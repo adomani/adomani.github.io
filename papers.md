@@ -109,7 +109,7 @@ math: true
   \\]
 
 - [Plane quartics with at least 8 hyperinflection points](http://arxiv.org/abs/1301.1865), joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), Bull. Braz. Math. Soc. (N.S.)  45 (2014), no. 4, 819–836.
+  [Marco Pacini](http://www.professores.uff.br/marco/), Bull. Braz. Math. Soc. (N.S.) 45 (2014), no. 4, 819–836.
 
   We show that quartics over the complex numbers with at least eight hyperinflection lines are determined by their inflection lines.
 
