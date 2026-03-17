@@ -39,15 +39,10 @@ math: true
   [Marco Pacini](http://www.professores.uff.br/marco/), Math. Res. Lett., vol. 27, no. 1, pp. 281–299, 2020.
 
   A classical construction in invariant theory associates to each quartic \\( Q \\) in \\( \mathbf{P}^2 \\), a quartic \\( H(Q) \\) in the dual projective plane \\( (\mathbf{P}^2)^\vee \\).
-
   Roughly, the points of \\( H(Q) \\) correspond to lines intersecting \\( Q \\) at a configuration of \\(4\\) points on \\( \mathbf{P}^1 \\) with vanishing \\( j \\)-invariant.
-
   Fix a general quartic \\( Q' \\) in \\( (\mathbf{P}^2)^\vee \\).
-
   Dolgachev asked how many quartics \\( Q \\) in \\( \mathbf{P}^2 \\) are there with \\( H(Q)=Q' \\).
-
   The answer is \\(15\\).
-
   The argument sheds **no** light on a possible interpretation of the number \\(15\\).
   (E.g. is \\( 15 = 3 \cdot 5 = 2^4-1 = \binom{6}{2} = \cdots \\)?).
 
