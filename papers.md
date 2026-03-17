@@ -102,8 +102,8 @@ math: true
 
   \\[
     \begin{array}{lrcl}
-      X_1 / \mathbf{F}_3: & -w^2 & = & (x^2 + y^2)^2 + y^3z - yz^3, \\\\
-      X_2 / \mathbf{F}_3: & -w^2 & = & x^4 + y^3z - yz^3, \\\\
+      X_1 / \mathbf{F}_3: & -w^2 & = & (x^2 + y^2)^2 + y^3z - yz^3, \\\\\\
+      X_2 / \mathbf{F}_3: & -w^2 & = & x^4 + y^3z - yz^3, \\\\\\
       X_3 / \mathbf{F}_9: & \alpha w^2 & = & x^4 + y^4 + z^4, {\textrm{where }} \alpha \in \mathbf{F}_9 {\textrm{ is a non-square}}.
     \end{array}
   \\]
