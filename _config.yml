@@ -1,0 +1,9 @@
+remote_theme: 'mmistakes/minimal-mistakes'
+markdown: kramdown
+mathjax: true
+
+plugins:
+- jekyll-remote-theme
+- jekyll-include-cache
+- jekyll-seo-tag
+- jekyll-feed

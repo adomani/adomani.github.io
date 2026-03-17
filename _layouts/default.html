@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+  <head>
+    {% if page.math %}
+    {% include _mathjax_support.html %}
+    {% endif %}
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

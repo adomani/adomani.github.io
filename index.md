@@ -1,0 +1,48 @@
+---
+title: home
+layout: single
+---
+<table>
+<tr>
+<td>
+<img alt="Damiano Testa" height="200" src="pictures/anakena.jpg" style="margin-left: 50px;" width="200"/>
+</td>
+<td><pre>      </pre></td><td>
+<div><b>Damiano Testa</b></div>
+<p style="margin-left: 0px;"><b>E-mail:</b>  d.testa at warwick dot ac dot uk
+  <br/><b>Office: </b> C2.13 Zeeman Building
+  <br/><b> Phone: </b> +44 (0)24 765 22662
+  <br/><b> Fax:   </b> +44 (0)24 765 24182<br/></p>
+</td>
+<td><pre>                   </pre></td><td>
+<b><br/>Address:</b> <br/>
+<br/> Mathematics Institute
+  <br/> University of Warwick
+  <br/> Coventry, CV4 7AL
+  <br/> United Kingdom
+  </td>
+</tr>
+</table>
+
+I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
+Prior to coming here, I was in the mathematics departments of
+[Oxford](http://www.maths.ox.ac.uk),
+[Bremen](http://math.jacobs-university.de/),
+[Roma](http://www.mat.uniroma1.it/),
+[Ithaca](http://www.math.cornell.edu/),
+[Boston](http://math.mit.edu/index.php),
+[Roma](http://www.mat.uniroma1.it/).
+My PhD supervisor was
+[Johan de Jong](http://www.math.columbia.edu/~dejong/);
+my undergraduate supervisor was
+[Corrado De Concini](http://www.mat.uniroma1.it/people/deconcini/).
+You can find a copy of my CV [here](pdfs/2026_03_17_CV.pdf).
+
+Between July 2025 and July 2027 I am partially supported by the [AI For Math fund](https://www.renaissancephilanthropy.org/ai-for-math-fund) award [Bridging proof and computation](https://www.renaissancephilanthropy.org/bridging-proof-and-computation-a-verified-leanmacaulay2-interface).
+
+
+Between September 2013 and August 2015 I was partially supported by EPSRC grant EP/K019279/1 [Moduli Spaces and Rational Points](msrp).
+
+---
+
+> ... most of the statements we made were wrong, most of the facts we learned were trivial...
