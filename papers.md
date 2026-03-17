@@ -100,13 +100,13 @@ math: true
 
   We also show that del Pezzo surfaces of degree two over a finite field are unirational with at most three possible exceptions:
 
-  \[
+  \\[
     \begin{array}{lrcl}
       X_1 / \mathbf{F}_3: & -w^2 & = & (x^2 + y^2)^2 + y^3z - yz^3, \\
       X_2 / \mathbf{F}_3: & -w^2 & = & x^4 + y^3z - yz^3, \\
       X_3 / \mathbf{F}_9: & \alpha w^2 & = & x^4 + y^4 + z^4, {\textrm{where }} \alpha \in \mathbf{F}_9 {\textrm{ is a non-square}}.
     \end{array}
-  \]
+  \\]
 
 - [Plane quartics with at least 8 hyperinflection points](http://arxiv.org/abs/1301.1865), joint with
   [Marco Pacini](http://www.professores.uff.br/marco/), Bull. Braz. Math. Soc. (N.S.)  45 (2014), no. 4, 819–836.
@@ -119,18 +119,18 @@ math: true
 
   Amusingly we find that the three plane quartics over \\(\mathbf{F}_{13}\\) with equations
 
-  \[
+  \\[
     x^4 + y^4 + z^4 + 3(x^2 y^2 + x^2 z^2 + y^2 z^2) = 0 \qquad
     x^4 + 3y^4 + 9z^4 + 3(9x^2 y^2 + 3x^2 z^2 + y^2 z^2) = 0 \qquad
     x^4 + 9y^4 + 3 z^4 + 3(3x^2 y^2 + 9x^2 z^2 + y^2 z^2) = 0
-  \]
+  \\]
   share the same inflection lines!
 
   The same property holds for the two quartics
-  \[
+  \\[
     x^4 -y^4 -z^4 = 2x^2 y^2 -4xyz^2 \qquad
     -(x^4 -y^4 +z^4) = 2x^2 y^2 -4xyz^2
-  \]
+  \\]
   and we show that among the Vermeulen's examples, these are essentially the only ones with this property.
 
 - [On Büchi's K3 surface](http://arxiv.org/abs/1212.1426), joint with
