@@ -1,0 +1,15 @@
+/*
+ * auto-dark.scss
+ * Automatically switch Minimal Mistakes to the dark skin
+ * when the user’s system/browser is set to dark mode.
+ *
+ * This does not require JS and does not override other theme styles.
+ * It simply instructs the theme to switch skins via the --mm-skin variable.
+ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Use the built-in Minimal Mistakes "dark" skin */
+    --mm-skin: "dark";
+  }
+}
