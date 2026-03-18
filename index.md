@@ -1,12 +1,12 @@
 ---
 title: "home"
 layout: single
-last_modified_at:
+last_modified_at: 2026-03-18T14:09:19
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
 
-## Damiano Testa  <a href="https://github.com/adomani">  <img src="assets/img/GitHub_Invertocat_White.svg" width="28" alt="GitHub logo"></a>
+## Damiano Testa  <a href="https://github.com/adomani">  <img src="pictures/GitHub_Invertocat_White.svg" width="28" alt="GitHub logo"></a>
 
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
