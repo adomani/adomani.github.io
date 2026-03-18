@@ -23,14 +23,9 @@ The lecture notes are available in PDF form:
 
 ## Practice Problem Sheets
 
-Some old practice problem sheets:
+Some old practice problems:
 
 - [Problem sheet 1](Problem%20Sheet%201.pdf)
 - [Problem sheet 1](Problem%20Sheet%202.pdf)
 - [Problem sheet 3](Problem%20Sheet%203.pdf)
-
----
-
-## Past Exam
-
-- pastExam.pdf
+- [Past exam](pastExam.pdf)
