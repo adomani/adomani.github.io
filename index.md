@@ -36,7 +36,7 @@ Between September 2013 and August 2015 I was partially supported by EPSRC grant 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 0.7em; line-height: 1.5;">
 
   <!-- Left column: email, office, phone, fax -->
-  <div style="flex: 1 1 250px; min-width: 300px;">
+  <div style="flex: 1 1 250px; min-width: 200px;">
     <b>Email:</b> d.testa at warwick dot ac dot uk<br>
     <b>Office:</b> C2.13, Zeeman Building<br>
     <b>Phone:</b> +44 (0)24 765 22662<br>
@@ -44,7 +44,7 @@ Between September 2013 and August 2015 I was partially supported by EPSRC grant 
   </div>
 
   <!-- Right column: postal address -->
-  <div style="flex: 1 1 250px; min-width: 300px;">
+  <div style="flex: 1 1 250px; min-width: 200px;">
     <b>Address:</b><br>
     Mathematics Institute<br>
     University of Warwick<br>
