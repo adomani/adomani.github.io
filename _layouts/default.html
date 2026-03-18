@@ -1,10 +1,27 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
+<html lang="{{ site.locale | default: 'en' }}" class="no-js">
   <head>
+    {% include head.html %}
     {% if page.math %}
-    {% include _mathjax_support.html %}
+    {% include head/_mathjax_support.html %}
     {% endif %}
   </head>
-  <body>
-    {{ content }}
+
+  <body class="{{ layout.body_class }}">
+
+    {% include skip-links.html %}
+    {% include masthead.html %}
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
   </body>
 </html>

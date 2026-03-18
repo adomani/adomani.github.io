@@ -1,6 +1,23 @@
-remote_theme: 'mmistakes/minimal-mistakes'
+title: "home"
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: dark
+
+locale: en
+
 markdown: kramdown
 mathjax: true
+
+navigation:
+  main: main
+
+enable_full_width: true
+
+defaults:
+- scope:
+    path: ""
+    type: "pages"
+  values:
+    sidebar: false
 
 plugins:
 - jekyll-remote-theme

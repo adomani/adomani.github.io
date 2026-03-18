@@ -1,13 +1,11 @@
 main:
-- title: home
-  url: /
-- title: Minicourses
+- title: "Minicourses"
   url: /minicourses/
-- title: Teaching
+- title: "Teaching"
   url: /teaching/
-- title: Slides
+- title: "Slides"
   url: /slides/
-- title: Papers
+- title: "Papers"
   url: /papers/
-- title: Moduli Spaces and Rational Points
+- title: "Moduli Spaces and Rational Points"
   url: /msrp/
