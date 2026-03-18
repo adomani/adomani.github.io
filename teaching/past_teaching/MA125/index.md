@@ -1,8 +1,9 @@
 ---
-title: "MA125 Introduction to Geometry"
-link: http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma125/
+title: ""
 layout: single
 ---
+
+# [MA125 Introduction to Geometry](http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma125/)
 
 ## Lectures
 
