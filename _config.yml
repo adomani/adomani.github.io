@@ -3,6 +3,8 @@ remote_theme: 'mmistakes/minimal-mistakes'
 markdown: kramdown
 mathjax: true
 
+navigation: "main"
+
 plugins:
 - jekyll-remote-theme
 - jekyll-include-cache
