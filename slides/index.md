@@ -2,8 +2,10 @@
 title: Slides
 layout: single
 math: true
-last_modified_at: 2026-03-18T16:03:17
+last_modified_at: 2026-03-18T16:08:09
 ---
+
+Maintaining a Large Formalisation Project [part 1](https://adomani.github.io/PreCFSG/Maintenance/Maintaining_1_Maths.pdf) and [part 2](https://adomani.github.io/PreCFSG/Maintenance/Maintaining_2_AI.pdf), [workshop on formalisation and group theory](https://adomani.github.io/PreCFSG/), Tsinghua University, Beijing, March 16th-20th, 2026.
 
 [Machine Verified Reasoning](https://adomani.github.io/Syllabus/Talks/2026_Machine_Verified_Reasoning.pdf), [Predictive Modelling Discussion Group, Warwick Engineering](https://warwick.ac.uk/fac/sci/wcpm/), February 12th, 2026.
 
