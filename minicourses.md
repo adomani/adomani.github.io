@@ -13,18 +13,14 @@ layout: single
 2019, July 22-26, Düsseldorf:
 [Arithmetic properties of del Pezzo surfaces](minicourses/2019_07_22_26_TestaDuesseldorf.pdf)
 
-
 2014, February 14-21, LEGAL, Teresópolis:
 [Rational points on surfaces](minicourses/2013_RPS/legal_RPS.html)
-
 
 2014, January-February, Concepción and IMPA:
 [Cox Rings of Rational surfaces](minicourses/2014_CRRS/CRRS.html)
 
-
 2013, January 5-15, Concepción:
 [Rational points on surfaces](minicourses/2013_RPS/UdeC_RPS.html)
-
 
 2008, April 14-18, Warwick: with
 [Martin Bright](http://www.boojum.org.uk/maths/) and
