@@ -11,6 +11,13 @@ navigation:
 
 enable_full_width: true
 
+defaults:
+- scope:
+    path: ""
+    type: "pages"
+  values:
+    sidebar: false
+
 plugins:
 - jekyll-remote-theme
 - jekyll-include-cache
