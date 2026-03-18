@@ -9,6 +9,8 @@ mathjax: true
 navigation:
   main: main
 
+enable_full_width: true
+
 plugins:
 - jekyll-remote-theme
 - jekyll-include-cache
