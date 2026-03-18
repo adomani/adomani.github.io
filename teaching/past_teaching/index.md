@@ -28,7 +28,7 @@ layout: single
   [Seventeenth](MA3J9/17th.pdf),
   [Tenth](MA3J9/10th.pdf) problem.
 - [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
-  [Lecture Notes](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/lecturers/ma426/MA426_EllipticCurves_2016.pdf)
+  [Lecture Notes](MA426_EllipticCurves_2018.pdf)
 
 ### 2018-19, Term 2
 - [MA106 Linear Algebra](https://moodle.warwick.ac.uk/course/view.php?id=23217)
