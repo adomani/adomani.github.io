@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:08:40
+last_modified_at: 2026-03-18T15:13:55
 ---
 
 ### 2025-26 Term 1
@@ -33,16 +33,15 @@ last_modified_at: 2026-03-18T15:08:40
 
 ### 2019-20, Term 2
 - {% include hcim.html %}
-- [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
-  [Lecture Notes](MA426_EllipticCurves_2018.pdf)
+- {% include elliptic %}
 
 ### 2018-19, Term 2
 - [MA106 Linear Algebra](2017-Spring-MA106-LinearAlgebra/)
-- [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
+- {% include elliptic %}
 
 ### 2017-18, Term 2
 - [MA106 Linear Algebra](2017-Spring-MA106-LinearAlgebra/)
-- [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
+- {% include elliptic %}
 
 ### 2016-17, Term 2
 - [MA106 Linear Algebra](2017-Spring-MA106-LinearAlgebra/)
