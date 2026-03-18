@@ -1,8 +1,11 @@
 ---
 title: Minicourses
 layout: single
-last_modified_at:
+last_modified_at: 2026-03-18T14:28:20
 ---
+
+2026, March 16-20: Tsinghua University, Beijing,
+[Workshop on Group Theory and Formalisation in Lean](https://github.com/adomani/PreCFSG)
 
 2023, May 2-3: Università Roma Tre,
 [Atelier Lean](https://github.com/adomani/Atelier_Lean_2023), during the
