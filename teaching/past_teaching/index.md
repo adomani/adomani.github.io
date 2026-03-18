@@ -12,7 +12,7 @@ layout: single
   Lecture Notes:
   [Third](MA3J9/3rd.pdf),
   [Seventeenth](MA3J9/17th.pdf),
-  MA3J9/10th.pdf problem.
+  [Tenth](MA3J9/10th.pdf) problem.
 - [MA939 Topics in Number Theory](https://warwick.ac.uk/fac/sci/maths/postgrad/current/phd_studies/modules/ma939/)
   A draft book (joint with Martin Bright and Ronald van Luijk) is available
   [here](surfaces/2021-01-03_surfaces.pdf).
