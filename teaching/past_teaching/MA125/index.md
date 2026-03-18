@@ -1,13 +1,7 @@
 ---
 title: "MA125 Introduction to Geometry"
+redirect_to: http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma125/
 layout: single
----
-
-[← Back to Damiano's homepage](adomani.github.io)
-
-# [MA125 Introduction to Geometry](http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma125/)
-**by [Damiano Testa](adomani.github.io)**
-
 ---
 
 ## Lectures
