@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T14:34:38
+last_modified_at: 2026-03-18T14:38:35
 ---
 
 ### 2025-26 Term 1
@@ -9,15 +9,15 @@ last_modified_at: 2026-03-18T14:34:38
 
 ### 2024-25 Term 1
 - [MA4N1 Theorem Proving with Lean](https://warwick.ac.uk/fac/sci/maths/currentstudents/modules/ma4n1/), course material on [GitHub](https://adomani.github.io/Syllabus/MA4N1/toc).
-- [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/).
+- [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/) and the corresponding [lecture notes](https://adomani.github.io/Syllabus/Manifolds_2023.pdf).
 
 ### 2023-24 Term 1
 - [MA4N1 Theorem Proving with Lean](https://warwick.ac.uk/fac/sci/maths/currentstudents/modules/ma4n1/), course material on [GitHub](https://adomani.github.io/Syllabus/MA4N1/toc).
-- [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/).
+- [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/) and the corresponding [lecture notes](https://adomani.github.io/Syllabus/Manifolds_2023.pdf).
 
 ### 2022-23 Term 1
 - [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/), Lecture Notes: Hilbert's [Third](past_teaching/MA3J9/3rd.pdf), [Seventeenth](past_teaching/MA3J9/17th.pdf), [Tenth](past_teaching/MA3J9/10th.pdf) problem.
-- [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/).
+- [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/) and the corresponding [lecture notes](https://adomani.github.io/Syllabus/Manifolds_2023.pdf).
 
 ### 2021-22, Term 2
 - [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/)
