@@ -2,8 +2,10 @@
 title: Slides
 layout: single
 math: true
-last_modified_at: 2026-03-18T15:47:58
+last_modified_at: 2026-03-18T15:54:01
 ---
+
+[Mathematics, automation, theorem proving](https://adomani.github.io/Syllabus/Talks/2023_Pisa_Maths_Autom_Thm_Proving.pdf), Colloquio at Università di Pisa, December 13th, 2023.
 
 [Lines of polynomials with Galois group \\(\mathfrak{A}_n\\)](2021_11_29_lines_Alt.pdf), a talk in the
 [GANT seminar](https://sites.google.com/view/gantseminar), November 29th, 2021.
