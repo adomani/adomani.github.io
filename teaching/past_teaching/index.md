@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:00:39
+last_modified_at: 2026-03-18T15:08:40
 ---
 
 ### 2025-26 Term 1
@@ -17,7 +17,7 @@ last_modified_at: 2026-03-18T15:00:39
 
 ### 2022-23 Term 1
 - {% include hcim.html %}
-- {% include manifolds.html %}.
+- {% include manifolds.html %}
 
 ### 2021-22, Term 2
 - {% include hcim.html %}
