@@ -16,6 +16,11 @@ classes: wide
   <img src="assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo">
 </a>
 
+<a href="https://github.com/adomani" target="_blank">
+  <img src="assets/img/github-invertocat-white.svg" alt="Octocat" />
+</a>
+
+
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
 [Oxford](http://www.maths.ox.ac.uk),
