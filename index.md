@@ -6,18 +6,18 @@ classes: wide
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
 
-## Damiano Testa  <a href="https://github.com/adomani">  <img src="assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo"></a>
+## Damiano Testa  <a href="https://github.com/adomani">  <img src="assets/img/GitHub_Invertocat_White.svg" width="16" alt="GitHub logo"></a>
 
 <a href="https://github.com/adomani">
-  <img src="/assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo">
+  <img src="/assets/img/GitHub_Invertocat_White.svg" width="16" alt="GitHub logo">
 </a>
 
 <a href="https://github.com/adomani">
-  <img src="assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo">
+  <img src="assets/img/GitHub_Invertocat_White.svg" width="16" alt="GitHub logo">
 </a>
 
 <a href="https://github.com/adomani" target="_blank">
-  <img src="assets/img/github-invertocat-white.svg" alt="Octocat" />
+  <img src="assets/img/GitHub_Invertocat_White.svg" alt="Octocat" />
 </a>
 
 
