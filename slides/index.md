@@ -2,6 +2,7 @@
 title: Slides
 layout: single
 math: true
+last_modified_at:
 ---
 
 [Lines of polynomials with Galois group \\(\mathfrak{A}_n\\)](slides/2021_11_29_lines_Alt.pdf), a talk in the

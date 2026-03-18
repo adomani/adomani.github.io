@@ -1,6 +1,7 @@
 ---
 title: Minicourses
 layout: single
+last_modified_at:
 ---
 
 2023, May 2-3: Università Roma Tre,

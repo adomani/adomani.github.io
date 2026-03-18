@@ -1,6 +1,7 @@
 ---
 title: "home"
 layout: single
+last_modified_at:
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
