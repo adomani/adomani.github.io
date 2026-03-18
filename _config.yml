@@ -3,6 +3,8 @@ remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: default
 locale: en
 
+theme: jekyll-theme-hacker
+
 markdown: kramdown
 mathjax: true
 
