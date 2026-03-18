@@ -6,7 +6,7 @@ classes: wide
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
 
-## Damiano Testa [<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark-Light.png" width="16" alt="GitHub Logo" />](https://github.com/adomani)
+## Damiano Testa
 
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
