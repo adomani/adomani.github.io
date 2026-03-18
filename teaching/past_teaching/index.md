@@ -9,17 +9,20 @@ layout: single
 
 ### 2020-21, Term 2
 - [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/)
+
   Lecture Notes:
   [Third](MA3J9/3rd.pdf),
   [Seventeenth](MA3J9/17th.pdf),
   [Tenth](MA3J9/10th.pdf) problem.
 - [MA939 Topics in Number Theory](https://warwick.ac.uk/fac/sci/maths/postgrad/current/phd_studies/modules/ma939/)
+
   A draft book (joint with Martin Bright and Ronald van Luijk) is available
   [here](surfaces/2021-01-03_surfaces.pdf).
   Feedback is welcome!
 
 ### 2019-20, Term 2
 - [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/)
+
   Lecture Notes:
   [Third](MA3J9/3rd.pdf),
   [Seventeenth](MA3J9/17th.pdf),
