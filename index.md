@@ -6,10 +6,14 @@ classes: wide
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
 
-## Damiano Testa  <a href="https://github.com/adomani">  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark-Light.png" width="16" alt="GitHub logo"></a>
+## Damiano Testa  <a href="https://github.com/adomani">  <img src="assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo"></a>
 
 <a href="https://github.com/adomani">
-  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark-Light.png" width="16" alt="GitHub logo">
+  <img src="/assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo">
+</a>
+
+<a href="https://github.com/adomani">
+  <img src="assets/img/github-invertocat-white.svg" width="16" alt="GitHub logo">
 </a>
 
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
