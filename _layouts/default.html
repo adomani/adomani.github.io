@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
     {% if page.math %}
     {% include _mathjax_support.html %}
     {% endif %}
-  </head>
-  <body>
-    {{ content }}
-  </body>
+    <!-- CSS, meta tags, and other links -->
+</head>
+<body>
+    {{ content }} <!-- Page content is inserted here -->
+</body>
 </html>
