@@ -21,4 +21,12 @@ layout: single
 
   - The third exercise sheet is available as [pdf](p3.pdf).
 
+    *Due Monday November 11th at 3pm.*
+
+  - The fourth exercise sheet is available as [pdf](p4.pdf).
+
+    Due Monday November 25th at 3pm.
+
+  - The fifth exercise sheet is available as  [pdf](p4.pdf).
+
     *Due Monday December 2nd at 3pm.*
