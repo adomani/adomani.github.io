@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:16:12
+last_modified_at: 2026-03-18T15:21:01
 ---
 
 ### 2025-26 Term 1
@@ -33,18 +33,18 @@ last_modified_at: 2026-03-18T15:16:12
 
 ### 2019-20, Term 2
 - {% include hcim.html %}
-- {% include elliptic %}
+- {% include elliptic.html %}
 
 ### 2018-19, Term 2
-- {% include linearalgebra %}
-- {% include elliptic %}
+- {% include linearalgebra.html %}
+- {% include elliptic.html %}
 
 ### 2017-18, Term 2
 - {% include linearalgebra %}
-- {% include elliptic %}
+- {% include elliptic.html %}
 
 ### 2016-17, Term 2
-- {% include linearalgebra %}
+- {% include linearalgebra.html %}
 
 ### 2015-16, Term 1
 - [MA138 Sets and Numbers](MA138SetsAndNumbers/)
