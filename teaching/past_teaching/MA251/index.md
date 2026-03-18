@@ -9,16 +9,16 @@ layout: single
 
 - [Lecture Notes](lectures.pdf)
 
-## Assignments
+- Assignments
 
-- The first exercise sheet is available as [pdf](p1.pdf).
+  - The first exercise sheet is available as [pdf](p1.pdf).
 
-  *Due Monday October 14th at 3pm.*
+    *Due Monday October 14th at 3pm.*
 
-- The second exercise sheet is available as [pdf](p2.pdf).
+  - The second exercise sheet is available as [pdf](p2.pdf).
 
-  *Due Monday October 28th at 3pm.*
+    *Due Monday October 28th at 3pm.*
 
-- The third exercise sheet is available as [pdf](p3.pdf).
+  - The third exercise sheet is available as [pdf](p3.pdf).
 
-  *Due Monday
+    *Due Monday December 2nd at 3pm.*
