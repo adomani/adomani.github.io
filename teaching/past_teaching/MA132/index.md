@@ -11,30 +11,24 @@ and
 
 ---
 
-## Lecture Notes
+- [Lecture Notes](lectures.pdf)
 
-- lectures.pdf
+- Test Solutions
 
----
+  - *[Solutions](testsol.pdf) to the first test (test A; other versions are permutations).*
 
-## Assignments & Test Solutions
+  - *[Solutions](testsol2.pdf) to the second test.*
 
-- http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/lecturers/ma132/ex1.pdf
+    **Note:** The correct answer to question 3 is **(b)**.
+    There are only 3 true statements because (iii) is NOT true.
 
-- *[Solutions](testsol.pdf) to the first test (test A; other versions are permutations).*
+  - *[Solutions](test3sol.pdf) to the third test.*
 
-- *[Solutions](testsol2.pdf) to the second test.*
+    **Note:** The correct answer to question 10 is **(c)**.
 
-  **Note:** The correct answer to question 3 is **(b)**.
-  There are only 3 true statements because (iii) is NOT true.
+  - *[Solutions](test4sol.pdf) to the fourth test.*
 
-- *[Solutions](test3sol.pdf) to the third test.*
-
-  **Note:** The correct answer to question 10 is **(c)**.
-
-- *[Solutions](test4sol.pdf) to the fourth test.*
-
-  **Note:**
-  The correct answer to question 2 is (b), since 0 IS a natural number.
-  On the other hand, the answers that will be considered to be correct are both (b) and (d):
-  these are the two possible correct answer depending on whether or not 0 is considered a natural number.
+    **Note:**
+    The correct answer to question 2 is (b), since 0 IS a natural number.
+    On the other hand, the answers that will be considered to be correct are both (b) and (d):
+    these are the two possible correct answer depending on whether or not 0 is considered a natural number.
