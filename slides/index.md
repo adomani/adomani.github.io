@@ -2,8 +2,10 @@
 title: Slides
 layout: single
 math: true
-last_modified_at: 2026-03-18T15:54:01
+last_modified_at: 2026-03-18T15:57:48
 ---
+
+[An introduction to linters](https://adomani.github.io/Syllabus/Talks/2025_Lean_Together_linter_talk.pdf), [Lean Together 2025](https://leanprover-community.github.io/lt2025/), [video](https://www.youtube.com/watch?v=734jMwgjkkM), January 15th, 2025.
 
 [Mathematics, automation, theorem proving](https://adomani.github.io/Syllabus/Talks/2023_Pisa_Maths_Autom_Thm_Proving.pdf), Colloquio at Università di Pisa, December 13th, 2023.
 
