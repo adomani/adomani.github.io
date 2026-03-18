@@ -27,25 +27,31 @@ Between July 2025 and July 2027 I am partially supported by the [AI For Math fun
 
 Between September 2013 and August 2015 I was partially supported by EPSRC grant EP/K019279/1 [Moduli Spaces and Rational Points](msrp).
 
+> _"... most of the statements we made were wrong, most of the facts we learned were trivial..."_
+
 ---
 
 ## Contact Information
 
-<div style="line-height: 1.6;">
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 0.9em; line-height: 1.5;">
 
-<b>Email:</b> d.testa at warwick dot ac dot uk<br>
-<b>Office:</b> C2.13, Zeeman Building<br>
-<b>Phone:</b> +44 (0)24 765 22662<br>
-<b>Fax:</b> +44 (0)24 765 24182<br><br>
+  <!-- Left column: email, office, phone, fax -->
+  <div style="flex: 1 1 250px; min-width: 200px;">
+    <b>Email:</b> d.testa at warwick dot ac dot uk<br>
+    <b>Office:</b> C2.13, Zeeman Building<br>
+    <b>Phone:</b> +44 (0)24 765 22662<br>
+    <b>Fax:</b> +44 (0)24 765 24182<br>
+  </div>
 
-<b>Address:</b><br>
-Mathematics Institute<br>
-University of Warwick<br>
-Coventry, CV4 7AL<br>
-United Kingdom
+  <!-- Right column: postal address -->
+  <div style="flex: 1 1 250px; min-width: 200px;">
+    <b>Address:</b><br>
+    Mathematics Institute<br>
+    University of Warwick<br>
+    Coventry, CV4 7AL<br>
+    United Kingdom
+  </div>
 
 </div>
 
 ---
-
-> _"... most of the statements we made were wrong, most of the facts we learned were trivial..."_
