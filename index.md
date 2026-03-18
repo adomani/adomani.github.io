@@ -1,28 +1,12 @@
 ---
-title: home
+title: "home"
 layout: single
+classes: wide
 ---
-<table>
-<tr>
-<td>
-<img alt="Damiano Testa" height="200" src="pictures/anakena.jpg" style="margin-left: 50px;" width="200"/>
-</td>
-<td><pre>      </pre></td><td>
-<div><b>Damiano Testa</b></div>
-<p style="margin-left: 0px;"><b>E-mail:</b>  d.testa at warwick dot ac dot uk
-  <br/><b>Office: </b> C2.13 Zeeman Building
-  <br/><b> Phone: </b> +44 (0)24 765 22662
-  <br/><b> Fax:   </b> +44 (0)24 765 24182<br/></p>
-</td>
-<td><pre>                   </pre></td><td>
-<b><br/>Address:</b> <br/>
-<br/> Mathematics Institute
-  <br/> University of Warwick
-  <br/> Coventry, CV4 7AL
-  <br/> United Kingdom
-  </td>
-</tr>
-</table>
+
+<img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
+
+## Damiano Testa
 
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
@@ -45,4 +29,23 @@ Between September 2013 and August 2015 I was partially supported by EPSRC grant 
 
 ---
 
-> ... most of the statements we made were wrong, most of the facts we learned were trivial...
+## Contact Information
+
+<div style="line-height: 1.6;">
+
+<b>Email:</b> d.testa at warwick dot ac dot uk<br>
+<b>Office:</b> C2.13, Zeeman Building<br>
+<b>Phone:</b> +44 (0)24 765 22662<br>
+<b>Fax:</b> +44 (0)24 765 24182<br><br>
+
+<b>Address:</b><br>
+Mathematics Institute<br>
+University of Warwick<br>
+Coventry, CV4 7AL<br>
+United Kingdom
+
+</div>
+
+---
+
+> _"... most of the statements we made were wrong, most of the facts we learned were trivial..."_
