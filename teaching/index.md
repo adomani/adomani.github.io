@@ -7,4 +7,4 @@ layout: single
 
 2022-23 Term 1, [MA3H5 Manifolds](https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/).
 
-[Past years](teaching/past_teaching/)
+[Past years](past_teaching/)
