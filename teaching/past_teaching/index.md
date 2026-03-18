@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T14:54:08
+last_modified_at: 2026-03-18T15:00:39
 ---
 
 ### 2025-26 Term 1
@@ -16,20 +16,15 @@ last_modified_at: 2026-03-18T14:54:08
 - {% include manifolds.html %}
 
 ### 2022-23 Term 1
-- [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/), Lecture Notes: Hilbert's [Third](past_teaching/MA3J9/3rd.pdf), [Seventeenth](past_teaching/MA3J9/17th.pdf), [Tenth](past_teaching/MA3J9/10th.pdf) problem.
+- {% include hcim.html %}
 - {% include manifolds.html %}.
 
 ### 2021-22, Term 2
-- [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/)
+- {% include hcim.html %}
 - [MA948 Applied Scheme Theory](https://warwick.ac.uk/fac/sci/maths/currentstudents/currentpostgraduates/phd_studies/modules/ma948/)
 
 ### 2020-21, Term 2
-- [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/)
-
-  Lecture Notes:
-  [Third](MA3J9/3rd.pdf),
-  [Seventeenth](MA3J9/17th.pdf),
-  [Tenth](MA3J9/10th.pdf) problem.
+- {% include hcim.html %}
 - [MA939 Topics in Number Theory](https://warwick.ac.uk/fac/sci/maths/postgrad/current/phd_studies/modules/ma939/)
 
   A draft book (joint with Martin Bright and Ronald van Luijk) is available
@@ -37,12 +32,7 @@ last_modified_at: 2026-03-18T14:54:08
   Feedback is welcome!
 
 ### 2019-20, Term 2
-- [MA3J9 Historical Challenges in Mathematics](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/)
-
-  Lecture Notes:
-  [Third](MA3J9/3rd.pdf),
-  [Seventeenth](MA3J9/17th.pdf),
-  [Tenth](MA3J9/10th.pdf) problem.
+- {% include hcim.html %}
 - [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
   [Lecture Notes](MA426_EllipticCurves_2018.pdf)
 
