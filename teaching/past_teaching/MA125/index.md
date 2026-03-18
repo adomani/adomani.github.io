@@ -16,6 +16,7 @@ layout: single
 ## Lecture Notes
 
 The lecture notes are available in PDF form:
+
 **[Download lectures.pdf](lectures.pdf)**
 
 ---
@@ -25,7 +26,7 @@ The lecture notes are available in PDF form:
 Some old practice problem sheets:
 
 - [Problem sheet 1](Problem%20Sheet%201.pdf)
-- Problem%20Sheet%202.pdf
+- [Problem sheet 1](Problem%20Sheet%202.pdf)
 - [Problem sheet 3](Problem%20Sheet%203.pdf)
 
 ---
