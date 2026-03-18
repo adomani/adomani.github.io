@@ -33,7 +33,7 @@ Between September 2013 and August 2015 I was partially supported by EPSRC grant 
 
 #### Contact Information
 
-<div style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 0.7em; line-height: 1.5;">
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 0.7em; line-height: 1.5; align-items: center;">
 
   <!-- Left column: email, office, phone, fax -->
   <div style="flex: 1 1 250px; min-width: 200px;">
