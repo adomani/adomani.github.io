@@ -6,6 +6,9 @@ layout: none
 <html lang="{{ site.locale | default: 'en' }}" class="no-js">
   <head>
     {% include head.html %}
+    {% if page.math %}
+    {% include head/_mathjax_support.html %}
+    {% endif %}
   </head>
 
   <body class="{{ layout.body_class }}">
