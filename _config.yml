@@ -1,23 +1,27 @@
 title: "home"
-
-#remote_theme: "mmistakes/minimal-mistakes"
-#minimal_mistakes_skin: default
-theme: jekyll-theme-hacker   # or any theme you choose
-
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: default
 locale: en
+
+theme: jekyll-theme-hacker
 
 markdown: kramdown
 mathjax: true
 
-plugins:
-  - jekyll-seo-tag
-  - jekyll-feed
-
 navigation:
   main: main
 
+enable_full_width: true
+
+defaults:
+- scope:
+    path: ""
+    type: "pages"
+  values:
+    sidebar: false
+
 plugins:
-#- jekyll-remote-theme
-#- jekyll-include-cache
+- jekyll-remote-theme
+- jekyll-include-cache
 - jekyll-seo-tag
 - jekyll-feed
