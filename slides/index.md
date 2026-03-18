@@ -20,4 +20,4 @@ Warwick $\overline{M}_{0,n}$ seminar, November 22nd, 2021.
 
 [\$\overline{M}_{0,134}\$ is not a Mori Dream Space](slides/2021_11_22_nMDS.pdf), an expository talk on a result of
 [Castravet-Tevelev](https://arxiv.org/abs/1311.7673),
-Warwick \$\overline{M}_{0,n}\$ seminar, November 22nd, 2021.
+Warwick&nbsp;\\(\overline{M}_{0,n}\\) seminar, November 22nd, 2021.
