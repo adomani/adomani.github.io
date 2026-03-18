@@ -18,4 +18,8 @@ Warwick \\(\overline{M}_{0\,\!\!,n}\\) seminar, November 22nd, 2021.
 
 [Contact in algebraic and tropical geometry](slides/2020_03_31_Versailles_Testa.pdf), in Versailles.
 
-\\(\overline{M}_{0\,\!,n}\\)
+\\(\overline{M}_{0,n}\\) nothing
+
+\\({\overline{M}_{0,n}}\\)  braces
+
+\\(\overline{M}_{{0,n}}\\)  inner braces
