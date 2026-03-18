@@ -23,19 +23,19 @@ The final exam will cover material from all 5 workbooks (Workbook 5 will only be
 
 * [Workbook 1](wkbknosol1.pdf) Friday April 26th. Solutions available [here](wkbksol1.pdf) on Thursday May 2nd.
 
-* Solutions for Test 1a of Friday May 3rd. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
+* [Solutions](test1sol.pdf) for Test 1a of Friday May 3rd. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
 
 * [Workbook 2](wkbknosol2.pdf) Friday May 3rd. Solutions available [here](wkbksol2.pdf) on Thursday May 9th.
 
-* Solutions for Test 2a of Friday May 10th. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
+* [Solutions](test2sol.pdf) for Test 2a of Friday May 10th. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
 As mentioned during the test, Q1 should have 1 ≤ r,s ≤ 318, and Q2 should have S={1,3,7,15,31,...}. Also, in the solutions I handed out, in A3 the required values of n are 1,2,3,4,6 (note the 6 instead of 5); the correct answer is still (b).
 
 * [Workbook 3](wkbknosol3.pdf) Friday May 10th. Solutions available [here](wkbksol3.pdf) on Thursday May 16th.
 
-* Solutions for Test 3a of Friday May 17th. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
+* [Solutions](test3sol.pdf) for Test 3a of Friday May 17th. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
 
 * [Workbook 4](wkbknosol4.pdf) Friday May 17th. Solutions available [here](wkbksol4.pdf) on Thursday May 23rd.
 
-* Solutions for Test 4a of Friday May 24th. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
+* [Solutions](test4sol.pdf) for Test 4a of Friday May 24th. The remaining tests had the same questions in a different order: it is up to you to work out the permutation!
 
 * [Workbook 5](wkbknosol5.pdf) Friday May 24th. Solutions available [here](wkbksol5.pdf) on Thursday May 30th. There is no test this Friday (May 31st).
