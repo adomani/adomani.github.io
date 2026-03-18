@@ -55,10 +55,10 @@ layout: single
 - [MA246 Number Theory](MA246/)
 
 ### 2012-13, Term 1
-- MA132/
+- [MA132 Foundations](MA132/)
 
 ### 2011-12, Term 3
-- MA246/
+- [MA246 Number Theory](MA246/)
 
 ### 2011-12, Term 2
 - [MA106 Linear Algebra](LinAlg2012/)
