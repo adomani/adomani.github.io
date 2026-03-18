@@ -1,6 +1,7 @@
 ---
 title: ""
 layout: single
+last_modified_at: 2026-03-18T14:20:20
 ---
 
 # [MA132 Foundations](http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma132/)
