@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:21:01
+last_modified_at: 2026-03-18T15:24:41
 ---
 
 ### 2025-26 Term 1
@@ -40,7 +40,7 @@ last_modified_at: 2026-03-18T15:21:01
 - {% include elliptic.html %}
 
 ### 2017-18, Term 2
-- {% include linearalgebra %}
+- {% include linearalgebra.html %}
 - {% include elliptic.html %}
 
 ### 2016-17, Term 2
