@@ -6,7 +6,8 @@ locale: en
 markdown: kramdown
 mathjax: true
 
-navigation: main
+navigation:
+  main: main
 
 plugins:
 - jekyll-remote-theme
