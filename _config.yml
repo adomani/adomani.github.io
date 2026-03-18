@@ -1,10 +1,6 @@
 title: "home"
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: default
-
-# Load the custom CSS file
-custom_css:
-- assets/css/auto-dark.scss
+minimal_mistakes_skin: dark
 
 locale: en
 
