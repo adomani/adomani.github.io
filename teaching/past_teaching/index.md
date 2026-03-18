@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:26:54
+last_modified_at: 2026-03-18T15:30:49
 ---
 
 ### 2025-26 Term 1
@@ -57,13 +57,13 @@ last_modified_at: 2026-03-18T15:26:54
 - [MA251 Algebra 1](MA251/)
 
 ### 2012-13, Term 3
-- [MA246 Number Theory](MA246/)
+- {% include nt246.html %}
 
 ### 2012-13, Term 1
 - [MA132 Foundations](MA132/)
 
 ### 2011-12, Term 3
-- [MA246 Number Theory](MA246/)
+- {% include nt246.html %}
 
 ### 2011-12, Term 2
 - [MA106 Linear Algebra](LinAlg2012/)
