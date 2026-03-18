@@ -25,7 +25,7 @@ layout: single
 
   - The fourth exercise sheet is available as [pdf](p4.pdf).
 
-    Due Monday November 25th at 3pm.
+    *Due Monday November 25th at 3pm.*
 
   - The fifth exercise sheet is available as  [pdf](p4.pdf).
 
