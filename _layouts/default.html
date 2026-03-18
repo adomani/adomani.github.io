@@ -1,12 +1,24 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <!-- CSS, meta tags, and other links -->
-</head>
-<body>
+<html lang="{{ site.locale | default: 'en' }}" class="no-js">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="{{ layout.body_class }}">
+
+    {% include skip-links.html %}
     {% include masthead.html %}
-    {{ content }} <!-- Page content is inserted here -->
-</body>
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+  </body>
 </html>
