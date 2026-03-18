@@ -4,11 +4,9 @@ layout: single
 classes: wide
 ---
 
-<img src="pictures/anakena.jpg" alt="Damiano Testa" width="230" height="230" style="float: right; margin: 0 0 1rem 1rem;"/>
+<img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
 
-## Damiano Testa  <a href="https://github.com/adomani">  <img src="assets/img/GitHub_Invertocat_White.svg" width="16" alt="GitHub logo"></a>
-
-[![GitHub](assets/img/GitHub_Invertocat_White.svg)](https://github.com/adomani)
+## Damiano Testa  <a href="https://github.com/adomani">  <img src="assets/img/GitHub_Invertocat_White.svg" width="18" alt="GitHub logo"></a>
 
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
