@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:24:41
+last_modified_at: 2026-03-18T15:26:54
 ---
 
 ### 2025-26 Term 1
@@ -50,10 +50,10 @@ last_modified_at: 2026-03-18T15:24:41
 - [MA138 Sets and Numbers](MA138SetsAndNumbers/)
 
 ### 2014-15, Term 1
-- [MA125 Introduction to Geometry](MA125/)
+- {% include introgeo.html %}
 
 ### 2013-14, Term 1
-- [MA125 Introduction to Geometry](MA125/)
+- {% include introgeo.html %}
 - [MA251 Algebra 1](MA251/)
 
 ### 2012-13, Term 3
