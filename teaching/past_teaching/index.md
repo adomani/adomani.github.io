@@ -31,18 +31,18 @@ layout: single
   [Lecture Notes](MA426_EllipticCurves_2018.pdf)
 
 ### 2018-19, Term 2
-- [MA106 Linear Algebra](https://moodle.warwick.ac.uk/course/view.php?id=23217)
+- [MA106 Linear Algebra](2017-Spring-MA106-LinearAlgebra/)
 - [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
 
 ### 2017-18, Term 2
-- [MA106 Linear Algebra](https://moodle.warwick.ac.uk/course/view.php?id=23217)
+- [MA106 Linear Algebra](2017-Spring-MA106-LinearAlgebra/)
 - [MA426 Elliptic Curves](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/resources/ma426/)
 
 ### 2016-17, Term 2
-- [MA106 Linear Algebra](https://moodle.warwick.ac.uk/course/view.php?id=23217)
+- [MA106 Linear Algebra](2017-Spring-MA106-LinearAlgebra/)
 
 ### 2015-16, Term 1
-- [MA138 Sets and Numbers](MA138SetsAndNumbers/index.html)
+- [MA138 Sets and Numbers](MA138SetsAndNumbers/)
 
 ### 2014-15, Term 1
 - [MA125 Introduction to Geometry](MA125/)
