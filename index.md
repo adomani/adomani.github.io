@@ -8,6 +8,8 @@ classes: wide
 
 ## Damiano Testa
 
+[![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark-Light.png)](https://github.com/adomani)
+
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
 [Oxford](http://www.maths.ox.ac.uk),
