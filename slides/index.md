@@ -17,7 +17,3 @@ Warwick <span>\\(\overline{M}_{0,n}\\)</span> seminar, November 22nd, 2021.
 [Using computers to do maths for us!](slides/2020_ToM_Testa.pdf), Tour of Mathematics 2020-21, Warwick.
 
 [Contact in algebraic and tropical geometry](slides/2020_03_31_Versailles_Testa.pdf), in Versailles.
-
-[\$\overline{M}_{0,134}\$ is not a Mori Dream Space](slides/2021_11_22_nMDS.pdf), an expository talk on a result of
-[Castravet-Tevelev](https://arxiv.org/abs/1311.7673),
-Warwick&nbsp;\\(\overline{M}_{0,n}\\) seminar, November 22nd, 2021.
