@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T05:56:06
+last_modified_at: 2026-03-19T06:11:01
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -67,7 +67,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **February 9-13, 2015 — Università di Padova**
   Conference:
-  [Recent advances in Linear series and Newton-Okounkov bodies](http://www.math.unipd.it/~urbinati/Webpage/PadovaConference)
+  [Recent advances in Linear series and Newton-Okounkov bodies](https://link.springer.com/article/10.1007/s12215-017-0314-x)
 
 - **February 5-6, 2015 — Università di Milano-Bicocca**
   Conference:
