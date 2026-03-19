@@ -1,10 +1,10 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-19T03:35:14
+last_modified_at: 2026-03-19T08:24:47
 ---
 
-# [MA246 Number Theory](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma246/) *(tests Friday 11am, Room MS.02)*
+# [MA246 Number Theory](https://web.archive.org/web/20111222023706/https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma246/) *(tests Friday 11am, Room MS.02)*
 
 ---
 
