@@ -2,7 +2,7 @@
 title: Cox Rings of Rational Surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T03:39:57
+last_modified_at: 2026-03-19T06:28:16
 ---
 
 ## January–February, 2014 — Concepción (Chile) and IMPA (Brasil)
@@ -79,7 +79,7 @@ The rough plan of the lectures is as follows:
 # References
 
 1. Ivan Arzhantsev, Ulrich Derenthal, Jürgen Hausen and Antonio Laface;
-   *[Cox Rings](https://www.cambridge.org/us/academic/subjects/mathematics/geometry-and-topology/cox-rings)*.
+   *[Cox Rings](https://www.cambridge.org/gb/universitypress/subjects/mathematics/geometry-and-topology/cox-rings)*.
    A free preview is available on the [arXiv](https://arxiv.org/abs/1003.4229).
    A book on Cox rings in general.
 
