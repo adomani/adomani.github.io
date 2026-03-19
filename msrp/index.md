@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:59:46
+last_modified_at: 2026-03-19T05:46:31
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -122,8 +122,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **May 26 - June 1, 2014 — Rice University**
   Collaboration with
-  {% include tonyVarillyAlvarado %} and
-  [Mauricio Velasco](http://wwwprof.uniandes.edu.co/~mvelasco/Velasco.html)
+  {% include tonyVarillyAlvarado %} and {% include mauricioVelasco %}
 
 - **May 12-16, 2014 — AIM, Palo Alto**
   Workshop:

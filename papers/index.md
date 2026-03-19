@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T05:16:39
+last_modified_at: 2026-03-19T05:46:31
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -207,7 +207,7 @@ last_modified_at: 2026-03-19T05:16:39
 
 - [Big rational surfaces](https://arxiv.org/abs/0901.1094), joint with
   {% include tonyVarillyAlvarado %} and
-  [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
+  {% include mauricioVelasco %},
   Math. Ann. 351 (2011), no. 1, 95–107.
 
   We present a unified approach to proving that smooth projective rational surfaces with
@@ -222,7 +222,7 @@ last_modified_at: 2026-03-19T05:16:39
 
 - [Cox rings of degree one del Pezzo surfaces](https://arxiv.org/abs/0803.0353), joint with
   {% include tonyVarillyAlvarado %} and
-  [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
+  {% include mauricioVelasco %},
   Algebra Number Theory 3 (2009), no. 7, 729–761.
 
   We settle a conjecture of Batyrev and Popov on the ideal of relations of the Cox ring of a del Pezzo surface
@@ -280,7 +280,7 @@ last_modified_at: 2026-03-19T05:16:39
 
 - [Gröbner bases, monomial group actions, and the Cox rings of Del Pezzo surfaces](https://arxiv.org/abs/math/0610261), joint with
   [Mike Stillman](https://pi.math.cornell.edu/~mike/) and
-  [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
+  {% include mauricioVelasco %},
   J. Algebra 316 (2007), no. 2, 777–801.
 
   My first paper on Cox rings.
