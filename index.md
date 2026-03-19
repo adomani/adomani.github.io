@@ -1,7 +1,7 @@
 ---
 title: "home"
 layout: single
-last_modified_at: 2026-03-19T03:35:14
+last_modified_at: 2026-03-19T05:27:44
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
@@ -16,7 +16,7 @@ Prior to coming here, I was in the mathematics departments of
 [Bremen](https://math.constructor.university/),
 [Roma](https://www.mat.uniroma1.it/),
 [Ithaca](https://math.cornell.edu/),
-[Boston](http://math.mit.edu/index.php),
+[Boston](https://math.mit.edu/index.php),
 [Roma](https://www.mat.uniroma1.it/).
 My PhD supervisor was
 [Johan de Jong](https://www.math.columbia.edu/~dejong/);
