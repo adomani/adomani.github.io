@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:25:01
+last_modified_at: 2026-03-19T04:36:14
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -85,7 +85,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **November 10-14, 2014 — Nagoya University**
   Conference:
-  [K3, Enriques Surfaces and Related Topics](http://www.math.nagoya-u.ac.jp/en/research/conference/2014/k3-enriques.html)
+  [K3, Enriques Surfaces and Related Topics](https://www.math.nagoya-u.ac.jp/en/research/conference/2014/k3-enriques.html)
 
 - **November 6, 2014 — Oxford**
   [COW Seminar](https://www.maths.ox.ac.uk/node/13217)
@@ -127,7 +127,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **May 12-16, 2014 — AIM, Palo Alto**
   Workshop:
-  [Rational and integral points on higher-dimensional varieties](http://www.cims.nyu.edu/~tschinke/.aim/aim14-index.html)
+  [Rational and integral points on higher-dimensional varieties](https://cims.nyu.edu/~tschinke/.aim/aim14-index.html)
   *Special hyperplane sections of Fermat hypersurfaces and sums of roots of unity*
 
 - **April 30, 2014 — UGA, Athens, Georgia**
