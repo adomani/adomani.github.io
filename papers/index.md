@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T03:49:59
+last_modified_at: 2026-03-19T03:50:58
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -185,7 +185,7 @@ last_modified_at: 2026-03-19T03:49:59
   the canonical class on \\(S\\).
 
 - [Counting Rational Points on Cubic Curves](https://arxiv.org/abs/0909.4246), joint with
-  [Roger Heath-Brown](http://www.maths.ox.ac.uk/contact/details/rhb),
+  [Roger Heath-Brown](https://www.maths.ox.ac.uk/people/roger.heath-brown),
   Sci. China Math. 53 (2010), no. 9, 2259–2268.
   Dedicated to Professor Wang Yuan.
 
