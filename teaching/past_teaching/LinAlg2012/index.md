@@ -1,14 +1,14 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-19T03:28:49
+last_modified_at: 2026-03-19T07:14:30
 ---
 
 # [MA106 Linear Algebra](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/)
 
 **Version of 18 January 2012**
 
-**by [Daan Krammer](http://www.warwick.ac.uk/~masbal/)**
+**by [Daan Krammer](hhttps://www.mathgenealogy.org/id.php?id=51052)**
 and
 **[Damiano Testa](http://adomani.github.io)**
 
