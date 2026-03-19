@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T04:41:01
+last_modified_at: 2026-03-19T04:46:24
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -90,7 +90,7 @@ last_modified_at: 2026-03-19T04:41:01
 
 - [On the unirationality of del Pezzo surfaces of degree two](https://arxiv.org/abs/1304.6798), joint with
   [Cecília Salgado](https://www.math.rug.nl/algebra/Main/salgado) and
-  [Tony Várilly-Alvarado](http://math.rice.edu/~av15/), J. Lond. Math. Soc. (2) 90 (2014), no. 1, 121–139.
+  {% include tonyVarillyAlvarado %}, J. Lond. Math. Soc. (2) 90 (2014), no. 1, 121–139.
 
   We analyze in detail Manin's unirationality construction for del Pezzo surfaces of degree two with a point, extending his results and clarifying an oversight.
 
@@ -206,7 +206,7 @@ last_modified_at: 2026-03-19T04:41:01
   as well as the induced action on the Kummer variety.
 
 - [Big rational surfaces](https://arxiv.org/abs/0901.1094), joint with
-  [Tony Várilly-Alvarado](http://math.rice.edu/~av15/) and
+  {% include tonyVarillyAlvarado %} and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   Math. Ann. 351 (2011), no. 1, 95–107.
 
@@ -221,7 +221,7 @@ last_modified_at: 2026-03-19T04:41:01
   in the explicit construction of a universal torsor on the variety itself.
 
 - [Cox rings of degree one del Pezzo surfaces](https://arxiv.org/abs/0803.0353), joint with
-  [Tony Várilly-Alvarado](http://math.rice.edu/~av15/) and
+  {% include tonyVarillyAlvarado %} and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   Algebra Number Theory 3 (2009), no. 7, 729–761.
 
