@@ -2,7 +2,7 @@
 title: Cox Rings of Rational Surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T06:28:16
+last_modified_at: 2026-03-19T06:29:29
 ---
 
 ## January–February, 2014 — Concepción (Chile) and IMPA (Brasil)
@@ -122,6 +122,6 @@ The rough plan of the lectures is as follows:
 
 14. Dongseon Hwang, Jinhyung Park;
     “Redundant blow-ups and Cox rings of rational surfaces”, available on the
-    [arXiv](https://arxiv.org/pdf/1303.2274v1.pdf).
+    [arXiv](https://arxiv.org/abs/1303.2274v1).
 
 ---
