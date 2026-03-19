@@ -1,7 +1,7 @@
 ---
 title: "home"
 layout: single
-last_modified_at: 2026-03-19T03:28:49
+last_modified_at: 2026-03-19T03:35:14
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
@@ -10,12 +10,12 @@ last_modified_at: 2026-03-19T03:28:49
 
 {% include octocat url="https://github.com/adomani" %} [`mathlib`](https://github.com/leanprover-community/mathlib4)
 
-I am a Reader in the [Mathematics Institute](http://warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://warwick.ac.uk/insite/).
+I am a Reader in the [Mathematics Institute](https://warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](https://warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
 [Oxford](https://www.maths.ox.ac.uk),
 [Bremen](https://math.constructor.university/),
 [Roma](https://www.mat.uniroma1.it/),
-[Ithaca](https://www.math.cornell.edu/),
+[Ithaca](https://math.cornell.edu/),
 [Boston](http://math.mit.edu/index.php),
 [Roma](https://www.mat.uniroma1.it/).
 My PhD supervisor was

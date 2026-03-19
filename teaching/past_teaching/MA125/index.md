@@ -1,10 +1,10 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-19T03:28:49
+last_modified_at: 2026-03-19T03:35:14
 ---
 
-# [MA125 Introduction to Geometry](http://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma125/)
+# [MA125 Introduction to Geometry](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma125/)
 
 ## Lectures
 

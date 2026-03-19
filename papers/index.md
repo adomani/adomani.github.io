@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T03:28:49
+last_modified_at: 2026-03-19T03:35:14
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -279,7 +279,7 @@ last_modified_at: 2026-03-19T03:28:49
   classes of graphs associated to forests.
 
 - [Gröbner bases, monomial group actions, and the Cox rings of Del Pezzo surfaces](http://arxiv.org/abs/math/0610261), joint with
-  [Mike Stillman](https://www.math.cornell.edu/~mike/) and
+  [Mike Stillman](https://math.cornell.edu/~mike/) and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   J. Algebra 316 (2007), no. 2, 777–801.
 
