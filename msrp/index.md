@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:04:24
+last_modified_at: 2026-03-19T04:05:15
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -71,7 +71,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **February 5-6, 2015 — Università di Milano-Bicocca**
   Conference:
-  [Geometria in Bicocca 2015](http://www.matapp.unimib.it/~dellavedova/GiBi2015/)
+  [Geometria in Bicocca 2015](https://gecogedi.dimai.unifi.it/event/109/)
   *K3 surfaces arising from arithmetic problems*
 
 ### 2014
