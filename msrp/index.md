@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:42:31
+last_modified_at: 2026-03-19T04:59:46
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -81,7 +81,7 @@ Below is a chronological list of academic activities associated with the grant.
   *K3 surfaces arising from arithmetic problems*
 
 - **November 15-17, 2014 — Kobe, Japan**
-  Collaboration with [Andrew Brooke-Taylor](https://eps.leeds.ac.uk/maths/staff/4010/dr-andrew-brooke-taylor)
+  Collaboration with {% include andrewBrookeTaylor %}
 
 - **November 10-14, 2014 — Nagoya University**
   Conference:
