@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T04:54:25
+last_modified_at: 2026-03-19T04:57:46
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -71,7 +71,7 @@ last_modified_at: 2026-03-19T04:54:25
 
 - [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](https://arxiv.org/abs/1401.0580), joint with
   [Nils Bruin](https://www.cecm.sfu.ca/~nbruin/) and
-  [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Acta Arith. 165 (2014), no. 3, 201–223.
+  {% include victorFlynn %}, Acta Arith. 165 (2014), no. 3, 201–223.
 
 - [The infinite random simplicial complex](https://arxiv.org/abs/1304.6798), joint with
   [Andrew Brooke-Taylor](https://eps.leeds.ac.uk/maths/staff/4010/dr-andrew-brooke-taylor).
@@ -142,7 +142,7 @@ last_modified_at: 2026-03-19T04:54:25
   Erratum: In Theorem 3.7, the field \\(K\\) should be assumed infinite.
 
 - [Finite Weil restriction of curves](https://arxiv.org/abs/1210.4407), joint with
-  [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Monatsh. Math. 176 (2015), no. 2, 197–218.
+  {% include victorFlynn %}, Monatsh. Math. 176 (2015), no. 2, 197–218.
 
   We start with the following question: given a number field \\(L\\) and a rational function \\(F(x)\\) with coefficients in \\(L\\), when are there infinitely many values \\(\alpha\\) in \\(L\\) such that \\(F(\alpha)\\) is a rational number?
 
@@ -196,7 +196,7 @@ last_modified_at: 2026-03-19T04:54:25
   and a geometric interpretation of an evaluation map on an abelian surface leading to the required inequalities.
 
 - [Two-coverings of Jacobians of curves of genus two](https://arxiv.org/abs/0905.1242), joint with
-  [Victor Flynn](https://people.maths.ox.ac.uk/flynn/) and
+  {% include victorFlynn %} and
   {% include ronaldVanLuijk %},
   Proc. Lond. Math. Soc. (3) 104 (2012), no. 2, 387–429.
 
