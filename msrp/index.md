@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:22:22
+last_modified_at: 2026-03-19T04:25:01
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -112,8 +112,8 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **June 12-19, 2014 — AUB, Beirut, Lebanon**
   Collaboration with
-  [Martin Bright](http://cns.aub.edu.lb/fas/math/Pages/bright.aspx) and
-  [Ronald van Luijk](http://www.math.leidenuniv.nl/~rvl/)
+  [Martin Bright](https://www.boojum.org.uk/maths/) and
+  [Ronald van Luijk](https://pub.math.leidenuniv.nl/~luijkrmvan/)
 
 - **June 6-8, 2014 — University of Edinburgh**
   Conference:
