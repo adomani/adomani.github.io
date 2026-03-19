@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T04:46:24
+last_modified_at: 2026-03-19T04:52:23
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -15,12 +15,12 @@ last_modified_at: 2026-03-19T04:46:24
   in Intelligent Computer Mathematics. CICM 2025. Lecture Notes in Computer Science, vol 16136.
 
 - Contact in algebraic and tropical geometry, joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), ZAG Handbook of Modern Algebraic Geometry, 2025.
+  {% include marcoPacini %}, ZAG Handbook of Modern Algebraic Geometry, 2025.
 
 - [Factors of HOMFLY polynomials](https://arxiv.org/abs/2006.14311), joint with Douglas Blackwell, Ann. Univ. Ferrara Sez. VII Sci. Mat. 70 (2024), no. 3, 1155–1163.
 
 - [Complex and tropical counts via positive characteristic](https://arxiv.org/abs/2004.00955), joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), Expo. Math. 40 (2022), no. 4, 1096–1115.
+  {% include marcoPacini %}, Expo. Math. 40 (2022), no. 4, 1096–1115.
 
   The short version (*curves* are appropriately *general*):
 
@@ -37,7 +37,7 @@ last_modified_at: 2026-03-19T04:46:24
   - unsurprisingly, \\(2^{g-1}\\) divides \\(2^{g-1} (2^g-1)\\).
 
 - [On a question of Dolgachev](https://arxiv.org/abs/1806.02113), joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), Math. Res. Lett., vol. 27, no. 1, pp. 281–299, 2020.
+  {% include marcoPacini %}, Math. Res. Lett., vol. 27, no. 1, pp. 281–299, 2020.
 
   A classical construction in invariant theory associates to each quartic \\( Q \\) in \\( \mathbf{P}^2 \\), a quartic \\( H(Q) \\) in the dual projective plane \\( (\mathbf{P}^2)^\vee \\).
   Roughly, the points of \\( H(Q) \\) correspond to lines intersecting \\( Q \\) at a configuration of \\(4\\) points on \\( \mathbf{P}^1 \\) with vanishing \\( j \\)-invariant.
@@ -48,7 +48,7 @@ last_modified_at: 2026-03-19T04:46:24
   (E.g. is \\( 15 = 3 \cdot 5 = 2^4-1 = \binom{6}{2} = \cdots \\)?).
 
 - [Reconstructing general plane quartics from their inflection lines](https://arxiv.org/abs/1711.05776), joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), Trans. Amer. Math. Soc., vol. 372, no. 1, pp. 705–732, 2019.
+  {% include marcoPacini %}, Trans. Amer. Math. Soc., vol. 372, no. 1, pp. 705–732, 2019.
 
   We prove that the general plane quartic over a field of characteristic coprime with 6 is uniquely determined by its configuration of inflection lines.
 
@@ -89,7 +89,7 @@ last_modified_at: 2026-03-19T04:46:24
   We add the \\(k\\)-dimensional face \\(\{v_0,\ldots,v_k \}\\) to the \\(k\\)-skeleton \\(\Delta_k\\) of \\(\Delta\\) with probability \\(\frac{1}{2}\\).
 
 - [On the unirationality of del Pezzo surfaces of degree two](https://arxiv.org/abs/1304.6798), joint with
-  [Cecília Salgado](https://www.math.rug.nl/algebra/Main/salgado) and
+  {% include ceciliaSalgado %} and
   {% include tonyVarillyAlvarado %}, J. Lond. Math. Soc. (2) 90 (2014), no. 1, 121–139.
 
   We analyze in detail Manin's unirationality construction for del Pezzo surfaces of degree two with a point, extending his results and clarifying an oversight.
@@ -105,7 +105,7 @@ last_modified_at: 2026-03-19T04:46:24
   \\]
 
 - [Plane quartics with at least 8 hyperinflection points](https://arxiv.org/abs/1301.1865), joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), Bull. Braz. Math. Soc. (N.S.) 45 (2014), no. 4, 819–836.
+  {% include marcoPacini %}, Bull. Braz. Math. Soc. (N.S.) 45 (2014), no. 4, 819–836.
 
   We show that quartics over the complex numbers with at least eight hyperinflection lines are determined by their inflection lines.
 
@@ -155,7 +155,7 @@ last_modified_at: 2026-03-19T04:46:24
   We show that Néron-Severi groups (and more generally cycle class groups) are theoretically computable assuming the Tate conjecture and computability of certain étale cohomology groups.
 
 - [Recovering plane curves of low degree from their inflection lines and inflection points](https://arxiv.org/abs/1110.3082), joint with
-  [Marco Pacini](http://www.professores.uff.br/marco/), Israel Journal of Mathematics, Volume 195 (Number 1), pp. 283–316.
+  {% include marcoPacini %}, Israel Journal of Mathematics, Volume 195 (Number 1), pp. 283–316.
 
   We start investigating to what extent plane curves can be reconstructed from the knwoledge of their inflection lines.
 
