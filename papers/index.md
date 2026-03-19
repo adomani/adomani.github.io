@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T04:25:01
+last_modified_at: 2026-03-19T04:41:01
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -150,7 +150,7 @@ last_modified_at: 2026-03-19T04:25:01
 
 - [Computing Néron-Severi groups and cycle class groups](https://arxiv.org/abs/1210.3720), joint with
   [Bjorn Poonen](http://www-math.mit.edu/~poonen/) and
-  [Ronald van Luijk](https://pub.math.leidenuniv.nl/~luijkrmvan/), Compos. Math., 151 (2015), no. 4, 713–734.
+  {% include ronaldVanLuijk %}, Compos. Math., 151 (2015), no. 4, 713–734.
 
   We show that Néron-Severi groups (and more generally cycle class groups) are theoretically computable assuming the Tate conjecture and computability of certain étale cohomology groups.
 
@@ -197,7 +197,7 @@ last_modified_at: 2026-03-19T04:25:01
 
 - [Two-coverings of Jacobians of curves of genus two](https://arxiv.org/abs/0905.1242), joint with
   [Victor Flynn](https://people.maths.ox.ac.uk/flynn/) and
-  [Ronald van Luijk](https://pub.math.leidenuniv.nl/~luijkrmvan/),
+  {% include ronaldVanLuijk %},
   Proc. Lond. Math. Soc. (3) 104 (2012), no. 2, 387–429.
 
   We construct explicit models for the two-coverings of Jacobians of genus two curves and also for some of their twists.

@@ -1,7 +1,7 @@
 ---
 title: Minicourses
 layout: single
-last_modified_at: 2026-03-19T04:38:33
+last_modified_at: 2026-03-19T04:41:01
 ---
 
 2026, March 16-20: Tsinghua University, Beijing,
@@ -27,6 +27,6 @@ last_modified_at: 2026-03-19T04:38:33
 [Rational points on surfaces](2013_RPS/UdeC_RPS.md)
 
 2008, April 14-18, Warwick: with
-{% include martin %} and
-[Ronald van Luijk](https://pub.math.leidenuniv.nl/~luijkrmvan/) we ran an
+{% include martinBright %} and
+{% include ronaldVanLuijk %} we ran an
 [Instructional workshop on Surfaces: Geometry and Arithmetic](https://web.archive.org/web/20120628205332/http://homepages.warwick.ac.uk/~maseap/arith/surfaces.html) and the [programme](2008_WarwickMinicourse.pdf)
