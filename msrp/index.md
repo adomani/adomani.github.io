@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:41:01
+last_modified_at: 2026-03-19T04:42:31
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -108,7 +108,7 @@ Below is a chronological list of academic activities associated with the grant.
   [Frontiers of rationality](http://www.maths.ed.ac.uk/cheltsov/spitsbergen/)
 
 - **June 30 - July 4, 2014 — University of Warwick**
-  Visit of [Anthony Várilly-Alvarado](http://math.rice.edu/~av15/)
+  Visit of {% include tonyVarillyAlvarado %}
 
 - **June 12-19, 2014 — AUB, Beirut, Lebanon**
   Collaboration with
@@ -122,7 +122,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **May 26 - June 1, 2014 — Rice University**
   Collaboration with
-  [Anthony Várilly-Alvarado](http://math.rice.edu/~av15/) and
+  {% include tonyVarillyAlvarado %} and
   [Mauricio Velasco](http://wwwprof.uniandes.edu.co/~mvelasco/Velasco.html)
 
 - **May 12-16, 2014 — AIM, Palo Alto**
