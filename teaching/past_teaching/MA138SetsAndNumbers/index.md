@@ -1,10 +1,10 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-19T03:28:49
+last_modified_at: 2026-03-19T08:26:50
 ---
 
-# [MA138 Sets and Numbers](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/ext/ma138/)
+# [MA138 Sets and Numbers](https://web.archive.org/web/20130512000624/http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma132/)
 
 ---
 
