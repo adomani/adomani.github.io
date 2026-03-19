@@ -1,7 +1,7 @@
 ---
 title: "home"
 layout: single
-last_modified_at: 2026-03-19T01:33:56
+last_modified_at: 2026-03-19T03:28:49
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
@@ -10,24 +10,24 @@ last_modified_at: 2026-03-19T01:33:56
 
 {% include octocat url="https://github.com/adomani" %} [`mathlib`](https://github.com/leanprover-community/mathlib4)
 
-I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
+I am a Reader in the [Mathematics Institute](http://warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
-[Oxford](http://www.maths.ox.ac.uk),
-[Bremen](http://math.jacobs-university.de/),
-[Roma](http://www.mat.uniroma1.it/),
-[Ithaca](http://www.math.cornell.edu/),
+[Oxford](https://www.maths.ox.ac.uk),
+[Bremen](https://math.constructor.university/),
+[Roma](https://www.mat.uniroma1.it/),
+[Ithaca](https://www.math.cornell.edu/),
 [Boston](http://math.mit.edu/index.php),
-[Roma](http://www.mat.uniroma1.it/).
+[Roma](https://www.mat.uniroma1.it/).
 My PhD supervisor was
-[Johan de Jong](http://www.math.columbia.edu/~dejong/);
+[Johan de Jong](https://www.math.columbia.edu/~dejong/);
 my undergraduate supervisor was
-[Corrado De Concini](http://www.mat.uniroma1.it/people/deconcini/).
+[Corrado De Concini](https://www.mat.uniroma1.it/people/deconcini/).
 You can find a copy of my CV [here](pdfs/2026_03_17_CV.pdf).
 
 Between July 2025 and July 2027 I am partially supported by the [AI For Math fund](https://www.renaissancephilanthropy.org/ai-for-math-fund) award [Bridging proof and computation](https://www.renaissancephilanthropy.org/bridging-proof-and-computation-a-verified-leanmacaulay2-interface).
 
 
-Between September 2013 and August 2015 I was partially supported by EPSRC grant EP/K019279/1 [Moduli Spaces and Rational Points](msrp).
+Between September 2013 and August 2015 I was partially supported by EPSRC grant EP/K019279/1 [Moduli Spaces and Rational Points](msrp/).
 
 > _"... most of the statements we made were wrong, most of the facts we learned were trivial..."_
 

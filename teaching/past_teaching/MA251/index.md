@@ -1,10 +1,10 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-18T14:20:20
+last_modified_at: 2026-03-19T03:28:49
 ---
 
-# [MA251 Algebra 1](http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year2/ma251/)
+# [MA251 Algebra 1](http://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year2/ma251/)
 
 ---
 

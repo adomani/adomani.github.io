@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at:
+last_modified_at: 2026-03-19T03:28:49
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -65,13 +65,13 @@ last_modified_at:
 
 - [Curves in characteristic 2 with non-trivial 2-torsion](http://arxiv.org/abs/1402.3241), joint with
   [Wouter Castryck](https://wis.kuleuven.be/algebra/publications/castryck-wouter) and
-  [Marco Streng](http://www.math.leidenuniv.nl/~streng/), Adv. Math. Commun. 8 (2014), no. 4, 479–495.
+  [Marco Streng](https://www.math.leidenuniv.nl/~streng/), Adv. Math. Commun. 8 (2014), no. 4, 479–495.
 
   We study combinatorially defined theta-characteristics for curves in characteristic two.
 
 - [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](http://arxiv.org/abs/1401.0580), joint with
   [Nils Bruin](http://www.cecm.sfu.ca/~nbruin/index.shtml) and
-  [Victor Flynn](http://people.maths.ox.ac.uk/flynn/), Acta Arith. 165 (2014), no. 3, 201–223.
+  [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Acta Arith. 165 (2014), no. 3, 201–223.
 
 - [The infinite random simplicial complex](http://arxiv.org/abs/1304.6798), joint with
   [Andrew Brooke-Taylor](http://www1.maths.leeds.ac.uk/~pmtadb/).
@@ -142,7 +142,7 @@ last_modified_at:
   Erratum: In Theorem 3.7, the field \\(K\\) should be assumed infinite.
 
 - [Finite Weil restriction of curves](http://arxiv.org/abs/1210.4407), joint with
-  [Victor Flynn](http://people.maths.ox.ac.uk/flynn/), Monatsh. Math. 176 (2015), no. 2, 197–218.
+  [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Monatsh. Math. 176 (2015), no. 2, 197–218.
 
   We start with the following question: given a number field \\(L\\) and a rational function \\(F(x)\\) with coefficients in \\(L\\), when are there infinitely many values \\(\alpha\\) in \\(L\\) such that \\(F(\alpha)\\) is a rational number?
 
@@ -196,7 +196,7 @@ last_modified_at:
   and a geometric interpretation of an evaluation map on an abelian surface leading to the required inequalities.
 
 - [Two-coverings of Jacobians of curves of genus two](http://arxiv.org/abs/0905.1242), joint with
-  [Victor Flynn](http://people.maths.ox.ac.uk/flynn/) and
+  [Victor Flynn](https://people.maths.ox.ac.uk/flynn/) and
   [Ronald van Luijk](http://www.math.leidenuniv.nl/~rvl/),
   Proc. Lond. Math. Soc. (3) 104 (2012), no. 2, 387–429.
 
@@ -279,7 +279,7 @@ last_modified_at:
   classes of graphs associated to forests.
 
 - [Gröbner bases, monomial group actions, and the Cox rings of Del Pezzo surfaces](http://arxiv.org/abs/math/0610261), joint with
-  [Mike Stillman](http://www.math.cornell.edu/~mike/) and
+  [Mike Stillman](https://www.math.cornell.edu/~mike/) and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   J. Algebra 316 (2007), no. 2, 777–801.
 
@@ -294,7 +294,7 @@ last_modified_at:
 
 - [The irreducibility of the spaces of rational curves on del Pezzo surfaces](pdfs/tgd.pdf),
   J. Algebraic Geom. 18 (2009), no. 1, 37–61.
-  PhD Thesis, supervisor [Johan de Jong](http://www.math.columbia.edu/~dejong/).
+  PhD Thesis, supervisor [Johan de Jong](https://www.math.columbia.edu/~dejong/).
 
   The main result is the proof that the spaces of rational curves on del Pezzo surfaces representing
   a fixed divisor class are either empty or irreducible, with one exception.
