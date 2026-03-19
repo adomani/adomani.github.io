@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T05:46:31
+last_modified_at: 2026-03-19T05:56:06
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -105,7 +105,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **July 14-18, 2014 — UNIS, Longyearbyen, Norway**
   Conference:
-  [Frontiers of rationality](http://www.maths.ed.ac.uk/cheltsov/spitsbergen/)
+  [Frontiers of rationality](https://webhomes.maths.ed.ac.uk/cheltsov/spitsbergen/)
 
 - **June 30 - July 4, 2014 — University of Warwick**
   Visit of {% include tonyVarillyAlvarado %}
@@ -117,7 +117,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **June 6-8, 2014 — University of Edinburgh**
   Conference:
-  [Edge Days](http://www.maths.ed.ac.uk/cheltsov/edge2014/index.html)
+  [Edge Days](https://webhomes.maths.ed.ac.uk/cheltsov/edge2014/index.html)
   *Certain rational elliptic fibrations and their exceptional curves*
 
 - **May 26 - June 1, 2014 — Rice University**
