@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T03:39:57
+last_modified_at: 2026-03-19T03:47:01
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -56,21 +56,21 @@ last_modified_at: 2026-03-19T03:39:57
 
 - [A few questions about curves on surfaces](https://arxiv.org/abs/1511.06618), joint with
   [Ciro Ciliberto](https://www.mat.uniroma2.it/~cilibert/),
-  [Andreas Leopold Knutsen](http://folk.uib.no/st00895/),
+  [Andreas Leopold Knutsen](https://sites.google.com/view/andreasleopoldknutsen/front-page),
   [John Lesieutre](https://jlesieutre.github.io/),
   [Victor Lozovanu](https://sites.google.com/site/victorlozovanu/),
-  [Rick Miranda](http://www.math.colostate.edu/~miranda/),
-  [Yusuf Mustopa](http://ymustopa.wixsite.com/home),
+  [Rick Miranda](https://www.math.colostate.edu/~miranda/),
+  [Yusuf Mustopa](https://ymustopa.wixsite.com:443/home),
   Rend. Circ. Mat. Palermo (2) 66 (2017), no. 2, 195–204.
 
 - [Curves in characteristic 2 with non-trivial 2-torsion](https://arxiv.org/abs/1402.3241), joint with
   [Wouter Castryck](https://wis.kuleuven.be/algebra/publications/castryck-wouter) and
-  [Marco Streng](https://www.math.leidenuniv.nl/~streng/), Adv. Math. Commun. 8 (2014), no. 4, 479–495.
+  [Marco Streng](https://pub.math.leidenuniv.nl/~strengtc/), Adv. Math. Commun. 8 (2014), no. 4, 479–495.
 
   We study combinatorially defined theta-characteristics for curves in characteristic two.
 
 - [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](https://arxiv.org/abs/1401.0580), joint with
-  [Nils Bruin](http://www.cecm.sfu.ca/~nbruin/index.shtml) and
+  [Nils Bruin](https://www.cecm.sfu.ca/~nbruin/) and
   [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Acta Arith. 165 (2014), no. 3, 201–223.
 
 - [The infinite random simplicial complex](https://arxiv.org/abs/1304.6798), joint with
