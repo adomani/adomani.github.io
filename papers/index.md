@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T06:55:53
+last_modified_at: 2026-03-19T07:01:01
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -130,7 +130,7 @@ last_modified_at: 2026-03-19T06:55:53
   and we show that among the Vermeulen's examples, these are essentially the only ones with this property.
 
 - [On Büchi's K3 surface](https://arxiv.org/abs/1212.1426), joint with
-  [Michela Artebani](http://dmat.cfm.cl/faculty/martebani.html) and
+  [Michela Artebani](https://dmat-udec.cl/2023/10/31/michela-artebani/) and
   {% include antonioLaface %}, Math. Z. 278 (2014), no. 3–4, 1113–1131.
 
   We show that the K3 surface arising from Büchi's problem is the Kummer surface of the Jacobian \\(J\\) of the genus two curve branched over an arithmetic progression of length 5.
