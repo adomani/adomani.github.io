@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:05:15
+last_modified_at: 2026-03-19T04:09:13
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -56,7 +56,7 @@ Below is a chronological list of academic activities associated with the grant.
 ### 2015
 
 - **June 1-12, 2015 — Cabo Frío, Brazil**
-  [II ELGA](http://www.impa.br/opencms/pt/eventos/store/evento_1503)
+  [II ELGA](https://impa.br/evento/ii-latin-american-school-of-algebraic-geometry-and-applications-ii-elga-2/?lang=en)
   *K3 surfaces arising from arithmetic problems*
 
 - **May 5-7, 2015 — IMPA, Rio de Janeiro**
