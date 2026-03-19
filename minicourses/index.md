@@ -1,7 +1,7 @@
 ---
 title: Minicourses
 layout: single
-last_modified_at: 2026-03-19T04:41:01
+last_modified_at: 2026-03-19T07:05:38
 ---
 
 2026, March 16-20: Tsinghua University, Beijing,
@@ -29,4 +29,4 @@ last_modified_at: 2026-03-19T04:41:01
 2008, April 14-18, Warwick: with
 {% include martinBright %} and
 {% include ronaldVanLuijk %} we ran an
-[Instructional workshop on Surfaces: Geometry and Arithmetic](https://web.archive.org/web/20120628205332/http://homepages.warwick.ac.uk/~maseap/arith/surfaces.html) and the [programme](2008_WarwickMinicourse.pdf)
+[Instructional workshop on Surfaces: Geometry and Arithmetic]({% include redirectSurfaces %}) and the [programme](2008_WarwickMinicourse.pdf)
