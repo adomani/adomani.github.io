@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T07:15:48
+last_modified_at: 2026-03-19T07:18:52
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -63,7 +63,7 @@ Below is a chronological list of academic activities associated with the grant.
   Two lectures on rational points
 
 - **March 27 - June 13, 2015 — IMPA, Rio de Janeiro**
-  [Special Thematic Program on Algebraic Geometry](http://alg-geo.impa.br/)
+  [Special Thematic Program on Algebraic Geometry](https://alg-geo.impa.br/)
 
 - **February 9-13, 2015 — Università di Padova**
   Conference:
