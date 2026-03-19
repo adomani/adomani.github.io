@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T03:47:01
+last_modified_at: 2026-03-19T03:48:37
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -74,7 +74,7 @@ last_modified_at: 2026-03-19T03:47:01
   [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Acta Arith. 165 (2014), no. 3, 201–223.
 
 - [The infinite random simplicial complex](https://arxiv.org/abs/1304.6798), joint with
-  [Andrew Brooke-Taylor](http://www1.maths.leeds.ac.uk/~pmtadb/).
+  [Andrew Brooke-Taylor](https://eps.leeds.ac.uk/maths/staff/4010/dr-andrew-brooke-taylor).
 
   We introduce the *infinite random simplicial complex* \\(\Delta\\), a simplicial complex on a countable set of vertices.
 
