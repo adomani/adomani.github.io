@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T05:49:29
+last_modified_at: 2026-03-19T05:52:40
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -131,7 +131,7 @@ last_modified_at: 2026-03-19T05:49:29
 
 - [On Büchi's K3 surface](https://arxiv.org/abs/1212.1426), joint with
   [Michela Artebani](http://dmat.cfm.cl/faculty/martebani.html) and
-  [Antonio Laface](http://www2.udec.cl/~alaface/), Math. Z. 278 (2014), no. 3–4, 1113–1131.
+  {% include antonioLaface %}, Math. Z. 278 (2014), no. 3–4, 1113–1131.
 
   We show that the K3 surface arising from Büchi's problem is the Kummer surface of the Jacobian \\(J\\) of the genus two curve branched over an arithmetic progression of length 5.
 
@@ -164,7 +164,7 @@ last_modified_at: 2026-03-19T05:49:29
   For *general* plane quartics, we show that the inflection lines and one inflection point are enough to reconstruct the curve.
 
 - [Nef and semiample divisors on rational surfaces](https://arxiv.org/abs/1104.4270), joint with
-  [Antonio Laface](http://www2.udec.cl/~alaface/), in "Torsors, étale homotopy and applications to rational points", LMS Lecture Notes, edited by A. Skorobogatov, pp. 429–446.
+  {% include antonioLaface %}, in "Torsors, étale homotopy and applications to rational points", LMS Lecture Notes, edited by A. Skorobogatov, pp. 429–446.
 
   We study the Cox rings of rational surfaces for which the anti-canonical divisor is (essentially) effective, finding conditions under which the Cox ring is finitely generated.
 
