@@ -2,7 +2,7 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T03:39:57
+last_modified_at: 2026-03-19T07:08:48
 ---
 
 ## February 14–21, 2014 — LEGAL, Teresópolis
@@ -15,7 +15,7 @@ The goal of the minicourse is to present different methods that have been used t
 
 Since it is easy to analyze the change in the set of rational points of a smooth projective surface under a birational transformation, it is common to reduce the study to minimal models (over the ground field), and to treat the various cases of the classification of surfaces separately.
 
-As a reference to the subject see the [lecture notes](http://homepages.warwick.ac.uk/~maseap/arith/surfaces.html) from a minicourse organized in Warwick in 2008 (Martin Bright, Ronald van Luijk, and the author).
+As a reference to the subject see the [lecture notes]({% include redirectSurfaces %}) from a minicourse organized in Warwick in 2008 (Martin Bright, Ronald van Luijk, and the author).
 
 ---
 

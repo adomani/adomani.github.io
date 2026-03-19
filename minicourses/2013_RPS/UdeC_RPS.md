@@ -2,7 +2,7 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T03:39:57
+last_modified_at: 2026-03-19T07:08:48
 ---
 
 ## January 8–15, 2013 — Concepción
@@ -29,7 +29,7 @@ it is common to reduce the study to minimal models (over the ground field),
 and to treat the various cases of the classification of surfaces separately.
 
 As a reference to the subject see the
-[lecture notes](http://homepages.warwick.ac.uk/~maseap/arith/surfaces.html)
+[lecture notes]({% include redirectSurfaces %})
 for a minicourse by Martin Bright, Ronald van Luijk, and the author (Warwick, 2008).
 
 ---
