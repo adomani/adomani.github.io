@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:18:09
+last_modified_at: 2026-03-19T04:22:22
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -135,12 +135,12 @@ Below is a chronological list of academic activities associated with the grant.
   *The Büchi K3 surface and its rational points*
 
 - **April 4-6, 2014 — Rice University**
-  [TAGS 2014](http://math.rice.edu/Conferences/TAGS2014/)
+  [TAGS 2014](https://math.rice.edu/NewsEvents/Conferences/TAGS2014/index.html)
   *The Büchi K3 surface and its rational points*
 
 - **March 31 - June 1, 2014 — Rice University**
   Visiting [Brendan Hassett](https://www.math.brown.edu/bhassett/) and
-  [Anthony Várilly-Alvarado](http://math.rice.edu/~av15/)
+  [Anthony Várilly-Alvarado](https://math.rice.edu/~av15/)
 
 - **February 18-21, 2014 — Teresópolis, Brazil**
   Minicourse at LEGAL
