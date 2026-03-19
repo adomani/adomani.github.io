@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T06:11:01
+last_modified_at: 2026-03-19T07:15:48
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -77,7 +77,7 @@ Below is a chronological list of academic activities associated with the grant.
 ### 2014
 
 - **December 10, 2014 — Humboldt University, Berlin**
-  [Algebraic geometry seminar](http://www.math.hu-berlin.de/~www-ag/Forschungsseminar.html)
+  [Algebraic geometry seminar](https://seminars.zib.de/hub-algebraic-geometry-seminar/)
   *K3 surfaces arising from arithmetic problems*
 
 - **November 15-17, 2014 — Kobe, Japan**
