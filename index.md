@@ -1,7 +1,7 @@
 ---
 title: "home"
 layout: single
-last_modified_at: 2026-03-19T06:25:27
+last_modified_at: 2026-03-19T15:25:19
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
@@ -24,7 +24,7 @@ my undergraduate supervisor was
 [Corrado De Concini](https://en.wikipedia.org/wiki/Corrado_de_Concini).
 You can find a copy of my CV [here](pdfs/2026_03_17_CV.pdf).
 
-Between July 2025 and July 2027 I am partially supported by the [AI For Math fund](https://www.renaissancephilanthropy.org/ai-for-math-fund) award [Bridging proof and computation](https://www.renaissancephilanthropy.org/bridging-proof-and-computation-a-verified-leanmacaulay2-interface).
+Between July 2025 and July 2027 I am partially supported by the [AI for Math Fund](https://www.renaissancephilanthropy.org/ai-for-math-fund) award [Bridging proof and computation](https://www.renaissancephilanthropy.org/bridging-proof-and-computation-a-verified-leanmacaulay2-interface).
 
 
 Between September 2013 and August 2015 I was partially supported by the EPSRC grant [Moduli Spaces and Rational Points](msrp/).
