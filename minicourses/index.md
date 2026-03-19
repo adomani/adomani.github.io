@@ -1,7 +1,7 @@
 ---
 title: Minicourses
 layout: single
-last_modified_at: 2026-03-19T02:07:32
+last_modified_at: 2026-03-19T02:46:16
 ---
 
 2026, March 16-20: Tsinghua University, Beijing,
@@ -18,13 +18,13 @@ last_modified_at: 2026-03-19T02:07:32
 [Arithmetic properties of del Pezzo surfaces](2019_07_22_26_TestaDuesseldorf.pdf)
 
 2014, February 14-21, LEGAL, Teresópolis:
-[Rational points on surfaces](minicourses/2013_RPS/legal_RPS.html)
+[Rational points on surfaces](2013_RPS/legal_RPS.md)
 
 2014, January-February, Concepción and IMPA:
-[Cox Rings of Rational surfaces](2014_CRRS/CRRS.html)
+[Cox Rings of Rational surfaces](2014_CRRS/CRRS.md)
 
 2013, January 5-15, Concepción:
-[Rational points on surfaces](2013_RPS/UdeC_RPS.html)
+[Rational points on surfaces](2013_RPS/UdeC_RPS.md)
 
 2008, April 14-18, Warwick: with
 [Martin Bright](http://www.boojum.org.uk/maths/) and

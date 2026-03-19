@@ -1,4 +1,10 @@
-# Rational points on surfaces
+---
+title: Rational points on surfaces
+layout: single
+math: true
+last_modified_at: 2026-03-19T02:46:16
+---
+
 ## February 14–21, 2014 — LEGAL, Teresópolis
 
 ---
