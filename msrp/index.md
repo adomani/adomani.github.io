@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T04:02:47
+last_modified_at: 2026-03-19T04:04:24
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -88,7 +88,7 @@ Below is a chronological list of academic activities associated with the grant.
   [K3, Enriques Surfaces and Related Topics](http://www.math.nagoya-u.ac.jp/en/research/conference/2014/k3-enriques.html)
 
 - **November 6, 2014 — Oxford**
-  [COW Seminar](http://people.bath.ac.uk/masgks/COW/COW.html)
+  [COW Seminar](https://www.maths.ox.ac.uk/node/13217)
   *K3 surfaces arising from arithmetic problems*
 
 - **October 15, 2014 — University of Nottingham**
