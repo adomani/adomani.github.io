@@ -1,14 +1,14 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-19T03:35:14
+last_modified_at: 2026-03-19T07:44:31
 ---
 
 # [MA132 Foundations](https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma132/)
 
 **by [Oleg Kozlovski](https://warwick.ac.uk/fac/sci/maths/people/staff/oleg_kozlovski/)**
 and
-**[Damiano Testa](http://adomani.github.io/)**
+**[Damiano Testa](https://adomani.github.io/)**
 
 ---
 

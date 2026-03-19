@@ -2,7 +2,7 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T07:08:48
+last_modified_at: 2026-03-19T07:44:31
 ---
 
 ## January 8–15, 2013 — Concepción
@@ -59,7 +59,7 @@ Topics include:
 
 - Methods for computing Picard groups of surfaces
 - Discussion of K3 surfaces appearing in a
-  [paper by Ronald van Luijk](http://www.math.leidenuniv.nl/~rvl/ps/picone.ps)
+  [paper by Ronald van Luijk](pub.math.leidenuniv.nl/~luijkrmvan/ps/picone.pdf)
 - [Joint work](https://arxiv.org/abs/1212.1426) with Michela Artebani and Antonio Laface on a K3
   surface arising from a problem studied by Büchi
 
@@ -79,7 +79,7 @@ Topics include:
   (see Hulek–Sankaran’s [notes](https://arxiv.org/abs/math/9810153) on Siegel modular threefolds)
 - Connection to the surface of cuboids
   - Ronald van Luijk’s undergraduate
-    [thesis](http://www.math.leidenuniv.nl/~rvl/ps/cuboids.ps)
+    [thesis](https://pub.math.leidenuniv.nl/~luijkrmvan/ps/cuboids.pdf)
   - More recent [joint work](https://arxiv.org/abs/1009.0388) with Michael Stoll
 
 ---
