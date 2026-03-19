@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T05:46:31
+last_modified_at: 2026-03-19T05:49:29
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -248,7 +248,7 @@ last_modified_at: 2026-03-19T05:46:31
   for \\(n\\) large enough.
 
 - [Conical and Spherical Graphs](adomani.github.io/pdfs/MT-CoSp.pdf), joint with
-  [Mario Marietti](https://math-diism.univpm.it/marietti/),
+  {% include marioMarietti %},
   European J. Combin. 33 (2012), no. 7, 1606–1618.
   Dedicated to Tony Machì.
 
@@ -257,7 +257,7 @@ last_modified_at: 2026-03-19T05:46:31
   We also prove a formula to compute the Euler characteristic of a simplicial set.
 
 - [A simple uniform approach to complexes arising from forests](https://arxiv.org/abs/0705.1461), joint with
-  [Mario Marietti](https://math-diism.univpm.it/marietti/),
+  {% include marioMarietti %},
   Electron. J. Combin. 15 (2008), no. 1, Research Paper 101, 18 pp.
 
   A follow up to the previous paper.
@@ -268,7 +268,7 @@ last_modified_at: 2026-03-19T05:46:31
   to a given complex and thus a direct combinatorial characterization of the homotopy type is more difficult.
 
 - [Cores of simplicial complexes](https://arxiv.org/abs/math/0703351), joint with
-  [Mario Marietti](https://math-diism.univpm.it/marietti/),
+  {% include marioMarietti %},
   Discrete Comput. Geom. 40 (2008), no. 3, 444–468.
 
   A combinatorial paper.
