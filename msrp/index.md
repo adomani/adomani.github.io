@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T03:48:37
+last_modified_at: 2026-03-19T04:02:47
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -92,7 +92,7 @@ Below is a chronological list of academic activities associated with the grant.
   *K3 surfaces arising from arithmetic problems*
 
 - **October 15, 2014 — University of Nottingham**
-  [Number theory and geometry seminar](https://www.maths.nottingham.ac.uk/personal/ibf/nt_sem.html)
+  [Number theory and geometry seminar](https://numbertheoryandgeometrynottingham.wordpress.com/)
   *The Büchi K3 surface and its rational points*
 
 - **September 8-9, 2014 — Università di Milano**
@@ -101,7 +101,7 @@ Below is a chronological list of academic activities associated with the grant.
   *The Büchi K3 surface and its rational points*
 
 - **August 1-16, 2014 — Thohoyandou, South Africa**
-  Masterclasses for [Warwick in Africa](https://warwick.ac.uk/giving/priority/responsibility/wina/)
+  Masterclasses for [Warwick in Africa](https://warwick.ac.uk/giving/wia/)
 
 - **July 14-18, 2014 — UNIS, Longyearbyen, Norway**
   Conference:
