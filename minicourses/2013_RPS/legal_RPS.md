@@ -2,7 +2,7 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T07:44:31
+last_modified_at: 2026-03-19T08:32:51
 ---
 
 ## February 14–21, 2014 — LEGAL, Teresópolis
@@ -36,7 +36,7 @@ Velasco, [work](https://arxiv.org/abs/0909.1835) of Michela Artebani and Antonio
 
 Among the surfaces of vanishing Kodaira dimension, K3 surfaces play a very special role; many basic questions are known and many are still unknown.
 
-First, I will discuss the general method for computing Picard groups of surfaces with an emphasis on K3 surfaces appearing in a [paper](pub.math.leidenuniv.nl/~luijkrmvan/ps/picone.pdf) of Ronald van Luijk.
+First, I will discuss the general method for computing Picard groups of surfaces with an emphasis on K3 surfaces appearing in a [paper](https://pub.math.leidenuniv.nl/~luijkrmvan/ps/picone.pdf) of Ronald van Luijk.
 Then, I will talk about [joint work](https://arxiv.org/abs/1212.1426) with Michela Artebani and Antonio Laface on a specific K3 surface arising from a
 problem studied by Büchi.
 
