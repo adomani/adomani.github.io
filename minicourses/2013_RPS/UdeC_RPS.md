@@ -2,7 +2,7 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T02:24:07
+last_modified_at: 2026-03-19T03:39:57
 ---
 
 ## January 8–15, 2013 — Concepción
@@ -45,9 +45,9 @@ Topics include:
 - Recent results with Cecília Salgado and Tony Várilly‑Alvarado
 - Cox rings of rational surfaces
 - References:
-  - [Joint work](http://arxiv.org/abs/0901.1094) with Tony Várilly‑Alvarado and Mauricio Velasco
-  - [Work](http://arxiv.org/abs/0909.1835) of Michela Artebani and Antonio Laface
-  - [Joint work](http://arxiv.org/abs/1104.4270) with Antonio Laface
+  - [Joint work](https://arxiv.org/abs/0901.1094) with Tony Várilly‑Alvarado and Mauricio Velasco
+  - [Work](https://arxiv.org/abs/0909.1835) of Michela Artebani and Antonio Laface
+  - [Joint work](https://arxiv.org/abs/1104.4270) with Antonio Laface
 
 ---
 
@@ -60,7 +60,7 @@ Topics include:
 - Methods for computing Picard groups of surfaces
 - Discussion of K3 surfaces appearing in a
   [paper by Ronald van Luijk](http://www.math.leidenuniv.nl/~rvl/ps/picone.ps)
-- [Joint work](http://arxiv.org/abs/1212.1426) with Michela Artebani and Antonio Laface on a K3
+- [Joint work](https://arxiv.org/abs/1212.1426) with Michela Artebani and Antonio Laface on a K3
   surface arising from a problem studied by Büchi
 
 ---
@@ -76,10 +76,10 @@ Topics include:
 
 - Examples from classical number‑theoretic problems
 - Moduli spaces of abelian surfaces
-  (see Hulek–Sankaran’s [notes](http://arxiv.org/abs/math/9810153) on Siegel modular threefolds)
+  (see Hulek–Sankaran’s [notes](https://arxiv.org/abs/math/9810153) on Siegel modular threefolds)
 - Connection to the surface of cuboids
   - Ronald van Luijk’s undergraduate
     [thesis](http://www.math.leidenuniv.nl/~rvl/ps/cuboids.ps)
-  - More recent [joint work](http://arxiv.org/abs/1009.0388) with Michael Stoll
+  - More recent [joint work](https://arxiv.org/abs/1009.0388) with Michael Stoll
 
 ---

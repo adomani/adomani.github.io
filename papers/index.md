@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T03:35:14
+last_modified_at: 2026-03-19T03:39:57
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -63,17 +63,17 @@ last_modified_at: 2026-03-19T03:35:14
   [Yusuf Mustopa](http://ymustopa.wixsite.com/home),
   Rend. Circ. Mat. Palermo (2) 66 (2017), no. 2, 195–204.
 
-- [Curves in characteristic 2 with non-trivial 2-torsion](http://arxiv.org/abs/1402.3241), joint with
+- [Curves in characteristic 2 with non-trivial 2-torsion](https://arxiv.org/abs/1402.3241), joint with
   [Wouter Castryck](https://wis.kuleuven.be/algebra/publications/castryck-wouter) and
   [Marco Streng](https://www.math.leidenuniv.nl/~streng/), Adv. Math. Commun. 8 (2014), no. 4, 479–495.
 
   We study combinatorially defined theta-characteristics for curves in characteristic two.
 
-- [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](http://arxiv.org/abs/1401.0580), joint with
+- [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](https://arxiv.org/abs/1401.0580), joint with
   [Nils Bruin](http://www.cecm.sfu.ca/~nbruin/index.shtml) and
   [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Acta Arith. 165 (2014), no. 3, 201–223.
 
-- [The infinite random simplicial complex](http://arxiv.org/abs/1304.6798), joint with
+- [The infinite random simplicial complex](https://arxiv.org/abs/1304.6798), joint with
   [Andrew Brooke-Taylor](http://www1.maths.leeds.ac.uk/~pmtadb/).
 
   We introduce the *infinite random simplicial complex* \\(\Delta\\), a simplicial complex on a countable set of vertices.
@@ -88,7 +88,7 @@ last_modified_at: 2026-03-19T03:35:14
 
   We add the \\(k\\)-dimensional face \\(\{v_0,\ldots,v_k \}\\) to the \\(k\\)-skeleton \\(\Delta_k\\) of \\(\Delta\\) with probability \\(\frac{1}{2}\\).
 
-- [On the unirationality of del Pezzo surfaces of degree two](http://arxiv.org/abs/1304.6798), joint with
+- [On the unirationality of del Pezzo surfaces of degree two](https://arxiv.org/abs/1304.6798), joint with
   [Cecília Salgado](https://www.math.rug.nl/algebra/Main/salgado) and
   [Tony Várilly-Alvarado](http://math.rice.edu/~av15/), J. Lond. Math. Soc. (2) 90 (2014), no. 1, 121–139.
 
@@ -104,7 +104,7 @@ last_modified_at: 2026-03-19T03:35:14
     \end{array}
   \\]
 
-- [Plane quartics with at least 8 hyperinflection points](http://arxiv.org/abs/1301.1865), joint with
+- [Plane quartics with at least 8 hyperinflection points](https://arxiv.org/abs/1301.1865), joint with
   [Marco Pacini](http://www.professores.uff.br/marco/), Bull. Braz. Math. Soc. (N.S.) 45 (2014), no. 4, 819–836.
 
   We show that quartics over the complex numbers with at least eight hyperinflection lines are determined by their inflection lines.
@@ -129,7 +129,7 @@ last_modified_at: 2026-03-19T03:35:14
   \\]
   and we show that among the Vermeulen's examples, these are essentially the only ones with this property.
 
-- [On Büchi's K3 surface](http://arxiv.org/abs/1212.1426), joint with
+- [On Büchi's K3 surface](https://arxiv.org/abs/1212.1426), joint with
   [Michela Artebani](http://dmat.cfm.cl/faculty/martebani.html) and
   [Antonio Laface](http://www2.udec.cl/~alaface/), Math. Z. 278 (2014), no. 3–4, 1113–1131.
 
@@ -141,20 +141,20 @@ last_modified_at: 2026-03-19T03:35:14
 
   Erratum: In Theorem 3.7, the field \\(K\\) should be assumed infinite.
 
-- [Finite Weil restriction of curves](http://arxiv.org/abs/1210.4407), joint with
+- [Finite Weil restriction of curves](https://arxiv.org/abs/1210.4407), joint with
   [Victor Flynn](https://people.maths.ox.ac.uk/flynn/), Monatsh. Math. 176 (2015), no. 2, 197–218.
 
   We start with the following question: given a number field \\(L\\) and a rational function \\(F(x)\\) with coefficients in \\(L\\), when are there infinitely many values \\(\alpha\\) in \\(L\\) such that \\(F(\alpha)\\) is a rational number?
 
   We generalize this question to the question of when does a fiber product of curves contain an irreducible component of genus at most one and we settle completely the problem when the curves in the fiber product have genus one.
 
-- [Computing Néron-Severi groups and cycle class groups](http://arxiv.org/abs/1210.3720), joint with
+- [Computing Néron-Severi groups and cycle class groups](https://arxiv.org/abs/1210.3720), joint with
   [Bjorn Poonen](http://www-math.mit.edu/~poonen/) and
   [Ronald van Luijk](http://www.math.leidenuniv.nl/~rvl/), Compos. Math., 151 (2015), no. 4, 713–734.
 
   We show that Néron-Severi groups (and more generally cycle class groups) are theoretically computable assuming the Tate conjecture and computability of certain étale cohomology groups.
 
-- [Recovering plane curves of low degree from their inflection lines and inflection points](http://arxiv.org/abs/1110.3082), joint with
+- [Recovering plane curves of low degree from their inflection lines and inflection points](https://arxiv.org/abs/1110.3082), joint with
   [Marco Pacini](http://www.professores.uff.br/marco/), Israel Journal of Mathematics, Volume 195 (Number 1), pp. 283–316.
 
   We start investigating to what extent plane curves can be reconstructed from the knwoledge of their inflection lines.
@@ -163,7 +163,7 @@ last_modified_at: 2026-03-19T03:35:14
 
   For *general* plane quartics, we show that the inflection lines and one inflection point are enough to reconstruct the curve.
 
-- [Nef and semiample divisors on rational surfaces](http://arxiv.org/abs/1104.4270), joint with
+- [Nef and semiample divisors on rational surfaces](https://arxiv.org/abs/1104.4270), joint with
   [Antonio Laface](http://www2.udec.cl/~alaface/), in "Torsors, étale homotopy and applications to rational points", LMS Lecture Notes, edited by A. Skorobogatov, pp. 429–446.
 
   We study the Cox rings of rational surfaces for which the anti-canonical divisor is (essentially) effective, finding conditions under which the Cox ring is finitely generated.
@@ -174,7 +174,7 @@ last_modified_at: 2026-03-19T03:35:14
 
   We conclude with an example of a Mori dream rational surface with vanishing anticanonical Iitaka dimension.
 
-- [The surface parametrizing cuboids](http://arxiv.org/abs/1009.0388), joint with
+- [The surface parametrizing cuboids](https://arxiv.org/abs/1009.0388), joint with
   [Michael Stoll](http://www.mathe2.uni-bayreuth.de/stoll/).
 
   We compute the Picard group of the surface \\(S\\) of cuboids;
@@ -184,7 +184,7 @@ last_modified_at: 2026-03-19T03:35:14
   as well as the Galois action on the set of curves to reduce the statement to the primitivity of
   the canonical class on \\(S\\).
 
-- [Counting Rational Points on Cubic Curves](http://arxiv.org/abs/0909.4246), joint with
+- [Counting Rational Points on Cubic Curves](https://arxiv.org/abs/0909.4246), joint with
   [Roger Heath-Brown](http://www.maths.ox.ac.uk/contact/details/rhb),
   Sci. China Math. 53 (2010), no. 9, 2259–2268.
   Dedicated to Professor Wang Yuan.
@@ -195,7 +195,7 @@ last_modified_at: 2026-03-19T03:35:14
   The argument exploits an interplay between analytic techniques to bound the number of solutions to a cubic equation
   and a geometric interpretation of an evaluation map on an abelian surface leading to the required inequalities.
 
-- [Two-coverings of Jacobians of curves of genus two](http://arxiv.org/abs/0905.1242), joint with
+- [Two-coverings of Jacobians of curves of genus two](https://arxiv.org/abs/0905.1242), joint with
   [Victor Flynn](https://people.maths.ox.ac.uk/flynn/) and
   [Ronald van Luijk](http://www.math.leidenuniv.nl/~rvl/),
   Proc. Lond. Math. Soc. (3) 104 (2012), no. 2, 387–429.
@@ -205,7 +205,7 @@ last_modified_at: 2026-03-19T03:35:14
   on the equations of a natural embedding of the Jacobian of a curve of genus two in projective space,
   as well as the induced action on the Kummer variety.
 
-- [Big rational surfaces](http://arxiv.org/abs/0901.1094), joint with
+- [Big rational surfaces](https://arxiv.org/abs/0901.1094), joint with
   [Tony Várilly-Alvarado](http://math.rice.edu/~av15/) and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   Math. Ann. 351 (2011), no. 1, 95–107.
@@ -220,7 +220,7 @@ last_modified_at: 2026-03-19T03:35:14
   An explicit presentation in terms of generators and relations of the Cox ring of a variety is the main step
   in the explicit construction of a universal torsor on the variety itself.
 
-- [Cox rings of degree one del Pezzo surfaces](http://arxiv.org/abs/0803.0353), joint with
+- [Cox rings of degree one del Pezzo surfaces](https://arxiv.org/abs/0803.0353), joint with
   [Tony Várilly-Alvarado](http://math.rice.edu/~av15/) and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   Algebra Number Theory 3 (2009), no. 7, 729–761.
@@ -256,7 +256,7 @@ last_modified_at: 2026-03-19T03:35:14
   edge covers and the homotopy type of associated simplicial complexes.
   We also prove a formula to compute the Euler characteristic of a simplicial set.
 
-- [A simple uniform approach to complexes arising from forests](http://arxiv.org/abs/0705.1461), joint with
+- [A simple uniform approach to complexes arising from forests](https://arxiv.org/abs/0705.1461), joint with
   [Mario Marietti](https://math-diism.univpm.it/marietti/),
   Electron. J. Combin. 15 (2008), no. 1, Research Paper 101, 18 pp.
 
@@ -267,7 +267,7 @@ last_modified_at: 2026-03-19T03:35:14
   This added flexibility and generality has as a drawback that there are several discrete invariants associated
   to a given complex and thus a direct combinatorial characterization of the homotopy type is more difficult.
 
-- [Cores of simplicial complexes](http://arxiv.org/abs/math/0703351), joint with
+- [Cores of simplicial complexes](https://arxiv.org/abs/math/0703351), joint with
   [Mario Marietti](https://math-diism.univpm.it/marietti/),
   Discrete Comput. Geom. 40 (2008), no. 3, 444–468.
 
@@ -278,7 +278,7 @@ last_modified_at: 2026-03-19T03:35:14
   As main applications we give combinatorial interpretations of these dimensions in several widely studied
   classes of graphs associated to forests.
 
-- [Gröbner bases, monomial group actions, and the Cox rings of Del Pezzo surfaces](http://arxiv.org/abs/math/0610261), joint with
+- [Gröbner bases, monomial group actions, and the Cox rings of Del Pezzo surfaces](https://arxiv.org/abs/math/0610261), joint with
   [Mike Stillman](https://math.cornell.edu/~mike/) and
   [Mauricio Velasco](https://mauricio-velasco.github.io/webpage/),
   J. Algebra 316 (2007), no. 2, 777–801.
@@ -303,4 +303,4 @@ last_modified_at: 2026-03-19T03:35:14
   all the rational curves in a fixed divisor class to a standard form.
   The relevant moduli spaces are sufficiently smooth that we can show that the various degenerations always
   take place within the smooth locus, proving the required irreducibility.
-  (The longer, actual PhD thesis is available [here](http://arxiv.org/abs/math/0609355).)
+  (The longer, actual PhD thesis is available [here](https://arxiv.org/abs/math/0609355).)

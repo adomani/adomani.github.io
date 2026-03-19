@@ -3,7 +3,7 @@ title: Moduli Spaces and Rational Points
 layout: single
 permalink: /msrp/
 math: true
-last_modified_at: 2026-03-19T03:35:14
+last_modified_at: 2026-03-19T03:39:57
 ---
 
 This page collects activities related to the EPSRC grant **EP/K019279/1**,
@@ -14,23 +14,23 @@ This page collects activities related to the EPSRC grant **EP/K019279/1**,
 ## Papers published during the grant period
 
 - **Bjorn Poonen, Damiano Testa, Ronald van Luijk**
-  [Computing Néron-Severi groups and cycle class groups](http://arxiv.org/abs/1210.3720);
+  [Computing Néron-Severi groups and cycle class groups](https://arxiv.org/abs/1210.3720);
   *Compositio Mathematica*, **151** (2015), no. 4, 713-734.
 
 - **E. Victor Flynn and Damiano Testa**
-  [Finite Weil restriction of curves](http://arxiv.org/abs/1210.4407);
+  [Finite Weil restriction of curves](https://arxiv.org/abs/1210.4407);
   *Monatsh. Math.*, **176** (2015), 197-218.
 
 - **Wouter Castryck, Marco Streng, Damiano Testa**
-  [Curves in characteristic 2 with non-trivial 2-torsion](http://arxiv.org/abs/1402.3241);
+  [Curves in characteristic 2 with non-trivial 2-torsion](https://arxiv.org/abs/1402.3241);
   *Advances in Mathematics of Communications* **8**(4), 479-495 (2014).
 
 - **Nils Bruin, E. Victor Flynn, Damiano Testa**
-  [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](http://arxiv.org/abs/1401.0580);
+  [Descent via (3,3)-isogeny on Jacobians of genus 2 curves](https://arxiv.org/abs/1401.0580);
   *Acta Arith.* **165** (2014), 201-223.
 
 - **Cecília Salgado, Damiano Testa, Anthony Várilly-Alvarado**
-  [On the unirationality of del Pezzo surfaces of degree two](http://arxiv.org/abs/1304.6798);
+  [On the unirationality of del Pezzo surfaces of degree two](https://arxiv.org/abs/1304.6798);
   *Journal of the London Mathematical Society*, **90**:121-139, 2014.
 
 ---
@@ -38,14 +38,14 @@ This page collects activities related to the EPSRC grant **EP/K019279/1**,
 ## Preprints written during the grant period
 
 - **Ciro Ciliberto, Andreas Leopold Knutsen, John Lesieutre, Victor Lozovanu, Rick Miranda, Yusuf Mustopa, Damiano Testa**
-  [A few questions about curves on surfaces](http://arxiv.org/abs/1511.06618);
+  [A few questions about curves on surfaces](https://arxiv.org/abs/1511.06618);
   *Rend. Circ. Mat. Palermo (2)* **66** (2017), no. 2, 195-204.
 
 - **Antonio Laface, Damiano Testa**
-  [On minimal rational elliptic surfaces](http://arxiv.org/abs/1502.00275).
+  [On minimal rational elliptic surfaces](https://arxiv.org/abs/1502.00275).
 
 - **Andrew Brooke-Taylor, Damiano Testa**
-  [The infinite random simplicial complex](http://arxiv.org/abs/1308.5517).
+  [The infinite random simplicial complex](https://arxiv.org/abs/1308.5517).
 
 ---
 

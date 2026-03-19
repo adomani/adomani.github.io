@@ -2,7 +2,7 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T02:46:16
+last_modified_at: 2026-03-19T03:39:57
 ---
 
 ## February 14–21, 2014 — LEGAL, Teresópolis
@@ -27,8 +27,8 @@ Heuristically, over number fields, if a rational surface has points, they tend t
 I will talk about the classical Segre-Manin Theorem on unirationality of del Pezzo surfaces of degree at least two and report on recent
 results obtained in collaboration with Cecília Salgado and Tony Várilly-Alvarado.
 
-I will also talk about Cox rings of rational surfaces and mention [joint work](http://arxiv.org/abs/0901.1094) with Tony Várilly-Alvarado and Mauricio
-Velasco, [work](http://arxiv.org/abs/0909.1835) of Michela Artebani and Antonio Laface, as well as [joint work](http://arxiv.org/abs/1104.4270) with Antonio Laface.
+I will also talk about Cox rings of rational surfaces and mention [joint work](https://arxiv.org/abs/0901.1094) with Tony Várilly-Alvarado and Mauricio
+Velasco, [work](https://arxiv.org/abs/0909.1835) of Michela Artebani and Antonio Laface, as well as [joint work](https://arxiv.org/abs/1104.4270) with Antonio Laface.
 
 ---
 
@@ -37,7 +37,7 @@ Velasco, [work](http://arxiv.org/abs/0909.1835) of Michela Artebani and Antonio 
 Among the surfaces of vanishing Kodaira dimension, K3 surfaces play a very special role; many basic questions are known and many are still unknown.
 
 First, I will discuss the general method for computing Picard groups of surfaces with an emphasis on K3 surfaces appearing in a [paper](http://www.math.leidenuniv.nl/~rvl/ps/picone.ps) of Ronald van Luijk.
-Then, I will talk about [joint work](http://arxiv.org/abs/1212.1426) with Michela Artebani and Antonio Laface on a specific K3 surface arising from a
+Then, I will talk about [joint work](https://arxiv.org/abs/1212.1426) with Michela Artebani and Antonio Laface on a specific K3 surface arising from a
 problem studied by Büchi.
 
 ---
@@ -49,9 +49,9 @@ with abelian varieties; for instance, there is no simply connected surface of ge
 completely explicit set of rational points.
 
 I will give some examples of surfaces arising from classical number theoretic questions, and will then focus on moduli spaces of abelian surfaces (see Klaus Hulek and Greg Sankaran's
-[notes](http://arxiv.org/abs/math/9810153) on Siegel modular threefolds for an introduction) and mention their relationship to the
+[notes](https://arxiv.org/abs/math/9810153) on Siegel modular threefolds for an introduction) and mention their relationship to the
 surface of cuboids
 (see Ronald van Luijk's undergraduate [thesis](http://www.math.leidenuniv.nl/~rvl/ps/cuboids.ps) and a more recent
-[joint work](http://arxiv.org/abs/1009.0388) with Michael Stoll).
+[joint work](https://arxiv.org/abs/1009.0388) with Michael Stoll).
 
 ---
