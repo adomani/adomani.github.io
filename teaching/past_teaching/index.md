@@ -1,7 +1,7 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-18T15:30:49
+last_modified_at: 2026-03-19T06:51:38
 ---
 
 ### 2025-26 Term 1
@@ -28,7 +28,7 @@ last_modified_at: 2026-03-18T15:30:49
 - [MA939 Topics in Number Theory](https://warwick.ac.uk/fac/sci/maths/postgrad/current/phd_studies/modules/ma939/)
 
   A draft book (joint with Martin Bright and Ronald van Luijk) is available
-  [here](surfaces/2021-01-03_surfaces.pdf).
+  [here](https://adomani.github.io/pdfs/2021-01-03_surfaces.pdf).
   Feedback is welcome!
 
 ### 2019-20, Term 2
