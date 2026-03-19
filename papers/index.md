@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T05:11:23
+last_modified_at: 2026-03-19T05:14:16
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -150,7 +150,7 @@ last_modified_at: 2026-03-19T05:11:23
 
 - [Computing Néron-Severi groups and cycle class groups](https://arxiv.org/abs/1210.3720), joint with
   [Bjorn Poonen](https://math.mit.edu/~poonen/) and
-  {% include ronaldVanLuijk -%}, Compos. Math., 151 (2015), no. 4, 713–734.
+  {% include ronaldVanLuijk | strip_newlines %}, Compos. Math., 151 (2015), no. 4, 713–734.
 
   We show that Néron-Severi groups (and more generally cycle class groups) are theoretically computable assuming the Tate conjecture and computability of certain étale cohomology groups.
 
