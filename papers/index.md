@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T05:52:40
+last_modified_at: 2026-03-19T05:56:56
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -175,7 +175,7 @@ last_modified_at: 2026-03-19T05:52:40
   We conclude with an example of a Mori dream rational surface with vanishing anticanonical Iitaka dimension.
 
 - [The surface parametrizing cuboids](https://arxiv.org/abs/1009.0388), joint with
-  [Michael Stoll](http://www.mathe2.uni-bayreuth.de/stoll/).
+  [Michael Stoll](https://www.mathe2.uni-bayreuth.de/stoll/).
 
   We compute the Picard group of the surface \\(S\\) of cuboids;
   the emphasis is to prove that a very explicit set of 140 curves on \\(S\\) generates the full Picard group,
