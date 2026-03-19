@@ -1,12 +1,14 @@
 ---
 title: "home"
 layout: single
-last_modified_at: 2026-03-19T01:26:13
+last_modified_at: 2026-03-19T01:33:56
 ---
 
 <img src="pictures/anakena.jpg" alt="Damiano Testa" width="200" height="200" style="float: right; margin: 0 0 1rem 1rem;"/>
 
-## Damiano Testa {% include octocat url="https://github.com/adomani" %} [`mathlib`](https://github.com/leanprover-community/mathlib4)
+## Damiano Testa
+
+{% include octocat url="https://github.com/adomani" %} [`mathlib`](https://github.com/leanprover-community/mathlib4)
 
 I am a Reader in the [Mathematics Institute](http://www2.warwick.ac.uk/fac/sci/maths/) of the [University of Warwick](http://www2.warwick.ac.uk/insite/).
 Prior to coming here, I was in the mathematics departments of
