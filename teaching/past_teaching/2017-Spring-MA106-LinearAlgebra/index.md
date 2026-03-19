@@ -1,10 +1,10 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-18T14:20:20
+last_modified_at: 2026-03-19T08:24:47
 ---
 
-# [MA106 Linear Algebra](https://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/)
+# [MA106 Linear Algebra](http://web.archive.org/web/20120511193559/http://www2.warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year1/ma106/)
 
 ---
 
