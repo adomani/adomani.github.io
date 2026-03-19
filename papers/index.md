@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T05:56:56
+last_modified_at: 2026-03-19T06:23:09
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -64,7 +64,7 @@ last_modified_at: 2026-03-19T05:56:56
   Rend. Circ. Mat. Palermo (2) 66 (2017), no. 2, 195–204.
 
 - [Curves in characteristic 2 with non-trivial 2-torsion](https://arxiv.org/abs/1402.3241), joint with
-  [Wouter Castryck](https://homes.esat.kuleuven.be/~wcastryc/) and
+  [Wouter Castryck(https://homes.esat.kuleuven.be/~wcastryc/) and
   [Marco Streng](https://pub.math.leidenuniv.nl/~strengtc/), Adv. Math. Commun. 8 (2014), no. 4, 479–495.
 
   We study combinatorially defined theta-characteristics for curves in characteristic two.
