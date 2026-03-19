@@ -3,6 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
+last_modified_at:
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with

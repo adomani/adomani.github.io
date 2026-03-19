@@ -7,5 +7,5 @@ main:
   url: /slides/
 - title: "Papers"
   url: /papers/
-- title: "Moduli Spaces and Rational Points"
-  url: /msrp/
+- title: "Macaulean"
+  url: https://github.com/Macaulean/Macaulean

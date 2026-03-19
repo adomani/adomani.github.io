@@ -2,18 +2,29 @@
 title: Slides
 layout: single
 math: true
+last_modified_at: 2026-03-18T16:08:49
 ---
 
-[Lines of polynomials with Galois group \\(\mathfrak{A}_n\\)](slides/2021_11_29_lines_Alt.pdf), a talk in the
+Maintaining a Large Formalisation Project [part 1](https://adomani.github.io/PreCFSG/Maintenance/Maintaining_1_Maths.pdf) and [part 2](https://adomani.github.io/PreCFSG/Maintenance/Maintaining_2_AI.pdf), [workshop on formalisation and group theory](https://adomani.github.io/PreCFSG/), Tsinghua University, Beijing, March 16th-20th, 2026.
+
+[Machine Verified Reasoning](https://adomani.github.io/Syllabus/Talks/2026_Machine_Verified_Reasoning.pdf), [Predictive Modelling Discussion Group](https://warwick.ac.uk/fac/sci/wcpm/), Warwick Engineering, February 12th, 2026.
+
+[An introduction to linters](https://adomani.github.io/Syllabus/Talks/2025_Lean_Together_linter_talk.pdf), [Lean Together 2025](https://leanprover-community.github.io/lt2025/), [video](https://www.youtube.com/watch?v=734jMwgjkkM), January 15th, 2025.
+
+[Mathematics, automation, theorem proving](https://adomani.github.io/Syllabus/Talks/2023_Pisa_Maths_Autom_Thm_Proving.pdf), Colloquio at Università di Pisa, December 13th, 2023.
+
+[Lines of polynomials with Galois group \\(\mathfrak{A}_n\\)](2021_11_29_lines_Alt.pdf), a talk in the
 [GANT seminar](https://sites.google.com/view/gantseminar), November 29th, 2021.
 
-[<span>\\(\overline{M}_{0,134}\\)</span> is not a Mori Dream Space](slides/2021_11_22_nMDS.pdf), an expository talk on a result of
+[<span>\\(\overline{M}_{0,134}\\)</span> is not a Mori Dream Space](2021_11_22_nMDS.pdf), an expository talk on a result of
 [Castravet-Tevelev](https://arxiv.org/abs/1311.7673),
 Warwick <span>\\(\overline{M}_{0,n}\\)</span> seminar, November 22nd, 2021.
 
-[Mathematical insights from using Lean](slides/2021_01_07_Testa_Lean_Together_2021.pdf), a talk at the online workshop [Lean Together 2021](https://leanprover-community.github.io/lt2021/)
-([recording](https://www.youtube.com/watch?v=jlJl0p7pm7M) of the talk).
+[Mathematical insights from using Lean](2021_01_07_Testa_Lean_Together_2021.pdf), a talk at the online workshop [Lean Together 2021](https://leanprover-community.github.io/lt2021/)
+([recording](https://www.youtube.com/watch?v=jlJl0p7pm7M) of the talk), January 7th, 2021.
 
-[Using computers to do maths for us!](slides/2020_ToM_Testa.pdf), Tour of Mathematics 2020-21, Warwick.
+[Computers and mathematics](2020_12_08_WMS_Calculations.pdf), Warwick Maths Society, December 8th, 2020.
 
-[Contact in algebraic and tropical geometry](slides/2020_03_31_Versailles_Testa.pdf), in Versailles.
+[Using computers to do maths for us!](2020_ToM_Testa.pdf), Tour of Mathematics 2020-21, Warwick.
+
+[Contact in algebraic and tropical geometry](2020_03_31_Versailles_Testa.pdf), in Versailles, March 31, 2020.
