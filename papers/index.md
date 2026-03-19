@@ -3,7 +3,7 @@ title: Papers
 layout: single
 permalink: /papers/
 math: true
-last_modified_at: 2026-03-19T03:50:58
+last_modified_at: 2026-03-19T04:16:54
 ---
 
 - [Growing Mathlib: maintenance of a large scale mathematical library](https://arxiv.org/abs/2508.21593), joint with
@@ -233,7 +233,7 @@ last_modified_at: 2026-03-19T03:50:58
   question on configurations of exceptional curves on the surface.
   We finally solve the combinatorial question by explicit geometric arguments.
 
-- [Fano varieties in index one Fano complete intersections](pdfs/FanoFano.pdf),
+- [Fano varieties in index one Fano complete intersections](adomani.github.io/pdfs/FanoFano.pdf),
   Math. Z. 259 (2008), no. 1, 61–64.
 
   A generalization of a result of Roya Beheshti and Jason Starr.
@@ -247,7 +247,7 @@ last_modified_at: 2026-03-19T03:50:58
   more precisely, general hypersurfaces of degree \\(n\\) in \\(\mathbf{P}^n\\) should be examples,
   for \\(n\\) large enough.
 
-- [Conical and Spherical Graphs](pdfs/MT-CoSp.pdf), joint with
+- [Conical and Spherical Graphs](adomani.github.io/pdfs/MT-CoSp.pdf), joint with
   [Mario Marietti](https://math-diism.univpm.it/marietti/),
   European J. Combin. 33 (2012), no. 7, 1606–1618.
   Dedicated to Tony Machì.
@@ -292,7 +292,7 @@ last_modified_at: 2026-03-19T03:50:58
   a range that is still unreachable by brute force computations and that was also not known at the time.
   Later generalizations and computer-free proofs were found (also by myself!).
 
-- [The irreducibility of the spaces of rational curves on del Pezzo surfaces](pdfs/tgd.pdf),
+- [The irreducibility of the spaces of rational curves on del Pezzo surfaces](adomani.github.io/pdfs/tgd.pdf),
   J. Algebraic Geom. 18 (2009), no. 1, 37–61.
   PhD Thesis, supervisor [Johan de Jong](https://www.math.columbia.edu/~dejong/).
 
