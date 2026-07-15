@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Semantic diff of mathlib4 PRs — classification from declaration hashes">
+<title>Semantic diff — mathlib4 PRs</title>
+<style>
+  :root{
+    --ground:#f4f3f7; --surface:#fdfdff; --surface-2:#f8f7fb;
+    --ink:#1b1b24; --muted:#6b6a7c; --faint:#a7a5b6; --hair:#e5e3ee;
+    --accent:#574a86; --accent-soft:#efecf7; --accent-ink:#463a6e;
+    --feat:#2c7a52; --fix:#b0640a; --refactor:#3763a6; --chore:#63687a;
+    --perf:#0d7268; --doc:#7a55c2; --ci:#7a7280; --other:#7a7280;
+    /* coordinate hues (composition bar) */
+    --c-new:#2c7a52; --c-stmt:#c07708; --c-proof:#3763a6; --c-ren:#7a55c2;
+    --c-mov:#0d7268; --c-rem:#b23a4e; --c-repr:#b0468f;
+    --shadow:0 1px 2px rgba(30,26,54,.05),0 4px 16px rgba(30,26,54,.05);
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#131218; --surface:#1b1a23; --surface-2:#201f2a;
+      --ink:#e9e8f1; --muted:#9998ac; --faint:#65647a; --hair:#2c2a38;
+      --accent:#a99ad6; --accent-soft:#241f36; --accent-ink:#c3b6e8;
+      --feat:#5bbd88; --fix:#d99542; --refactor:#6c9de0; --chore:#9aa0b4;
+      --perf:#3fb8ab; --doc:#b295ea; --ci:#9aa0b4; --other:#9aa0b4;
+      --c-new:#5bbd88; --c-stmt:#e0a54c; --c-proof:#6c9de0; --c-ren:#b295ea;
+      --c-mov:#3fb8ab; --c-rem:#e06c80; --c-repr:#df7ac0;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#131218; --surface:#1b1a23; --surface-2:#201f2a;
+    --ink:#e9e8f1; --muted:#9998ac; --faint:#65647a; --hair:#2c2a38;
+    --accent:#a99ad6; --accent-soft:#241f36; --accent-ink:#c3b6e8;
+    --feat:#5bbd88; --fix:#d99542; --refactor:#6c9de0; --chore:#9aa0b4;
+    --perf:#3fb8ab; --doc:#b295ea; --ci:#9aa0b4; --other:#9aa0b4;
+    --c-new:#5bbd88; --c-stmt:#e0a54c; --c-proof:#6c9de0; --c-ren:#b295ea;
+    --c-mov:#3fb8ab; --c-rem:#e06c80; --c-repr:#df7ac0;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+  }
+  :root[data-theme="light"]{
+    --ground:#f4f3f7; --surface:#fdfdff; --surface-2:#f8f7fb;
+    --ink:#1b1b24; --muted:#6b6a7c; --faint:#a7a5b6; --hair:#e5e3ee;
+    --accent:#574a86; --accent-soft:#efecf7; --accent-ink:#463a6e;
+    --feat:#2c7a52; --fix:#b0640a; --refactor:#3763a6; --chore:#63687a;
+    --perf:#0d7268; --doc:#7a55c2; --ci:#7a7280; --other:#7a7280;
+    --c-new:#2c7a52; --c-stmt:#c07708; --c-proof:#3763a6; --c-ren:#7a55c2;
+    --c-mov:#0d7268; --c-rem:#b23a4e; --c-repr:#b0468f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    line-height:1.5;-webkit-font-smoothing:antialiased;font-size:15px}
+  .wrap{max-width:1180px;margin:0 auto;padding:clamp(20px,4vw,52px) clamp(16px,3vw,36px) 80px}
+  a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid color-mix(in oklab,var(--accent) 35%,transparent)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  /* header */
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:600}
+  h1{font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.08;margin:.5rem 0 .35rem;letter-spacing:-.02em;
+    text-wrap:balance;font-weight:680}
+  .lede{color:var(--muted);max-width:66ch;font-size:1.03rem;margin:0}
+  .meta{margin-top:14px;font-family:var(--mono);font-size:12.5px;color:var(--faint);
+    display:flex;gap:18px;flex-wrap:wrap}
+  .meta b{color:var(--muted);font-weight:600}
+
+  /* legend */
+  .legend{margin:26px 0 8px;background:var(--surface);border:1px solid var(--hair);border-radius:14px;
+    padding:16px 18px;box-shadow:var(--shadow)}
+  .legend h2{font-size:12px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 12px;font-weight:600}
+  .coords{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px 22px}
+  .coord{display:flex;gap:9px;align-items:baseline;font-size:13px}
+  .swatch{width:9px;height:9px;border-radius:2px;flex:none;transform:translateY(1px)}
+  .coord code{font-family:var(--mono);font-weight:600;color:var(--ink);font-size:12.5px}
+  .coord span{color:var(--muted)}
+  .derived-note{margin-top:12px;padding-top:12px;border-top:1px dashed var(--hair);
+    font-size:12.5px;color:var(--muted)}
+  .derived-note code{font-family:var(--mono);color:var(--ink);background:var(--surface-2);
+    padding:1px 5px;border-radius:4px}
+
+  /* controls */
+  .controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin:20px 0 14px}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font:inherit;font-size:12.5px;cursor:pointer;border:1px solid var(--hair);background:var(--surface);
+    color:var(--muted);padding:5px 11px;border-radius:999px;line-height:1;display:inline-flex;gap:6px;align-items:center}
+  .chip:hover{border-color:var(--accent)}
+  .chip[aria-pressed="true"]{background:var(--accent-soft);border-color:color-mix(in oklab,var(--accent) 45%,transparent);
+    color:var(--accent-ink);font-weight:600}
+  .chip .dot{width:8px;height:8px;border-radius:50%}
+  .chip .n{font-family:var(--mono);font-size:11px;opacity:.7}
+  .spacer{flex:1 1 40px}
+  .divider{width:1px;align-self:stretch;background:var(--hair);margin:2px 2px}
+  .grp-badge{margin-left:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);background:var(--accent-soft);border:1px solid color-mix(in oklab,var(--accent) 30%,transparent);
+    border-radius:5px;padding:1px 5px;vertical-align:1px}
+  tbody tr.row.is-open-pr td.pr{box-shadow:inset 3px 0 0 var(--accent)}
+  .miss{color:var(--faint);font-style:italic;font-family:var(--sans)}
+  .toggle{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);cursor:pointer;user-select:none}
+  .toggle input{accent-color:var(--accent);width:15px;height:15px}
+  select{font:inherit;font-size:12.5px;color:var(--ink);background:var(--surface);border:1px solid var(--hair);
+    border-radius:8px;padding:5px 8px}
+
+  /* table */
+  .tablecard{background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;
+    box-shadow:var(--shadow)}
+  .scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:920px}
+  thead th{position:sticky;top:0;background:var(--surface);z-index:2;font-family:var(--mono);font-weight:600;
+    font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right;
+    padding:12px 9px;border-bottom:1px solid var(--hair);white-space:nowrap;cursor:pointer;user-select:none}
+  thead th.l{text-align:left}
+  thead th:hover{color:var(--accent)}
+  thead th .ar{opacity:0;font-size:9px;margin-left:2px}
+  thead th[data-active] .ar{opacity:1;color:var(--accent)}
+  tbody td{padding:11px 9px;border-bottom:1px solid var(--hair);text-align:right;
+    font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13px;white-space:nowrap}
+  tbody tr.row{cursor:pointer}
+  tbody tr.row:hover{background:var(--surface-2)}
+  tbody tr.row.open{background:var(--accent-soft)}
+  td.pr{text-align:left;font-family:var(--mono)}
+  a.prnum{font-weight:600;color:var(--ink);border-bottom:1px solid transparent}
+  a.prnum:hover{color:var(--accent-ink);border-bottom-color:var(--accent)}
+  .shas a{color:var(--faint);border-bottom:1px solid transparent}
+  .shas a:hover{color:var(--accent-ink);border-bottom-color:color-mix(in oklab,var(--accent) 50%,transparent)}
+  td.title{text-align:left;font-family:var(--sans);white-space:normal;max-width:340px;color:var(--muted);font-size:13px}
+  td.title .subj{color:var(--ink)}
+  .z{color:var(--faint)}
+  .num-strong{color:var(--ink);font-weight:600}
+
+  /* label + type pills */
+  .pill{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;font-weight:600;
+    padding:2px 8px;border-radius:6px;letter-spacing:.02em;text-transform:lowercase;
+    border:1px solid transparent}
+  .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .lab-feat{color:var(--feat);background:color-mix(in oklab,var(--feat) 13%,transparent)}
+  .lab-fix{color:var(--fix);background:color-mix(in oklab,var(--fix) 14%,transparent)}
+  .lab-refactor{color:var(--refactor);background:color-mix(in oklab,var(--refactor) 13%,transparent)}
+  .lab-chore{color:var(--chore);background:color-mix(in oklab,var(--chore) 14%,transparent)}
+  .lab-perf{color:var(--perf);background:color-mix(in oklab,var(--perf) 13%,transparent)}
+  .lab-doc{color:var(--doc);background:color-mix(in oklab,var(--doc) 13%,transparent)}
+  .lab-ci,.lab-other{color:var(--other);background:color-mix(in oklab,var(--other) 13%,transparent)}
+  .diverge{margin-left:7px;font-family:var(--mono);font-size:10.5px;color:var(--fix);
+    border:1px dashed color-mix(in oklab,var(--fix) 55%,transparent);border-radius:5px;padding:1px 5px;
+    white-space:nowrap}
+  .tag{margin-left:7px;font-family:var(--mono);font-size:10px;color:var(--accent-ink);
+    background:var(--accent-soft);border-radius:5px;padding:1px 5px}
+
+  /* composition bar */
+  .bar{display:flex;height:9px;width:150px;border-radius:3px;overflow:hidden;background:var(--surface-2);
+    outline:1px solid var(--hair)}
+  .bar i{display:block;height:100%}
+  .bar.empty{position:relative}
+  .bar.empty::after{content:"∅ no env delta";position:absolute;inset:0;display:flex;align-items:center;
+    justify-content:center;font-family:var(--mono);font-size:9px;color:var(--faint);letter-spacing:.03em}
+
+  /* expand panel */
+  tr.detail td{padding:0;border-bottom:1px solid var(--hair);background:var(--surface-2)}
+  .panel{padding:6px 16px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 26px}
+  .bucket h4{margin:14px 0 7px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;
+    display:flex;align-items:center;gap:7px;font-weight:600}
+  .bucket h4 .swatch{width:8px;height:8px}
+  .bucket h4 .cnt{color:var(--muted);font-weight:500}
+  .names{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+  .names li{font-family:var(--mono);font-size:12px;color:var(--ink);word-break:break-all;
+    padding:2px 8px;background:var(--surface);border-radius:5px;border:1px solid var(--hair)}
+  .names li.ren b{color:var(--faint);font-weight:400}
+  .names li.ren em{color:var(--feat);font-style:normal}
+  .more{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:2px}
+  .panel-note{grid-column:1/-1;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--hair);
+    padding-top:10px}
+  .panel-note .k{font-family:var(--mono);color:var(--accent-ink)}
+  .shas{grid-column:1/-1;font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .empty-detail{grid-column:1/-1;font-family:var(--mono);font-size:12.5px;color:var(--muted);padding:8px 0}
+
+  footer{margin-top:26px;font-size:12px;color:var(--faint);font-family:var(--mono);line-height:1.7}
+  .hidden{display:none !important}
+  @media (max-width:640px){
+    td.title{max-width:170px}
+    .meta{gap:10px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Semantic diff · mathlib4</div>
+    <h1>What each PR actually changed in the environment</h1>
+    <p class="lede">Every declaration in mathlib is reduced to two rename-invariant hashes — one for its
+      <em>statement</em>, one for its <em>proof</em>. Diffing two commits classifies a PR from the delta alone,
+      not its title: what was added, generalized, reproved, renamed, or left provably untouched.</p>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <section class="legend" aria-label="coordinate legend">
+    <h2>The eight coordinates</h2>
+    <div class="coords" id="coords"></div>
+    <div class="derived-note">
+      Derived axes: <code>meaning Δ = authored_new + statement_changed</code> ·
+      <code>structure Δ = renamed + moved + proof_changed + repr_changed</code>.
+      The label is a function of the vector; where it disagrees with the PR's title prefix, a
+      <span style="color:var(--fix)">divergence flag</span> shows both.
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="chips" id="groups"></div>
+    <span class="divider"></span>
+    <div class="chips" id="filters"></div>
+    <span class="spacer"></span>
+    <label class="toggle"><input type="checkbox" id="showBig" checked> show 2 enormous diffs</label>
+    <label class="toggle" for="sortSel">sort
+      <select id="sortSel">
+        <option value="idx">mathlib order</option>
+        <option value="meaning">meaning Δ</option>
+        <option value="structure">structure Δ</option>
+        <option value="authored_new">authored_new</option>
+        <option value="statement_changed">statement_changed</option>
+        <option value="proof_changed">proof_changed</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="tablecard"><div class="scroll">
+    <table>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+  </div></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script id="data" type="application/json">{
+"generated": "2026-07-15",
+"source": "cached master batch-tips (v4.32.0-rc1) + 11 open PRs vs merge-base (live fork cache)",
+"rows": [
+{
+"pr": "40732",
+"subject": "chore: bump toolchain to v4.32.0-rc1",
+"type": "chore",
+"label": "feat",
+"base": "e81046e832ef",
+"head": "360da6fa66c1",
+"gap": 1,
+"tag": null,
+"meaning": 2074,
+"structure": 287391,
+"ambiguity": null,
+"vector": {
+"authored_new": 1,
+"statement_changed": 2073,
+"proof_changed": 287391,
+"renamed": 0,
+"moved": 0,
+"removed": 4,
+"repr_changed": 0,
+"unchanged": 68041
+},
+"dd": {
+"authored_new": [
+"Subtype.eq_iff"
+],
+"statement_changed": [
+"Mathlib.Tactic.Linarith.getPCompSet",
+"CongrMetaM.nextPattern",
+"fieldEq",
+"Mathlib.Tactic.ClickSuggestions.rpc",
+"Mathlib.Meta.Positivity.PositivityExt.ctorIdx",
+"Mathlib.Explode.Entries.mk.inj",
+"Mathlib.Tactic.Linarith.linarith",
+"Mathlib.Notation3.exprToMatcher",
+"Lean.Meta.ensureHasType",
+"Mathlib.WhatsNew.whatsNew",
+"Mathlib.Notation3.mkFoldlMatcher",
+"Plausible.TotalFunction.Finsupp.sampleableExt",
+"Mathlib.Tactic.Bicategory.instMonadMor₁BicategoryM",
+"Nat.properDivisors_ofNat",
+"Lean.Elab.Tactic.unfoldCases",
+"Mathlib.Tactic.Tauto.distribNot",
+"Mathlib.Tactic.CategoryTheory.CancelIso.cancelIsoSimproc",
+"tacticDocs",
+"Mathlib.Notation3.matchApp",
+"Mathlib.Tactic.Linarith.CertificateOracle.ctorIdx",
+"Lean.Elab.Term.withoutCDot.parenthesizer",
+"Mathlib.Tactic.elabLinarithConfig",
+"simpsTac",
+"Mathlib.Tactic.Translate.reorderForall",
+"Mathlib.Tactic.Superscript.Mapping.superscript",
+"Lean.Meta.RefinedDiscrTree.encodeExpr",
+"Mathlib.Meta.NormNum.evalNatCeil",
+"Mathlib.Tactic.CheckCompositions.checkCompositionsTac",
+"Mathlib.Tactic.Algebra.RingCompute.add",
+"instRpcEncodableCalcParams",
+"Mathlib.Meta.FunProp.withIncreasedTransitionDepth",
+"Mathlib.Tactic.MkIff.nCasesSum",
+"Lean.MVarId.obviousHfunext?",
+"Lean.Meta.RefinedDiscrTree.keysAsPattern.next",
+"Finsupp.fun₀.matchAlts.formatter",
+"exists_delab",
+"Finsupp.fun₀.formatter",
+"Mathlib.Tactic.Linarith.addExprs",
+"Lean.Elab.collectTryThisSuggestions",
+"Tactic.higherOrderAttr",
+"verifyGrind",
+"Mathlib.Util.TermReduce.elabBeta",
+"Mathlib.Tactic.Bicategory.instMkMor₂BicategoryM_1",
+"Lean.Elab.Tactic.getMemType",
+"Mathlib.Meta.Positivity.evalNNRatDen",
+"Mathlib.Tactic.superscriptTerm",
+"Mathlib.Meta.NormNum.evalNatFib",
+"Lean.Meta.mkRichHCongr",
+"Mathlib.Meta.FunProp.increaseSteps",
+"Mathlib.Tactic.Abel.mkTerm"
+],
+"renamed": [],
+"moved": [],
+"removed": [
+"Nat.sqrt.iter_sq_le",
+"Nat.sqrt_le",
+"Nat.lt_succ_sqrt",
+"Nat.sqrt.lt_iter_succ_sq"
+],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 2023,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 43,
+"closure": 201374,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "41528",
+"subject": "feat(RingTheory/PicardGroup): invertible modules over semirings are locally free",
+"type": "feat",
+"label": "feat",
+"base": "360da6fa66c1",
+"head": "2028213c0d61",
+"gap": 557,
+"tag": null,
+"meaning": 219310,
+"structure": 15689,
+"ambiguity": null,
+"vector": {
+"authored_new": 3612,
+"statement_changed": 215698,
+"proof_changed": 15593,
+"renamed": 32,
+"moved": 11,
+"removed": 360,
+"repr_changed": 53,
+"unchanged": 188856
+},
+"dd": {
+"authored_new": [
+"IsEllipticNet.smul",
+"CategoryTheory.Sieve.generate_pushforward",
+"CategoryTheory.PreZeroHypercover.pushforwardIsoBind_inv_s₀",
+"AlgebraicGeometry.Scheme.ord_eq_unzero_ordHom",
+"ContRepresentation.coind₁ι",
+"TopRep.hom_d_succ",
+"ContinuousLinearMap.adjoint_rTensor",
+"Finset.HasMulAntidiagonal.mem_mulAntidiagonal_ofAdd_iff_toAdd_mem_antidiagonal",
+"MvPolynomial.sumAlgEquiv_C_inl",
+"Matrix.detp_neg_one_of_isEmpty",
+"Mathlib.Meta.Positivity.evalTheta",
+"CategoryTheory.Limits.isLimitEquivFanOfIsThin",
+"Module.Free.away_of_finite_of_flat_of_rankAtStalk_constant",
+"Mathlib.CrossRef.Database.shortName",
+"MonoidAlgebra.support_coeff_single_mul_subset",
+"Ideal.inertiaDeg'_eq_of_isMaximal",
+"CategoryTheory.WalkingIso.fromIso_map_zero_zero",
+"AffineEquiv.constVSub_symm_apply",
+"CategoryTheory.GrothendieckTopology.IsLocalSite.instFaithfulSheafCoconstantSheaf",
+"MeasureTheory.preVariationFun_apply",
+"MeasureTheory.setIntegral_condExp_le_of_ae_restrict_nonneg",
+"Monotone.map_csInf_le_csInf_image",
+"CategoryTheory.Arrow.LeftHomotopy.add",
+"IsOpenQuotientMap.of_comp",
+"log_riemannZeta_eq_neg_log_sub_add_ofReal",
+"RingConGen.Rel.star",
+"Algebra.tensorQuotientTensorEquiv_symm_tmul",
+"MeasureTheory.VectorMeasure.semivariation_apply_le_bound",
+"Finset.instMeasurableSpace",
+"IsGaloisGroup.instSubtypeMemSubgroupTop",
+"isLocalHomeomorph_iff_isCoveringMap",
+"Fin.sub_castSucc_eq_castSucc_sub_of_le",
+"IsLocalizedModule.Away.of_associated",
+"MonoidAlgebra.coeff_mul_single_eq_coeff_mul",
+"MeasureTheory.MemLp.ae_norm_condExp_le_essSup",
+"CategoryTheory.Limits.ι_coproductUniqueIso_hom_assoc",
+"SkewMonoidAlgebra.support_ofCoeff",
+"CategoryTheory.Functor.mapHomologicalComplexCompIso_hom_app_f",
+"Matrix.separatingRight_iff_forall_mulVec_eq_zero",
+"conGen_star",
+"LT.lt.subset",
+"MeasureTheory.VectorMeasure.Integrable.tendsto_setIntegral_nhds_zero",
+"CategoryTheory.Arrow.LeftHomotopy.compLeft",
+"TopologicalSpace.Compacts.instSecondCountableTopology",
+"LinearMap.isQuasiInverse_subtype_projectionOnto",
+"CochainComplex.Plus.instIsRightDerivabilityStructureInjectiveObjectInverseImageQuasiIsoMapCochainComplexPlusιLocalizerMorphism",
+"Int.zmultiples_inf",
+"FormalGroup.comm'",
+"CategoryTheory.Functor.rightDerivedFunctorPlus",
+"CategoryTheory.InjectiveObject.instIsClosedUnderLimitsOfShapeIsInjectiveDiscrete"
+],
+"statement_changed": [
+"HomologicalComplex.homotopyCofiber.inrX",
+"Module.End.IsSemisimple.minpoly_squarefree",
+"PolynomialModule.equivPolynomialSelf",
+"abs_sub_nonpos",
+"CategoryTheory.Iso.commSemiRingCatIsoToRingEquiv_toRingHom",
+"WeierstrassCurve.Affine.Y_eq_of_Y_ne",
+"MeasureTheory.integral_nonneg",
+"LeftPreLieRing.instLieAdmissibleRing",
+"Geometry.SimplicialComplex.facets",
+"arithGeom_eq",
+"Filter.eventually_cocardinal",
+"AlgEquiv.aut",
+"CategoryTheory.GrothendieckTopology.preservesLimitsOfShape_plusFunctor",
+"LieSubmodule.map_le_iff_le_comap",
+"CategoryTheory.SimplicialObject.Splitting.homotopyEquivNondegComplex",
+"Polynomial.CC",
+"EReal.tendsto_nhds_bot_iff_real",
+"CategoryTheory.Precoverage.toGrothendieck_le_iff_le_toPrecoverage",
+"Matrix.num_transpose",
+"MeasureTheory.le_measure_sdiff",
+"MeasureTheory.condExpIndL1.congr_simp",
+"CovariantDerivative.torsion_apply",
+"AddMonoidAlgebra.mem_grade_iff",
+"AddAction.IsBlock.disjoint_vadd_right",
+"Matrix.nnnorm_entry_le_entrywise_sup_nnnorm",
+"Algebra.IsAlgebraic.isTranscendenceBasis_of_lift_le_trdeg",
+"intrinsicClosure",
+"ContinuousAt.neg",
+"MonoidHom.not_dvd_card_ker_transferSylow",
+"Polynomial.degree_gcd_le_left",
+"HomotopicalAlgebra.FibrantObject.HoCat.resolutionMap",
+"Matrix.liftLinear_single",
+"Algebra.FormallySmooth.exists_kerProj_comp_eq_id",
+"HomologicalComplex.Hom.sqTo_right",
+"BitVec.toFin_pow",
+"Finsupp.mem_range_mapDomain_iff",
+"Summable.hasSum_iff_tendsto_nat",
+"HomologicalComplex.hasExactColimitsOfShape",
+"IsOrderedMonoid.toMulRightMono",
+"CategoryTheory.Limits.MonoCoprod",
+"Nat.pow_nthRoot_le_iff",
+"CategoryTheory.MorphismProperty.TransfiniteCompositionOfShape.mem_incl_app",
+"PointedCone.minTensorProduct_map_le",
+"CategoryTheory.OrthogonalReflection.isRightAdjoint_ι",
+"TrivSqZeroExt.eq_smul_exp_of_ne_zero",
+"Subalgebra.induction_on_adjoin",
+"Set.Finset.coe_einfsep",
+"Nonneg.nsmul_mk",
+"NumberField.mixedEmbedding.fundamentalCone.normLeOne_eq_preimage_image",
+"vectorSpan_pair_rev"
+],
+"renamed": [
+[
+"CategoryTheory.Limits.Cocone.ext_inv",
+"CategoryTheory.Limits.Cocone.extInv",
+"exact"
+],
+[
+"CategoryTheory.Limits.Cocone.ext_inv.congr_simp",
+"CategoryTheory.Limits.Cocone.extInv.congr_simp",
+"exact"
+],
+[
+"CategoryTheory.Limits.Cocone.ext_inv_hom_hom",
+"CategoryTheory.Limits.Cocone.extInv_hom_hom",
+"exact"
+],
+[
+"CategoryTheory.Limits.Cocone.ext_inv_inv_hom",
+"CategoryTheory.Limits.Cocone.extInv_inv_hom",
+"exact"
+],
+[
+"CategoryTheory.Limits.Cone.ext_inv",
+"CategoryTheory.Limits.Cone.extInv",
+"exact"
+],
+[
+"CategoryTheory.Limits.Cone.ext_inv_hom_hom",
+"CategoryTheory.Limits.Cone.extInv_hom_hom",
+"exact"
+],
+[
+"CategoryTheory.Limits.Cone.ext_inv_inv_hom",
+"CategoryTheory.Limits.Cone.extInv_inv_hom",
+"exact"
+],
+[
+"HasSubset.Subset.hcongr_4",
+"LE.le.hcongr_4",
+"exact"
+],
+[
+"OrderIso.toCompleteLatticeHom",
+"CompleteLatticeHom.OrderIso.toCompleteLatticeHom",
+"exact"
+],
+[
+"PSet.instHasSubset",
+"PSet.instLE",
+"exact"
+],
+[
+"Set.addAntidiagonal",
+"Set.antidiagonal",
+"exact"
+],
+[
+"Set.mem_addAntidiagonal",
+"Set.mem_antidiagonal",
+"exact"
+],
+[
+"Set.swap_mem_addAntidiagonal",
+"Set.swap_mem_antidiagonal",
+"exact"
+],
+[
+"Set.swap_mem_addAntidiagonal_aux",
+"Set.swap_mem_antidiagonal_aux",
+"exact"
+],
+[
+"SkewMonoidAlgebra.ofFinsupp.inj",
+"SkewMonoidAlgebra.ofCoeff.inj",
+"exact"
+],
+[
+"SkewMonoidAlgebra.ofFinsupp.injEq",
+"SkewMonoidAlgebra.ofCoeff.injEq",
+"exact"
+],
+[
+"SkewMonoidAlgebra.ofFinsupp.sizeOf_spec",
+"SkewMonoidAlgebra.ofCoeff.sizeOf_spec",
+"exact"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.congr_simp",
+"CategoryTheory.CardinalDirectedPoset.congr_simp",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instEssentiallySmallHasCardinalLTWithTerminal",
+"CategoryTheory.CardinalDirectedPoset.instEssentiallySmallHasCardinalLTWithTerminal",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instHasTerminalElemCarrierObjPartOrdEmbIsCardinalFilteredValSetPropSet",
+"CategoryTheory.CardinalDirectedPoset.instHasTerminalElemCarrierObjPartOrdEmbIsCardinalFilteredValSetPropSet",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instHasTerminalElemCarrierObjPartOrdEmbIsCardinalFilteredWithTopValSetPropSetWithTop",
+"CategoryTheory.CardinalDirectedPoset.instHasTerminalElemCarrierObjPartOrdEmbIsCardinalFilteredWithTopValSetPropSetWithTop",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsCardinalFilteredCarrierObjPartOrdEmbIsCardinalFiltered",
+"CategoryTheory.CardinalDirectedPoset.instIsCardinalFilteredCarrierObjPartOrdEmbIsCardinalFiltered",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsCardinalFilteredElemCarrierObjPartOrdEmbIsCardinalFilteredValSetPropSet",
+"CategoryTheory.CardinalDirectedPoset.instIsCardinalFilteredElemCarrierObjPartOrdEmbIsCardinalFilteredValSetPropSet",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsCardinalFilteredElemCarrierObjPartOrdEmbIsCardinalFilteredWithTopValSetPropSetWithTop",
+"CategoryTheory.CardinalDirectedPoset.instIsCardinalFilteredElemCarrierObjPartOrdEmbIsCardinalFilteredWithTopValSetPropSetWithTop",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsCardinalFilteredWithTopCarrierObjPartOrdEmbIsCardinalFiltered",
+"CategoryTheory.CardinalDirectedPoset.instIsCardinalFilteredWithTopCarrierObjPartOrdEmbIsCardinalFiltered",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsDirectedOrderSubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredPropSet",
+"CategoryTheory.CardinalDirectedPoset.instIsDirectedOrderSubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredPropSet",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsDirectedOrderSubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredWithTopPropSetWithTop",
+"CategoryTheory.CardinalDirectedPoset.instIsDirectedOrderSubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredWithTopPropSetWithTop",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instIsFilteredCarrierObjPartOrdEmbIsCardinalFiltered",
+"CategoryTheory.CardinalDirectedPoset.instIsFilteredCarrierObjPartOrdEmbIsCardinalFiltered",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instNonemptyCarrierObjPartOrdEmbIsCardinalFiltered",
+"CategoryTheory.CardinalDirectedPoset.instNonemptyCarrierObjPartOrdEmbIsCardinalFiltered",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instNonemptySubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredPropSet",
+"CategoryTheory.CardinalDirectedPoset.instNonemptySubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredPropSet",
+"reproved"
+],
+[
+"CategoryTheory.CardinalFilteredPoset.instNonemptySubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredWithTopPropSetWithTop",
+"CategoryTheory.CardinalDirectedPoset.instNonemptySubtypeSetCarrierObjPartOrdEmbIsCardinalFilteredWithTopPropSetWithTop",
+"reproved"
+],
+[
+"IsClosedEmbedding.measurable",
+"Topology.IsClosedEmbedding.measurable",
+"reproved"
+]
+],
+"moved": [
+"Pi.le_def",
+"le_Prop_eq",
+"Fintype.equivFinOfCardEq.congr_simp",
+"RelIso.mk.congr_simp",
+"CategoryTheory.ShortComplex.mk.congr_simp",
+"Prop.le",
+"Mathlib.Tactic.Algebra.cleanupConsts",
+"Mathlib.Tactic.TermCongr.cHole.congr_simp",
+"Pi.hasLe",
+"toContinuousMap.congr_simp",
+"Homeomorph.mk.congr_simp"
+],
+"removed": [
+"instNonemptyGCDMonoid",
+"MvPolynomial.scalarRTensor_apply_X_tmul_apply",
+"AddMonoidAlgebra.smul_apply",
+"AddMonoidAlgebra.mapRingEquiv_apply",
+"AddMonoidAlgebra.addAddCommMonoid",
+"Finset.instIsTransSSubset",
+"Finset.instSubsingletonHasAntidiagonal",
+"CategoryTheory.Functor.PushoutObjObj.ofNatIso_ι_assoc",
+"IsOpenEmbedding.sumElim",
+"AddMonoidAlgebra.tensorEquiv_tmul",
+"AddMonoidAlgebra.nontrivial",
+"instContMDiffSMulContinuousLinearMapIdModelWithCornersSelfOfCompleteSpace",
+"CategoryTheory.Arrow.isIso_of_isIso",
+"CategoryTheory.CardinalFilteredPoset.instIsCardinalAccessibleCategory",
+"Finset.sigmaAntidiagonalEquivProd_symm_apply_snd_coe",
+"Computability.FinEncoding.mk.inj",
+"MonoidAlgebra.addCommMonoid",
+"Finset.antidiagonal.snd_le",
+"ContinuousCohomology.continuousCohomologyZeroIso",
+"IsBezout.nonemptyGCDMonoid",
+"AddMonoidAlgebra.single_apply",
+"Relation.TransGen.instRefl_mathlib",
+"AddSubgroup.IsNormalClosureFG.comap",
+"RightOrdContinuous.toOrderEmbedding.congr_simp",
+"PSet.instReflSubset",
+"AddMonoidAlgebra.support_mul",
+"NumberField.mixedEmbedding.instNoAtomsMixedSpaceVolume",
+"MonoidAlgebra.unique",
+"StrongFEPair.Λ",
+"ContinuousCohomology.MultiInd.d_succ",
+"LieRinehartAlgebra.instLieRinehartRingDerivation",
+"OrderIso.withBotCongr_symm_apply",
+"ContinuousCohomology.I",
+"MeasureTheory.Measure.restrict.instNoAtoms",
+"CategoryTheory.ObjectProperty.SerreClassLocalization.hasBinaryProducts",
+"StrongFEPair.differentiable_Λ",
+"MeasureTheory.Measure.prod.instNoAtoms_snd",
+"StrongFEPair.Λ_eq",
+"instNonemptyNormalizedGCDMonoidOfUniqueFactorizationMonoid",
+"AddMonoidAlgebra.ofCoeff_mapDomain",
+"Set.addAntidiagonal_mono_left",
+"Set.instTransSSubsetSubset",
+"MonoidAlgebra.supportedEquivFinsupp_symm_apply_coe_support_val",
+"MvPolynomial.sumAlgEquiv_apply",
+"MeasureTheory.Lp.instCoeDep",
+"ContinuousCohomology.I_obj_V_isAddCommGroup",
+"StrongFEPair.hf_top'",
+"ContinuousCohomology.instLinearActionTopModuleCatI",
+"AddMonoidAlgebra.addAddCommGroup",
+"gcd_mul_lcm"
+],
+"representation_changed": [
+"PolynomialModule",
+"AddMonoidAlgebra.ofCoeff",
+"AddMonoidAlgebra",
+"MonoidAlgebra.ofCoeff",
+"Computability.FinEncoding",
+"MonoidAlgebra",
+"ContRepresentation",
+"MeasureTheory.NoAtoms",
+"SkewMonoidAlgebra.ofFinsupp",
+"Manifold.Elab.findModelInner",
+"_private.Mathlib.Geometry.Manifold.Notation.0.Manifold.Elab.findModelInner.fromTotalSpace",
+"TwoSidedIdeal.mk",
+"IsDedekindDomain.HeightOneSpectrum.adicCompletion",
+"LocPathConnectedSpace",
+"AlgebraicGeometry.Scheme.PartialIso",
+"StrongNormalizedGCDMonoid",
+"CategoryTheory.Arrow.LeftHomotopy",
+"CategoryTheory.Limits.HasWeakLimitsOfShape",
+"Mathlib.Tactic.Polynomial.PolynomialExt",
+"ZSMul",
+"Cardinal.SharplyLT",
+"IsHeckeTriple",
+"MeasureTheory.NullSingletonClass",
+"Finset.HasMulAntidiagonal",
+"CategoryTheory.GrothendieckTopology.IsLocalSite",
+"Mathlib.Tactic.Determinant.Ctx",
+"LieRinehartSubalgebra",
+"NSMul",
+"CategoryTheory.Limits.WeakLimitCone",
+"LawfulXor",
+"Mathlib.Tactic.Determinant.Cert",
+"CategoryTheory.MorphismProperty.sourceLocalClosure",
+"IsGCDMonoid",
+"SSet.Edge.InvStruct",
+"ZPow",
+"PresheafOfModules.Submodule",
+"NPow",
+"Mathlib.Tactic.Determinant.CertCache",
+"CategoryTheory.Limits.HasWeakLimit",
+"CategoryTheory.Limits.IsWeakLimit",
+"CategoryTheory.Limits.HasWeakKernels",
+"HomotopicalAlgebra.ReedyStructure",
+"SelfAdjointDecompose",
+"LinearMap.IsWeak",
+"UsesSetNotationForOrder",
+"IsStrongFEPair",
+"Mathlib.Tactic.Determinant.ReifiedBirdDet",
+"AlgebraicGeometry.Scheme.IsRationalOver",
+"StrongNormalizationMonoid",
+"Mathlib.Tactic.DuplicateDecls.Target",
+"LocallyPathConnectedSpace",
+"Complex.ECanonicalDecomp",
+"CategoryTheory.Arrow.RightHomotopy"
+]
+},
+"more": {
+"authored_new": 3562,
+"statement_changed": 215648,
+"renamed": 0,
+"moved": 0,
+"removed": 310
+},
+"gen": 4836,
+"closure": 138080,
+"notes": [
+"representation change on ['PolynomialModule', 'AddMonoidAlgebra.ofCoeff', 'AddMonoidAlgebra', 'MonoidAlgebra.ofCoeff', 'Computability.FinEncoding'] (+independent authored API) → follow-your-nose closure"
+],
+"group": "merged"
+},
+{
+"pr": "41331",
+"subject": "chore: measure longest (re-)build path instructions",
+"type": "chore",
+"label": "chore",
+"base": "2028213c0d61",
+"head": "286a924d324f",
+"gap": 1,
+"tag": null,
+"meaning": 0,
+"structure": 0,
+"ambiguity": "chore|style (no env delta; distinguish via the syntactic layer)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565920
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|style (no env delta; distinguish via the syntactic layer)"
+],
+"group": "merged"
+},
+{
+"pr": "41547",
+"subject": "ci: run lake cache shadow pipeline with patched lake version with latest features",
+"type": "ci",
+"label": "chore",
+"base": "286a924d324f",
+"head": "6f6d267d6dab",
+"gap": 1,
+"tag": null,
+"meaning": 0,
+"structure": 0,
+"ambiguity": "chore|style (no env delta; distinguish via the syntactic layer)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565920
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|style (no env delta; distinguish via the syntactic layer)"
+],
+"group": "merged"
+},
+{
+"pr": "41587",
+"subject": "chore: refactor bench suite",
+"type": "chore",
+"label": "chore",
+"base": "6f6d267d6dab",
+"head": "a08ff0d0f4a0",
+"gap": 2,
+"tag": null,
+"meaning": 0,
+"structure": 0,
+"ambiguity": "chore|style (no env delta; distinguish via the syntactic layer)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565920
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|style (no env delta; distinguish via the syntactic layer)"
+],
+"group": "merged"
+},
+{
+"pr": "40323",
+"subject": "fix(GRewrite): preserve binder names in the goal",
+"type": "fix",
+"label": "fix",
+"base": "a08ff0d0f4a0",
+"head": "bd20b9c6e573",
+"gap": 1,
+"tag": null,
+"meaning": 1,
+"structure": 17782,
+"ambiguity": "fix|feat (statement change; generalisation vs correction is intent)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 1,
+"proof_changed": 17782,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 544099
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [
+"Mathlib.Tactic.GCongr.applyGCongrLemma"
+],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 1,
+"closure": 4038,
+"notes": [
+"boundary: fix|feat (statement change; generalisation vs correction is intent)"
+],
+"group": "merged"
+},
+{
+"pr": "41588",
+"subject": "chore: use `Sort*` in the definition of `Equiv`",
+"type": "chore",
+"label": "chore",
+"base": "bd20b9c6e573",
+"head": "1857d442a8db",
+"gap": 1,
+"tag": null,
+"meaning": 0,
+"structure": 0,
+"ambiguity": "chore|style (no env delta; distinguish via the syntactic layer)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565921
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|style (no env delta; distinguish via the syntactic layer)"
+],
+"group": "merged"
+},
+{
+"pr": "41553",
+"subject": "chore(CategoryTheory/Sites/Descent/Precoverage): deprecate duplicate theorem",
+"type": "chore",
+"label": "refactor",
+"base": "1857d442a8db",
+"head": "19e77d298b5e",
+"gap": 1,
+"tag": null,
+"meaning": 0,
+"structure": 2,
+"ambiguity": "refactor|fix (proof-only change; fix-intent is invisible to the env)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 2,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565919
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 1,
+"closure": 0,
+"notes": [
+"boundary: refactor|fix (proof-only change; fix-intent is invisible to the env)"
+],
+"group": "merged"
+},
+{
+"pr": "41238",
+"subject": "feat: more API specific to strict group homs",
+"type": "feat",
+"label": "feat",
+"base": "19e77d298b5e",
+"head": "e0394640a9b5",
+"gap": 1,
+"tag": null,
+"meaning": 19,
+"structure": 9,
+"ambiguity": null,
+"vector": {
+"authored_new": 12,
+"statement_changed": 7,
+"proof_changed": 9,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565903
+},
+"dd": {
+"authored_new": [
+"IsOpenMap.isStrictMap",
+"MonoidHom.isStrictMap_iff_isHomeomorph_quotientKerEquivRange",
+"IsHomeomorph.isStrictMap",
+"ContinuousAddEquiv.quotientKerEquivRange",
+"AddMonoidHom.isStrictMap_iff_isEmbedding_kerLift",
+"AddMonoidHom.isStrictMap_iff_isHomeomorph_quotientKerEquivRange",
+"ContinuousMulEquiv.quotientKerEquivRange",
+"MonoidHom.isStrictMap_iff_isEmbedding_kerLift",
+"Homeomorph.comp_isStrictMap_iff",
+"IsClosedMap.isStrictMap",
+"Homeomorph.isStrictMap_comp_iff",
+"Homeomorph.quotientKerEquivRange"
+],
+"statement_changed": [
+"MonoidHom.isStrictMap_iff_isOpenQuotientMap_rangeRestrict",
+"AddMonoidHom.isStrictMap_prodMap_iff",
+"AddMonoidHom.isStrictMap_iff_isOpenQuotientMap_rangeRestrict",
+"MonoidHom.isStrictMap_prodMap",
+"Topology.Homeomorph.quotientKerEquivRange",
+"AddMonoidHom.isStrictMap_prodMap",
+"MonoidHom.isStrictMap_prodMap_iff"
+],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 15,
+"closure": 3,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "41511",
+"subject": "feat: variations of Submodule.disjoint_map with weaker hypotheses",
+"type": "feat",
+"label": "feat",
+"base": "e0394640a9b5",
+"head": "0c00cfd56dfe",
+"gap": 1,
+"tag": null,
+"meaning": 2,
+"structure": 302,
+"ambiguity": null,
+"vector": {
+"authored_new": 2,
+"statement_changed": 0,
+"proof_changed": 302,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565582
+},
+"dd": {
+"authored_new": [
+"Submodule.disjoint_map_of_ker_le_left",
+"Submodule.disjoint_map_of_ker_le_right"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 64,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "40092",
+"subject": "feat(Topology/Connected): path-connectedness of products and pi types",
+"type": "feat",
+"label": "feat",
+"base": "0c00cfd56dfe",
+"head": "61df950f3fe7",
+"gap": 1,
+"tag": null,
+"meaning": 6,
+"structure": 0,
+"ambiguity": null,
+"vector": {
+"authored_new": 6,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565950
+},
+"dd": {
+"authored_new": [
+"IsPathConnected.prod",
+"Prod.instPathConnectedSpace",
+"JoinedIn.prod",
+"Pi.instPathConnectedSpace",
+"IsPathConnected.pi",
+"JoinedIn.pi"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 4,
+"closure": 0,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "41360",
+"subject": "feat(Topology/Order/IntermediateValue): add fixed point theorem",
+"type": "feat",
+"label": "feat",
+"base": "61df950f3fe7",
+"head": "4de1b93c2153",
+"gap": 1,
+"tag": null,
+"meaning": 3,
+"structure": 0,
+"ambiguity": null,
+"vector": {
+"authored_new": 3,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565960
+},
+"dd": {
+"authored_new": [
+"exists_mem_uIcc_isFixedPt_of_surjOn",
+"exists_mem_uIcc_isFixedPt_of_mapsTo",
+"exists_mem_Icc_isFixedPt_of_surjOn"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 4,
+"closure": 0,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "41569",
+"subject": "chore(Topology/DiscreteSubset): fix typo eventualy -\u003e eventually in lemma name",
+"type": "chore",
+"label": "refactor",
+"base": "4de1b93c2153",
+"head": "c368140668f5",
+"gap": 2,
+"tag": null,
+"meaning": 0,
+"structure": 1,
+"ambiguity": "chore|refactor (pure rename)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 1,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565963
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [
+[
+"Disjoint.eventualy_nhdsWithin_specializes",
+"Disjoint.eventually_nhdsWithin_specializes",
+"exact"
+]
+],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 3,
+"notes": [
+"boundary: chore|refactor (pure rename)"
+],
+"group": "merged"
+},
+{
+"pr": "40453",
+"subject": "feat(MeasureTheory/Function/EssSup): add iSup_le_essSup, add essSup_le_iSup",
+"type": "feat",
+"label": "feat",
+"base": "c368140668f5",
+"head": "052559c5c957",
+"gap": 1,
+"tag": null,
+"meaning": 2,
+"structure": 0,
+"ambiguity": null,
+"vector": {
+"authored_new": 2,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565967
+},
+"dd": {
+"authored_new": [
+"essSup_le_iSup",
+"iSup_eq_essSup"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "28865",
+"subject": "feat: a map is smooth iff its post-composition with an immersion is",
+"type": "feat",
+"label": "feat",
+"base": "052559c5c957",
+"head": "5e1cacbae25b",
+"gap": 1,
+"tag": null,
+"meaning": 6,
+"structure": 0,
+"ambiguity": null,
+"vector": {
+"authored_new": 6,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565969
+},
+"dd": {
+"authored_new": [
+"contMDiffAt_iff_of_mem_maximalAtlas",
+"ContMDiff.iff_comp_isImmersion",
+"ContMDiff.iff_comp_isImmersionOfComplement",
+"ContMDiffAt.iff_comp_isImmersionAtOfComplement",
+"ContDiffWithinAt.congr'",
+"ContMDiffAt.iff_comp_isImmersionAt"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 3,
+"closure": 0,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "41533",
+"subject": "refactor: notation for `EventuallyEq` on `Set`",
+"type": "refactor",
+"label": "feat",
+"base": "",
+"head": "e3846aae75c8",
+"gap": null,
+"tag": "unsafe fork-PR",
+"meaning": 1484,
+"structure": 40196,
+"ambiguity": null,
+"vector": {
+"authored_new": 4,
+"statement_changed": 1480,
+"proof_changed": 40196,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 512884
+},
+"dd": {
+"authored_new": [
+"Filter.«term_=ᶠˢ[_]_»",
+"Filter.«term_⊆ᶠ[_]_»",
+"MeasureTheory.«term_⊆ᵐ[_]_»",
+"MeasureTheory.«term_=ᵐˢ[_]_»"
+],
+"statement_changed": [
+"Finset.eventuallyEq_iUnion",
+"MeasureTheory.IsAddFundamentalDomain.integral_eq_tsum''",
+"MeasureTheory.sum_measure_le_measure_univ",
+"MeasureTheory.IsFundamentalDomain.lintegral_eq_tsum''",
+"hasGradientWithinAt_congr_set'",
+"setOf_riemannianEDist_lt_subset_nhds",
+"ProbabilityTheory.iCondIndepFun.indepFun_sub_sub",
+"MeasureTheory.measure_congr",
+"MeasureTheory.ae_iff_measure_eq",
+"MeasureTheory.laverage_union_mem_openSegment",
+"MeasureTheory.Measure.comap_comap",
+"MeasureTheory.union_ae_eq_univ_of_ae_eq_univ_left",
+"ProbabilityTheory.iCondIndep_iff",
+"PreErgodic.ae_empty_or_univ",
+"UpperHalfPlane.instSMulInvariantMeasureGeneralLinearGroupFinOfNatNatRealVolume",
+"MeasureTheory.measureReal_restrict_apply₀'",
+"Filter.EventuallyEq.iInter",
+"BoxIntegral.unitPartition.setFinite_index",
+"MeasureTheory.Conservative.ae_mem_imp_frequently_image_mem",
+"MeasureTheory.NullMeasurableSet.prod",
+"hasFDerivWithinAt_congr_set",
+"ProbabilityTheory.compProd_map_condDistrib",
+"BaireMeasurableSet.compl",
+"MeasureTheory.IsAddFundamentalDomain.setIntegral_eq",
+"ProbabilityTheory.condExp_ae_eq_trim_integral_condExpKernel",
+"MeasureTheory.Measure.OuterRegular.comap'",
+"MeasureTheory.Conservative.exists_mem_iterate_mem",
+"volume_image_subtype_coe",
+"nullMeasurableSet_Ioi",
+"MeasureTheory.AEStronglyMeasurable.nullMeasurableSet_le",
+"MeasureTheory.tendsto_measure_biUnion_Ici_zero_of_pairwise_disjoint",
+"MeasureTheory.measure_diff_lt_of_lt_add",
+"MeasureTheory.nullMeasurable_iff_eventuallyMeasurable",
+"MeasureTheory.locallyIntegrable_comap",
+"ProbabilityTheory.iCondIndepSet",
+"Filter.EventuallyEq.mem_iff",
+"ProbabilityTheory.iCondIndep.congr_simp",
+"MeasureTheory.measureReal_union_add_inter₀",
+"MeasureTheory.ae_restrict_mem₀",
+"MeasureTheory.QuotientMeasureEqMeasurePreimage.sigmaFiniteQuotient",
+"unitInterval.volume_Ico",
+"eventuallyMeasurableSet_of_mem_filter",
+"Ergodic.ae_empty_or_univ_of_ae_le_preimage",
+"ProbabilityTheory.condDistrib_ae_eq_condExp",
+"aeSeqSet",
+"MeasureTheory.Measure.nullMeasurableSet_prod",
+"MeasureTheory.IsFundamentalDomain.smul_of_comm",
+"ProbabilityTheory.CondIndepSets.inter",
+"MeasureTheory.Measure.IsOpenPosMeasure.comap",
+"MeasureTheory.Measure.pi_Ico_ae_eq_pi_Icc"
+],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 1430,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 15,
+"closure": 11848,
+"notes": [],
+"group": "merged"
+},
+{
+"pr": "41653",
+"group": "open",
+"tag": "Hagb",
+"subject": "fix(Data/Finsupp/MonomialOrder): add the missing namespace for deprecated n",
+"type": "fix",
+"label": "refactor",
+"base": "81a5d257c8e4",
+"head": "59b365dc6c64",
+"gap": 1,
+"meaning": 0,
+"structure": 3,
+"ambiguity": "chore|refactor (pure rename)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 3,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 566231
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [
+[
+"acm",
+"MonomialOrder.acm",
+"exact"
+],
+[
+"lo",
+"MonomialOrder.lo",
+"exact"
+],
+[
+"wf",
+"MonomialOrder.wf",
+"exact"
+]
+],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|refactor (pure rename)"
+]
+},
+{
+"pr": "41678",
+"group": "open",
+"tag": "JX-Mo",
+"subject": "refactor(RepresentationTheory): record the concrete binary biproduct",
+"type": "refactor",
+"label": "feat",
+"base": "b883e5758cef",
+"head": "3c994f48f6f5",
+"gap": 1,
+"meaning": 3,
+"structure": 1,
+"ambiguity": null,
+"vector": {
+"authored_new": 3,
+"statement_changed": 0,
+"proof_changed": 1,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 566202
+},
+"dd": {
+"authored_new": [
+"Rep.binaryBicone",
+"Rep.prodIsoProduct",
+"Rep.binaryBiconeIsBilimit"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 6,
+"closure": 0,
+"notes": []
+},
+{
+"pr": "41701",
+"group": "open",
+"tag": "kbuzzard",
+"subject": "perf: golf Ideal.powQuotSuccInclusion_injective",
+"type": "perf",
+"label": "refactor",
+"base": "2800ac2bd3c2",
+"head": "9807bafb435e",
+"gap": 1,
+"meaning": 0,
+"structure": 12,
+"ambiguity": "refactor|fix (proof-only change; fix-intent is invisible to the env)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 12,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565986
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 1,
+"closure": 0,
+"notes": [
+"boundary: refactor|fix (proof-only change; fix-intent is invisible to the env)"
+]
+},
+{
+"pr": "41704",
+"group": "open",
+"tag": "plp127",
+"subject": "perf(FieldTheory/CardinalEmb): golf `succEquiv_coherence`",
+"type": "perf",
+"label": "refactor",
+"base": "a08ff0d0f4a0",
+"head": "061f23683f2c",
+"gap": 1,
+"meaning": 0,
+"structure": 9,
+"ambiguity": "refactor|fix (proof-only change; fix-intent is invisible to the env)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 9,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 565904
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 7,
+"notes": [
+"boundary: refactor|fix (proof-only change; fix-intent is invisible to the env)"
+]
+},
+{
+"pr": "41707",
+"group": "open",
+"tag": "marcelolynch",
+"subject": "fix(cache): carry decompression pipeline state across download rounds",
+"type": "fix",
+"label": "chore",
+"base": "12b4b4adf73c",
+"head": "e254e31d99a7",
+"gap": 1,
+"meaning": 0,
+"structure": 0,
+"ambiguity": "chore|style (no env delta; distinguish via the syntactic layer)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 564566
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|style (no env delta; distinguish via the syntactic layer)"
+]
+},
+{
+"pr": "41736",
+"group": "open",
+"tag": "pechersky",
+"subject": "feat: generalize SMul instances from DistribMulAction to DistribSMul",
+"type": "feat",
+"label": "feat",
+"base": "1f165a51dee3",
+"head": "d90b071afba8",
+"gap": 1,
+"meaning": 5417,
+"structure": 6105,
+"ambiguity": null,
+"vector": {
+"authored_new": 2,
+"statement_changed": 5415,
+"proof_changed": 6105,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 551393
+},
+"dd": {
+"authored_new": [
+"ContinuousLinearMap.distribSMul",
+"ContinuousMultilinearMap.instNormSMulClass"
+],
+"statement_changed": [
+"support_iteratedFDeriv_subset",
+"MDifferentiableAt.coordChangeL",
+"ContDiffAt.smul",
+"Diffeomorph.sumCongr_coe",
+"SmoothBumpCovering.IsSubordinate.toSmoothPartitionOfUnity",
+"smoothSheaf.obj_eq",
+"VectorField.eventuallyEq_mpullback_mpullbackWithin_extChartAt",
+"LinearMap.support_singularValues",
+"mdifferentiableOn_atlas_symm",
+"ContDiffOn.continuousOn_deriv_of_isOpen",
+"ContinuousMultilinearMap.flipMultilinear_flipLinear",
+"HasStrictFDerivAt.clm_comp",
+"Distribution.lineDerivOp_eq_lineDerivCLM",
+"ContinuousAlternatingMap.curryLeft_add",
+"ContDiffMapSupportedIn.fderivLM_apply_of_gt",
+"SchwartzMap.smulLeftCLM_compL_smulLeftCLM",
+"ContinuousMultilinearMap.opNNNorm_prod",
+"contDiffOn_union_iff_of_isOpen",
+"ContDiffAt.contDiffAt_implicitFunction",
+"ContMDiff.iff_comp_isImmersionOfComplement",
+"Diffeomorph.contMDiffWithinAt_diffeomorph_comp_iff",
+"ContDiffBump.instCoeFunForallReal",
+"iteratedDeriv_scomp_two",
+"FreeLieAlgebra.lift_of_apply",
+"ContDiffWithinAt.norm",
+"ContinuousLinearMap.norm_iteratedFDeriv_le_of_bilinear_of_le_one",
+"Unitization.convexOn_of_convexOn_inr_comp",
+"Diffeomorph.symm_toHomeomorph",
+"SchwartzMap.isBigO_cocompact_zpow_neg_nat",
+"ContDiff.smul",
+"Diffeology.isPlot_iff_dSmooth",
+"isSymmSndFDerivWithinAt_iff_iteratedFDerivWithin",
+"ContMDiffWithinAt.congr_set",
+"ContDiffMapSupportedIn.contDiff",
+"ContDiffMapSupportedIn.integralAgainstBilinLM",
+"FormalMultilinearSeries.nnnorm_changeOriginSeriesTerm_apply_le",
+"TestFunctionClass.noConfusionType",
+"OpenPartialHomeomorph.contDiffOn_restrContDiff_source",
+"Manifold.IsImmersionAtOfComplement.domChart",
+"ContinuousMultilinearMap.curryFinFinset_symm_apply_piecewise_const",
+"R_mul",
+"Manifold.LiftSourceTargetPropertyAt",
+"smoothSheafCommRing.isUnit_stalk_iff",
+"MDifferentiableAt.coordChange",
+"Function.hasTemperateGrowth_iff_isBigO",
+"SchwartzMap.norm_toLp'",
+"Diffeology.isPlot_id'",
+"TemperedDistribution.lineDerivOpCLM_eq",
+"Manifold.IsImmersionAt.continuousOn",
+"ODE.contDiffOn_nat_picard_Icc"
+],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 5365,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 9,
+"closure": 3394,
+"notes": []
+},
+{
+"pr": "41742",
+"group": "open",
+"tag": "giuseppesorge",
+"subject": "feat(Data/ZMod): add `Unique (ZMod 2)ˣ` instance",
+"type": "feat",
+"label": "feat",
+"base": "4a73a604a632",
+"head": "03890c35403e",
+"gap": 1,
+"meaning": 1,
+"structure": 4,
+"ambiguity": null,
+"vector": {
+"authored_new": 1,
+"statement_changed": 0,
+"proof_changed": 4,
+"renamed": 0,
+"moved": 0,
+"removed": 1,
+"repr_changed": 0,
+"unchanged": 566349
+},
+"dd": {
+"authored_new": [
+"ZMod.instUniqueUnitsOfNatNat"
+],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [
+"ZMod.instSubsingletonUnits"
+],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 1,
+"closure": 0,
+"notes": []
+},
+{
+"pr": "41750",
+"group": "open",
+"tag": "joelriou",
+"subject": "feat(CategoryTheory/MorphismProperty): trivial bundles",
+"type": "feat",
+"label": "feat",
+"base": "14c4b77b0c8c",
+"head": "78cb073b61a0",
+"gap": 1,
+"meaning": 2549,
+"structure": 8510,
+"ambiguity": null,
+"vector": {
+"authored_new": 31,
+"statement_changed": 2518,
+"proof_changed": 8509,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 1,
+"unchanged": 549554
+},
+"dd": {
+"authored_new": [
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.map",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.ofIsTerminal_r",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.ofIsTerminal",
+"CategoryTheory.MorphismProperty.trivialBundles",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.isPullback_of_isTerminal",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.ext",
+"CategoryTheory.MorphismProperty.instIsStableUnderBaseChangeTrivialBundles",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.isoOfIsTerminal",
+"CategoryTheory.MorphismProperty.mem_trivialBundles_iff",
+"CategoryTheory.MorphismProperty.instIsStableUnderBaseChangeTrivialBundlesWithFiber",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.chgFiber_r",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.exists_iso",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.mk.inj",
+"CategoryTheory.MorphismProperty.instIsStableUnderCobaseChangeISup",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.mk.sizeOf_spec",
+"CategoryTheory.Limits.BinaryFan.IsLimit.exists_lift",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.ext_iff",
+"CategoryTheory.MorphismProperty.instIsStableUnderBaseChangeISup",
+"CategoryTheory.MorphismProperty.trivialBundles.of_isPullback_of_fac",
+"CategoryTheory.Limits.BinaryCofan.IsColimit.exists_desc",
+"CategoryTheory.MorphismProperty.trivialBundlesWithFiber",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.pullback",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.chgFiber",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.isoOfIsTerminal_hom",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.isPullback",
+"CategoryTheory.MorphismProperty.instIsStableUnderBaseChangeTrivialBundlesWithFiber_1",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.map_r",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.ofIso_r",
+"CategoryTheory.MorphismProperty.trivialBundlesWithFiber_le_trivialBundles",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.pullback_r",
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber.ofIso"
+],
+"statement_changed": [
+"SSet.hoFunctor.unitHomEquiv_eq",
+"CategoryTheory.AddGrp.leftUnitor_hom_hom_hom",
+"SSet.stdSimplex.ι₁_whiskerLeft_toSSetObjI_μ",
+"CategoryTheory.AddGrpObj.tensorObj.neg_def",
+"CategoryTheory.Limits.BinaryBicone.isBilimitOfCokernelFst",
+"CategoryTheory.AddGrp.forget₂AddMon_comp_forget",
+"CategoryTheory.CartesianCopyDiscard.ofCartesianMonoidalCategory",
+"CategoryTheory.Over.monObjMkPullbackSnd_mul",
+"CategoryTheory.associator_inv_apply",
+"SSet.prodStdSimplex.pairingCore.IsType₂.simplex_snd_apply",
+"CategoryTheory.Limits.Concrete.prodEquiv_symm_apply_fst",
+"CategoryTheory.Equivalence.mapCommGrp_inverse",
+"CategoryTheory.GrpObj.left_inv_assoc",
+"AlgebraicGeometry.quasiSeparatedSpace_iff_quasiCompact_prod_lift",
+"CategoryTheory.CommRingObjCat.forget_map",
+"CategoryTheory.Over.μ_pullback_left_fst_fst'",
+"CategoryTheory.Grp.braiding_inv_hom_hom",
+"CategoryTheory.AddGrpObj",
+"CategoryTheory.isVanKampenColimit_extendCofan",
+"CategoryTheory.SimplicialThickening.functor_id",
+"CategoryTheory.GrpObj.mul_inv",
+"CategoryTheory.yonedaAddGrp_naturality_assoc",
+"CategoryTheory.shrinkYonedaMon_obj",
+"CategoryTheory.CommGrp.mkIso'_hom_hom_hom_hom",
+"CategoryTheory.AddGrpObj.lift_comp_neg_left",
+"AddCommGrpCat.instBraidedForgetAddMonoidHomCarrier",
+"Rep.barResolution.extIso",
+"CategoryTheory.Over.whiskerRight_left_snd",
+"CategoryTheory.Functor.mapAddGrp_obj_addGrp_neg",
+"Representation.LinearizeMonoidal.assoc_comp_δ",
+"CategoryTheory.IsMonHom.monoidHom_apply",
+"SSet.Homotopy.toSimplicialObjectHomotopy",
+"PresheafOfModules.ModuleColimit.homEquiv_app_apply",
+"CategoryTheory.Limits.binaryCofanZeroRightIsColimit",
+"AddCommGrpCat.leftExactFunctorForgetEquivalence.inverseAux.congr_simp",
+"CategoryTheory.Limits.pushoutCoconeEquivBinaryCofan_functor_map_hom",
+"CategoryTheory.AddGrp.hom_add",
+"CategoryTheory.Limits.BinaryFan.isLimitCompRightIso",
+"CategoryTheory.Functor.OplaxMonoidal.lift_δ",
+"CategoryTheory.Functor.mapAddGrpCompIso",
+"CategoryTheory.CommGrp.uniqueHomFromTrivial",
+"SSet.ι₁_app_fst",
+"CategoryTheory.Limits.BinaryFan.map_fst",
+"CategoryTheory.Over.prodLeftIsoPullback_hom_snd",
+"CategoryTheory.yonedaRingObj",
+"CategoryTheory.CommGrpObj.ofRepresentableBy",
+"SSet.Subcomplex.unionProd.symmIso",
+"CategoryTheory.AddGrpObj.lift_neg_right_eq",
+"CategoryTheory.Limits.BinaryFan.IsLimit.lift'_coe",
+"CategoryTheory.CartesianMonoidalCategory.ofChosenFiniteProducts.leftUnitor_naturality"
+],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": [
+"CategoryTheory.MorphismProperty.TrivialBundleWithFiber"
+]
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 2468,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 30,
+"closure": 5735,
+"notes": [
+"representation change on ['CategoryTheory.MorphismProperty.TrivialBundleWithFiber'] (+independent authored API) → follow-your-nose closure"
+]
+},
+{
+"pr": "41757",
+"group": "open",
+"tag": "wwylele",
+"subject": "doc: add theorem 8 (straightedge-and-compass construction) to 100.yaml",
+"type": "doc",
+"label": "chore",
+"base": "f98b1aa39a57",
+"head": "8c70e8e5bde8",
+"gap": 1,
+"meaning": 0,
+"structure": 0,
+"ambiguity": "chore|style (no env delta; distinguish via the syntactic layer)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 566408
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 0,
+"notes": [
+"boundary: chore|style (no env delta; distinguish via the syntactic layer)"
+]
+},
+{
+"pr": "41759",
+"group": "open",
+"tag": "JovanGerb",
+"subject": "chore: deprecate `haveI'` and `letI'`",
+"type": "chore",
+"label": "fix",
+"base": "f98b1aa39a57",
+"head": "3baea48da9b5",
+"gap": 1,
+"meaning": 135,
+"structure": 0,
+"ambiguity": "fix|feat (statement change; generalisation vs correction is intent)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 135,
+"proof_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 566208
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [
+"Mathlib.Meta.Positivity.evalIntCast",
+"Mathlib.Meta.Positivity.positivity",
+"Mathlib.Meta.Positivity.evalInv",
+"Tactic.NormNum.evalNatGCD",
+"Mathlib.Tactic.Ring.proveLE",
+"Mathlib.Meta.Positivity.evalMersenne",
+"Tactic.NormNum.evalNatLCM",
+"Mathlib.Meta.Positivity.evalNatAbs",
+"Mathlib.Meta.Positivity.evalNatCast",
+"Mathlib.Meta.NormNum.evalNatCast",
+"Mathlib.Meta.Positivity.evalMax",
+"Mathlib.Meta.Positivity.evalZPow",
+"Mathlib.Tactic.Ring.evalLE",
+"Mathlib.Meta.Positivity.evalENatCeil",
+"Mathlib.Meta.Positivity.normNumPositivity",
+"Mathlib.Meta.Positivity.evalNatTotient",
+"Mathlib.Meta.Positivity.evalIntGCD",
+"Mathlib.Meta.NormNum.evalMul",
+"Tactic.NormNum.evalJacobiSym",
+"Mathlib.Meta.Positivity.evalERealDiv",
+"Mathlib.Meta.Positivity.evalNatCeil",
+"Mathlib.Tactic.Ring.proveLT",
+"Mathlib.Meta.Positivity.evalRealSinArctan",
+"Mathlib.Tactic.Ring.RingCompute.pow",
+"Mathlib.Meta.NormNum.evalOrdinalMul",
+"Mathlib.Meta.NormNum.evalIntOfNat",
+"Mathlib.Meta.NormNum.evalOfScientific",
+"Mathlib.Meta.NormNum.evalLT",
+"Mathlib.Meta.Positivity.evalMul",
+"Mathlib.Meta.Positivity.proveNonneg",
+"Mathlib.Meta.NormNum.Result.inv",
+"Mathlib.Tactic.LinearCombination.rescale",
+"Mathlib.Meta.Positivity.evalAlgebraMap",
+"Mathlib.Meta.NormNum.evalOrdinalNPow",
+"Mathlib.Tactic.LinearCombination.elabLinearCombination",
+"Mathlib.Meta.NormNum.evalIntCast",
+"Mathlib.Meta.Positivity.evalRealArctan",
+"Mathlib.Tactic.Ring.evalLT",
+"Mathlib.Meta.Positivity.evalNatLCM",
+"Mathlib.Meta.Positivity.evalIte",
+"Mathlib.Meta.NormNum.evalIntNatAbs",
+"Mathlib.Meta.Positivity.evalIntFloor",
+"Mathlib.Meta.NormNum.evalOrdinalOPow",
+"Mathlib.Meta.NormNum.evalLE",
+"Mathlib.Meta.Positivity.evalNatSqrt",
+"Mathlib.Meta.Positivity.evalSqrt",
+"Mathlib.Meta.Positivity.evalDiv",
+"Mathlib.Meta.NormNum.evalOrdinalDiv",
+"Tactic.NormNum.evalIntGCD",
+"Mathlib.Meta.Positivity.evalRatCast"
+],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 85,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 87,
+"closure": 65,
+"notes": [
+"boundary: fix|feat (statement change; generalisation vs correction is intent)"
+]
+},
+{
+"pr": "41762",
+"group": "open",
+"tag": "felixpernegger",
+"subject": "chore: replace terminal `convert` with `exact`",
+"type": "chore",
+"label": "refactor",
+"base": "f98b1aa39a57",
+"head": "7296a719a9ff",
+"gap": 1,
+"meaning": 0,
+"structure": 37314,
+"ambiguity": "refactor|fix (proof-only change; fix-intent is invisible to the env)",
+"vector": {
+"authored_new": 0,
+"statement_changed": 0,
+"proof_changed": 37314,
+"renamed": 0,
+"moved": 0,
+"removed": 0,
+"repr_changed": 0,
+"unchanged": 516753
+},
+"dd": {
+"authored_new": [],
+"statement_changed": [],
+"renamed": [],
+"moved": [],
+"removed": [],
+"representation_changed": []
+},
+"more": {
+"authored_new": 0,
+"statement_changed": 0,
+"renamed": 0,
+"moved": 0,
+"removed": 0
+},
+"gen": 0,
+"closure": 12341,
+"notes": [
+"boundary: refactor|fix (proof-only change; fix-intent is invisible to the env)"
+]
+}
+]
+}</script>
+<script>
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const REPO = "https://github.com/leanprover-community/mathlib4";
+const COORDS = [
+  ["authored_new","c-new","new authored declarations"],
+  ["statement_changed","c-stmt","proposition / type changed"],
+  ["proof_changed","c-proof","only the proof term changed"],
+  ["renamed","c-ren","same decl, new name (hash-matched)"],
+  ["moved","c-mov","relocated module, meaning intact"],
+  ["removed","c-rem","vanished, no hash successor"],
+  ["repr_changed","c-repr","representation / encoding change"],
+];
+const NUMKEYS = COORDS.map(c=>c[0]);
+const LABELS = ["feat","fix","refactor","chore","perf","doc","ci","other"];
+const BIG = new Set(["40732","41528"]); // the two enormous diffs
+
+// ---- legend ----
+document.getElementById("coords").innerHTML = COORDS.map(([k,c,d])=>
+  `<div class="coord"><span class="swatch" style="background:var(--${c})"></span>`+
+  `<code>${k}</code><span>${d}</span></div>`).join("");
+document.getElementById("coords").insertAdjacentHTML("beforeend",
+  `<div class="coord"><span class="swatch" style="background:var(--faint)"></span>`+
+  `<code>unchanged</code><span>identical on both sides</span></div>`);
+
+// ---- meta ----
+const nMerged = DATA.rows.filter(r=>r.group==="merged").length;
+const nOpen = DATA.rows.filter(r=>r.group==="open").length;
+document.getElementById("meta").innerHTML =
+  `<span><b>${nMerged}</b> merged (cached replay)</span>`+
+  `<span><b>${nOpen}</b> open (live vs merge-base)</span>`+
+  `<span><b>generated:</b> ${DATA.generated}</span>`;
+
+// ---- group filter ----
+const state = {filter:new Set(), group:new Set(), sort:"idx", big:true};
+const GROUPS=[["merged",nMerged,"cached master batch-tips"],["open",nOpen,"not-yet-merged PRs, live fork cache"]];
+const gbox=document.getElementById("groups");
+gbox.innerHTML = `<button class="chip" data-g="__allg" aria-pressed="true">both</button>`+
+  GROUPS.map(([g,n,t])=>`<button class="chip" data-g="${g}" aria-pressed="false" title="${t}">${g}<span class="n">${n}</span></button>`).join("");
+gbox.addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  const g=b.dataset.g;
+  if(g==="__allg"){ state.group.clear(); }
+  else { state.group.has(g)?state.group.delete(g):state.group.add(g); }
+  for(const c of gbox.children){
+    const on = c.dataset.g==="__allg" ? state.group.size===0 : state.group.has(c.dataset.g);
+    c.setAttribute("aria-pressed", on?"true":"false");
+  }
+  render();
+});
+const counts = {};
+for(const r of DATA.rows){ counts[r.label]=(counts[r.label]||0)+1; }
+const fbox = document.getElementById("filters");
+fbox.innerHTML = `<button class="chip" data-f="__all" aria-pressed="true">all</button>` +
+  LABELS.filter(l=>counts[l]).map(l=>
+    `<button class="chip" data-f="${l}" aria-pressed="false"><span class="dot" style="background:var(--${l})"></span>${l}<span class="n">${counts[l]}</span></button>`).join("");
+fbox.addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  const f=b.dataset.f;
+  if(f==="__all"){ state.filter.clear(); }
+  else { state.filter.has(f)?state.filter.delete(f):state.filter.add(f); }
+  for(const c of fbox.children){
+    const on = c.dataset.f==="__all" ? state.filter.size===0 : state.filter.has(c.dataset.f);
+    c.setAttribute("aria-pressed", on?"true":"false");
+  }
+  render();
+});
+document.getElementById("showBig").addEventListener("change",e=>{state.big=e.target.checked;render();});
+document.getElementById("sortSel").addEventListener("change",e=>{state.sort=e.target.value;render();});
+
+// ---- table head ----
+const HEAD = [
+  ["pr","PR","l"],["label","classification","l"],["bar","shape","l"],
+  ["authored_new","new"],["statement_changed","stmt"],["proof_changed","proof"],
+  ["renamed","ren"],["moved","mov"],["removed","rem"],["repr_changed","repr"],
+  ["unchanged","unchanged"],["meaning","mΔ"],["structure","sΔ"],
+];
+const TITLES = Object.fromEntries(COORDS.map(([k,c,d])=>[k,`${k} — ${d}`]));
+Object.assign(TITLES,{
+  unchanged:"unchanged — identical on both sides",
+  meaning:"meaning Δ = authored_new + statement_changed",
+  structure:"structure Δ = renamed + moved + proof_changed + repr_changed",
+  pr:"PR number — links to the pull request on GitHub",
+  label:"classification derived from the vector (vs. the PR's title prefix)",
+  bar:"shape — log-scaled composition of the non-zero coordinates",
+});
+document.getElementById("head").innerHTML = HEAD.map(([k,lbl,cls])=>{
+  const sortable = !["pr","label","bar"].includes(k);
+  return `<th class="${cls==='l'?'l':''}" title="${TITLES[k]||k}" ${sortable?`data-sort="${k}"`:""}>${lbl}<span class="ar">▼</span></th>`;
+}).join("");
+document.getElementById("head").addEventListener("click",e=>{
+  const th=e.target.closest("th[data-sort]"); if(!th) return;
+  state.sort=th.dataset.sort; document.getElementById("sortSel").value =
+    ["meaning","structure","authored_new","statement_changed","proof_changed"].includes(state.sort)?state.sort:"idx";
+  render();
+});
+
+const fmt = n => n===0 ? '<span class="z">0</span>' : (n>=1000? '<span class="num-strong">'+n.toLocaleString()+'</span>' : String(n));
+const esc = s => s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+function compBar(r){
+  const parts = COORDS.map(([k,c])=>[c, r.vector[k]||0]).filter(p=>p[1]>0);
+  if(!parts.length) return `<span class="bar empty"></span>`;
+  // log-scale widths so a 3-decl PR and a 40k-proof PR are both legible
+  const w = parts.map(([c,v])=>[c, Math.log10(v+1)]);
+  const tot = w.reduce((a,b)=>a+b[1],0);
+  return `<span class="bar" title="${parts.map(p=>p[1]).join(' / ')}">`+
+    w.map(([c,x])=>`<i style="width:${(100*x/tot).toFixed(1)}%;background:var(--${c})"></i>`).join("")+`</span>`;
+}
+
+function labelCell(r){
+  let h = `<span class="pill lab-${r.label}">${r.label}</span>`;
+  if(r.type!==r.label && r.type!=="other")
+    h += `<span class="diverge">title: ${r.type}</span>`;
+  if(r.tag) h += `<span class="tag">${r.tag}</span>`;
+  return h;
+}
+
+function detailPanel(r){
+  const buckets = [
+    ["authored_new","c-new","authored_new"],
+    ["statement_changed","c-stmt","statement_changed"],
+    ["renamed","c-ren","renamed"],
+    ["moved","c-mov","moved"],
+    ["removed","c-rem","removed"],
+    ["representation_changed","c-repr","repr_changed"],
+  ];
+  let cols="";
+  for(const [key,c,lbl] of buckets){
+    const names = r.dd[key]||[];
+    if(!names.length) continue;
+    const moreKey = key==="representation_changed" ? null : key;
+    const more = moreKey ? (r.more[moreKey]||0) : 0;
+    let items;
+    if(key==="renamed"){
+      items = names.map(t=>`<li class="ren"><b>${esc(t[0])}</b> → <em>${esc(t[1])}</em> <span style="color:var(--faint)">${t[2]||""}</span></li>`).join("");
+    } else {
+      items = names.map(n=>`<li>${esc(n)}</li>`).join("");
+    }
+    cols += `<div class="bucket"><h4><span class="swatch" style="background:var(--${c})"></span>`+
+      `${lbl} <span class="cnt">· ${(r.vector[lbl]||names.length)}</span></h4>`+
+      `<ul class="names">${items}</ul>`+
+      (more>0?`<div class="more">+ ${more} more</div>`:"")+`</div>`;
+  }
+  const extras=[];
+  if(r.gen) extras.push(`<span class="k">generated closure</span> ${r.gen} helpers (kept out of the vector)`);
+  if(r.closure) extras.push(`<span class="k">closure dragged</span> ${r.closure} generated decls followed a rename/move`);
+  let note = extras.length? `<div class="panel-note">${extras.join(" &nbsp;·&nbsp; ")}</div>`:"";
+  for(const n of (r.notes||[])) note += `<div class="panel-note">${esc(n)}</div>`;
+  const shaLink = s => `<a href="${REPO}/commit/${s}" target="_blank" rel="noopener">${s}</a>`;
+  const shas = `<div class="shas">base ${shaLink(r.base)} → head ${shaLink(r.head)}${r.gap&&r.gap>1?`  ·  spans ${r.gap} merges`:""}</div>`;
+  if(!cols) cols = `<div class="empty-detail">No environment delta — every declaration hashed identically on both sides. Nothing to expand.</div>`;
+  return `<div class="panel">${cols}${note}${shas}</div>`;
+}
+
+function render(){
+  let rows = DATA.rows.slice();
+  if(!state.big) rows = rows.filter(r=>!BIG.has(r.pr));
+  if(state.group.size) rows = rows.filter(r=>state.group.has(r.group));
+  if(state.filter.size) rows = rows.filter(r=>state.filter.has(r.label));
+  rows.forEach((r,i)=>r._idx = DATA.rows.indexOf(r));
+  if(state.sort!=="idx") rows.sort((a,b)=>(b.sort===a.sort,0)||((b[state.sort]??b.vector[state.sort]??0)-(a[state.sort]??a.vector[state.sort]??0)));
+  else rows.sort((a,b)=>a._idx-b._idx);
+
+  // header active marker
+  for(const th of document.querySelectorAll("th[data-sort]"))
+    th.toggleAttribute("data-active", th.dataset.sort===state.sort);
+
+  const body=document.getElementById("body");
+  body.innerHTML = rows.map(r=>{
+    if(r.missing){
+      return `<tr class="row is-open-pr" data-pr="${r.pr}"><td class="pr"><a class="prnum" href="${REPO}/pull/${r.pr}" target="_blank" rel="noopener">#${r.pr}</a><span class="grp-badge">open</span></td>`+
+        `<td class="l" colspan="${HEAD.length-1}" style="text-align:left"><span class="miss">no report — endpoint fell back to a compile or failed</span></td></tr>`+
+        `<tr class="detail hidden" data-detail="${r.pr}"><td colspan="${HEAD.length}"></td></tr>`;
+    }
+    const v=r.vector;
+    const numCells = NUMKEYS.map(k=>`<td title="${TITLES[k]}">${fmt(v[k])}</td>`).join("");
+    return `<tr class="row${r.group==='open'?' is-open-pr':''}" data-pr="${r.pr}">`+
+      `<td class="pr"><a class="prnum" href="${REPO}/pull/${r.pr}" target="_blank" rel="noopener">#${r.pr}</a>${r.group==='open'?'<span class="grp-badge">open</span>':''}</td>`+
+      `<td class="l" style="text-align:left">${labelCell(r)}</td>`+
+      `<td class="l" style="text-align:left">${compBar(r)}</td>`+
+      numCells+
+      `<td class="z" title="${TITLES.unchanged}">${v.unchanged.toLocaleString()}</td>`+
+      `<td title="${TITLES.meaning}">${r.meaning>=1000?'<span class="num-strong">'+r.meaning.toLocaleString()+'</span>':(r.meaning||'<span class=z>0</span>')}</td>`+
+      `<td title="${TITLES.structure}">${r.structure>=1000?'<span class="num-strong">'+r.structure.toLocaleString()+'</span>':(r.structure||'<span class=z>0</span>')}</td>`+
+      `</tr>`+
+      `<tr class="detail hidden" data-detail="${r.pr}"><td colspan="${HEAD.length}">${detailPanel(r)}</td></tr>`;
+  }).join("");
+  // subject line as a second row inside PR cell? keep compact: add title under classification via tooltip
+  body.querySelectorAll("tr.row").forEach(tr=>{
+    const r = rows.find(x=>x.pr===tr.dataset.pr);
+    tr.querySelector(".pr").insertAdjacentHTML("beforeend",
+      `<div style="font-family:var(--sans);font-size:11.5px;color:var(--muted);white-space:normal;max-width:230px;margin-top:3px">${esc(r.subject)}</div>`);
+    tr.addEventListener("click",(e)=>{
+      if(e.target.closest("a")) return;   // let PR/commit links through without toggling
+      const d=body.querySelector(`tr.detail[data-detail="${tr.dataset.pr}"]`);
+      const open=!d.classList.contains("hidden");
+      d.classList.toggle("hidden",open);
+      tr.classList.toggle("open",!open);
+    });
+  });
+  document.getElementById("foot").innerHTML =
+    `showing ${rows.length} of ${DATA.rows.length} · click any row to expand its declaration-level diff · `+
+    `hashes omitted (internal engine state); names are the readable payload`;
+}
+render();
+</script>
+</body>
+</html>
