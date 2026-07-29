@@ -10,7 +10,6 @@ Usage:
 """
 import re
 import sys
-import unicodedata
 import yaml
 
 # --- tiny BibTeX parser -----------------------------------------------------
@@ -92,51 +91,19 @@ def parse_fields(s):
     return fields
 
 
-# --- LaTeX -> display text (approximate; math left for MathJax) --------------
-# accent macro -> combining diacritical mark (applied via NFC normalization)
-COMBINING = {
-    "'": '\u0301', '"': '\u0308', '`': '\u0300', '^': '\u0302',
-    '~': '\u0303', '=': '\u0304', '.': '\u0307', 'u': '\u0306',
-    'v': '\u030C', 'c': '\u0327', 'H': '\u030B', 'r': '\u030A',
-}
-# standalone special-character macros
-SPECIALS = {
-    r'\ss': 'ß', r'\o': 'ø', r'\O': 'Ø', r'\l': 'ł', r'\L': 'Ł',
-    r'\aa': 'å', r'\AA': 'Å', r'\ae': 'æ', r'\AE': 'Æ',
-    r'\oe': 'œ', r'\OE': 'Œ',
-}
-# Two forms: braced `\'{e}` (inner spaces allowed) or bare `\'e` / `\`a`.
-# The bare form must NOT swallow trailing spaces (e.g. `Variet\`a quiver`).
-_ACCENT_RE = re.compile(
-    r"\\([\"'`^~=.uvcHr])(?:\{\s*(\\[ij]|[A-Za-z])\s*\}|(\\[ij]|[A-Za-z]))")
-
-
-def _apply_accents(s):
-    def repl(m):
-        acc = m.group(1)
-        base = m.group(2) or m.group(3)
-        base = {r'\i': 'i', r'\j': 'j'}.get(base, base)
-        return unicodedata.normalize('NFC', base + COMBINING[acc])
-    prev = None
-    while prev != s:            # nested/repeated accents
-        prev, s = s, _ACCENT_RE.sub(repl, s)
-    return s
-
-
+# --- LaTeX -> display text ---------------------------------------------------
+# papers.bib stores accents as UTF-8, so all that remains is stripping
+# capitalization-protection braces ({F}ermat) and a couple of escapes, while
+# leaving inline $...$ math untouched for MathJax.
 def delatex(s):
     if not s:
         return s
-    # protect inline math for MathJax
     math = []
     def stash(m):
         math.append(m.group(0))
         return f'\x00{len(math)-1}\x00'
-    s = re.sub(r'\$[^$]*\$', stash, s)
-    s = _apply_accents(s)
-    for k, v in SPECIALS.items():
-        s = re.sub(re.escape(k) + r'(?![A-Za-z])', v, s)
-    s = s.replace(r'\i', 'ı').replace(r'\j', 'ȷ')
-    s = s.replace('{', '').replace('}', '')
+    s = re.sub(r'\$[^$]*\$', stash, s)          # protect math
+    s = s.replace('{', '').replace('}', '')      # drop {F}ermat-style braces
     s = s.replace('\\&', '&').replace('~', ' ')
     s = re.sub(r'\s+', ' ', s).strip()
     s = re.sub('\x00(\\d+)\x00', lambda m: math[int(m.group(1))], s)
