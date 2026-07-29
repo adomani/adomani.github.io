@@ -22,7 +22,7 @@ My PhD supervisor was
 [Johan de Jong](https://www.math.columbia.edu/~dejong/);
 my undergraduate supervisor was
 [Corrado De Concini](https://en.wikipedia.org/wiki/Corrado_de_Concini).
-You can find a copy of my CV [here](pdfs/2026_03_17_CV.pdf).
+You can find a copy of my CV [here](pdfs/CV.pdf).
 
 Between July 2025 and July 2027 I am partially supported by the [AI for Math Fund](https://www.renaissancephilanthropy.org/ai-for-math-fund) award [Bridging proof and computation](https://www.renaissancephilanthropy.org/bridging-proof-and-computation-a-verified-leanmacaulay2-interface).
 
