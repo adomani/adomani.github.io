@@ -3,12 +3,22 @@ Renders one publication record from _data/publications.yml.
 Papers with a `description` become a <details>/<summary> pair (citation shown,
 description hidden until expanded); papers without render as a plain citation.
 The title is wrapped in .pub-title so every title stands out (bold), whether or
-not it links out. Citation and description both go through `markdownify` so
-links, emphasis and the \\(..\\) math convention render consistently.
+not it links out. Each author whose name appears in _data/collaborators.yml is
+linked to their homepage; others render as plain text. An optional
+`citation_note` (e.g. a dedication or thesis credit) is shown after the citation.
+Citation, note and description all go through `markdownify` so links, emphasis
+and the \\(..\\) math convention render consistently.
 Usage: {% include pub_entry.html pub=record %}
 {%- endcomment -%}
 {%- assign r = include.pub -%}
-{%- capture cite -%}<span class="pub-title">{% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}</span>{% if r.authors.size > 0 %}, {{ r.authors | join: ", " }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.{%- endcapture -%}
+{%- capture authorlist -%}
+{%- for a in r.authors -%}
+{%- assign homepage = site.data.collaborators[a] -%}
+{%- if homepage -%}[{{ a }}]({{ homepage }}){%- else -%}{{ a }}{%- endif -%}
+{%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- capture cite -%}<span class="pub-title">{% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}</span>{% if r.authors.size > 0 %}, {{ authorlist }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.{% if r.citation_note %} {{ r.citation_note }}{% endif %}{%- endcapture -%}
 {%- assign citehtml = cite | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
 {%- if r.description -%}
 <details class="pub"><summary>{{ citehtml }}</summary><div class="pub-desc">{{ r.description | markdownify }}</div></details>

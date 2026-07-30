@@ -43,6 +43,8 @@ def render_record(e):
     rec = B.to_record(f)
     if e.get('description'):
         rec['description'] = e['description']
+    if e.get('citation_note'):
+        rec['citation_note'] = e['citation_note']
     return rec
 
 
