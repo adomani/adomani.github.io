@@ -1,0 +1,701 @@
+[
+  {
+    "key": "Macaulean-ICMS2026",
+    "type": "inproceedings",
+    "author": [
+      "Ballard, Matthew",
+      "Leykin, Anton",
+      "Stillman, Michael E.",
+      "Testa, Damiano",
+      "Torrance, Douglas A.",
+      "Yang, Jay"
+    ],
+    "keywords": "accepted",
+    "fields": {
+      "title": "A {M}acaulay2-{L}ean interface for proofs in {L}ean",
+      "booktitle": "International Congress on Mathematical Software (ICMS 2026)",
+      "year": "2026"
+    }
+  },
+  {
+    "key": "2508.21593",
+    "type": "inproceedings",
+    "author": [
+      "Baanen, Anne",
+      "Ballard, Matthew Robert",
+      "Commelin, Johan",
+      "Chen, Bryan Gin-ge",
+      "Rothgang, Michael",
+      "Testa, Damiano"
+    ],
+    "keywords": "accepted",
+    "fields": {
+      "title": "Growing Mathlib: maintenance of a large scale mathematical library",
+      "editor": "de Paiva, Valeria and Koepke, Peter",
+      "booktitle": "Intelligent Computer Mathematics",
+      "year": "2026",
+      "pages": "51--70",
+      "eprint": "arXiv:2508.21593"
+    }
+  },
+  {
+    "key": "ZAG",
+    "type": "article",
+    "author": [
+      "Pacini, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "accepted",
+    "fields": {
+      "title": "Contact in algebraic and tropical geometry",
+      "journal": "ZAG Handbook of Modern Algebraic Geometry",
+      "year": "2025"
+    }
+  },
+  {
+    "key": "MR4767562",
+    "type": "article",
+    "author": [
+      "Blackwell, Douglas",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Factors of {HOMFLY} polynomials",
+      "journal": "Ann. Univ. Ferrara Sez. VII Sci. Mat.",
+      "fjournal": "Annali dell'Universitá{} di Ferrara. Sezione VII. Scienze Matematiche",
+      "volume": "70",
+      "year": "2024",
+      "number": "3",
+      "pages": "1155--1163",
+      "issn": "0430-3202,1827-1510",
+      "mrclass": "57K14 (14E22 14H50 57K10)",
+      "mrnumber": "4767562",
+      "doi": "10.1007/s11565-024-00530-8"
+    }
+  },
+  {
+    "key": "MR4518645",
+    "type": "article",
+    "author": [
+      "Pacini, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Complex and tropical counts via positive characteristic",
+      "journal": "Expo. Math.",
+      "fjournal": "Expositiones Mathematicae",
+      "volume": "40",
+      "year": "2022",
+      "number": "4",
+      "pages": "1096--1115",
+      "issn": "0723-0869,1878-0792",
+      "mrclass": "14T20 (14E22 14G17 14H50 14N10)",
+      "mrnumber": "4518645",
+      "doi": "10.1016/j.exmath.2022.07.003"
+    },
+    "description": "The short version (*curves* are appropriately *general*):\n\n- A plane quartic has \\\\(28\\\\) bitangent lines, *unless* it is tropical or defined over a field of characteristic \\\\(2\\\\), in which case it has \\\\(7\\\\).\n\n- A plane curve of degree \\\\(d\\\\) has \\\\(3 d (d-2)\\\\) inflection lines, *unless* it is tropical or defined over a field of characteristic \\\\(3\\\\), in which case it has \\\\(d(d-2)\\\\).\n\n- A canonical curve of genus \\\\(g\\\\) has \\\\(2^{g-1} (2^g-1)\\\\) theta-hyperplanes, *unless* it is tropical or defined over a field of characteristic \\\\(2\\\\), in which case it has \\\\(2^g-1\\\\).\n\nWe give a framework for analyzing these differences, by reduction to positive characteristic. As a consequence, we obtain divisibility properties for the numbers above:\n\n- clearly, \\\\(4\\\\) divides \\\\(28\\\\);\n- of course, \\\\(3\\\\) divides \\\\(3 d (d-2)\\\\);\n- unsurprisingly, \\\\(2^{g-1}\\\\) divides \\\\(2^{g-1} (2^g-1)\\\\)."
+  },
+  {
+    "key": "MR4088817",
+    "type": "article",
+    "author": [
+      "Pacini, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "On a question of {D}olgachev",
+      "journal": "Math. Res. Lett.",
+      "fjournal": "Mathematical Research Letters",
+      "volume": "27",
+      "year": "2020",
+      "number": "1",
+      "pages": "281--299"
+    },
+    "description": "A classical construction in invariant theory associates to each quartic \\\\( Q \\\\) in \\\\( \\mathbf{P}^2 \\\\), a quartic \\\\( H(Q) \\\\) in the dual projective plane \\\\( (\\mathbf{P}^2)^\\vee \\\\).\nRoughly, the points of \\\\( H(Q) \\\\) correspond to lines intersecting \\\\( Q \\\\) at a configuration of \\\\(4\\\\) points on \\\\( \\mathbf{P}^1 \\\\) with vanishing \\\\( j \\\\)-invariant.\nFix a general quartic \\\\( Q' \\\\) in \\\\( (\\mathbf{P}^2)^\\vee \\\\).\nDolgachev asked how many quartics \\\\( Q \\\\) in \\\\( \\mathbf{P}^2 \\\\) are there with \\\\( H(Q)=Q' \\\\).\nThe answer is \\\\(15\\\\).\nThe argument sheds **no** light on a possible interpretation of the number \\\\(15\\\\).\n(E.g. is \\\\( 15 = 3 \\cdot 5 = 2^4-1 = \\binom{6}{2} = \\cdots \\\\)?)."
+  },
+  {
+    "key": "MR3968785",
+    "type": "article",
+    "author": [
+      "Pacini, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Reconstructing general plane quartics from their inflection lines",
+      "journal": "Trans. Amer. Math. Soc.",
+      "fjournal": "Transactions of the American Mathematical Society",
+      "volume": "372",
+      "year": "2019",
+      "number": "1",
+      "pages": "705--732",
+      "doi": "10.1090/tran/7599"
+    },
+    "description": "We prove that the general plane quartic over a field of characteristic coprime with 6 is uniquely determined by its configuration of inflection lines.\n\nWe use the classical invariants of binary quartic forms, a degeneration argument and an explicit reconstruction!"
+  },
+  {
+    "key": "MR3694974",
+    "type": "article",
+    "author": [
+      "Ciliberto, Ciro",
+      "Knutsen, Andreas Leopold",
+      "Lesieutre, John",
+      "Lozovanu, Victor",
+      "Miranda, Rick",
+      "Mustopa, Yusuf",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "A few questions about curves on surfaces",
+      "journal": "Rend. Circ. Mat. Palermo (2)",
+      "fjournal": "Rendiconti del Circolo Matematico di Palermo. Second Series",
+      "volume": "66",
+      "year": "2017",
+      "number": "2",
+      "pages": "195--204",
+      "doi": "10.1007/s12215-016-0284-4"
+    }
+  },
+  {
+    "key": "MR3454087",
+    "type": "article",
+    "author": [
+      "Bogomolov, Fedor",
+      "Cheltsov, Ivan",
+      "Mangolte, Frédéric",
+      "Shramov, Constantin",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Spitsbergen volume",
+      "journal": "Eur. J. Math.",
+      "fjournal": "European Journal of Mathematics",
+      "volume": "2",
+      "year": "2016",
+      "number": "1",
+      "pages": "1--8",
+      "doi": "10.1007/s40879-015-0088-7"
+    }
+  },
+  {
+    "key": "MR3334893",
+    "type": "article",
+    "author": [
+      "Poonen, Bjorn",
+      "Testa, Damiano",
+      "van Luijk, Ronald"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Computing {N}éron-{S}everi groups and cycle class groups",
+      "journal": "Compos. Math.",
+      "fjournal": "Compositio Mathematica",
+      "volume": "151",
+      "year": "2015",
+      "number": "4",
+      "pages": "713--734",
+      "doi": "10.1112/S0010437X14007878"
+    },
+    "description": "We show that Néron-Severi groups (and more generally cycle class groups) are theoretically computable assuming the Tate conjecture and computability of certain étale cohomology groups."
+  },
+  {
+    "key": "MR3302155",
+    "type": "article",
+    "author": [
+      "Flynn, E. V.",
+      "Testa, D."
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Finite {W}eil restriction of curves",
+      "journal": "Monatsh. Math.",
+      "fjournal": "Monatshefte für Mathematik",
+      "volume": "176",
+      "year": "2015",
+      "number": "2",
+      "pages": "197--218",
+      "doi": "10.1007/s00605-014-0711-6"
+    },
+    "description": "We start with the following question: given a number field \\\\(L\\\\) and a rational function \\\\(F(x)\\\\) with coefficients in \\\\(L\\\\), when are there infinitely many values \\\\(\\alpha\\\\) in \\\\(L\\\\) such that \\\\(F(\\alpha)\\\\) is a rational number?\n\nWe generalize this question to the question of when does a fiber product of curves contain an irreducible component of genus at most one and we settle completely the problem when the curves in the fiber product have genus one."
+  },
+  {
+    "key": "MR3296195",
+    "type": "article",
+    "author": [
+      "Pacini, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Plane quartics with at least 8 hyperinflection points",
+      "journal": "Bull. Braz. Math. Soc. (N.S.)",
+      "fjournal": "Bulletin of the Brazilian Mathematical Society. New Series. Boletim da Sociedade Brasileira de Matemática",
+      "volume": "45",
+      "year": "2014",
+      "number": "4",
+      "pages": "819--836",
+      "doi": "10.1007/s00574-014-0077-3"
+    },
+    "description": "We show that quartics over the complex numbers with at least eight hyperinflection lines are determined by their inflection lines.\n\nThe result uses the classification of quartics with at least eight hyperinflection lines by Vermeulen and exploits the fact that all these quartics have dihedral groups in their automorphism groups.\n\nOur methods apply also in positive characteristic.\n\nAmusingly we find that the three plane quartics over \\\\(\\mathbf{F}_{13}\\\\) with equations\n\n\\\\[\n  x^4 + y^4 + z^4 + 3(x^2 y^2 + x^2 z^2 + y^2 z^2) = 0 \\qquad\n  x^4 + 3y^4 + 9z^4 + 3(9x^2 y^2 + 3x^2 z^2 + y^2 z^2) = 0 \\qquad\n  x^4 + 9y^4 + 3 z^4 + 3(3x^2 y^2 + 9x^2 z^2 + y^2 z^2) = 0\n\\\\]\nshare the same inflection lines!\n\nThe same property holds for the two quartics\n\\\\[\n  x^4 -y^4 -z^4 = 2x^2 y^2 -4xyz^2 \\qquad\n  -(x^4 -y^4 +z^4) = 2x^2 y^2 -4xyz^2\n\\\\]\nand we show that among the Vermeulen's examples, these are essentially the only ones with this property."
+  },
+  {
+    "key": "MR3290950",
+    "type": "article",
+    "author": [
+      "Castryck, Wouter",
+      "Streng, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Curves in characteristic 2 with non-trivial 2-torsion",
+      "journal": "Adv. Math. Commun.",
+      "fjournal": "Advances in Mathematics of Communications",
+      "volume": "8",
+      "year": "2014",
+      "number": "4",
+      "pages": "479--495",
+      "doi": "10.3934/amc.2014.8.479"
+    },
+    "description": "We study combinatorially defined theta-characteristics for curves in characteristic two."
+  },
+  {
+    "key": "MR3278907",
+    "type": "article",
+    "author": [
+      "Artebani, Michela",
+      "Laface, Antonio",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "On {B}üchi's {K}3 surface",
+      "journal": "Math. Z.",
+      "fjournal": "Mathematische Zeitschrift",
+      "volume": "278",
+      "year": "2014",
+      "number": "3-4",
+      "pages": "1113--1131",
+      "doi": "10.1007/s00209-014-1348-9"
+    },
+    "description": "We show that the K3 surface arising from Büchi's problem is the Kummer surface of the Jacobian \\\\(J\\\\) of the genus two curve branched over an arithmetic progression of length 5.\n\nWe then exploit that the abelian surface \\\\(J\\\\) is isogenous to a product of elliptic curves to conclude that the set of rational points on Büchi's K3 surface is Zariski dense.\n\nFinally we give a natural modular interpretation of Büchi's K3 surface as an irreducible component of the moduli space of rank two stable vector bundles on the Büchi K3 surface itself, opening the way for a modular solution to Büchi's problem.\n\nErratum: In Theorem 3.7, the field \\\\(K\\\\) should be assumed infinite."
+  },
+  {
+    "key": "MR3263947",
+    "type": "article",
+    "author": [
+      "Bruin, Nils",
+      "Flynn, E. Victor",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Descent via {$(3,3)$}-isogeny on {J}acobians of genus~2 curves",
+      "journal": "Acta Arith.",
+      "fjournal": "Acta Arithmetica",
+      "volume": "165",
+      "year": "2014",
+      "number": "3",
+      "pages": "201--223",
+      "doi": "10.4064/aa165-3-1"
+    }
+  },
+  {
+    "key": "MR3245139",
+    "type": "article",
+    "author": [
+      "Salgado, Cecília",
+      "Testa, Damiano",
+      "Várilly-Alvarado, Anthony"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "On the unirationality of del {P}ezzo surfaces of degree~2",
+      "journal": "J. Lond. Math. Soc. (2)",
+      "fjournal": "Journal of the London Mathematical Society. Second Series",
+      "volume": "90",
+      "year": "2014",
+      "number": "1",
+      "pages": "121--139",
+      "doi": "10.1112/jlms/jdu014"
+    },
+    "description": "We analyze in detail Manin's unirationality construction for del Pezzo surfaces of degree two with a point, extending his results and clarifying an oversight.\n\nWe also show that del Pezzo surfaces of degree two over a finite field are unirational with at most three possible exceptions:\n\n\\\\[\n  \\begin{array}{lrcl}\n    X_1 / \\mathbf{F}_3: & -w^2 & = & (x^2 + y^2)^2 + y^3z - yz^3, \\\\\\\\\\\\\n    X_2 / \\mathbf{F}_3: & -w^2 & = & x^4 + y^3z - yz^3, \\\\\\\\\\\\\n    X_3 / \\mathbf{F}_9: & \\alpha w^2 & = & x^4 + y^4 + z^4, {\\textrm{where }} \\alpha \\in \\mathbf{F}_9 {\\textrm{ is a non-square}}.\n  \\end{array}\n\\\\]"
+  },
+  {
+    "key": "MR3101251",
+    "type": "article",
+    "author": [
+      "Pacini, Marco",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Recovering plane curves of low degree from their inflection lines and inflection points",
+      "journal": "Israel J. Math.",
+      "fjournal": "Israel Journal of Mathematics",
+      "volume": "195",
+      "year": "2013",
+      "number": "1",
+      "pages": "283--316",
+      "doi": "10.1007/s11856-012-0129-6"
+    },
+    "description": "We start investigating to what extent plane curves can be reconstructed from the knwoledge of their inflection lines.\n\nFor plane cubics, we prove that the reconstruction is always possible.\n\nFor *general* plane quartics, we show that the inflection lines and one inflection point are enough to reconstruct the curve."
+  },
+  {
+    "key": "MR3077175",
+    "type": "incollection",
+    "author": [
+      "Laface, Antonio",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Nef and semiample divisors on rational surfaces",
+      "booktitle": "Torsors, étale homotopy and applications to rational points",
+      "series": "London Math. Soc. Lecture Note Ser.",
+      "volume": "405",
+      "pages": "429--446",
+      "publisher": "Cambridge Univ. Press, Cambridge",
+      "year": "2013"
+    },
+    "description": "We study the Cox rings of rational surfaces for which the anti-canonical divisor is (essentially) effective, finding conditions under which the Cox ring is finitely generated.\n\nWe show that there is a curve of arithmetic genus one and a finitely generated subgroup of its Picard group that is finite if and only if every nef divisor on the surface is semi-ample.\n\nThus we are able reduce the question of finite generation of Cox rings to the question of whether the semigroup of effective curves on the surface is finitely generated.\n\nWe conclude with an example of a Mori dream rational surface with vanishing anticanonical Iitaka dimension."
+  },
+  {
+    "key": "MR2923472",
+    "type": "article",
+    "author": [
+      "Marietti, Mario",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Conical and spherical graphs",
+      "journal": "European J. Combin.",
+      "fjournal": "European Journal of Combinatorics",
+      "volume": "33",
+      "year": "2012",
+      "number": "7",
+      "pages": "1606--1618",
+      "doi": "10.1016/j.ejc.2012.03.021"
+    },
+    "description": "We introduce the notions of spherical and conical graphs, establishing links with (independent) dominating sets,\nedge covers and the homotopy type of associated simplicial complexes.\nWe also prove a formula to compute the Euler characteristic of a simplicial set."
+  },
+  {
+    "key": "MR2880245",
+    "type": "article",
+    "author": [
+      "Flynn, E. Victor",
+      "Testa, Damiano",
+      "van Luijk, Ronald"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Two-coverings of {J}acobians of curves of genus 2",
+      "journal": "Proc. Lond. Math. Soc. (3)",
+      "fjournal": "Proceedings of the London Mathematical Society. Third Series",
+      "volume": "104",
+      "year": "2012",
+      "number": "2",
+      "pages": "387--429",
+      "doi": "10.1112/plms/pdr012"
+    },
+    "description": "We construct explicit models for the two-coverings of Jacobians of genus two curves and also for some of their twists.\nAn important role is played by the analysis of the action of the two-torsion subgroup\non the equations of a natural embedding of the Jacobian of a curve of genus two in projective space,\nas well as the induced action on the Kummer variety."
+  },
+  {
+    "key": "MR2824848",
+    "type": "article",
+    "author": [
+      "Testa, Damiano",
+      "Várilly-Alvarado, Anthony",
+      "Velasco, Mauricio"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Big rational surfaces",
+      "journal": "Math. Ann.",
+      "fjournal": "Mathematische Annalen",
+      "volume": "351",
+      "year": "2011",
+      "number": "1",
+      "pages": "95--107",
+      "doi": "10.1007/s00208-010-0590-7"
+    },
+    "description": "We present a unified approach to proving that smooth projective rational surfaces with\nbig anti-canonical divisor have finitely generated Cox ring.\nAlmost every previously known example was treated by ad hoc arguments on a case-by-case basis and\nis covered by our general result.\nVery few known examples of rational surfaces for which this statement was previously known are\nnot covered by our result.\nWe also provide many new examples.\nAn explicit presentation in terms of generators and relations of the Cox ring of a variety is the main step\nin the explicit construction of a universal torsor on the variety itself."
+  },
+  {
+    "key": "MR2718825",
+    "type": "article",
+    "author": [
+      "Heath-Brown, Roger",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Counting rational points on cubic curves",
+      "journal": "Sci. China Math.",
+      "fjournal": "Science China. Mathematics",
+      "volume": "53",
+      "year": "2010",
+      "number": "9",
+      "pages": "2259--2268",
+      "doi": "10.1007/s11425-010-4037-0"
+    },
+    "description": "By a combination of the determinant method and \\\\(n\\\\)-descent on curves of genus one,\nwe find bounds for the number of rational points on a smooth plane cubic curve that are uniform in\nthe coefficients and depend explicitly on the rank of the Mordell-Weil group of the curve.\nThe argument exploits an interplay between analytic techniques to bound the number of solutions to a cubic equation\nand a geometric interpretation of an evaluation map on an abelian surface leading to the required inequalities."
+  },
+  {
+    "key": "MR2579393",
+    "type": "article",
+    "author": [
+      "Testa, Damiano",
+      "Várilly-Alvarado, Anthony",
+      "Velasco, Mauricio"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Cox rings of degree one del {P}ezzo surfaces",
+      "journal": "Algebra Number Theory",
+      "fjournal": "Algebra \\& Number Theory",
+      "volume": "3",
+      "year": "2009",
+      "number": "7",
+      "pages": "729--761",
+      "doi": "10.2140/ant.2009.3.729"
+    },
+    "description": "We settle a conjecture of Batyrev and Popov on the ideal of relations of the Cox ring of a del Pezzo surface\nin the last remaining case of del Pezzo surfaces of degree one.\nUsing techniques from commutative algebra, we transform the problem to a geometric question about\nthe vanishing of certain cohomology groups of line bundles on the surface.\nWe then analyze geometrically the various line bundles to reduce further the problem to a combinatorial\nquestion on configurations of exceptional curves on the surface.\nWe finally solve the combinatorial question by explicit geometric arguments."
+  },
+  {
+    "key": "MR2448278",
+    "type": "article",
+    "author": [
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "The irreducibility of the spaces of rational curves on del {P}ezzo surfaces",
+      "journal": "J. Algebraic Geom.",
+      "fjournal": "Journal of Algebraic Geometry",
+      "volume": "18",
+      "year": "2009",
+      "number": "1",
+      "pages": "37--61",
+      "doi": "10.1090/S1056-3911-08-00484-0"
+    },
+    "description": "The main result is the proof that the spaces of rational curves on del Pezzo surfaces representing\na fixed divisor class are either empty or irreducible, with one exception.\nThe argument involves a detailed analysis of the possible singularities of (a partial resolution of)\nthe moduli spaces of rational curves on surfaces and combines this with a degeneration argument to reduce\nall the rational curves in a fixed divisor class to a standard form.\nThe relevant moduli spaces are sufficiently smooth that we can show that the various degenerations always\ntake place within the smooth locus, proving the required irreducibility.\n(The longer, actual PhD thesis is available [here](https://arxiv.org/abs/math/0609355).)"
+  },
+  {
+    "key": "MR2443295",
+    "type": "article",
+    "author": [
+      "Marietti, Mario",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Cores of simplicial complexes",
+      "journal": "Discrete Comput. Geom.",
+      "fjournal": "Discrete \\& Computational Geometry. An International Journal of Mathematics and Computer Science",
+      "volume": "40",
+      "year": "2008",
+      "number": "3",
+      "pages": "444--468",
+      "doi": "10.1007/s00454-008-9081-y"
+    },
+    "description": "A combinatorial paper.\nWe introduce a \"reduction technique\" to study the homotopy type of simplicial complexes,\nwith the goal of answering a question of Ehrenborg and Hetyei on the dimension of certain complexes\nknown to be homotopy equivalent to spheres.\nAs main applications we give combinatorial interpretations of these dimensions in several widely studied\nclasses of graphs associated to forests."
+  },
+  {
+    "key": "MR2426164",
+    "type": "article",
+    "author": [
+      "Marietti, Mario",
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "A uniform approach to complexes arising from forests",
+      "journal": "Electron. J. Combin.",
+      "fjournal": "Electronic Journal of Combinatorics",
+      "volume": "15",
+      "year": "2008",
+      "number": "1",
+      "pages": "Research Paper 101, 18",
+      "url": "http://www.combinatorics.org/Volume_15/Abstracts/v15i1r101.html"
+    },
+    "description": "A follow up to the previous paper.\nWe generalize our reduction technique to cover a wider range of simplicial complexes.\nWhile the complexes that we could analyze in the previous paper were either contractible or\nhomotopy equivalent to spheres, the complexes here can also be (disjoint unions of) wedges of spheres.\nThis added flexibility and generality has as a drawback that there are several discrete invariants associated\nto a given complex and thus a direct combinatorial characterization of the homotopy type is more difficult."
+  },
+  {
+    "key": "MR2375615",
+    "type": "article",
+    "author": [
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Fano varieties in index one {F}ano complete intersections",
+      "journal": "Math. Z.",
+      "fjournal": "Mathematische Zeitschrift",
+      "volume": "259",
+      "year": "2008",
+      "number": "1",
+      "pages": "61--64",
+      "doi": "10.1007/s00209-007-0211-7"
+    },
+    "description": "A generalization of a result of Roya Beheshti and Jason Starr.\nThe results in this paper imply that, for \\\\(n>4\\\\), a smooth hypersurface of degree \\\\(n\\\\) in\n\\\\(n\\\\)-dimensional projective space cannot be covered by Fano varieties (resp. toric varieties)\nof dimension between 2 and \\\\(n-3\\\\) (inclusive).\n(For comparison, Roya and Jason prove the same statement but only for Fano subvarieties of dimension 2,\nrather than the full range.)\nThis is supporting evidence to the widely believed conjecture that there exist rationally connected varieties\nthat are not unirational and that,\nmore precisely, general hypersurfaces of degree \\\\(n\\\\) in \\\\(\\mathbf{P}^n\\\\) should be examples,\nfor \\\\(n\\\\) large enough."
+  },
+  {
+    "key": "MR2358614",
+    "type": "article",
+    "author": [
+      "Stillman, Mike",
+      "Testa, Damiano",
+      "Velasco, Mauricio"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Gröbner bases, monomial group actions, and the {C}ox rings of del {P}ezzo surfaces",
+      "journal": "J. Algebra",
+      "fjournal": "Journal of Algebra",
+      "volume": "316",
+      "year": "2007",
+      "number": "2",
+      "pages": "777--801",
+      "doi": "10.1016/j.jalgebra.2007.05.016"
+    },
+    "description": "My first paper on Cox rings.\nUsing commutative algebra arguments, we exploit the action of the automorphism group of the Picard lattice\nof a del Pezzo surface to reduce a question of Batyrev and Popov on the Cox rings of del Pezzo surfaces\nto a completely mechanical verification.\nThe main application is that we are able to use the computer to verify the conjecture for del Pezzo surfaces\nof degree at least three,\na range that is still unreachable by brute force computations and that was also not known at the time.\nLater generalizations and computer-free proofs were found (also by myself!)."
+  },
+  {
+    "key": "MR2717265",
+    "type": "book",
+    "author": [
+      "Testa, Damiano"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "The {S}everi problem for rational curves on del {P}ezzo surfaces",
+      "note": "Thesis (Ph.D.)--Massachusetts Institute of Technology",
+      "publisher": "ProQuest LLC, Ann Arbor, MI",
+      "year": "2005",
+      "%     pages": "(no paging)"
+    }
+  },
+  {
+    "key": "TMs",
+    "type": "article",
+    "author": [
+      "Damiano Testa"
+    ],
+    "keywords": "published",
+    "fields": {
+      "title": "Varietà quiver e teoria delle rappresentazioni",
+      "year": "2001",
+      "journal": "Master's thesis (italian)"
+    }
+  },
+  {
+    "key": "BTL",
+    "type": "book",
+    "author": [
+      "Martin Bright",
+      "Damiano Testa",
+      "Ronald van Luijk"
+    ],
+    "keywords": "book",
+    "fields": {
+      "title": "Geometry and Arithmetic of Surfaces",
+      "pages": "in preparation",
+      "year": "2026+"
+    }
+  },
+  {
+    "key": "dJBGLT",
+    "type": "book",
+    "author": [
+      "Aise Johan de Jong",
+      "Roya Beheshti",
+      "Alex Ghitza",
+      "Max Lieblich",
+      "Damiano Testa"
+    ],
+    "keywords": "book",
+    "fields": {
+      "title": "Elliptic Surfaces",
+      "pages": "in preparation",
+      "year": "2026+"
+    }
+  },
+  {
+    "key": "1701.06864",
+    "type": "misc",
+    "author": [
+      "Damiano Testa"
+    ],
+    "keywords": "preprint",
+    "fields": {
+      "title": "$3 \\times 3$ Singular Matrices of Linear Forms",
+      "year": "2017",
+      "eprint": "arXiv:1701.06864"
+    }
+  },
+  {
+    "key": "FHs",
+    "type": "article",
+    "author": [
+      "Damiano Testa"
+    ],
+    "keywords": "preprint",
+    "fields": {
+      "title": "Singular Hyperplane Sections of {F}ermat Hypersurfaces",
+      "year": "2016"
+    }
+  },
+  {
+    "key": "1502.00275",
+    "type": "misc",
+    "author": [
+      "Antonio Laface",
+      "Damiano Testa"
+    ],
+    "keywords": "preprint",
+    "fields": {
+      "title": "On minimal rational elliptic surfaces",
+      "year": "2015",
+      "eprint": "arXiv:1502.00275"
+    }
+  },
+  {
+    "key": "1308.5517",
+    "type": "misc",
+    "author": [
+      "Andrew Brooke-Taylor",
+      "Damiano Testa"
+    ],
+    "keywords": "preprint",
+    "fields": {
+      "title": "The infinite random simplicial complex",
+      "year": "2013",
+      "eprint": "arXiv:1308.5517"
+    },
+    "description": "We introduce the *infinite random simplicial complex* \\\\(\\Delta\\\\), a simplicial complex on a countable set of vertices.\n\nThe infinite random simplicial complex \\\\(\\Delta\\\\) is the simplicial complex obtained almost surely by the following procedure.\n\nFor each pair of vertices, draw an edge between them with probability \\\\(\\frac{1}{2}\\\\).\n\nProceeding inductively, suppose that the \\\\((k-1)\\\\)-skeleton \\\\(\\Delta_{k-1}\\\\) of \\\\(\\Delta\\\\) has already been constructed.\n\nLet \\\\(v_0,\\ldots,v_k\\\\) be a \\\\((k+1)\\\\)-tuple of vertices of \\\\(\\Delta_{k-1}\\\\) with the property that every proper subset of \\\\(\\{v_0,\\ldots,v_k \\}\\\\) forms a face of \\\\(\\Delta_{k-1}\\\\).\n\nWe add the \\\\(k\\\\)-dimensional face \\\\(\\{v_0,\\ldots,v_k \\}\\\\) to the \\\\(k\\\\)-skeleton \\\\(\\Delta_k\\\\) of \\\\(\\Delta\\\\) with probability \\\\(\\frac{1}{2}\\\\)."
+  },
+  {
+    "key": "1009.0388",
+    "type": "article",
+    "author": [
+      "Stoll, Michael",
+      "Testa, Damiano"
+    ],
+    "keywords": "accepted",
+    "fields": {
+      "title": "The surface parametrizing cuboids",
+      "journal": "Math. Comp.",
+      "fjournal": "Mathematics of Computation",
+      "year": "2026",
+      "eprint": "arXiv:1009.0388"
+    },
+    "description": "We compute the Picard group of the surface \\\\(S\\\\) of cuboids;\nthe emphasis is to prove that a very explicit set of 140 curves on \\\\(S\\\\) generates the full Picard group,\nnot just a finite index subgroup.\nThe main tool is the use of a combination of the geometric automorphism group of \\\\(S\\\\),\nas well as the Galois action on the set of curves to reduce the statement to the primitivity of\nthe canonical class on \\\\(S\\\\)."
+  }
+]

@@ -1,53 +1,62 @@
-# Shared-dataset prototype (publications)
+# Publications pipeline
 
-Goal: maintain publications **once** and render them in both the LaTeX CV and
-this website, instead of hand-copying `papers.bib` into `papers/index.md`.
+One canonical, hand-editable source of truth for publications; everything else
+is generated. The website page and the CV's `.bib` both derive from it.
 
 ## Pipeline
 
 ```
-_bibliography/papers.bib          <- single source of truth (same file the CV uses)
-        │  scripts/bib2yaml.py
-        ▼
-_data/publications.yml            <- generated; consumed natively by Jekyll
-        │  _includes/pub_entry.html  (Liquid template, one entry)
-        ▼
-papers-generated/index.md         <- page that loops over site.data.publications
-        ▼  /papers-generated/      <- rendered by GitHub Pages (no custom plugins)
+_bibliography/publications.json      <- CANONICAL (edit this). Rich data +
+        │                               per-paper `description` (markdown).
+        │  scripts/publications.py
+        ├── --yaml ─▶ _data/publications.yml     (render-ready, for the website)
+        │                 │  _includes/pub_entry.html  (Liquid template)
+        │                 ▼
+        │            papers-generated/index.md  ─▶ /papers-generated/
+        │
+        └── --bib  ─▶ _bibliography/papers.bib   (reconstructed, for the CV)
 ```
 
-## Regenerate
+- Papers with a `description` render as a `<details>/<summary>` pair (citation
+  shown, description hidden until clicked); papers without render as a plain
+  citation. All authors are listed in order.
+- Inline math is written `\\(..\\)` in the JSON/descriptions; it survives
+  kramdown to `\(..\)`, which the site's MathJax typesets.
+
+## Regenerate after editing the JSON
 
 ```sh
-python3 scripts/bib2yaml.py _bibliography/papers.bib _data/publications.yml
+python3 scripts/publications.py --yaml _data/publications.yml
+python3 scripts/publications.py --bib  _bibliography/papers.bib
 ```
-
-`papers.bib` currently lives in the [CV repo](https://github.com/adomani/CV).
-For now, copy it here and re-run the script; the CI step (next milestone) will
-do this automatically on each push so the two never drift.
 
 ## Testing
 
 The pipeline checks itself, so CI can prove it does the right thing:
 
 ```sh
-# 1. Golden-file check: is the committed data in sync with the .bib?
-python3 scripts/bib2yaml.py _bibliography/papers.bib _data/publications.yml --check
+# Golden-file checks: are the generated files in sync with the JSON?
+python3 scripts/publications.py --yaml _data/publications.yml --check
+python3 scripts/publications.py --bib  _bibliography/papers.bib  --check
 
-# 2. Fixture test: pin the converter's behaviour against a golden output
-python3 tests/test_bib2yaml.py            # --update to regenerate after an intended change
+# Fixture test: pin JSON -> yaml and JSON -> bib output
+python3 tests/test_publications.py            # --update to regenerate after an intended change
 ```
 
-`.github/workflows/publications.yml` runs both on every PR, then builds the
-site and asserts the rendered page looks right (known entry present, UTF-8
-accents rendered, no proxied URLs leaked). It is **validate-only** — it never
-publishes; GitHub Pages still deploys the live site from the default branch.
+`.github/workflows/publications.yml` runs these on every PR, builds the site,
+and asserts the rendered page (known entry, UTF-8 accents, a <details> block, a
+migrated description, inline math, no proxied URLs). It is **validate-only** —
+it never publishes.
 
-## Scope / not yet modelled
+## CV round-trip
 
-- Per-paper prose/abstracts and co-author profile links (present on the current
-  hand-written `papers/index.md`) are **website-only enrichments** — they would
-  become optional fields on each record, emitted by the template but ignored by
-  the CV.
-- Only publications are prototyped. Teaching, talks, etc. would follow the same
-  pattern with their own `_data/*.yml` + include.
+`--bib` reconstructs `papers.bib` from the JSON. This was verified to rebuild
+the CV with a byte-identical bibliography, so the CV can eventually consume the
+generated `.bib` (Phase B: CI pushes it to the private CV repo). `bib2yaml.py`
+remains only as a helper library (display formatting) and for the one-time
+bib→json migration.
+
+## Not yet modelled
+
+- Co-author profile links in descriptions (the old page linked some names).
+- Extending the same JSON-canonical pattern to teaching, talks, etc.
