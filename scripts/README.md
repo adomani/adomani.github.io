@@ -12,7 +12,7 @@ _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
         ├── --yaml ─▶ _data/publications.yml     (render-ready, for the website)
         │                 │  _includes/pub_entry.html  (Liquid template)
         │                 ▼
-        │            papers-generated/index.md  ─▶ /papers-generated/
+        │            papers/index.md  ─▶ /papers/
         │
         └── --bib  ─▶ _bibliography/papers.bib   (reconstructed, for the CV)
 ```

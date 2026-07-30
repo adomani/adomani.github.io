@@ -12,7 +12,7 @@ on:
       - '_data/publications.yml'
       - 'scripts/**'
       - '_includes/pub_entry.html'
-      - 'papers-generated/**'
+      - 'papers/**'
       - 'tests/**'
       - 'assets/**'
       - '_config.yml'
@@ -52,7 +52,7 @@ jobs:
       - name: Assert rendered publications page
         run: |
           set -euo pipefail
-          f=_site/papers-generated/index.html
+          f=_site/papers/index.html
           test -s "$f"
           grep -q "A Macaulay2-Lean interface for proofs in Lean" "$f"   # known entry
           grep -q "Gröbner" "$f"                                          # UTF-8 accent
