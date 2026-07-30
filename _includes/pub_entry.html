@@ -2,15 +2,16 @@
 Renders one publication record from _data/publications.yml.
 Papers with a `description` become a <details>/<summary> pair (citation shown,
 description hidden until expanded); papers without render as a plain citation.
-Both citation and description go through `markdownify` so links, emphasis and
-the \\(..\\) math convention render consistently.
+The title is wrapped in .pub-title so every title stands out (bold), whether or
+not it links out. Citation and description both go through `markdownify` so
+links, emphasis and the \\(..\\) math convention render consistently.
 Usage: {% include pub_entry.html pub=record %}
 {%- endcomment -%}
 {%- assign r = include.pub -%}
-{%- capture cite -%}{% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}{% if r.authors.size > 0 %}, {{ r.authors | join: ", " }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.{%- endcapture -%}
+{%- capture cite -%}<span class="pub-title">{% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}</span>{% if r.authors.size > 0 %}, {{ r.authors | join: ", " }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.{%- endcapture -%}
 {%- assign citehtml = cite | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
 {%- if r.description -%}
-<div class="pub pub-fold"><input type="checkbox" class="pub-fold__cb" id="fold-{{ r.key }}"><div class="pub-cite"><label class="pub-fold__btn" for="fold-{{ r.key }}" aria-label="Toggle abstract"></label>{{ citehtml }}</div><div class="pub-desc">{{ r.description | markdownify }}</div></div>
+<details class="pub"><summary>{{ citehtml }}</summary><div class="pub-desc">{{ r.description | markdownify }}</div></details>
 {%- else -%}
 <p class="pub">{{ citehtml }}</p>
 {%- endif -%}
