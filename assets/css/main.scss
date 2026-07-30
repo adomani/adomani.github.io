@@ -1,0 +1,37 @@
+---
+# Custom styles layered on top of the Minimal Mistakes remote theme.
+# The empty front matter is required so Jekyll compiles this to /assets/css/main.css.
+---
+
+@charset "utf-8";
+
+// --- variable overrides (must come BEFORE the theme import) -----------------
+$max-width: 1600px;          // wider content area (theme default is 1280px)
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+// --- overrides that need the theme's mixins/vars (AFTER the import) ---------
+
+// Smaller base font across all breakpoints (theme default: 16/18/20/22px).
+// Everything is rem-based, so this scales the whole site down proportionally.
+html {
+  font-size: 14px;
+  @include breakpoint($medium)  { font-size: 15px; }
+  @include breakpoint($large)   { font-size: 16px; }
+  @include breakpoint($x-large) { font-size: 17px; }
+}
+
+// Use more of the horizontal space: on wide screens the theme reserves a
+// right gutter the width of the (unused) sidebar. Reclaim it for content.
+.page {
+  @include breakpoint($large) {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+// Keep the top masthead (nav bar) aligned to the same wider max-width.
+.masthead__inner-wrap {
+  max-width: $max-width;
+}
