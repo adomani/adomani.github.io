@@ -35,3 +35,26 @@ html {
 .masthead__inner-wrap {
   max-width: $max-width;
 }
+
+// Prevent horizontal overflow / empty space to the right on phones.
+// Nothing on the site is meant to scroll sideways, so clip stray overflow at
+// the root and make long content (titles, URLs, math) wrap instead.
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.page__content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+// Media and wide blocks never exceed their column.
+img,
+table,
+pre,
+iframe {
+  max-width: 100%;
+}
+
