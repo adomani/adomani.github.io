@@ -58,3 +58,29 @@ iframe {
   max-width: 100%;
 }
 
+// --- publications list (/papers-generated/) --------------------------------
+// Papers with a description are <details>/<summary>; those without are <p>.
+.pub {
+  margin: 0.55em 0;
+}
+
+details.pub > summary {
+  cursor: pointer;
+  display: list-item;              // keep the disclosure triangle (some resets drop it)
+}
+
+details.pub[open] > summary {
+  margin-bottom: 0.4em;
+}
+
+.pub-desc {
+  margin: 0.3em 0 0.8em 1.4em;
+}
+
+// Enforce the collapse explicitly: hide the description unless the <details>
+// is open. This guarantees the fold works even if a theme/UA rule would
+// otherwise render the content of a closed <details>.
+details.pub:not([open]) > .pub-desc {
+  display: none;
+}
+

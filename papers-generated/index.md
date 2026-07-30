@@ -5,13 +5,6 @@ permalink: /papers-generated/
 math: true
 ---
 
-<style>
-.page__content .pub { margin: 0.55em 0; }
-.page__content details.pub > summary { cursor: pointer; }
-.page__content details.pub[open] > summary { margin-bottom: 0.4em; }
-.page__content .pub-desc { margin: 0.3em 0 0.8em 1.4em; }
-</style>
-
 {% assign pubs = site.data.publications %}
 
 ## Publications
