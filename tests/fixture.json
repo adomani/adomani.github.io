@@ -1,0 +1,41 @@
+[
+  {
+    "key": "fix-accepted",
+    "type": "inproceedings",
+    "author": ["Ballard, Matthew", "Testa, Damiano"],
+    "keywords": "accepted",
+    "fields": {
+      "title": "A {M}acaulay2 interface for $R = k[x]$ proofs",
+      "booktitle": "International Congress (ICMS 2026)",
+      "year": "2026"
+    },
+    "description": "A short **note**: the interface targets \\\\(R = k[x]\\\\)."
+  },
+  {
+    "key": "fix-published",
+    "type": "article",
+    "author": ["Grüne, Anna", "Testa, Damiano"],
+    "keywords": "published",
+    "fields": {
+      "title": "On {G}röbner bases",
+      "journal": "J. Alg.",
+      "fjournal": "Journal of Algebra",
+      "volume": "10",
+      "number": "2",
+      "pages": "5--20",
+      "year": "2020",
+      "doi": "10.1000/xyz"
+    }
+  },
+  {
+    "key": "fix-preprint",
+    "type": "misc",
+    "author": ["Testa, D."],
+    "keywords": "preprint",
+    "fields": {
+      "title": "A preprint with $3 \\times 3$ matrices",
+      "year": "2019",
+      "eprint": "arXiv:1901.01234"
+    }
+  }
+]

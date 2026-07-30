@@ -1,13 +1,16 @@
 ---
-title: Papers (generated)
+title: Papers
 layout: single
 permalink: /papers-generated/
 math: true
 ---
 
-*Prototype — this page is generated automatically from
-[`papers.bib`](https://github.com/adomani/CV/blob/master/papers.bib), the same
-file the CV is built from. Do not edit by hand.*
+<style>
+.page__content .pub { margin: 0.55em 0; }
+.page__content details.pub > summary { cursor: pointer; }
+.page__content details.pub[open] > summary { margin-bottom: 0.4em; }
+.page__content .pub-desc { margin: 0.3em 0 0.8em 1.4em; }
+</style>
 
 {% assign pubs = site.data.publications %}
 

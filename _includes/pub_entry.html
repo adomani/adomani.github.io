@@ -1,8 +1,16 @@
 {%- comment -%}
-Renders one publication record from _data/publications.yml as a markdown list
-item. Usage: {% include pub_entry.html pub=record %}
-All authors are listed in .bib order (the owner is not singled out), so no
-name-matching is needed.
+Renders one publication record from _data/publications.yml.
+Papers with a `description` become a <details>/<summary> pair (citation shown,
+description hidden until expanded); papers without render as a plain citation.
+Both citation and description go through `markdownify` so links, emphasis and
+the \\(..\\) math convention render consistently.
+Usage: {% include pub_entry.html pub=record %}
 {%- endcomment -%}
 {%- assign r = include.pub -%}
-- {% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}{% if r.authors.size > 0 %}, {{ r.authors | join: ", " }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.
+{%- capture cite -%}{% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}{% if r.authors.size > 0 %}, {{ r.authors | join: ", " }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.{%- endcapture -%}
+{%- assign citehtml = cite | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
+{%- if r.description -%}
+<details class="pub"><summary>{{ citehtml }}</summary><div class="pub-desc">{{ r.description | markdownify }}</div></details>
+{%- else -%}
+<p class="pub">{{ citehtml }}</p>
+{%- endif -%}
