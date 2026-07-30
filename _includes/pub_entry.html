@@ -10,7 +10,7 @@ Usage: {% include pub_entry.html pub=record %}
 {%- capture cite -%}{% if r.url %}[{{ r.title }}]({{ r.url }}){% else %}{{ r.title }}{% endif %}{% if r.authors.size > 0 %}, {{ r.authors | join: ", " }}{% endif %}{% if r.venue %}, *{{ r.venue }}*{% endif %}{% if r.volume %} **{{ r.volume }}**{% endif %}{% if r.number %}, no. {{ r.number }}{% endif %}{% if r.pages %}, {{ r.pages }}{% endif %}{% if r.year %} ({{ r.year }}){% endif %}.{%- endcapture -%}
 {%- assign citehtml = cite | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
 {%- if r.description -%}
-<details class="pub"><summary>{{ citehtml }}</summary><div class="pub-desc">{{ r.description | markdownify }}</div></details>
+<div class="pub pub-fold"><input type="checkbox" class="pub-fold__cb" id="fold-{{ r.key }}"><div class="pub-cite"><label class="pub-fold__btn" for="fold-{{ r.key }}" aria-label="Toggle abstract"></label>{{ citehtml }}</div><div class="pub-desc">{{ r.description | markdownify }}</div></div>
 {%- else -%}
 <p class="pub">{{ citehtml }}</p>
 {%- endif -%}

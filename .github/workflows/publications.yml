@@ -57,7 +57,8 @@ jobs:
           grep -q "A Macaulay2-Lean interface for proofs in Lean" "$f"   # known entry
           grep -q "Gröbner" "$f"                                          # UTF-8 accent
           grep -q "Néron" "$f"
-          grep -q '<details class="pub">' "$f"                            # details/summary present
+          grep -q 'class="pub pub-fold"' "$f"                             # collapsible entry present
+          grep -q 'pub-fold__cb' "$f"                                     # checkbox toggle present
           grep -q "theta-hyperplanes" "$f"                                # a migrated description
           grep -qF '\(28\)' "$f"                                          # inline math for MathJax
           if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
