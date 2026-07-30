@@ -383,7 +383,8 @@
       "pages": "1606--1618",
       "doi": "10.1016/j.ejc.2012.03.021"
     },
-    "description": "We introduce the notions of spherical and conical graphs, establishing links with (independent) dominating sets,\nedge covers and the homotopy type of associated simplicial complexes.\nWe also prove a formula to compute the Euler characteristic of a simplicial set."
+    "description": "We introduce the notions of spherical and conical graphs, establishing links with (independent) dominating sets,\nedge covers and the homotopy type of associated simplicial complexes.\nWe also prove a formula to compute the Euler characteristic of a simplicial set.",
+    "citation_note": "Dedicated to Tony Machì."
   },
   {
     "key": "MR2880245",
@@ -445,7 +446,8 @@
       "pages": "2259--2268",
       "doi": "10.1007/s11425-010-4037-0"
     },
-    "description": "By a combination of the determinant method and \\\\(n\\\\)-descent on curves of genus one,\nwe find bounds for the number of rational points on a smooth plane cubic curve that are uniform in\nthe coefficients and depend explicitly on the rank of the Mordell-Weil group of the curve.\nThe argument exploits an interplay between analytic techniques to bound the number of solutions to a cubic equation\nand a geometric interpretation of an evaluation map on an abelian surface leading to the required inequalities."
+    "description": "By a combination of the determinant method and \\\\(n\\\\)-descent on curves of genus one,\nwe find bounds for the number of rational points on a smooth plane cubic curve that are uniform in\nthe coefficients and depend explicitly on the rank of the Mordell-Weil group of the curve.\nThe argument exploits an interplay between analytic techniques to bound the number of solutions to a cubic equation\nand a geometric interpretation of an evaluation map on an abelian surface leading to the required inequalities.",
+    "citation_note": "Dedicated to Professor Wang Yuan."
   },
   {
     "key": "MR2579393",
@@ -485,7 +487,8 @@
       "pages": "37--61",
       "doi": "10.1090/S1056-3911-08-00484-0"
     },
-    "description": "The main result is the proof that the spaces of rational curves on del Pezzo surfaces representing\na fixed divisor class are either empty or irreducible, with one exception.\nThe argument involves a detailed analysis of the possible singularities of (a partial resolution of)\nthe moduli spaces of rational curves on surfaces and combines this with a degeneration argument to reduce\nall the rational curves in a fixed divisor class to a standard form.\nThe relevant moduli spaces are sufficiently smooth that we can show that the various degenerations always\ntake place within the smooth locus, proving the required irreducibility.\n(The longer, actual PhD thesis is available [here](https://arxiv.org/abs/math/0609355).)"
+    "description": "The main result is the proof that the spaces of rational curves on del Pezzo surfaces representing\na fixed divisor class are either empty or irreducible, with one exception.\nThe argument involves a detailed analysis of the possible singularities of (a partial resolution of)\nthe moduli spaces of rational curves on surfaces and combines this with a degeneration argument to reduce\nall the rational curves in a fixed divisor class to a standard form.\nThe relevant moduli spaces are sufficiently smooth that we can show that the various degenerations always\ntake place within the smooth locus, proving the required irreducibility.\n(The longer, actual PhD thesis is available [here](https://arxiv.org/abs/math/0609355).)",
+    "citation_note": "PhD Thesis, supervisor [Johan de Jong](https://www.math.columbia.edu/~dejong/)."
   },
   {
     "key": "MR2443295",

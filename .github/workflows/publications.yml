@@ -10,9 +10,10 @@ on:
       - '_bibliography/publications.json'
       - '_bibliography/papers.bib'
       - '_data/publications.yml'
+      - '_data/collaborators.yml'
       - 'scripts/**'
       - '_includes/pub_entry.html'
-      - 'papers-generated/**'
+      - 'papers/**'
       - 'tests/**'
       - 'assets/**'
       - '_config.yml'
@@ -52,7 +53,7 @@ jobs:
       - name: Assert rendered publications page
         run: |
           set -euo pipefail
-          f=_site/papers-generated/index.html
+          f=_site/papers/index.html
           test -s "$f"
           grep -q "A Macaulay2-Lean interface for proofs in Lean" "$f"   # known entry
           grep -q "Gröbner" "$f"                                          # UTF-8 accent
@@ -60,6 +61,9 @@ jobs:
           grep -q '<details class="pub">' "$f"                            # collapsible entry present
           grep -q '<span class="pub-title">' "$f"                         # titles are wrapped/emphasised
           grep -q "theta-hyperplanes" "$f"                                # a migrated description
+          grep -q 'href="https://anne.mx/"' "$f"                          # co-author homepage link
+          grep -q "Dedicated to Tony Mach" "$f"                           # citation_note (dedication)
+          grep -q 'supervisor <a href="https://www.math.columbia.edu/~dejong/"' "$f"  # thesis credit
           grep -qF '\(28\)' "$f"                                          # inline math for MathJax
           if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
             echo "::error::a raw \$...\$ math span leaked (site MathJax expects \\(..\\))"; exit 1

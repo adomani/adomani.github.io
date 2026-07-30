@@ -393,6 +393,7 @@ publications:
     edge covers and the homotopy type of associated simplicial complexes.
 
     We also prove a formula to compute the Euler characteristic of a simplicial set.'
+  citation_note: Dedicated to Tony Machì.
 - key: MR2880245
   title: Two-coverings of Jacobians of curves of genus 2
   authors:
@@ -471,6 +472,7 @@ publications:
 
     and a geometric interpretation of an evaluation map on an abelian surface leading to the required
     inequalities.'
+  citation_note: Dedicated to Professor Wang Yuan.
 - key: MR2579393
   title: Cox rings of degree one del Pezzo surfaces
   authors:
@@ -529,6 +531,7 @@ publications:
     take place within the smooth locus, proving the required irreducibility.
 
     (The longer, actual PhD thesis is available [here](https://arxiv.org/abs/math/0609355).)'
+  citation_note: PhD Thesis, supervisor [Johan de Jong](https://www.math.columbia.edu/~dejong/).
 - key: MR2443295
   title: Cores of simplicial complexes
   authors:

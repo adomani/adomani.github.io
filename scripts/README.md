@@ -12,7 +12,7 @@ _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
         ├── --yaml ─▶ _data/publications.yml     (render-ready, for the website)
         │                 │  _includes/pub_entry.html  (Liquid template)
         │                 ▼
-        │            papers-generated/index.md  ─▶ /papers-generated/
+        │            papers/index.md  ─▶ /papers/
         │
         └── --bib  ─▶ _bibliography/papers.bib   (reconstructed, for the CV)
 ```
@@ -20,6 +20,11 @@ _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
   citation. All authors are listed in order.
+- An optional per-entry `citation_note` (markdown) is shown after the citation —
+  used for dedications and the thesis/supervisor credit.
+- Co-author homepages live in `_data/collaborators.yml` (a hand-edited
+  `name: url` map — the single point of entry). The template links any author
+  whose rendered name matches a key there; unlisted names render as plain text.
 - Inline math is written `\\(..\\)` in the JSON/descriptions; it survives
   kramdown to `\(..\)`, which the site's MathJax typesets.
 
@@ -58,5 +63,4 @@ bib→json migration.
 
 ## Not yet modelled
 
-- Co-author profile links in descriptions (the old page linked some names).
 - Extending the same JSON-canonical pattern to teaching, talks, etc.
