@@ -59,55 +59,32 @@ iframe {
 }
 
 // --- publications list (/papers-generated/) --------------------------------
-// Papers with a description use a CSS-only checkbox disclosure (a hidden
-// checkbox toggled by a <label>), instead of <details>/<summary>: the
-// :checked ~ sibling toggle renders identically in every browser, avoiding
-// Blink's inconsistent native <details> behavior on mobile Chrome.
+// Papers with a description are a native <details>/<summary>; those without are
+// a plain <p>. Every title is bold (.pub-title) so it stands out whether or not
+// it links out.
 .pub {
   margin: 0.55em 0;
 }
 
-.pub-fold {
-  position: relative;             // contains the visually-hidden checkbox
+.pub-title {
+  font-weight: 700;
 }
 
-// Visually hide the checkbox but keep it focusable for keyboard users.
-.pub-fold__cb {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  overflow: hidden;
-}
-
-.pub-fold__btn {
+details.pub > summary {
   cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  width: 1.1em;
-  color: inherit;
 }
 
-.pub-fold__btn::before {
-  content: "\25B8";               // ▸ collapsed
-}
-
-.pub-fold__cb:checked ~ .pub-cite .pub-fold__btn::before {
-  content: "\25BE";               // ▾ expanded
-}
-
-// Keyboard focus affordance on the toggle.
-.pub-fold__cb:focus-visible ~ .pub-cite .pub-fold__btn {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+details.pub[open] > summary {
+  margin-bottom: 0.4em;
 }
 
 .pub-desc {
-  display: none;
   margin: 0.3em 0 0.8em 1.4em;
 }
 
-.pub-fold__cb:checked ~ .pub-desc {
-  display: block;
+// Belt-and-suspenders: keep the description folded when the <details> is
+// closed, even if a theme/UA reset would otherwise reveal it.
+details.pub:not([open]) > .pub-desc {
+  display: none;
 }
 
