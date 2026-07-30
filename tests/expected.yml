@@ -2,7 +2,7 @@
 # Do not edit by hand; edit the .bib and re-run the script.
 publications:
 - key: fix-accepted
-  title: A Macaulay2 interface for $R = k[x]$ proofs
+  title: A Macaulay2 interface for \\(R = k[x]\\) proofs
   authors:
   - Matthew Ballard
   - Damiano Testa
@@ -25,7 +25,7 @@ publications:
   status: published
 preprints:
 - key: fix-preprint
-  title: A preprint with $3 \times 3$ matrices
+  title: A preprint with \\(3 \times 3\\) matrices
   authors:
   - D. Testa
   year: '2019'

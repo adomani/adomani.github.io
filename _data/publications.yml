@@ -203,7 +203,7 @@ publications:
   category: publications
   status: published
 - key: MR3263947
-  title: Descent via $(3,3)$-isogeny on Jacobians of genus 2 curves
+  title: Descent via \\((3,3)\\)-isogeny on Jacobians of genus 2 curves
   authors:
   - Nils Bruin
   - E. Victor Flynn
@@ -403,7 +403,7 @@ publications:
   status: published
 preprints:
 - key: '1701.06864'
-  title: $3 \times 3$ Singular Matrices of Linear Forms
+  title: \\(3 \times 3\\) Singular Matrices of Linear Forms
   authors:
   - Damiano Testa
   year: '2017'

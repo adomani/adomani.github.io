@@ -53,6 +53,10 @@ jobs:
           grep -q "A Macaulay2-Lean interface for proofs in Lean" "$f"  # known entry
           grep -q "Gröbner" "$f"                              # UTF-8 accent rendered
           grep -q "Néron" "$f"
+          grep -qF '\(3 \times 3\)' "$f"                      # inline math uses \(..\) for MathJax
+          if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
+            echo "::error::a raw \$...\$ math span leaked (site MathJax expects \\(..\\))"; exit 1
+          fi
           if grep -q "pugwash" "$f"; then
             echo "::error::proxied pugwash URL leaked into the rendered page"; exit 1
           fi
