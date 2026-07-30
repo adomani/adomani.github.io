@@ -93,16 +93,18 @@ def parse_fields(s):
 
 # --- LaTeX -> display text ---------------------------------------------------
 # papers.bib stores accents as UTF-8, so all that remains is stripping
-# capitalization-protection braces ({F}ermat) and a couple of escapes, while
-# leaving inline $...$ math untouched for MathJax.
+# capitalization-protection braces ({F}ermat) and a couple of escapes.
+# Inline math `$...$` is re-emitted as `\\(...\\)`: the site's MathJax uses the
+# \(...\) delimiter, and the doubled backslash survives kramdown (which would
+# otherwise eat a single `\(` as an escaped paren) to yield `\(...\)` in the HTML.
 def delatex(s):
     if not s:
         return s
     math = []
     def stash(m):
-        math.append(m.group(0))
+        math.append('\\\\(' + m.group(0)[1:-1] + '\\\\)')  # $x$ -> \\(x\\)
         return f'\x00{len(math)-1}\x00'
-    s = re.sub(r'\$[^$]*\$', stash, s)          # protect math
+    s = re.sub(r'\$[^$]*\$', stash, s)          # protect + convert math
     s = s.replace('{', '').replace('}', '')      # drop {F}ermat-style braces
     s = s.replace('\\&', '&').replace('~', ' ')
     s = re.sub(r'\s+', ' ', s).strip()
