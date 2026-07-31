@@ -25,7 +25,8 @@
       "pages": "5--20",
       "year": "2020",
       "doi": "10.1000/xyz"
-    }
+    },
+    "description": "First line of a multi-line note.\nSecond line, so the generator emits a `|` literal block."
   },
   {
     "key": "fix-preprint",

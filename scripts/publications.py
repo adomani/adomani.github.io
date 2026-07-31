@@ -48,15 +48,30 @@ def render_record(e):
     return rec
 
 
+# Emit multi-line strings as `|` literal blocks (readable, no quoting/escaping);
+# single-line strings keep the default style. Scoped to a private dumper so we
+# don't mutate PyYAML's global SafeDumper.
+class _BlockDumper(yaml.SafeDumper):
+    pass
+
+
+def _str_representer(dumper, data):
+    style = '|' if '\n' in data else None
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style=style)
+
+
+_BlockDumper.add_representer(str, _str_representer)
+
+
 def to_yaml(entries):
     def year_key(r):
         return -int(re.sub(r'[^0-9]', '', r['year']) or '0')
     buckets = {'publications': [], 'preprints': [], 'books': []}
     for r in sorted((render_record(e) for e in entries), key=year_key):
         buckets[r['category']].append(r)
-    return YAML_HEADER + yaml.safe_dump(buckets, allow_unicode=True,
-                                        sort_keys=False, default_flow_style=False,
-                                        width=100)
+    return YAML_HEADER + yaml.dump(buckets, Dumper=_BlockDumper, allow_unicode=True,
+                                   sort_keys=False, default_flow_style=False,
+                                   width=100)
 
 
 # --- JSON entry -> BibTeX (reconstruct; description is website-only) ----------
