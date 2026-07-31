@@ -661,6 +661,20 @@ publications:
   category: publications
   status: published
 preprints:
+- key: FittingsTheorem
+  title: A formalised proof of Fitting's Theorem via the binomial theorem for non-associative, non-unital
+    rings
+  authors:
+  - Damiano Testa
+  year: '2026'
+  url: https://github.com/adomani/FittingsTheorem
+  category: preprints
+  status: preprint
+  description: 'A Lean 4 formalisation of Fitting''s theorem: the join of two nilpotent normal subgroups
+    is nilpotent.
+
+    The proof puts a (non-associative, non-unital) semiring structure on the normal subgroups of a group,
+    with the commutator as multiplication, and runs the binomial theorem in that setting.'
 - key: '1701.06864'
   title: \\(3 \times 3\\) Singular Matrices of Linear Forms
   authors:
