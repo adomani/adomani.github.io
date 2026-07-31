@@ -24,6 +24,9 @@ publications:
   url: https://doi.org/10.1000/xyz
   category: publications
   status: published
+  description: |-
+    First line of a multi-line note.
+    Second line, so the generator emits a `|` literal block.
 preprints:
 - key: fix-preprint
   title: A preprint with \\(3 \times 3\\) matrices
