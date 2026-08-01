@@ -57,9 +57,12 @@ python3 tests/test_publications.py            # --update to regenerate after an 
 `.github/workflows/publications.yml` runs these on every PR, builds the site,
 and asserts the rendered page (known entry, UTF-8 accents, a <details> block, a
 migrated description, inline math, no proxied URLs).
-`.github/workflows/cv.yml` builds the CV PDF from `cv/` and asserts its content
-(preprint present, repo link shown, accents render). Both are **validate-only** —
-they never publish.
+`.github/workflows/deploy.yml` builds the Jekyll site **and** the CV PDF together
+and deploys them as one GitHub Pages artifact (Pages source = "GitHub Actions").
+The CV PDF is generated from the same `publications.json`, placed at
+`pdfs/CV.pdf`, and served from the built site — so the published CV is always in
+sync, with no committed binary and no manual step. On pull requests it builds and
+asserts (preprint present, repo link shown, accents render) but does not deploy.
 
 ## CV build
 
@@ -72,7 +75,5 @@ one-time bib→json migration.
 
 ## Not yet modelled
 
-- Publishing the built CV PDF automatically to `pdfs/CV.pdf` (Stage 2: build on
-  deploy, or commit from CI). For now `pdfs/CV.pdf` is updated manually.
 - Extending the same JSON-canonical pattern to the other CV sections (teaching,
   talks, etc.) so the website pages and the CV share that data too.
