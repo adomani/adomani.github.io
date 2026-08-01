@@ -2,3 +2,7 @@
 # Python
 __pycache__/
 *.pyc
+
+# The published CV is built fresh on every deploy (deploy.yml) from cv/ and the
+# shared publications.json, then placed here. Not committed — it's a build output.
+pdfs/CV.pdf
