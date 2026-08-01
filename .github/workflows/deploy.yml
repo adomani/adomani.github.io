@@ -1,0 +1,83 @@
+name: Deploy site and CV
+
+# Builds the Jekyll site and the CV PDF together and deploys them as one Pages
+# artifact. The CV PDF is generated from the same publications.json as the
+# website, placed at pdfs/CV.pdf, and included in the built site — so the
+# published CV is always in sync, with no committed binary and no manual step.
+#
+# On pull_request the build job runs (validation) but does NOT deploy.
+# Requires the repo's Pages source to be set to "GitHub Actions".
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. Build the CV PDF from the shared source and place it where the site
+      #    serves it (pdfs/CV.pdf). cv/papers.bib is generated, not committed.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install pyyaml
+      - name: papers.bib is up to date with the JSON
+        run: python3 scripts/publications.py --bib _bibliography/papers.bib --check
+      - name: Materialise the CV bibliography
+        run: cp _bibliography/papers.bib cv/papers.bib
+      - name: Build CV PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv
+          root_file: main.tex
+      - name: Assert CV content
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          pdftotext -layout cv/main.pdf cv.txt
+          grep -q "FittingsTheorem" cv.txt                      # preprint present
+          grep -q "github.com/adomani/FittingsTheorem" cv.txt   # repo link shown
+          grep -q "Néron" cv.txt                                # UTF-8 accent renders
+          echo "CV assertions passed."
+      - name: Place CV PDF into the site
+        run: cp cv/main.pdf pdfs/CV.pdf
+
+      # 2. Build the Jekyll site, now including the fresh CV PDF.
+      - uses: actions/configure-pages@v5
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: .
+          destination: ./_site
+      - name: Assert CV PDF is in the built site
+        run: test -s _site/pdfs/CV.pdf
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    # Never deploy from a pull request; only from master pushes / manual runs.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
