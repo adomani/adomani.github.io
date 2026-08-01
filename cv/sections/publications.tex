@@ -1,0 +1,13 @@
+\defbibfilter{p_or_a}{%
+    keyword=published or keyword=accepted
+}
+
+\nocite{*}
+\printbibliography[filter=p_or_a, title={Publications},resetnumbers=true]
+\printbibliography[keyword={preprint},title={Preprints}]
+\printbibliography[keyword={book},title={Books}]
+% Can instead manually enter publications as shown:
+% \section{Publications}
+% \orderedouterlist{
+% \entry{S. Petridis, J. Shen, \textbf{D. Cetin} and M. Pantic, "Visual-Only Recognition of Normal, Whispered And Silent Speech", \textit{IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), April 2018}}
+% }

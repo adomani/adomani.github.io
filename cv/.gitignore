@@ -1,0 +1,15 @@
+# Generated at build time from _bibliography/papers.bib (canonical: publications.json)
+papers.bib
+
+# LaTeX build artifacts
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.out
+*.run.xml
+*.synctex.gz
+*.bbl
+*.blg
