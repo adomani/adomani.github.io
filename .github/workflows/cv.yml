@@ -1,0 +1,59 @@
+name: Build CV
+
+# Builds the CV PDF from the LaTeX sources in cv/, using the bibliography
+# generated from the canonical publications.json. Validate-only for now: it
+# proves the CV builds in this repo and asserts key content. It does NOT yet
+# publish pdfs/CV.pdf (that stays manual until the deploy step is wired up).
+
+on:
+  pull_request:
+    paths:
+      - 'cv/**'
+      - '_bibliography/publications.json'
+      - '_bibliography/papers.bib'
+      - 'scripts/**'
+      - '.github/workflows/cv.yml'
+  workflow_dispatch:
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install pyyaml
+
+      # The bib the CV consumes must be in sync with the JSON, then materialise
+      # it next to the CV sources (cv/papers.bib is gitignored, built here).
+      - name: papers.bib is up to date with the JSON
+        run: python3 scripts/publications.py --bib _bibliography/papers.bib --check
+      - name: Materialise the CV bibliography
+        run: cp _bibliography/papers.bib cv/papers.bib
+
+      - name: Build CV PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv
+          root_file: main.tex
+
+      - name: Assert CV content
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          f=cv/main.pdf
+          test -s "$f"
+          pdftotext -layout "$f" cv.txt
+          grep -q "FittingsTheorem" cv.txt                 # preprint present
+          grep -q "github.com/adomani/FittingsTheorem" cv.txt   # repo link shown (howpublished, url=false)
+          grep -q "Néron" cv.txt                           # UTF-8 accent renders
+          grep -q "Preprints" cv.txt
+          echo "CV build assertions passed."
+
+      - name: Upload CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV
+          path: cv/main.pdf

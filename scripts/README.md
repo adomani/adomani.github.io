@@ -14,8 +14,14 @@ _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
         │                 ▼
         │            papers/index.md  ─▶ /papers/
         │
-        └── --bib  ─▶ _bibliography/papers.bib   (reconstructed, for the CV)
+        └── --bib  ─▶ _bibliography/papers.bib   (for the CV)
+                          │  copied to cv/papers.bib, then latexmk
+                          ▼
+                      cv/main.tex  ─▶ CV PDF   (.github/workflows/cv.yml)
 ```
+
+The CV (`cv/`) and the website `/papers/` page are both generated from the same
+`publications.json` — one source, two outputs.
 
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
@@ -50,17 +56,23 @@ python3 tests/test_publications.py            # --update to regenerate after an 
 
 `.github/workflows/publications.yml` runs these on every PR, builds the site,
 and asserts the rendered page (known entry, UTF-8 accents, a <details> block, a
-migrated description, inline math, no proxied URLs). It is **validate-only** —
-it never publishes.
+migrated description, inline math, no proxied URLs).
+`.github/workflows/cv.yml` builds the CV PDF from `cv/` and asserts its content
+(preprint present, repo link shown, accents render). Both are **validate-only** —
+they never publish.
 
-## CV round-trip
+## CV build
 
-`--bib` reconstructs `papers.bib` from the JSON. This was verified to rebuild
-the CV with a byte-identical bibliography, so the CV can eventually consume the
-generated `.bib` (Phase B: CI pushes it to the private CV repo). `bib2yaml.py`
-remains only as a helper library (display formatting) and for the one-time
-bib→json migration.
+`--bib` reconstructs `papers.bib` from the JSON. The CV sources live in `cv/`;
+the build copies the generated bib to `cv/papers.bib` (gitignored) and runs
+`latexmk`. The CV's biblatex uses `url=false`, so preprint URLs are emitted as
+`howpublished = {\url{...}}` (which is not suppressed) to keep the link visible.
+`bib2yaml.py` remains only as a helper library (display formatting) and for the
+one-time bib→json migration.
 
 ## Not yet modelled
 
-- Extending the same JSON-canonical pattern to teaching, talks, etc.
+- Publishing the built CV PDF automatically to `pdfs/CV.pdf` (Stage 2: build on
+  deploy, or commit from CI). For now `pdfs/CV.pdf` is updated manually.
+- Extending the same JSON-canonical pattern to the other CV sections (teaching,
+  talks, etc.) so the website pages and the CV share that data too.

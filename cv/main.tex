@@ -1,0 +1,65 @@
+\documentclass[letterpaper,11pt,hidelinks]{article}
+
+% Choose bibliography style for formatting list of publications
+\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false,defernumbers=true]{biblatex}
+\addbibresource{papers.bib}
+%\bibliography{papers}
+
+% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
+\def\theme{BlueViolet}
+
+% More predefined colors can be found in
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+% Example photograph taken from Wikimedia Commons
+% https://commons.wikimedia.org/wiki/File:Kiara_Krit_passport.jpg
+
+\usepackage{simplecv}
+\usepackage{import}
+
+% Show the build date so the CV carries its own "last updated" stamp
+\fancyfoot[L]{\footnotesize Last updated: \today}
+
+%\boldname{Testa}{Damiano}{}
+
+\begin{document}
+
+% Heading
+\headinginline{Damiano Testa}{
+\begin{tabular}{l@{\hspace{10pt}}l}
+\multicolumn{2}{l}{Mathematics Institute} \\
+\multicolumn{2}{l}{University of Warwick} \\[5pt]
+Website: & \href{https://adomani.github.io/}{adomani.github.io} \\
+Email: & \href{mailto: d.testa@warwick.ac.uk}{d.testa@...} \\
+GitHub: & \href{https://github.com/adomani/}{adomani}
+\end{tabular}
+}
+
+% \headingphoto{Name Surname}{
+%     Website: \website{example.com} \\
+%     Email: \email{example@example.edu} \\
+%     LinkedIn: \linkedin{name-surname} \\
+%     GitHub: \github{example}
+% }{photo.jpg}
+
+% Page One
+\import{sections/}{personal.tex}
+\import{sections/}{education.tex}
+\import{sections/}{positions.tex}
+\import{sections/}{awards.tex}
+\import{sections/}{publications.tex}
+%\newpage
+\pagebreak
+\import{sections/}{teaching.tex}
+\import{sections/}{service.tex}
+\pagebreak
+\import{sections/}{students.tex}
+\pagebreak
+\import{sections/}{talks.tex}
+%\import{sections/}{end.tex}
+
+
+% Page Two
+%\sidebyside
+%    {\import{sections/}{skills.tex}}
+%    {\import{sections/}{languages.tex}}
+\end{document}

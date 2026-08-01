@@ -77,11 +77,19 @@ def to_yaml(entries):
 # --- JSON entry -> BibTeX (reconstruct; description is website-only) ----------
 def to_bib(entries):
     def emit(e):
+        preprint = 'preprint' in (e.get('keywords') or '').lower()
         lines = [f"@{e['type']}{{{e['key']},"]
         if e.get('author'):
             lines.append("  author = {" + ' and '.join(e['author']) + "},")
         for k in sorted(e['fields']):
-            lines.append(f"  {k} = {{{e['fields'][k]}}},")
+            v = e['fields'][k]
+            # The CV's biblatex runs url=false, so a plain `url` field is hidden.
+            # For preprints the link is the only locator, so wrap it in
+            # `howpublished = {\url{...}}`, which url=false does not suppress.
+            if k == 'url' and preprint:
+                lines.append(f"  howpublished = {{\\url{{{v}}}}},")
+            else:
+                lines.append(f"  {k} = {{{v}}},")
         if e.get('keywords'):
             lines.append(f"  keywords = {{{e['keywords']}}},")
         lines.append("}")
