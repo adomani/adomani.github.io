@@ -1,7 +1,6 @@
 ---
 title: ""
 layout: single
-last_modified_at: 2026-03-19T08:24:47
 ---
 
 # [MA251 Algebra 1](https://web.archive.org/web/20141026103713/https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year2/ma251/)

@@ -2,7 +2,6 @@
 title: Cox Rings of Rational Surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T06:29:29
 ---
 
 ## January–February, 2014 — Concepción (Chile) and IMPA (Brasil)
