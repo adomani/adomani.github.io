@@ -63,13 +63,14 @@ def md_to_web(s):
     return re.sub(r'\$([^$]*)\$', lambda m: '\\\\(' + m.group(1) + '\\\\)', s)
 
 
-def itemize(header, items, lead=''):
+def itemize(banner, items, lead=''):
     """Wrap already-rendered item bodies in the CV's standard itemize envelope.
 
-    `lead` is any text between the banner and \\begin{itemize} (e.g. a bold
-    subsection heading). `items` is the '\\n'-joined item bodies.
+    `banner` is the `% GENERATED ...` header line (see `header()`); `lead` is any
+    text between it and \\begin{itemize} (e.g. a bold subsection heading);
+    `items` is the '\\n'-joined item bodies.
     """
-    return header + lead + '\\begin{itemize}\n' + items + '\n\\end{itemize}\n'
+    return banner + lead + '\\begin{itemize}\n' + items + '\n\\end{itemize}\n'
 
 
 def emit(path, content, *, check=False):
@@ -79,8 +80,10 @@ def emit(path, content, *, check=False):
     (with a message on stderr) if it is stale or missing.
     """
     if check:
-        current = (open(path, encoding='utf-8').read()
-                   if path and path != '-' and os.path.exists(path) else None)
+        current = None
+        if path and path != '-' and os.path.exists(path):
+            with open(path, encoding='utf-8') as fh:
+                current = fh.read()
         if current == content:
             print(f'OK: {path} is up to date')
             return 0

@@ -21,7 +21,8 @@ def load(name):
 
 def read(path):
     """Parse a YAML data file (for modules with more than one DATA path)."""
-    return yaml.safe_load(open(path, encoding='utf-8'))
+    with open(path, encoding='utf-8') as fh:
+        return yaml.safe_load(fh)
 
 
 def assert_itemize(tex, n_items):
