@@ -61,15 +61,20 @@ jobs:
           set -euo pipefail
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
           pdftotext -layout cv/main.pdf cv.txt
-          grep -q "FittingsTheorem" cv.txt                      # preprint present
-          grep -q "github.com/adomani/FittingsTheorem" cv.txt   # repo link shown
-          grep -q "Néron" cv.txt                                # UTF-8 accent renders
-          grep -q "Superficies Racionales sobre un Cuerpo" cv.txt  # minicourse (shared data)
-          grep -q "CIMPA" cv.txt                                # cv_only entry IS on the CV
-          grep -q "Metaprogramming in Lean" cv.txt              # a talk (shared data)
-          grep -q "18.701 Algebra, Grader" cv.txt               # teaching table (shared data)
-          grep -q "Using computers to do maths for us" cv.txt   # Tour of Mathematics (teaching)
-          grep -q "Frontiers of rationality" cv.txt             # organized conference (shared data)
+          # Run every check, report all misses, then fail once (a bare `grep -q`
+          # would both hide which string was missing and stop at the first).
+          fail=0
+          have() { grep -qF -- "$2" "$1" || { echo "::error::CV PDF missing: $2"; fail=1; }; }
+          have cv.txt "FittingsTheorem"                        # preprint present
+          have cv.txt "github.com/adomani/FittingsTheorem"     # repo link shown
+          have cv.txt "Néron"                                  # UTF-8 accent renders
+          have cv.txt "Superficies Racionales sobre un Cuerpo" # minicourse (shared data)
+          have cv.txt "CIMPA"                                  # cv_only entry IS on the CV
+          have cv.txt "Metaprogramming in Lean"                # a talk (shared data)
+          have cv.txt "18.701 Algebra, Grader"                 # teaching table (shared data)
+          have cv.txt "Using computers to do maths for us"     # Tour of Mathematics (teaching)
+          have cv.txt "Frontiers of rationality"               # organized conference (shared data)
+          [ "$fail" -eq 0 ] || { echo "::error::CV content assertions failed (see above)"; exit 1; }
           echo "CV assertions passed."
       - name: Place CV PDF into the site
         run: cp cv/main.pdf pdfs/CV.pdf
@@ -92,78 +97,75 @@ jobs:
           test ! -e _site/README.md && test ! -e _site/README.html  # repo README not a site page
           test -s _site/pdfs/CV.pdf # ...but the CV PDF artifact is still served
           echo "internal sources excluded; CV PDF still served."
-      - name: Assert /slides/ page renders from shared data
+      - name: Assert rendered pages (report every failing check, not just the first)
         run: |
           set -euo pipefail
-          f=_site/slides/index.html
-          test -s "$f"
-          grep -q "2021_11_29_lines_Alt.pdf" "$f"     # a slide PDF (shared data)
-          grep -q "watch?v=734jMwgjkkM" "$f"          # a video link
-          grep -q "Using computers to do maths for us" "$f"  # web_only entry present
-          grep -q "Castravet-Tevelev" "$f"            # expository note
-          if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
-            echo "::error::a raw \$...\$ math span leaked on /slides/"; exit 1
-          fi
-          echo "Slides page assertions passed."
-      - name: Assert minicourses page renders from shared data
-        run: |
-          set -euo pipefail
-          f=_site/minicourses/index.html
-          test -s "$f"
-          grep -q "Superficies Racionales sobre un Cuerpo" "$f"   # a shared entry
-          grep -q "boojum.org.uk" "$f"                            # collaborator link (Martin Bright)
-          ! grep -q "CIMPA" "$f"                                  # cv_only entry hidden from the website
-      - name: Assert msrp page links collaborators from the shared map
-        run: |
-          set -euo pipefail
-          f=_site/msrp/index.html
-          test -s "$f"
-          # The generic collaborator.html include resolved names via _data/collaborators.yml.
-          grep -qF '<a href="https://www.boojum.org.uk/maths/">Martin Bright</a>' "$f"
-          grep -qF '<a href="https://pub.math.leidenuniv.nl/~luijkrmvan/">Ronald van Luijk</a>' "$f"
-          echo "msrp collaborator-include assertions passed."
-      - name: Assert teaching pages render courses from _data/courses.yml
-        run: |
-          set -euo pipefail
-          cur=_site/teaching/index.html
-          past=_site/teaching/past_teaching/index.html
-          test -s "$cur" && test -s "$past"
-          grep -q "MA4N1 Theorem Proving with Lean" "$cur"      # current-term course via the include
-          grep -q "MA4N1 Theorem Proving with Lean" "$past"     # same course, data-driven, on the history page
-          grep -q "Manifolds_2023.pdf" "$past"                  # a course's extra "links" resolved
-          grep -q "MA3J9/3rd.pdf" "$past"                       # a course's "notes" markdown resolved
-          grep -q "GitHub logo" "$past"                         # the github icon (octocat) resolved
-          echo "teaching course-include assertions passed."
-      - name: Assert MathJax v3 is loaded (and the retired CDN is gone)
-        run: |
-          set -euo pipefail
-          f=_site/papers/index.html                        # a math: true page
-          test -s "$f"
-          grep -q 'cdn.jsdelivr.net/npm/mathjax@3' "$f"     # modern MathJax v3 on a maintained CDN
-          ! grep -q 'cdn.mathjax.org' "$f"                  # the retired v2 shim CDN is gone
-          echo "MathJax v3 loader present; retired CDN absent."
-      - name: Assert rendered /papers/ page (from publications.json)
-        run: |
-          set -euo pipefail
+          # Run all checks, collecting failures, then fail once at the end — so a
+          # single missing pattern doesn't shadow the rest. Each helper names the
+          # file and pattern; `seen` guards a missing page (reported once).
+          fail=0
+          seen() { if [ -s "$1" ]; then return 0; fi; echo "::error::missing or empty: $1"; fail=1; return 1; }
+          have() { grep -qF -- "$2" "$1" || { echo "::error::missing in $1: $2"; fail=1; }; }
+          lack() { if grep -qF -- "$2" "$1"; then echo "::error::unexpected in $1: $2"; fail=1; fi; }
+          no_raw_math() { if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$1"; then echo "::error::raw \$...\$ math leaked in $1 (MathJax expects \\(..\\))"; fail=1; fi; }
+
+          # /papers/ (from publications.json) + the MathJax v3 loader
           f=_site/papers/index.html
-          test -s "$f"
-          grep -q "A Macaulay2-Lean interface for proofs in Lean" "$f"   # known entry
-          grep -q "Gröbner" "$f"                                          # UTF-8 accent
-          grep -q "Néron" "$f"
-          grep -q '<details class="pub">' "$f"                            # collapsible entry present
-          grep -q '<span class="pub-title">' "$f"                         # titles wrapped/emphasised
-          grep -q "theta-hyperplanes" "$f"                                # a migrated description
-          grep -q 'href="https://anne.mx/"' "$f"                          # co-author homepage link
-          grep -q "Dedicated to Tony Mach" "$f"                           # citation_note (dedication)
-          grep -q 'supervisor <a href="https://www.math.columbia.edu/~dejong/"' "$f"  # thesis credit
-          grep -qF '\(28\)' "$f"                                          # inline math for MathJax
-          if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
-            echo "::error::a raw \$...\$ math span leaked (MathJax expects \\(..\\))"; exit 1
+          if seen "$f"; then
+            have "$f" "A Macaulay2-Lean interface for proofs in Lean"   # known entry
+            have "$f" "Gröbner"                                          # UTF-8 accent
+            have "$f" "Néron"
+            have "$f" '<details class="pub">'                            # collapsible entry present
+            have "$f" '<span class="pub-title">'                         # titles wrapped/emphasised
+            have "$f" "theta-hyperplanes"                                # a migrated description
+            have "$f" 'href="https://anne.mx/"'                          # co-author homepage link
+            have "$f" "Dedicated to Tony Mach"                           # citation_note (dedication)
+            have "$f" 'supervisor <a href="https://www.math.columbia.edu/~dejong/"'  # thesis credit
+            have "$f" '\(28\)'                                           # inline math delimiter for MathJax
+            have "$f" 'cdn.jsdelivr.net/npm/mathjax@3'                   # modern MathJax v3 CDN
+            lack "$f" 'cdn.mathjax.org'                                  # retired v2 shim CDN gone
+            lack "$f" 'pugwash'                                          # no proxied URL leaked
+            no_raw_math "$f"
           fi
-          if grep -q "pugwash" "$f"; then
-            echo "::error::proxied pugwash URL leaked into the rendered page"; exit 1
+
+          # /slides/
+          f=_site/slides/index.html
+          if seen "$f"; then
+            have "$f" "2021_11_29_lines_Alt.pdf"            # a slide PDF (shared data)
+            have "$f" "watch?v=734jMwgjkkM"                 # a video link
+            have "$f" "Using computers to do maths for us"  # web_only entry present
+            have "$f" "Castravet-Tevelev"                   # expository note
+            no_raw_math "$f"
           fi
-          echo "Publications page assertions passed."
+
+          # /minicourses/
+          f=_site/minicourses/index.html
+          if seen "$f"; then
+            have "$f" "Superficies Racionales sobre un Cuerpo"  # a shared entry
+            have "$f" "boojum.org.uk"                           # collaborator link (Martin Bright)
+            lack "$f" "CIMPA"                                   # cv_only entry hidden from the website
+          fi
+
+          # /msrp/ (collaborator.html resolved via _data/collaborators.yml)
+          f=_site/msrp/index.html
+          if seen "$f"; then
+            have "$f" '<a href="https://www.boojum.org.uk/maths/">Martin Bright</a>'
+            have "$f" '<a href="https://pub.math.leidenuniv.nl/~luijkrmvan/">Ronald van Luijk</a>'
+          fi
+
+          # /teaching/ + past_teaching (course.html resolved via _data/courses.yml)
+          f=_site/teaching/index.html
+          if seen "$f"; then have "$f" "MA4N1 Theorem Proving with Lean"; fi   # current-term course
+          f=_site/teaching/past_teaching/index.html
+          if seen "$f"; then
+            have "$f" "MA4N1 Theorem Proving with Lean"  # same course on the history page
+            have "$f" "Manifolds_2023.pdf"               # a course's extra "links" resolved
+            have "$f" "MA3J9/3rd.pdf"                    # a course's "notes" markdown resolved
+            have "$f" "GitHub logo"                      # the github icon (octocat) resolved
+          fi
+
+          [ "$fail" -eq 0 ] || { echo "::error::one or more rendered-page assertions failed (see above)"; exit 1; }
+          echo "All rendered-page assertions passed."
 
       - uses: actions/upload-pages-artifact@v3
         with:
