@@ -2,12 +2,18 @@
 # (scripts/talks.py). Newest first. Most entries are structured:
 #   year, date, title, venue     (title/venue may contain LaTeX: math, \href)
 # A few heterogeneous entries (workshops, multi-talk series) keep the CV line
-# verbatim in `text`. The website /slides/ page will render the subset that
-# gains slide/video fields (added in a follow-up).
+# verbatim in `text`.
+#
+# Optional `slides:` is a URL; on the CV it renders as a trailing
+# ", \href{url}{slides}." on the line. The website /slides/ page (follow-up)
+# renders the subset with `slides`, plus further website-only fields it may
+# carry — `video:` (URL), `web_title:` (public title when it differs from the CV
+# `title`) and `note:` (short expository note) — all ignored by the CV.
 - year: 2026
   date: February 12
   title: Machine Verified Reasoning
-  venue: \href{https://warwick.ac.uk/fac/sci/wcpm/}{Predictive Modelling Discussion Group}, Warwick Engineering, \href{https://adomani.github.io/Syllabus/Talks/2026_Machine_Verified_Reasoning.pdf}{slides}.
+  venue: \href{https://warwick.ac.uk/fac/sci/wcpm/}{Predictive Modelling Discussion Group}, Warwick Engineering
+  slides: https://adomani.github.io/Syllabus/Talks/2026_Machine_Verified_Reasoning.pdf
 
 - year: 2025
   date: December 9-12
@@ -32,7 +38,8 @@
 - year: 2025
   date: January 14
   title: An introduction to linters
-  venue: \href{https://leanprover-community.github.io/lt2025/}{Lean Together 2025}, online workshop, \href{https://github.com/adomani/Syllabus/blob/master/Talks/2025_Lean_Together_linter_talk.pdf}{slides}.
+  venue: \href{https://leanprover-community.github.io/lt2025/}{Lean Together 2025}, online workshop
+  slides: https://github.com/adomani/Syllabus/blob/master/Talks/2025_Lean_Together_linter_talk.pdf
 
 - year: 2024
   date: June 24-28
@@ -42,17 +49,20 @@
 - year: 2023
   date: December 13
   title: Mathematics, automation, theorem proving
-  venue: Colloquium, Pisa, Italy, \href{https://adomani.github.io/Syllabus/2023_Pisa_Maths_Autom_Thm_Proving.pdf}{slides}.
+  venue: Colloquium, Pisa, Italy
+  slides: https://adomani.github.io/Syllabus/2023_Pisa_Maths_Autom_Thm_Proving.pdf
 
 - year: 2023
   date: November 14
   title: Mathematics, automation, theorem proving
-  venue: Warwick Maths Society, \href{https://adomani.github.io/Syllabus/2023_WMS_Maths_Autom_Thm_Proving.pdf}{slides}.
+  venue: Warwick Maths Society
+  slides: https://adomani.github.io/Syllabus/2023_WMS_Maths_Autom_Thm_Proving.pdf
 
 - year: 2023
   date: September 7
   title: Algebraic Geometry in Lean
-  venue: \href{https://lftcm2023.github.io/}{Lean for the Curious Mathematician 2023}, D\"usseldorf, \href{https://lftcm2023.github.io/slides/AG.pdf}{slides}.
+  venue: \href{https://lftcm2023.github.io/}{Lean for the Curious Mathematician 2023}, D\"usseldorf
+  slides: https://lftcm2023.github.io/slides/AG.pdf
 
 - year: 2021
   date: November 29
