@@ -1,6 +1,6 @@
 # adomani.github.io
 
-Source for Damiano Testa's academic website **and** CV.
+Source for Damiano Testa's webpage.
 
 ### 🌐 Live site — <https://adomani.github.io/>
 
@@ -12,8 +12,7 @@ Source for Damiano Testa's academic website **and** CV.
 
 ## About this repository
 
-The website (Jekyll → GitHub Pages) and the CV (LaTeX → PDF) are generated from
-**one set of canonical data files**, so the two never drift apart:
+The website (Jekyll → GitHub Pages) and the CV (LaTeX → PDF) are generated from:
 
 | Canonical source | Feeds |
 | --- | --- |
