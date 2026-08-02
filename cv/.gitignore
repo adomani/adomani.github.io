@@ -7,6 +7,9 @@ sections/minicourses_generated.tex
 # Generated at build time from _data/talks.yml (scripts/talks.py)
 sections/talks_generated.tex
 
+# Generated at build time from _data/teaching.yml (scripts/teaching.py)
+sections/teaching_generated.tex
+
 # LaTeX build artifacts
 *.aux
 *.bcf

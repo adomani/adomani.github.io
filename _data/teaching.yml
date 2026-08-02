@@ -1,0 +1,110 @@
+# Canonical source for the CV's Teaching institution tables.
+# scripts/teaching.py --tex renders cv/sections/teaching_generated.tex from this
+# (gitignored; teaching.tex \input's it). One institution per top-level entry,
+# `courses` newest-first. `period` and `course` are emitted verbatim into a
+# two-column LaTeX tabular, so they may contain LaTeX (e.g. \emph{...}).
+# Bootstrapped by parsing the old teaching.tex; proven to render byte-identically.
+- institution: Warwick
+  courses:
+  - period: 2026-27, Term 1
+    course: MA4N1 Theorem Proving with Lean
+  - period: 2025-26, Term 1
+    course: MA4N1 Theorem Proving with Lean
+  - period: 2024-25, Term 1
+    course: MA3H5 Manifolds
+  - period: 2024-25, Term 1
+    course: MA4N1 Theorem Proving with Lean
+  - period: 2023-24, Term 1
+    course: MA3H5 Manifolds
+  - period: 2023-24, Term 1
+    course: MA4N1 Theorem Proving with Lean
+  - period: 2022-23, Term 1
+    course: MA3H5 Manifolds
+  - period: 2022-23, Term 1
+    course: MA3J9 Historical Challenges in Mathematics
+  - period: 2021-22, Term 2
+    course: MA939 Applied Scheme Theory
+  - period: 2021-22, Term 2
+    course: MA3J9 Historical Challenges in Mathematics
+  - period: 2020-21, Term 2
+    course: MA939 Topics in Number Theory (Brauer-Manin obstruction)
+  - period: 2020-21, Term 2
+    course: MA3J9 Historical Challenges in Mathematics
+  - period: 2020-21
+    course: Tour of Mathematics, \emph{Using computers to do maths for us!} (outreach)
+  - period: 2019-20, Term 2
+    course: MA3J9 Historical Challenges in Mathematics
+  - period: 2019-20, Term 2
+    course: MA426 Elliptic Curves
+  - period: 2018-19, Term 2
+    course: MA106 Linear Algebra
+  - period: 2018-19, Term 2
+    course: MA426 Elliptic Curves
+  - period: 2017-18, Term 2
+    course: MA106 Linear Algebra
+  - period: 2017-18, Term 2
+    course: MA426 Elliptic Curves
+  - period: 2016-17, Term 2
+    course: MA106 Linear Algebra
+  - period: 2015-16, Term 2
+    course: MA138 Sets and Numbers
+  - period: 2014-15, Term 1
+    course: MA1250 Introduction to Geometry
+  - period: 2013-14, Term 1
+    course: MA251 Algebra I
+  - period: 2013-14, Term 1
+    course: MA1250 Introduction to Geometry
+  - period: 2012-13, Term 1
+    course: MA132 Foundations
+  - period: 2012-13, Term 3
+    course: MA246 Number Theory
+  - period: 2012-13, Term 1
+    course: MA132 Foundations
+  - period: 2011-12, Term 3
+    course: MA246 Number Theory
+  - period: 2011-12, Term 2
+    course: MA106 Linear Algebra
+
+- institution: Oxford
+  courses:
+  - period: 2011, Hillary Term
+    course: Part A Group Theory, New College Tutor
+  - period: 2011, Hillary Term
+    course: Part C Elliptic Curves, Tutor
+  - period: 2010, Michaelmas Term
+    course: Part C Algebraic Geometry, Tutor
+  - period: 2010, Trinity Term
+    course: Part A Number Theory
+  - period: 2010, Hillary Term
+    course: Part A Group Theory, New College Tutor
+
+- institution: La Sapienza
+  courses:
+  - period: 2006, October-December
+    course: Algebra Lineare a Ingegneria Clinica, Tutor
+
+- institution: Cornell
+  courses:
+  - period: 2006, Spring
+    course: '767 Algebraic Geometry: Algebraic Surfaces'
+  - period: 2006, Spring
+    course: 191 Calculus for Engineers
+  - period: 2005, Fall
+    course: 192 Calculus for Engineers
+
+- institution: MIT
+  courses:
+  - period: 2005, Spring
+    course: 18.06 Linear Algebra, Course Administrator
+  - period: 2004, Summer
+    course: 18.03 Differential Equations
+  - period: 2004, Spring
+    course: 18.04 Complex Variables with Applications, Rec.\ Instr.
+  - period: 2003, Fall
+    course: 18.02 Multivariable Calculus, Rec.\ Instr.
+  - period: 2003, Summer
+    course: 18.03 Differential Equations
+  - period: 2003, Spring
+    course: 18.03 Differential Equations, Rec.\ Instr.
+  - period: 2002, Fall
+    course: 18.701 Algebra, Grader
