@@ -27,14 +27,16 @@ Minicourses follow the same idea from `_data/minicourses.yml`:
 
 ```
 _data/minicourses.yml     <- CANONICAL (edit this)
-        ├── Jekyll reads it directly ─▶ /minicourses/ (website; links + collaborators)
+        ├── scripts/minicourses_page.py ─▶ minicourses/index.md  (/minicourses/ page)
         └── scripts/cv_sections.py minicourses ─▶ cv/sections/minicourses_generated.tex (CV)
 ```
 
+Both the website page and the CV are generated from the one file (the page used
+to be a Jekyll Liquid loop; now it comes from the shared builder like `/slides/`).
 `url`, `links` and `collaborators` render on the website (the latter linked via
 `_data/collaborators.yml`); the CV lists minicourses as plain text. Set
 `cv_only: true` on an entry to keep it on the CV but hide it from the website
-(e.g. an on-hold course). The generated `.tex` is built at deploy time and
+(e.g. an on-hold course). Both generated files are built at deploy time and
 gitignored, like `cv/papers.bib`.
 
 Talks work the same way from `_data/talks.yml`:

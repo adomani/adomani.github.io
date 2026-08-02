@@ -18,10 +18,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 os.chdir(os.path.dirname(HERE))          # repo root, so relative data paths resolve
 
-import _common          # noqa: E402
-import cv_sections       # noqa: E402
-import publications      # noqa: E402
-import slides            # noqa: E402
+import _common            # noqa: E402
+import cv_sections         # noqa: E402
+import minicourses_page    # noqa: E402
+import publications        # noqa: E402
+import slides              # noqa: E402
 
 
 def _pub_yaml():
@@ -45,6 +46,7 @@ TARGETS = [
     ('cv/sections/teaching_generated.tex',    _section('teaching'),        False),
     ('cv/sections/conferences_generated.tex', _section('conferences'),     False),
     ('slides/index.md',                       slides.render,               False),
+    ('minicourses/index.md',                  minicourses_page.render,     False),
 ]
 
 
