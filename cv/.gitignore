@@ -4,13 +4,13 @@ papers.bib
 # Generated at build time from _data/minicourses.yml (scripts/cv_sections.py)
 sections/minicourses_generated.tex
 
-# Generated at build time from _data/talks.yml (scripts/talks.py)
+# Generated at build time from _data/talks.yml (scripts/cv_sections.py)
 sections/talks_generated.tex
 
-# Generated at build time from _data/teaching.yml (scripts/teaching.py)
+# Generated at build time from _data/teaching.yml (scripts/cv_sections.py)
 sections/teaching_generated.tex
 
-# Generated at build time from _data/conferences.yml (scripts/conferences.py)
+# Generated at build time from _data/conferences.yml (scripts/cv_sections.py)
 sections/conferences_generated.tex
 
 # LaTeX build artifacts
