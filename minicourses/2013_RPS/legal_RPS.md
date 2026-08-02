@@ -2,7 +2,6 @@
 title: Rational points on surfaces
 layout: single
 math: true
-last_modified_at: 2026-03-19T08:32:51
 ---
 
 ## February 14–21, 2014 — LEGAL, Teresópolis

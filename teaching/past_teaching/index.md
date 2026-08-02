@@ -1,7 +1,6 @@
 ---
 title: Teaching (Past Courses)
 layout: single
-last_modified_at: 2026-03-19T06:51:38
 ---
 
 ### 2025-26 Term 1

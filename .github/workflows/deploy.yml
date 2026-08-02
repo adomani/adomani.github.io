@@ -167,7 +167,10 @@ jobs:
 
           # /teaching/ + past_teaching (course.html resolved via _data/courses.yml)
           f=_site/teaching/index.html
-          if seen "$f"; then have "$f" "MA4N1 Theorem Proving with Lean"; fi   # current-term course
+          if seen "$f"; then
+            have "$f" "MA4N1 Theorem Proving with Lean"   # current-term course
+            lack "$f" 'class="dt-updated"'                # no stale per-page "Updated:" meta (only the global footer date)
+          fi
           f=_site/teaching/past_teaching/index.html
           if seen "$f"; then
             have "$f" "MA4N1 Theorem Proving with Lean"  # same course on the history page
