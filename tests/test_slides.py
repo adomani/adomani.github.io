@@ -6,16 +6,9 @@
 Also pins the content the hand-written /slides/ page used to carry, so the
 generated page can't silently drop a slide PDF, video, note or entry.
 """
-import os
 import re
-import sys
 
-import yaml
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-os.chdir(ROOT)
-import slides as S  # noqa: E402
+import _helpers
 
 # Every slide PDF the old hand-written page linked (relative names) — each must
 # still be reachable from the generated page.
@@ -35,7 +28,7 @@ OLD_PDFS = [
 
 
 def main():
-    entries = yaml.safe_load(open(S.DATA, encoding='utf-8'))
+    S, entries = _helpers.load('slides')
     md = S.to_markdown(entries)
 
     assert md.startswith('---\n')

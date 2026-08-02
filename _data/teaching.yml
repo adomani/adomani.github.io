@@ -1,5 +1,5 @@
 # Canonical source for the CV's Teaching institution tables.
-# scripts/teaching.py --tex renders cv/sections/teaching_generated.tex from this
+# scripts/cv_sections.py teaching renders cv/sections/teaching_generated.tex from this
 # (gitignored; teaching.tex \input's it). One institution per top-level entry,
 # `courses` newest-first. `period` and `course` are emitted verbatim into a
 # two-column LaTeX tabular, so they may contain LaTeX (e.g. \emph{...}).

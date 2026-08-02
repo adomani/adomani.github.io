@@ -1,13 +1,15 @@
-# Single source of truth for talks — the CV talks list is generated from this
-# (scripts/talks.py). Newest first. Most entries are structured:
-#   year, date, title, venue     (title/venue may contain LaTeX: math, \href)
-# A few heterogeneous entries (workshops, multi-talk series) keep the CV line
-# verbatim in `text`.
+# Single source of truth for talks — the CV talks list and the website /slides/
+# page are both generated from this. Newest first. Most entries are structured:
+#   year, date, title, venue
+# `title` and `venue` are MARKDOWN inline text: [label](url), *emphasis*, $math$,
+# Unicode accents. _common.md_to_tex renders it to LaTeX for the CV;
+# _common.md_to_web renders it for the website. A few heterogeneous entries
+# (workshops, multi-talk series) keep the CV line verbatim in `text` (still LaTeX).
 #
 # Optional `slides:` is a URL; on the CV it renders as a trailing
 # ", \href{url}{slides}." on the line. The website /slides/ page is generated
 # from the subset with `slides` (scripts/slides.py), using two further fields the
-# CV ignores: `video:` (URL) and `note:` (a short sentence, may contain \href).
+# CV ignores: `video:` (URL) and `note:` (a short Markdown sentence).
 #
 # `web_only: true` marks an entry that appears on /slides/ but NOT in the CV's
 # talks list — e.g. the Tour of Mathematics (which lives in the CV's Teaching
@@ -15,15 +17,15 @@
 - year: 2026
   date: March 16-20
   title: Maintaining a Large Formalisation Project
-  venue: \href{https://adomani.github.io/PreCFSG/}{workshop on formalisation and group theory}, Tsinghua University, Beijing
+  venue: '[workshop on formalisation and group theory](https://adomani.github.io/PreCFSG/), Tsinghua University, Beijing'
   slides: https://adomani.github.io/PreCFSG/Maintenance/Maintaining_1_Maths.pdf
-  note: (\href{https://adomani.github.io/PreCFSG/Maintenance/Maintaining_2_AI.pdf}{part 2})
+  note: ([part 2](https://adomani.github.io/PreCFSG/Maintenance/Maintaining_2_AI.pdf))
   web_only: true
 
 - year: 2026
   date: February 12
   title: Machine Verified Reasoning
-  venue: \href{https://warwick.ac.uk/fac/sci/wcpm/}{Predictive Modelling Discussion Group}, Warwick Engineering
+  venue: '[Predictive Modelling Discussion Group](https://warwick.ac.uk/fac/sci/wcpm/), Warwick Engineering'
   slides: https://adomani.github.io/Syllabus/Talks/2026_Machine_Verified_Reasoning.pdf
 
 - year: 2025
@@ -49,7 +51,7 @@
 - year: 2025
   date: January 14
   title: An introduction to linters
-  venue: \href{https://leanprover-community.github.io/lt2025/}{Lean Together 2025}, online workshop
+  venue: '[Lean Together 2025](https://leanprover-community.github.io/lt2025/), online workshop'
   slides: https://github.com/adomani/Syllabus/blob/master/Talks/2025_Lean_Together_linter_talk.pdf
   video: https://www.youtube.com/watch?v=734jMwgjkkM
 
@@ -73,13 +75,13 @@
 - year: 2023
   date: September 7
   title: Algebraic Geometry in Lean
-  venue: \href{https://lftcm2023.github.io/}{Lean for the Curious Mathematician 2023}, D\"usseldorf
+  venue: '[Lean for the Curious Mathematician 2023](https://lftcm2023.github.io/), Düsseldorf'
   slides: https://lftcm2023.github.io/slides/AG.pdf
 
 - year: 2021
   date: November 29
   title: Lines of polynomials with Galois group $\mathfrak{A}_{2n}$
-  venue: \href{https://sites.google.com/view/gantseminar}{Greek Algebra \& Number Theory} seminar, online.
+  venue: '[Greek Algebra & Number Theory](https://sites.google.com/view/gantseminar) seminar, online.'
   slides: https://adomani.github.io/slides/2021_11_29_lines_Alt.pdf
 
 - year: 2021
@@ -87,12 +89,12 @@
   title: $\overline{M}_{0,134}$ is not a Mori Dream Space
   venue: Warwick $\overline{M}_{0,n}$ seminar, online.
   slides: https://adomani.github.io/slides/2021_11_22_nMDS.pdf
-  note: An expository talk on a result of \href{https://arxiv.org/abs/1311.7673}{Castravet-Tevelev}.
+  note: An expository talk on a result of [Castravet-Tevelev](https://arxiv.org/abs/1311.7673).
 
 - year: 2021
   date: January 7
   title: Mathematical insights from using Lean
-  venue: \href{https://leanprover-community.github.io/lt2021/}{Lean Together 2021}, online.
+  venue: '[Lean Together 2021](https://leanprover-community.github.io/lt2021/), online.'
   slides: https://adomani.github.io/slides/2021_01_07_Testa_Lean_Together_2021.pdf
   video: https://www.youtube.com/watch?v=jlJl0p7pm7M
 
@@ -116,13 +118,13 @@
 - year: 2020
   date: March 31
   title: Contact in algebraic and tropical geometry
-  venue: dematerialized session of ``Alg\`ebre et G\'eom\'etrie'', Versailles, France.
+  venue: dematerialized session of “Algèbre et Géométrie”, Versailles, France.
   slides: https://adomani.github.io/slides/2020_03_31_Versailles_Testa.pdf
 
 - year: 2019
   date: July 22-26
   title: Arithmetic properties of del Pezzo surfaces
-  venue: D\"usseldorf, Germany
+  venue: Düsseldorf, Germany
 
 - year: 2018
   date: November 30
@@ -162,7 +164,7 @@
 - year: 2015
   date: June 1-12
   title: K3 surfaces arising from arithmetic problems
-  venue: II ELGA, Cabo Fr\'io, Rio de Janeiro, Brasil.
+  venue: II ELGA, Cabo Frío, Rio de Janeiro, Brasil.
 
 - year: 2015
   date: May 5-7
@@ -176,13 +178,13 @@
 
 - year: 2015
   date: February 9-13
-  title: Conference ``Recent advances in Linear series and Newton-Okounkov bodies''
-  venue: Universit\`a degli studi di Padova, Padova, Italy.
+  title: Conference “Recent advances in Linear series and Newton-Okounkov bodies”
+  venue: Università degli studi di Padova, Padova, Italy.
 
 - year: 2015
   date: February 5-6
   title: K3 surfaces arising from arithmetic problems
-  venue: Conference ``Geometria in Bicocca 2015'', Universit\`a di Milano-Bicocca, Milano, Italy.
+  venue: Conference “Geometria in Bicocca 2015”, Università di Milano-Bicocca, Milano, Italy.
 
 - year: 2014
   date: December 10
@@ -192,7 +194,7 @@
 - year: 2014
   date: November 10-14
   title: K3 surfaces arising from arithmetic problems
-  venue: Conference ``K3, Enriques Surfaces and Related Topics'', Nagoya University, Nagoya, Japan.
+  venue: Conference “K3, Enriques Surfaces and Related Topics”, Nagoya University, Nagoya, Japan.
 
 - year: 2014
   date: November 6
@@ -201,13 +203,13 @@
 
 - year: 2014
   date: October 15
-  title: The B\"uchi K3 surface and its rational points
+  title: The Büchi K3 surface and its rational points
   venue: Number theory and geometry seminar, University of Nottingham, Nottingham, UK.
 
 - year: 2014
   date: September 8-9
-  title: The B\"uchi K3 surface and its rational points
-  venue: Workshop Fibrations on algebraic varieties and related topics, Universit\`a di Milano, Milano, Italy.
+  title: The Büchi K3 surface and its rational points
+  venue: Workshop Fibrations on algebraic varieties and related topics, Università di Milano, Milano, Italy.
 
 - year: 2014
   date: June 6-8
@@ -232,12 +234,12 @@
 - year: 2014
   date: February 17-21
   title: Rational points on varieties
-  venue: Liberdade Em Geometria Algébrica LEGAL 2014, Teres\'opolis, Brazil.
+  venue: Liberdade Em Geometria Algébrica LEGAL 2014, Teresópolis, Brazil.
 
 - year: 2014
   date: February 14
   title: Moduli spaces and rational points
-  venue: Colloquium, Universidad de los Andes, Bogot\'a, Colombia.
+  venue: Colloquium, Universidad de los Andes, Bogotá, Colombia.
 
 - year: 2014
   date: January 30-February 6
@@ -247,12 +249,12 @@
 - year: 2014
   date: January 28
   title: Singular plane sections of Fermat surfaces and roots of unity
-  venue: UFF Singularity Workshop, UFF, Niter\'oi, Brazil.
+  venue: UFF Singularity Workshop, UFF, Niterói, Brazil.
 
 - year: 2014
   date: January 14-21
   title: Cox Rings of Rational Surfaces
-  venue: minicourse at Universidad de Concepci\'on, Chile.
+  venue: minicourse at Universidad de Concepción, Chile.
 
 - year: 2014
   date: January 6-10
@@ -262,12 +264,12 @@
 - year: 2013
   date: December 18
   title: Curve di genere due con un'involuzione non iperellittica
-  venue: Universit\`a di Ferrara, Italy.
+  venue: Università di Ferrara, Italy.
 
 - year: 2013
   date: December 11-13
   title: Unirationality of certain del Pezzo surfaces of degree two
-  venue: Algebraic and Arithmetic Geometry - ``Birpol6'', Basel, Switzerland.
+  venue: Algebraic and Arithmetic Geometry - “Birpol6”, Basel, Switzerland.
 
 - year: 2013
   date: November 14
@@ -281,8 +283,8 @@
 
 - year: 2013
   date: June 20
-  title: The B\"uchi K3 surface and its rational points
-  venue: during the Program on Rational Points, Rational Curves and Entire Holomorphic Curves on Projective Varieties, CRM, Montr\'eal, Qu\'ebec.
+  title: The Büchi K3 surface and its rational points
+  venue: during the Program on Rational Points, Rational Curves and Entire Holomorphic Curves on Projective Varieties, CRM, Montréal, Québec.
 
 - year: 2013
   date: June 6-9
@@ -291,23 +293,23 @@
 
 - year: 2013
   date: June 3-4
-  title: Computability of N\'eron-Severi groups
+  title: Computability of Néron-Severi groups
   venue: London-Paris Number Theory Seminar, Imperial College, London.
 
 - year: 2013
   date: March 20
-  title: The B\"uchi K3 surface and its rational points
+  title: The Büchi K3 surface and its rational points
   venue: London Number Theory Seminar, UCL, London.
 
 - year: 2013
   date: March 11-15
   title: The surface of cuboids and Siegel modular threefolds
-  venue: Conference ``Nouvelles directions en arithm\'etique et g\'eom\'etrie des surfaces alg\'ebriques '', Luminy, France.
+  venue: Conference “Nouvelles directions en arithmétique et géométrie des surfaces algébriques ”, Luminy, France.
 
 - year: 2013
   date: January 5-15
   title: Minicourse on Rational points on surfaces
-  venue: Concepci\'on, Chile.
+  venue: Concepción, Chile.
 
 - year: 2012
   date: October 29
@@ -316,13 +318,13 @@
 
 - year: 2012
   date: October 26
-  title: The B\"uchi K3 surface and its rational points
+  title: The Büchi K3 surface and its rational points
   venue: Colóquio de Geometria e Aritmética, Rio de Janeiro, Brasil.
 
 - year: 2012
   date: July 2-7
-  title: The B\"uchi K3 surface and its rational points
-  venue: Durham Symposium on ``Interactions of birational geometry with other fields'', Durham, UK.
+  title: The Büchi K3 surface and its rational points
+  venue: Durham Symposium on “Interactions of birational geometry with other fields”, Durham, UK.
 
 - year: 2012
   date: June 11-17
@@ -337,7 +339,7 @@
 - year: 2011
   date: December 2
   title: Surfaces rationnelles avec diviseur anticanonique pseudo-effectif
-  venue: Universit\'e de Toulouse, France.
+  venue: Université de Toulouse, France.
 
 - year: 2011
   date: October
@@ -347,7 +349,7 @@
 - year: 2011
   date: October
   title: Plane cubics and their flex lines
-  venue: Universidade Federal Fluminense, Niter\'oi, Brasil.
+  venue: Universidade Federal Fluminense, Niterói, Brasil.
 
 - year: 2011
   date: October
@@ -378,7 +380,7 @@
 - year: 2010
   date: December
   title: Rational surfaces with pseudo-effective anticanonical divisor
-  venue: V Iberoamerican Congress on Geometry, Puc\'on, Chile.
+  venue: V Iberoamerican Congress on Geometry, Pucón, Chile.
 
 - year: 2010
   date: October
@@ -398,7 +400,7 @@
 - year: 2010
   date: May
   title: Relative Weil restriction
-  venue: ETH Z\"urich, Switzerland.
+  venue: ETH Zürich, Switzerland.
 
 - year: 2010
   date: April
@@ -413,7 +415,7 @@
 - year: 2009
   date: November
   title: Grosses surfaces rationnelles
-  venue: S\'eminaire ``Vari\'et\'es rationnelles'', ENS, Paris, France.
+  venue: Séminaire “Variétés rationnelles”, ENS, Paris, France.
 
 - year: 2009
   date: September
@@ -433,7 +435,7 @@
 - year: 2008
   date: June
   title: The Rational Box Problem
-  venue: at the ``Workshop on Rational Points on Curves and Higher Dimensional Varieties'', Warwick University, UK.
+  venue: at the “Workshop on Rational Points on Curves and Higher Dimensional Varieties”, Warwick University, UK.
 
 - year: 2008
   date: April 14-18
@@ -446,12 +448,12 @@
 - year: 2008
   date: January
   title: Connectedness of mapping spaces to del Pezzo surfaces
-  venue: Giornate Genovesi II, Universit\`a di Genova, Italy.
+  venue: Giornate Genovesi II, Università di Genova, Italy.
 
 - year: 2007
   date: December
   title: Rationally connected varieties and unirational varieties
-  venue: Max Planck Institut f\"ur Mathematik, Bonn, Germany.
+  venue: Max Planck Institut für Mathematik, Bonn, Germany.
 
 - year: 2007
   date: October
@@ -471,22 +473,22 @@
 - year: 2007
   date: June
   title: Rationally connected varieties and unirational varieties
-  venue: joint Bremen-G\"ottingen-Hannover Seminar, Leibniz Universit\"at Hannover, Germany.
+  venue: joint Bremen-Göttingen-Hannover Seminar, Leibniz Universität Hannover, Germany.
 
 - year: 2007
   date: March
   title: Cores of simplicial complexes
-  venue: 58\`eme S\'eminaire Lotharingien, Lyon, France.
+  venue: 58ème Séminaire Lotharingien, Lyon, France.
 
 - year: 2007
   date: January
-  title: Variet\`a unirazionali e variet\`a razionalmente connesse
+  title: Varietà unirazionali e varietà razionalmente connesse
   venue: Scuola Normale Superiore, Pisa, Italy.
 
 - year: 2006
   date: November
   title: Rationally connected varieties and spaces of rational curves
-  venue: Universit\'e de Provence Aix-Marseille, France.
+  venue: Université de Provence Aix-Marseille, France.
 
 - year: 2006
   date: March
@@ -517,7 +519,7 @@
 - year: 2005
   date: June 10
   title: Il problema di Severi per curve razionali su superficie di del Pezzo
-  venue: Universit\`a di Roma II ``Tor Vergata'', Italy.
+  venue: Università di Roma II “Tor Vergata”, Italy.
 
 - year: 2005
   date: January-March
@@ -527,7 +529,7 @@
 - year: 2004
   date: June 7
   title: Spazi di Mappe Stabili
-  venue: Universit\`a di Roma II ``Tor Vergata'', Italy.
+  venue: Università di Roma II “Tor Vergata”, Italy.
 
 - year: 2001-2004
   text: '2001-2004: Several talks in graduate student seminars at MIT, including {\emph{The $h$-cobordism theorem}}, {\emph{The Banach-Tarski Paradox}}, {\emph{Quotients of varieties by reductive groups}}, USA.'

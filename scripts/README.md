@@ -9,12 +9,12 @@ is generated. The website page and the CV's `.bib` both derive from it.
 _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
         │                               per-paper `description` (markdown).
         │  scripts/publications.py
-        ├── --yaml ─▶ _data/publications.yml     (render-ready, for the website)
+        ├── to_yaml ─▶ _data/publications.yml    (render-ready, for the website)
         │                 │  _includes/pub_entry.html  (Liquid template)
         │                 ▼
         │            papers/index.md  ─▶ /papers/
         │
-        └── --bib  ─▶ _bibliography/papers.bib   (for the CV)
+        └── to_bib  ─▶ _bibliography/papers.bib   (for the CV)
                           │  copied to cv/papers.bib, then latexmk
                           ▼
                       cv/main.tex  ─▶ CV PDF   (.github/workflows/cv.yml)
@@ -27,35 +27,35 @@ Minicourses follow the same idea from `_data/minicourses.yml`:
 
 ```
 _data/minicourses.yml     <- CANONICAL (edit this)
-        ├── Jekyll reads it directly ─▶ /minicourses/ (website; links + collaborators)
-        └── scripts/minicourses.py --tex ─▶ cv/sections/minicourses_generated.tex (CV)
+        ├── scripts/minicourses_page.py ─▶ minicourses/index.md  (/minicourses/ page)
+        └── scripts/cv_sections.py minicourses ─▶ cv/sections/minicourses_generated.tex (CV)
 ```
 
+Both the website page and the CV are generated from the one file (the page used
+to be a Jekyll Liquid loop; now it comes from the shared builder like `/slides/`).
 `url`, `links` and `collaborators` render on the website (the latter linked via
 `_data/collaborators.yml`); the CV lists minicourses as plain text. Set
 `cv_only: true` on an entry to keep it on the CV but hide it from the website
-(e.g. an on-hold course). The generated `.tex` is built at deploy time and
+(e.g. an on-hold course). Both generated files are built at deploy time and
 gitignored, like `cv/papers.bib`.
 
 Talks work the same way from `_data/talks.yml`:
 
 ```
 _data/talks.yml     <- CANONICAL (edit this)
-        └── scripts/talks.py --tex ─▶ cv/sections/talks_generated.tex (CV)
+        └── scripts/cv_sections.py talks ─▶ cv/sections/talks_generated.tex (CV)
 ```
 
 Most entries are structured (`year, date, title, venue`); a few heterogeneous
-ones (workshops, multi-talk series) keep the CV line verbatim in `text`. Fields
-may hold LaTeX (math in titles, `\href` in venues) and are emitted verbatim.
-The data was bootstrapped by parsing the old `talks.tex` and **verified to
-render byte-for-byte identically** to the hand-written list. An optional
-`slides:` URL renders on the CV line as a trailing `\href{url}{slides}.` (this
-replaced the hrefs that used to be hand-embedded in `venue`).
+ones (workshops, multi-talk series) keep the CV line verbatim in `text`.
+`title`/`venue` are **Markdown inline text** (see *Inline text* below), so the
+same field feeds both the CV and `/slides/`. An optional `slides:` URL renders on
+the CV line as a trailing `\href{url}{slides}.`
 
 The website `/slides/` page is generated from the same data:
 
 ```
-_data/talks.yml  ── scripts/slides.py --out ─▶ slides/index.md  (/slides/ page)
+_data/talks.yml  ── scripts/slides.py ─▶ slides/index.md  (/slides/ page)
 ```
 
 It lists every talk with a `slides` URL (newest first), converting the CV's
@@ -71,7 +71,7 @@ The CV's Teaching institution tables work the same way from `_data/teaching.yml`
 
 ```
 _data/teaching.yml     <- CANONICAL (edit this)
-        └── scripts/teaching.py --tex ─▶ cv/sections/teaching_generated.tex (CV)
+        └── scripts/cv_sections.py teaching ─▶ cv/sections/teaching_generated.tex (CV)
 ```
 
 One institution per entry, `courses` newest-first with `period` and `course`
@@ -87,15 +87,13 @@ The CV's **Organized conferences** list works the same way from
 `_data/conferences.yml`:
 
 ```
-_data/conferences.yml  ── scripts/conferences.py --tex ─▶ cv/sections/conferences_generated.tex (CV)
+_data/conferences.yml  ── scripts/cv_sections.py conferences ─▶ cv/sections/conferences_generated.tex (CV)
 ```
 
-The four entries are too heterogeneous to structure (an `\href` session title, a
-plain `\emph` title, differing "with … venue … dates" phrasing), so each is one
-verbatim `text` line emitted as-is — the same choice as the irregular talks
-entries. Bootstrapped by parsing the old `teaching.tex` and **verified to render
-byte-for-byte identically**. `teaching.tex` `\input`s both this and the teaching
-tables; the whole Teaching section is now data-driven.
+The four entries are too heterogeneous to structure, so each is one **Markdown**
+`text` line (`[*title*](url), with … venue … dates`) that `_common.md_to_tex`
+renders to LaTeX. `teaching.tex` `\input`s both this and the teaching tables; the
+whole Teaching section is data-driven.
 
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
@@ -108,11 +106,37 @@ tables; the whole Teaching section is now data-driven.
 - Inline math is written `\\(..\\)` in the JSON/descriptions; it survives
   kramdown to `\(..\)`, which the site's MathJax typesets.
 
-## Regenerate after editing the JSON
+## Inline text (one source, two dialects)
+
+Sections that render to **both** the CV and the website (talks → `/slides/`,
+conferences) store their inline formatting as neutral **Markdown**, not LaTeX:
+
+```
+[label](url)   *emphasis*   $math$   é ü “ ”      (in the YAML)
+      │                                    │
+      │ _common.md_to_tex                  │ _common.md_to_web
+      ▼                                    ▼
+\href{url}{label}, \emph{..}, $..$,   [label](url), *emphasis*, \(math\)
+é ü `` '' (LaTeX, for the CV)          (kramdown/MathJax, for the site)
+```
+
+So the format is defined once; each target applies a tiny converter. `$math$`
+and the verbatim `text` escape-hatch pass through. Sections whose CV text is
+**plain** (minicourses — its links live in separate `url`/`collaborators`
+fields) keep `tex_escape` instead; `publications` (biblatex) and `teaching`
+(tables) are their own formats.
+
+## How the generators fit together
+
+Every generator exposes one function, `render() -> str`, and `scripts/build.py`
+is the **single entry point**: it holds the one list of named *(data → output)*
+targets and materialises them all. There is no per-script CLI — adding a section
+is one line in `build.py`. The whole pipeline is three commands:
 
 ```sh
-python3 scripts/publications.py --yaml _data/publications.yml
-python3 scripts/publications.py --bib  _bibliography/papers.bib
+python3 scripts/build.py          # regenerate every output (fragments, papers.bib, /slides/)
+python3 scripts/build.py --check  # verify the committed outputs are in sync (no writes)
+python3 scripts/build.py talks    # preview one target on stdout (by name)
 ```
 
 ## Testing
@@ -120,12 +144,9 @@ python3 scripts/publications.py --bib  _bibliography/papers.bib
 The pipeline checks itself, so CI can prove it does the right thing:
 
 ```sh
-# Golden-file checks: are the generated files in sync with the JSON?
-python3 scripts/publications.py --yaml _data/publications.yml --check
-python3 scripts/publications.py --bib  _bibliography/papers.bib  --check
-
-# Fixture test: pin JSON -> yaml and JSON -> bib output
-python3 tests/test_publications.py            # --update to regenerate after an intended change
+python3 scripts/build.py --check              # committed files in sync with their source
+for t in tests/test_*.py; do python3 "$t"; done   # one self-check per section
+python3 tests/test_publications.py --update   # regenerate fixtures after an intended change
 ```
 
 `.github/workflows/publications.yml` runs these on every PR, builds the site,
@@ -140,7 +161,7 @@ asserts (preprint present, repo link shown, accents render) but does not deploy.
 
 ## CV build
 
-`--bib` reconstructs `papers.bib` from the JSON. The CV sources live in `cv/`;
+`publications.to_bib` reconstructs `papers.bib` from the JSON. The CV sources live in `cv/`;
 the build copies the generated bib to `cv/papers.bib` (gitignored) and runs
 `latexmk`. The CV's biblatex uses `url=false`, so preprint URLs are emitted as
 `howpublished = {\url{...}}` (which is not suppressed) to keep the link visible.

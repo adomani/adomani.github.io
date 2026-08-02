@@ -2,15 +2,12 @@
 """Generate the publication outputs from the canonical JSON.
 
     _bibliography/publications.json   (canonical, hand-editable, has descriptions)
-        ├── --yaml -> _data/publications.yml   (render-ready, for the website)
-        └── --bib  -> _bibliography/papers.bib  (reconstructed, for the CV)
+        ├── to_yaml() -> _data/publications.yml   (render-ready, for the website)
+        └── to_bib()  -> _bibliography/papers.bib  (reconstructed, for the CV)
 
-Usage:
-    python3 scripts/publications.py --yaml _data/publications.yml
-    python3 scripts/publications.py --bib  _bibliography/papers.bib
-    add --check to compare against the committed file instead of writing.
+Both outputs are materialised by scripts/build.py (the single entry point); this
+module exposes `load()`, `to_yaml()` and `to_bib()`.
 """
-import argparse
 import json
 import os
 import re
@@ -95,34 +92,3 @@ def to_bib(entries):
         lines.append("}")
         return "\n".join(lines)
     return BIB_HEADER + "\n\n".join(emit(e) for e in entries) + "\n"
-
-
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--yaml')
-    ap.add_argument('--bib')
-    ap.add_argument('--check', action='store_true')
-    a = ap.parse_args()
-    entries = load()
-    target, out = (a.yaml, to_yaml(entries)) if a.yaml else (a.bib, to_bib(entries))
-    if not target:
-        ap.error('specify --yaml or --bib')
-
-    if a.check:
-        current = open(target, encoding='utf-8').read() if os.path.exists(target) else None
-        if current == out:
-            print(f'OK: {target} is up to date with {CANONICAL}')
-            return 0
-        sys.stderr.write(f'ERROR: {target} is stale. Regenerate with:\n'
-                         f'    python3 scripts/publications.py '
-                         f'{"--yaml" if a.yaml else "--bib"} {target}\n')
-        return 1
-
-    with open(target, 'w', encoding='utf-8') as fh:
-        fh.write(out)
-    print(f'Wrote {target} ({len(entries)} entries)')
-    return 0
-
-
-if __name__ == '__main__':
-    sys.exit(main())
