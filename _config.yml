@@ -24,3 +24,23 @@ plugins:
 - jekyll-include-cache
 - jekyll-seo-tag
 - jekyll-feed
+
+# Keep build tooling and sources out of the published site — only the rendered
+# pages and the CV *artifact* (pdfs/CV.pdf) are served, not the LaTeX sources or
+# the Python pipeline. Setting `exclude` replaces Jekyll's defaults, so the
+# standard ignores are repeated here.
+exclude:
+- .sass-cache/
+- .jekyll-cache/
+- gemfiles/
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
+- cv/          # LaTeX CV sources — the PDF is served from pdfs/CV.pdf instead
+- scripts/     # Python build pipeline
+- tests/       # generator self-checks
+- README.md    # repo landing page (for GitHub), not a site page
