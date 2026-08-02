@@ -50,10 +50,22 @@ may hold LaTeX (math in titles, `\href` in venues) and are emitted verbatim.
 The data was bootstrapped by parsing the old `talks.tex` and **verified to
 render byte-for-byte identically** to the hand-written list. An optional
 `slides:` URL renders on the CV line as a trailing `\href{url}{slides}.` (this
-replaced the hrefs that used to be hand-embedded in `venue`). The website
-`/slides/` page (follow-up) will render the subset with `slides`, using further
-website-only fields the CV ignores: `video:`, `web_title:` (public title when it
-differs from the CV `title`) and `note:` (short expository note).
+replaced the hrefs that used to be hand-embedded in `venue`).
+
+The website `/slides/` page is generated from the same data:
+
+```
+_data/talks.yml  ── scripts/slides.py --out ─▶ slides/index.md  (/slides/ page)
+```
+
+It lists every talk with a `slides` URL (newest first), converting the CV's
+LaTeX to the kramdown/MathJax the site expects (`\href{u}{t}` → `[t](u)`,
+`$...$` → `\\(...\\)`, accents → Unicode). Two further fields the CV ignores are
+used here: `video:` (a URL) and `note:` (a short sentence, may contain `\href`).
+An entry with `web_only: true` shows on `/slides/` but is skipped by the CV —
+used for the Tour of Mathematics (which is in the CV's Teaching section) and the
+Tsinghua minicourse slides. `slides/index.md` is generated at build time and
+gitignored, like the CV fragments.
 
 The CV's Teaching institution tables work the same way from `_data/teaching.yml`:
 
@@ -140,5 +152,5 @@ one-time bib→json migration.
 - The remaining CV sections are still hand-written LaTeX in `cv/sections/`
   (education, positions, awards, service, students, personal). They have no
   website counterpart, so there's little to share yet.
-- The website `/slides/` page is still a hand-curated view; rebuilding it from
-  `_data/talks.yml` (the subset with slides/video) remains a possible follow-up.
+- The website `/slides/` page is now generated from `_data/talks.yml` (see
+  above), so talks and slides share one source.
