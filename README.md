@@ -18,7 +18,11 @@ The website and CV are generated from:
 | [`_data/teaching.yml`](_data/teaching.yml), [`_data/conferences.yml`](_data/conferences.yml) | the CV Teaching section |
 | [`_data/courses.yml`](_data/courses.yml), [`_data/collaborators.yml`](_data/collaborators.yml) | the teaching pages and co-author links |
 
-The single command [`python3 scripts/build.py`](scripts/build.py) materialises everything, and CI
+The single command
+```bash
+python3 scripts/build.py
+```
+materialises everything, and CI
 rebuilds and deploys the site and the CV together on every push to `master`.
 
 See [`scripts/README.md`](scripts/README.md) for the full pipeline.
