@@ -229,7 +229,7 @@ publications:
     \\]
     share the same inflection lines!
 
-    The same property holds for the two quartics
+    The same property holds, over a field of characteristic 3 or 13, for the two quartics
     \\[
       x^4 -y^4 -z^4 = 2x^2 y^2 -4xyz^2 \qquad
       -(x^4 -y^4 +z^4) = 2x^2 y^2 -4xyz^2
