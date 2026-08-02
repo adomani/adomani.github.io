@@ -165,8 +165,10 @@ asserts (preprint present, repo link shown, accents render) but does not deploy.
 the build copies the generated bib to `cv/papers.bib` (gitignored) and runs
 `latexmk`. The CV's biblatex uses `url=false`, so preprint URLs are emitted as
 `howpublished = {\url{...}}` (which is not suppressed) to keep the link visible.
-`bib2yaml.py` remains only as a helper library (display formatting) and for the
-one-time bib→json migration.
+`bibrender.py` holds the display helpers that turn each JSON entry's fields into
+the website record (`to_record` and the `delatex`/`format_authors`/`link_for` it
+calls). The JSON is the only source; the old `papers.bib` → JSON migration that
+seeded it has been retired (it's in the git history if ever needed).
 
 ## Not yet modelled
 
