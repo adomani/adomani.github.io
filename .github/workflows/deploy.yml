@@ -78,6 +78,7 @@ jobs:
           test ! -e _site/cv       # LaTeX CV sources excluded
           test ! -e _site/scripts  # Python pipeline excluded
           test ! -e _site/tests    # generator self-checks excluded
+          test ! -e _site/README.md && test ! -e _site/README.html  # repo README not a site page
           test -s _site/pdfs/CV.pdf # ...but the CV PDF artifact is still served
           echo "internal sources excluded; CV PDF still served."
       - name: Assert /slides/ page renders from shared data

@@ -43,3 +43,4 @@ exclude:
 - cv/          # LaTeX CV sources — the PDF is served from pdfs/CV.pdf instead
 - scripts/     # Python build pipeline
 - tests/       # generator self-checks
+- README.md    # repo landing page (for GitHub), not a site page
