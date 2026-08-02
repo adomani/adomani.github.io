@@ -1,11 +1,11 @@
-{% if site.data.build.iso %}
 <p class="page__footer-copyright" style="font-size: 0.7em; opacity: 0.8;">
   Last updated:
-  <time datetime="{{ site.data.build.iso }}" id="site-updated">{{ site.data.build.date }}</time>
+  <time datetime="{{ site.time | date_to_xmlschema }}" id="site-updated">{{ site.time | date: "%-d %B %Y" }}</time>
 </p>
 <script>
-  // Reformat the build timestamp in the viewer's locale + timezone (the server
-  // stamped it in UTC). Falls back to the UTC date if JS is off or parsing fails.
+  // site.time is the build timestamp (UTC on GitHub Pages). Reformat it in the
+  // viewer's own locale + timezone; fall back to the UTC date if JS is off or
+  // parsing fails.
   (function () {
     var el = document.getElementById('site-updated');
     if (!el) return;
@@ -14,4 +14,3 @@
     el.textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
   })();
 </script>
-{% endif %}
