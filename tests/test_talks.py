@@ -3,26 +3,16 @@
 
     python3 tests/test_talks.py
 """
-import os
-import sys
-
-import yaml
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-os.chdir(ROOT)
-import talks as T  # noqa: E402
+import _helpers
 
 
 def main():
-    entries = yaml.safe_load(open(T.DATA, encoding='utf-8'))
+    T, entries = _helpers.load('talks')
     tex = T.to_tex(entries)
 
-    assert tex.startswith('% GENERATED')
     # `web_only` entries appear on the website /slides/ page but not in the CV.
     n_cv = sum(1 for e in entries if not e.get('web_only'))
-    assert tex.count('\\item') == n_cv, 'item count mismatch (web_only excluded)'
-    assert tex.rstrip().endswith('\\end{itemize}')
+    _helpers.assert_itemize(tex, n_cv)
 
     # Every entry is either structured (title+venue, date unless web_only) or text.
     for e in entries:

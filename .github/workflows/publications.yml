@@ -37,31 +37,22 @@ jobs:
           python-version: '3.x'
       - run: pip install pyyaml
 
-      # 1. Golden-file checks: both generated artifacts are in sync with the JSON.
-      #    Catches "edited the JSON but forgot to regenerate" and generator drift.
-      - name: publications.yml is up to date with the JSON
-        run: python3 scripts/publications.py --yaml _data/publications.yml --check
-      - name: papers.bib is up to date with the JSON (CV round-trip)
-        run: python3 scripts/publications.py --bib _bibliography/papers.bib --check
+      # 1. Golden-file check: the committed outputs (publications.yml, papers.bib)
+      #    are in sync with the JSON. Catches "edited the source, forgot to
+      #    regenerate" and generator drift.
+      - name: Committed generated files are up to date
+        run: python3 scripts/build.py --check
 
-      # 2. Fixture test: pins JSON -> yaml and JSON -> bib output.
-      - name: Generator fixture test
-        run: python3 tests/test_publications.py
-      - name: Minicourses generator test
-        run: python3 tests/test_minicourses.py
-      - name: Talks generator test
-        run: python3 tests/test_talks.py
-      - name: Teaching generator test
-        run: python3 tests/test_teaching.py
-      - name: Conferences generator test
-        run: python3 tests/test_conferences.py
-      - name: Slides generator test
-        run: python3 tests/test_slides.py
+      # 2. Generator self-checks (one per section).
+      - name: Generator tests
+        run: |
+          set -euo pipefail
+          for t in tests/test_*.py; do echo "== $t =="; python3 "$t"; done
 
-      # 3. Build the whole site (catches Liquid/template/theme errors).
-      #    Generate the /slides/ page first — it's built from the talk data.
-      - name: Generate the /slides/ page from talks data
-        run: python3 scripts/slides.py --out slides/index.md
+      # 3. Build the whole site (catches Liquid/template/theme errors). Generate
+      #    every artifact first — the /slides/ page is built from the talk data.
+      - name: Materialise all generated files
+        run: python3 scripts/build.py
       - name: Build site
         uses: actions/jekyll-build-pages@v1
         with:

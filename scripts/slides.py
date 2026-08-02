@@ -15,11 +15,9 @@ the CV are LaTeX; this converts them to the kramdown/MathJax the site expects:
     python3 scripts/slides.py --out slides/index.md
     python3 scripts/slides.py            # write to stdout
 """
-import argparse
 import re
-import sys
 
-import yaml
+import _common
 
 DATA = '_data/talks.yml'
 
@@ -77,7 +75,7 @@ def fmt_date(entry):
     return f'{date}, {year}'          # e.g. "March 16-20, 2026"
 
 
-def render(entry):
+def render_entry(entry):
     title = web(entry['title'])
     parts = [f"[{title}]({entry['slides']})", web(entry['venue']).rstrip('.')]
     if entry.get('video'):
@@ -92,25 +90,15 @@ def render(entry):
 
 def to_markdown(entries):
     talks = [e for e in entries if e.get('slides')]
-    body = '\n\n'.join(render(e) for e in talks)
+    body = '\n\n'.join(render_entry(e) for e in talks)
     return FRONT_MATTER + '\n' + body + '\n'
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--out', default='-', help='write the page here (default stdout)')
-    a = ap.parse_args()
-    entries = yaml.safe_load(open(DATA, encoding='utf-8'))
-    md = to_markdown(entries)
-    if a.out == '-':
-        sys.stdout.write(md)
-    else:
-        with open(a.out, 'w', encoding='utf-8') as fh:
-            fh.write(md)
-        n = sum(1 for e in entries if e.get('slides'))
-        print(f'Wrote {a.out} ({n} slide entries)')
-    return 0
+def render():
+    entries = _common.load(DATA)
+    n = sum(1 for e in entries if e.get('slides'))
+    return to_markdown(entries), n
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    raise SystemExit(_common.cli(render, noun='slide entries'))

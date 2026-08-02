@@ -36,15 +36,10 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install pyyaml
-      - name: papers.bib is up to date with the JSON
-        run: python3 scripts/publications.py --bib _bibliography/papers.bib --check
-      - name: Materialise the CV data fragments
-        run: |
-          cp _bibliography/papers.bib cv/papers.bib
-          python3 scripts/minicourses.py --tex cv/sections/minicourses_generated.tex
-          python3 scripts/talks.py --tex cv/sections/talks_generated.tex
-          python3 scripts/teaching.py --tex cv/sections/teaching_generated.tex
-          python3 scripts/conferences.py --tex cv/sections/conferences_generated.tex
+      # Materialise every generated artifact from the canonical data: the CV
+      # fragments, cv/papers.bib, and the /slides/ page (scripts/build.py).
+      - name: Materialise all generated files
+        run: python3 scripts/build.py
       - name: Build CV PDF
         uses: xu-cheng/latex-action@v3
         with:
@@ -68,10 +63,8 @@ jobs:
       - name: Place CV PDF into the site
         run: cp cv/main.pdf pdfs/CV.pdf
 
-      # 2. Generate the /slides/ page from the same talk data, then build the
-      #    Jekyll site (now including the fresh CV PDF and slides page).
-      - name: Generate the /slides/ page from talks data
-        run: python3 scripts/slides.py --out slides/index.md
+      # 2. Build the Jekyll site (the /slides/ page and CV PDF are already in
+      #    place from the build.py step above).
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:

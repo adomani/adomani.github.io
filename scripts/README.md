@@ -28,7 +28,7 @@ Minicourses follow the same idea from `_data/minicourses.yml`:
 ```
 _data/minicourses.yml     <- CANONICAL (edit this)
         ├── Jekyll reads it directly ─▶ /minicourses/ (website; links + collaborators)
-        └── scripts/minicourses.py --tex ─▶ cv/sections/minicourses_generated.tex (CV)
+        └── scripts/minicourses.py --out ─▶ cv/sections/minicourses_generated.tex (CV)
 ```
 
 `url`, `links` and `collaborators` render on the website (the latter linked via
@@ -41,7 +41,7 @@ Talks work the same way from `_data/talks.yml`:
 
 ```
 _data/talks.yml     <- CANONICAL (edit this)
-        └── scripts/talks.py --tex ─▶ cv/sections/talks_generated.tex (CV)
+        └── scripts/talks.py --out ─▶ cv/sections/talks_generated.tex (CV)
 ```
 
 Most entries are structured (`year, date, title, venue`); a few heterogeneous
@@ -71,7 +71,7 @@ The CV's Teaching institution tables work the same way from `_data/teaching.yml`
 
 ```
 _data/teaching.yml     <- CANONICAL (edit this)
-        └── scripts/teaching.py --tex ─▶ cv/sections/teaching_generated.tex (CV)
+        └── scripts/teaching.py --out ─▶ cv/sections/teaching_generated.tex (CV)
 ```
 
 One institution per entry, `courses` newest-first with `period` and `course`
@@ -87,7 +87,7 @@ The CV's **Organized conferences** list works the same way from
 `_data/conferences.yml`:
 
 ```
-_data/conferences.yml  ── scripts/conferences.py --tex ─▶ cv/sections/conferences_generated.tex (CV)
+_data/conferences.yml  ── scripts/conferences.py --out ─▶ cv/sections/conferences_generated.tex (CV)
 ```
 
 The four entries are too heterogeneous to structure (an `\href` session title, a
@@ -108,24 +108,29 @@ tables; the whole Teaching section is now data-driven.
 - Inline math is written `\\(..\\)` in the JSON/descriptions; it survives
   kramdown to `\(..\)`, which the site's MathJax typesets.
 
-## Regenerate after editing the JSON
+## How the generators fit together
+
+Every generator has the same shape — a `to_tex`/`to_markdown` renderer plus a
+`render()` that loads its data — and shares one CLI (`scripts/_common.py`:
+`--out PATH [--check]`, or `-` for stdout). `scripts/build.py` holds the single
+list of *(data → output)* targets and materialises them all; adding a section is
+one line there. So the whole pipeline is driven by two commands:
 
 ```sh
-python3 scripts/publications.py --yaml _data/publications.yml
-python3 scripts/publications.py --bib  _bibliography/papers.bib
+python3 scripts/build.py          # regenerate every output (fragments, papers.bib, /slides/)
+python3 scripts/build.py --check  # verify the committed outputs are in sync (no writes)
 ```
+
+To preview one section on its own: `python3 scripts/talks.py --out - ` (stdout).
 
 ## Testing
 
 The pipeline checks itself, so CI can prove it does the right thing:
 
 ```sh
-# Golden-file checks: are the generated files in sync with the JSON?
-python3 scripts/publications.py --yaml _data/publications.yml --check
-python3 scripts/publications.py --bib  _bibliography/papers.bib  --check
-
-# Fixture test: pin JSON -> yaml and JSON -> bib output
-python3 tests/test_publications.py            # --update to regenerate after an intended change
+python3 scripts/build.py --check              # committed files in sync with their source
+for t in tests/test_*.py; do python3 "$t"; done   # one self-check per section
+python3 tests/test_publications.py --update   # regenerate fixtures after an intended change
 ```
 
 `.github/workflows/publications.yml` runs these on every PR, builds the site,

@@ -3,26 +3,16 @@
 
     python3 tests/test_minicourses.py
 """
-import os
-import sys
-
-import yaml
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-os.chdir(ROOT)
-import minicourses as M  # noqa: E402
+import _helpers
 
 
 def main():
-    entries = yaml.safe_load(open(M.DATA, encoding='utf-8'))
+    M, entries = _helpers.load('minicourses')
     tex = M.to_tex(entries)
 
     # Structure
-    assert tex.startswith('% GENERATED'), 'missing provenance header'
+    _helpers.assert_itemize(tex, len(entries))
     assert '{\\textbf{Minicourses}}' in tex
-    assert tex.count('\\item') == len(entries), 'item count mismatch'
-    assert tex.rstrip().endswith('\\end{itemize}')
 
     # Every required field surfaces; url/links are website-only and must NOT leak
     for e in entries:

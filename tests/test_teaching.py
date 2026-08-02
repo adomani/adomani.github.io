@@ -3,24 +3,14 @@
 
     python3 tests/test_teaching.py
 """
-import os
-import sys
-
-import yaml
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-os.chdir(ROOT)
-import teaching as T  # noqa: E402
+import _helpers
 
 
 def main():
-    data = yaml.safe_load(open(T.DATA, encoding='utf-8'))
+    T, data = _helpers.load('teaching')
     tex = T.to_tex(data)
 
-    assert tex.startswith('% GENERATED')
-    assert tex.count('\\item') == len(data), 'one \\item per institution'
-    assert tex.rstrip().endswith('\\end{itemize}')
+    _helpers.assert_itemize(tex, len(data))          # one \item per institution
 
     # Every institution has a name and a non-empty ordered course list, and each
     # course has both columns (period + course), emitted verbatim into a tabular.

@@ -3,25 +3,15 @@
 
     python3 tests/test_conferences.py
 """
-import os
-import sys
-
-import yaml
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-os.chdir(ROOT)
-import conferences as C  # noqa: E402
+import _helpers
 
 
 def main():
-    entries = yaml.safe_load(open(C.DATA, encoding='utf-8'))
+    C, entries = _helpers.load('conferences')
     tex = C.to_tex(entries)
 
-    assert tex.startswith('% GENERATED')
+    _helpers.assert_itemize(tex, len(entries))       # one \item per conference
     assert C.HEADING in tex
-    assert tex.count('\\item') == len(entries), 'one \\item per conference'
-    assert tex.rstrip().endswith('\\end{itemize}')
 
     for e in entries:
         assert e.get('text'), f'conference entry missing text: {e}'
