@@ -81,6 +81,12 @@ jobs:
 
       # 2. Build the Jekyll site (the /slides/ page and CV PDF are already in
       #    place from the build.py step above).
+      # Stamp the deploy date into a data file the footer reads, so the site's
+      # "Last updated" is always current (like the CV footer) — gitignored.
+      - name: Stamp build date for the footer
+        run: |
+          printf 'date: "%s"\niso: "%s"\n' \
+            "$(date -u +'%-d %B %Y')" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" > _data/build.yml
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:
