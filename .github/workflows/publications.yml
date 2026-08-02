@@ -8,7 +8,7 @@ on:
   pull_request:
     paths:
       - '_bibliography/publications.json'
-      - '_bibliography/papers.bib'
+      - 'cv/papers.bib'
       - '_data/publications.yml'
       - '_data/collaborators.yml'
       - '_data/minicourses.yml'

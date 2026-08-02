@@ -3,7 +3,7 @@
 
     _bibliography/publications.json   (canonical, hand-editable, has descriptions)
         ├── to_yaml() -> _data/publications.yml   (render-ready, for the website)
-        └── to_bib()  -> _bibliography/papers.bib  (reconstructed, for the CV)
+        └── to_bib()  -> cv/papers.bib  (reconstructed, read by latexmk for the CV)
 
 Both outputs are materialised by scripts/build.py (the single entry point); this
 module exposes `load()`, `to_yaml()` and `to_bib()`.
