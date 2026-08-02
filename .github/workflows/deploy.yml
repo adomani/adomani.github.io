@@ -119,6 +119,14 @@ jobs:
           grep -q "MA3J9/3rd.pdf" "$past"                       # a course's "notes" markdown resolved
           grep -q "GitHub logo" "$past"                         # the github icon (octocat) resolved
           echo "teaching course-include assertions passed."
+      - name: Assert MathJax v3 is loaded (and the retired CDN is gone)
+        run: |
+          set -euo pipefail
+          f=_site/papers/index.html                        # a math: true page
+          test -s "$f"
+          grep -q 'cdn.jsdelivr.net/npm/mathjax@3' "$f"     # modern MathJax v3 on a maintained CDN
+          ! grep -q 'cdn.mathjax.org' "$f"                  # the retired v2 shim CDN is gone
+          echo "MathJax v3 loader present; retired CDN absent."
 
       - uses: actions/upload-pages-artifact@v3
         with:
