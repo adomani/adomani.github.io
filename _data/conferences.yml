@@ -1,0 +1,16 @@
+# Canonical source for the CV's "Organized conferences" list (newest first).
+# scripts/conferences.py --tex renders cv/sections/conferences_generated.tex from
+# this (gitignored; teaching.tex \input's it). Each `text` is one verbatim LaTeX
+# line (the entries are too heterogeneous to structure), emitted as-is.
+# Bootstrapped by parsing the old teaching.tex; proven to render byte-identically.
+- text: |-
+    \href{https://icms-conference.org/2026/session5.html}{\emph{Mathematics in Lean}} session at ICMS 2026, with Matthew Ballard and R\'emy Degenne, Waterloo, Canada, 20-23 July 2026.
+
+- text: |-
+    {\emph{Frontiers of rationality}}, with Ivan Cheltsov, Fr\'ed\'eric Mangolte, Constantin Shramov, Longyearbyen, Spitsbergen 14-18 July 2014.
+
+- text: |-
+    {\emph{Edge days}}, with Ivan Cheltsov, Edinburgh 6-8 June 2014.
+
+- text: |-
+    {\emph{Rational Points-Geometric, Analytic and Explicit Approaches}}, with Roger Heath-Brown, John Cremona, Samir Siksek, Michael Stoll, Warwick, 27-31 May, 2013.

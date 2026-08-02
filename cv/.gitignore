@@ -10,6 +10,9 @@ sections/talks_generated.tex
 # Generated at build time from _data/teaching.yml (scripts/teaching.py)
 sections/teaching_generated.tex
 
+# Generated at build time from _data/conferences.yml (scripts/conferences.py)
+sections/conferences_generated.tex
+
 # LaTeX build artifacts
 *.aux
 *.bcf
