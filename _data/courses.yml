@@ -1,0 +1,74 @@
+# Course definitions for the website's teaching pages. Referenced by id from
+# teaching/index.md and teaching/past_teaching/index.md via
+#     {% include course.html id="tpwl" %}
+# Define a course once here; every term that lists it links the same way.
+#
+#   title   (required)  the course code + name
+#   url     (required)  primary link (external, or a relative course subpage)
+#   links   (optional)  list of {label, url} extra material, shown as "(label)"
+#   github  (optional)  a repo URL, shown as the GitHub icon
+#   notes   (optional)  a short markdown sentence appended after the link
+#
+# NOTE: relative urls (e.g. "MA125/") resolve against the PAGE that includes the
+# course, so a course with a relative url must only be listed on pages under the
+# same path (in practice: past_teaching/). Courses shown on teaching/index.md use
+# absolute urls.
+tpwl:
+  title: "MA4N1 Theorem Proving with Lean"
+  url: "https://warwick.ac.uk/fac/sci/maths/currentstudents/modules/ma4n1/"
+  github: "https://adomani.github.io/Syllabus/MA4N1/toc"
+
+manifolds:
+  title: "MA3H5 Manifolds"
+  url: "https://warwick.ac.uk/fac/sci/maths/currentstudents/ughandbook/year3/ma3h5/"
+  links:
+    - label: "lecture notes"
+      url: "https://adomani.github.io/Syllabus/Manifolds_2023.pdf"
+
+hcim:
+  title: "MA3J9 Historical Challenges in Mathematics"
+  url: "https://web.archive.org/web/20210511070907/https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year3/ma3j9/"
+  notes: "Lecture Notes: Hilbert's [3rd](https://adomani.github.io/teaching/past_teaching/MA3J9/3rd.pdf), [17th](https://adomani.github.io/teaching/past_teaching/MA3J9/17th.pdf), [10th](https://adomani.github.io/teaching/past_teaching/MA3J9/10th.pdf) problem"
+
+elliptic:
+  title: "MA426 Elliptic Curves"
+  url: "https://web.archive.org/web/20200809210600/https://warwick.ac.uk/fac/sci/maths/undergrad/ughandbook/year4/ma426/"
+  links:
+    - label: "Lecture Notes"
+      url: "MA426_EllipticCurves_2018.pdf"
+
+linearalgebra:
+  title: "MA106 Linear Algebra"
+  url: "2017-Spring-MA106-LinearAlgebra/"
+
+introgeo:
+  title: "MA125 Introduction to Geometry"
+  url: "MA125/"
+
+nt246:
+  title: "MA246 Number Theory"
+  url: "MA246/"
+
+ma948:
+  title: "MA948 Applied Scheme Theory"
+  url: "https://warwick.ac.uk/fac/sci/maths/currentstudents/currentpostgraduates/phd_studies/modules/ma948/"
+
+ma939:
+  title: "MA939 Topics in Number Theory"
+  url: "https://warwick.ac.uk/fac/sci/maths/postgrad/current/phd_studies/modules/ma939/"
+
+ma138:
+  title: "MA138 Sets and Numbers"
+  url: "MA138SetsAndNumbers/"
+
+ma251:
+  title: "MA251 Algebra 1"
+  url: "MA251/"
+
+ma132:
+  title: "MA132 Foundations"
+  url: "MA132/"
+
+ma106_2012:
+  title: "MA106 Linear Algebra"
+  url: "LinAlg2012/"

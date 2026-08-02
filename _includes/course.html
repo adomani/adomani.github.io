@@ -1,0 +1,7 @@
+{%- comment -%}
+Link a course by id via the _data/courses.yml definitions — one place per course.
+Usage:  {% include course.html id="tpwl" %}
+Renders "[title](url)" plus optional (links), a GitHub icon, and a notes clause.
+{%- endcomment -%}
+{%- assign c = site.data.courses[include.id] -%}
+[{{ c.title }}]({{ c.url }}){% for l in c.links %} ([{{ l.label }}]({{ l.url }})){% endfor %}{% if c.github %}, course material on {% include octocat url=c.github %}{% endif %}{% if c.notes %} {{ c.notes }}{% endif -%}
