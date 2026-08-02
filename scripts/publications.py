@@ -2,10 +2,9 @@
 """Generate the publication outputs from the canonical JSON.
 
     _bibliography/publications.json   (canonical, hand-editable, has descriptions)
-        ├── --yaml -> _data/publications.yml   (render-ready, for the website)
-        └── --bib  -> _bibliography/papers.bib  (reconstructed, for the CV)
+        ├── to_yaml() -> _data/publications.yml   (render-ready, for the website)
+        └── to_bib()  -> _bibliography/papers.bib  (reconstructed, for the CV)
 
-Usage:
 Both outputs are materialised by scripts/build.py (the single entry point); this
 module exposes `load()`, `to_yaml()` and `to_bib()`.
 """

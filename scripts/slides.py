@@ -2,7 +2,7 @@
 """Generate the website /slides/ page from the shared talk data.
 
     _data/talks.yml  (canonical)
-        └── scripts/slides.py --out slides/index.md ─▶ the /slides/ page
+        └── scripts/slides.py ─▶ slides/index.md  (the /slides/ page)
 
 The page lists every talk that carries a `slides` URL (newest first, in file
 order), including `web_only` talks that are not in the CV. Fields authored for

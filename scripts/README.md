@@ -9,12 +9,12 @@ is generated. The website page and the CV's `.bib` both derive from it.
 _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
         │                               per-paper `description` (markdown).
         │  scripts/publications.py
-        ├── --yaml ─▶ _data/publications.yml     (render-ready, for the website)
+        ├── to_yaml ─▶ _data/publications.yml    (render-ready, for the website)
         │                 │  _includes/pub_entry.html  (Liquid template)
         │                 ▼
         │            papers/index.md  ─▶ /papers/
         │
-        └── --bib  ─▶ _bibliography/papers.bib   (for the CV)
+        └── to_bib  ─▶ _bibliography/papers.bib   (for the CV)
                           │  copied to cv/papers.bib, then latexmk
                           ▼
                       cv/main.tex  ─▶ CV PDF   (.github/workflows/cv.yml)
@@ -161,7 +161,7 @@ asserts (preprint present, repo link shown, accents render) but does not deploy.
 
 ## CV build
 
-`--bib` reconstructs `papers.bib` from the JSON. The CV sources live in `cv/`;
+`publications.to_bib` reconstructs `papers.bib` from the JSON. The CV sources live in `cv/`;
 the build copies the generated bib to `cv/papers.bib` (gitignored) and runs
 `latexmk`. The CV's biblatex uses `url=false`, so preprint URLs are emitted as
 `howpublished = {\url{...}}` (which is not suppressed) to keep the link visible.
