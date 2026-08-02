@@ -51,6 +51,22 @@ The data was bootstrapped by parsing the old `talks.tex` and **verified to
 render byte-for-byte identically** to the hand-written list. The website
 `/slides/` page will render a subset of this data (follow-up).
 
+The CV's Teaching institution tables work the same way from `_data/teaching.yml`:
+
+```
+_data/teaching.yml     <- CANONICAL (edit this)
+        └── scripts/teaching.py --tex ─▶ cv/sections/teaching_generated.tex (CV)
+```
+
+One institution per entry, `courses` newest-first with `period` and `course`
+columns (emitted verbatim into a two-column tabular, so they may hold LaTeX like
+`\emph{...}`). Bootstrapped by parsing the old `teaching.tex` and **verified to
+render byte-for-byte identically** (the one intended addition is the covid-era
+"Tour of Mathematics" outreach lecture, which lived only on the website
+`/slides/` page before). The website's per-course `/teaching/` pages stay as the
+curated view — they carry problem sheets, drafts and course subpages the CV
+doesn't, and only cover Warwick, so they're not regenerated from this data.
+
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
   citation. All authors are listed in order.

@@ -43,6 +43,7 @@ jobs:
           cp _bibliography/papers.bib cv/papers.bib
           python3 scripts/minicourses.py --tex cv/sections/minicourses_generated.tex
           python3 scripts/talks.py --tex cv/sections/talks_generated.tex
+          python3 scripts/teaching.py --tex cv/sections/teaching_generated.tex
       - name: Build CV PDF
         uses: xu-cheng/latex-action@v3
         with:
@@ -59,6 +60,8 @@ jobs:
           grep -q "Superficies Racionales sobre un Cuerpo" cv.txt  # minicourse (shared data)
           grep -q "CIMPA" cv.txt                                # cv_only entry IS on the CV
           grep -q "Metaprogramming in Lean" cv.txt              # a talk (shared data)
+          grep -q "18.701 Algebra, Grader" cv.txt               # teaching table (shared data)
+          grep -q "Using computers to do maths for us" cv.txt   # Tour of Mathematics (teaching)
           echo "CV assertions passed."
       - name: Place CV PDF into the site
         run: cp cv/main.pdf pdfs/CV.pdf
