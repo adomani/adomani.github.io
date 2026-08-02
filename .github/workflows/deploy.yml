@@ -111,6 +111,15 @@ jobs:
           lack() { if grep -qF -- "$2" "$1"; then echo "::error::unexpected in $1: $2"; fail=1; fi; }
           no_raw_math() { if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$1"; then echo "::error::raw \$...\$ math leaked in $1 (MathJax expects \\(..\\))"; fail=1; fi; }
 
+          # / (home) — the global "Last updated" footer must render. It vanished
+          # silently twice (#38, #39) when the footer/custom.html include was
+          # dropped from the layout; this guard fails the build before deploy.
+          f=_site/index.html
+          if seen "$f"; then
+            have "$f" 'id="site-updated"'    # footer "Last updated" element present
+            have "$f" '<time datetime="20'   # ...stamped with the site.time build date
+          fi
+
           # /papers/ (from publications.json) + the MathJax v3 loader
           f=_site/papers/index.html
           if seen "$f"; then
