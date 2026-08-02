@@ -1,8 +1,11 @@
-# Single point of entry for co-authors' homepages.
-# The publications page (/papers/) links every author name that appears here to
-# their page; names not listed render as plain text. Keys must match the
-# rendered author name exactly (see _data/publications.yml). Add a collaborator
-# once here and every paper you share links to them.
+# Single point of entry for co-authors' homepages — the ONE place a homepage URL
+# lives. Consumers:
+#   - /papers/ (pub_entry.html) links every author name that appears here;
+#   - other pages link a name with {% include collaborator.html name="..." %};
+#   - the /minicourses/ page (scripts/minicourses_page.py) links collaborators.
+# Names not listed render as plain text. Keys must match the rendered name
+# exactly (see _data/publications.yml). Add a collaborator once here and every
+# page that mentions them links to them.
 "Aise Johan de Jong": "https://www.math.columbia.edu/~dejong/"
 "Andreas Leopold Knutsen": "https://sites.google.com/view/andreasleopoldknutsen/front-page"
 "Andrew Brooke-Taylor": "https://eps.leeds.ac.uk/maths/staff/4010/dr-andrew-brooke-taylor"

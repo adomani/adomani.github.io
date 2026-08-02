@@ -89,6 +89,15 @@ jobs:
           grep -q "Superficies Racionales sobre un Cuerpo" "$f"   # a shared entry
           grep -q "boojum.org.uk" "$f"                            # collaborator link (Martin Bright)
           ! grep -q "CIMPA" "$f"                                  # cv_only entry hidden from the website
+      - name: Assert msrp page links collaborators from the shared map
+        run: |
+          set -euo pipefail
+          f=_site/msrp/index.html
+          test -s "$f"
+          # The generic collaborator.html include resolved names via _data/collaborators.yml.
+          grep -qF '<a href="https://www.boojum.org.uk/maths/">Martin Bright</a>' "$f"
+          grep -qF '<a href="https://pub.math.leidenuniv.nl/~luijkrmvan/">Ronald van Luijk</a>' "$f"
+          echo "msrp collaborator-include assertions passed."
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,8 @@
+{%- comment -%}
+Link a collaborator by name via the _data/collaborators.yml homepage map — the
+single source of truth for co-author homepages (also used by pub_entry.html).
+Usage:  {% include collaborator.html name="Martin Bright" %}
+Renders <a href="url">name</a> when the name is in the map, else the plain name.
+{%- endcomment -%}
+{%- assign url = site.data.collaborators[include.name] -%}
+{%- if url %}<a href="{{ url }}">{{ include.name }}</a>{% else %}{{ include.name }}{% endif -%}
