@@ -37,6 +37,20 @@ _data/minicourses.yml     <- CANONICAL (edit this)
 (e.g. an on-hold course). The generated `.tex` is built at deploy time and
 gitignored, like `cv/papers.bib`.
 
+Talks work the same way from `_data/talks.yml`:
+
+```
+_data/talks.yml     <- CANONICAL (edit this)
+        └── scripts/talks.py --tex ─▶ cv/sections/talks_generated.tex (CV)
+```
+
+Most entries are structured (`year, date, title, venue`); a few heterogeneous
+ones (workshops, multi-talk series) keep the CV line verbatim in `text`. Fields
+may hold LaTeX (math in titles, `\href` in venues) and are emitted verbatim.
+The data was bootstrapped by parsing the old `talks.tex` and **verified to
+render byte-for-byte identically** to the hand-written list. The website
+`/slides/` page will render a subset of this data (follow-up).
+
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
   citation. All authors are listed in order.

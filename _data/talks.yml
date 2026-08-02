@@ -1,0 +1,498 @@
+# Single source of truth for talks — the CV talks list is generated from this
+# (scripts/talks.py). Newest first. Most entries are structured:
+#   year, date, title, venue     (title/venue may contain LaTeX: math, \href)
+# A few heterogeneous entries (workshops, multi-talk series) keep the CV line
+# verbatim in `text`. The website /slides/ page will render the subset that
+# gains slide/video fields (added in a follow-up).
+- year: 2026
+  date: February 12
+  title: Machine Verified Reasoning
+  venue: \href{https://warwick.ac.uk/fac/sci/wcpm/}{Predictive Modelling Discussion Group}, Warwick Engineering, \href{https://adomani.github.io/Syllabus/Talks/2026_Machine_Verified_Reasoning.pdf}{slides}.
+
+- year: 2025
+  date: December 9-12
+  title: Metaprogramming in Lean
+  venue: Bridging Formal Mathematics and AI, ItaLean 2025, Bologna, Italy.
+
+- year: 2025
+  date: November 19
+  title: Bridging proof and computation
+  venue: Maths Week Parliamentary Expo, House of Commons, London.
+
+- year: 2025
+  date: November 4
+  title: The Tactic Analysis Framework
+  venue: study group on Lean, Imperial.
+
+- year: 2025
+  date: June 17
+  title: Specialisation and generalisation
+  venue: Algebraic Geometry learning seminar, Warwick.
+
+- year: 2025
+  date: January 14
+  title: An introduction to linters
+  venue: \href{https://leanprover-community.github.io/lt2025/}{Lean Together 2025}, online workshop, \href{https://github.com/adomani/Syllabus/blob/master/Talks/2025_Lean_Together_linter_talk.pdf}{slides}.
+
+- year: 2024
+  date: June 24-28
+  title: Formalising algebraic geometry
+  venue: AIM online workshop.
+
+- year: 2023
+  date: December 13
+  title: Mathematics, automation, theorem proving
+  venue: Colloquium, Pisa, Italy, \href{https://adomani.github.io/Syllabus/2023_Pisa_Maths_Autom_Thm_Proving.pdf}{slides}.
+
+- year: 2023
+  date: November 14
+  title: Mathematics, automation, theorem proving
+  venue: Warwick Maths Society, \href{https://adomani.github.io/Syllabus/2023_WMS_Maths_Autom_Thm_Proving.pdf}{slides}.
+
+- year: 2023
+  date: September 7
+  title: Algebraic Geometry in Lean
+  venue: \href{https://lftcm2023.github.io/}{Lean for the Curious Mathematician 2023}, D\"usseldorf, \href{https://lftcm2023.github.io/slides/AG.pdf}{slides}.
+
+- year: 2021
+  date: November 29
+  title: Lines of polynomials with Galois group $\mathfrak{A}_{2n}$
+  venue: Greek Algebra \& Number Theory seminar, online.
+
+- year: 2021
+  date: November 22
+  title: $\overline{M}_{0,134}$ is not a Mori Dream Space
+  venue: Warwick $\overline{M}_{0,n}$ seminar, online.
+
+- year: 2021
+  date: January 7
+  title: Mathematical insights from using Lean
+  venue: Lean Together 2021, online.
+
+- year: 2020
+  date: December 8
+  title: Computers and Mathematics
+  venue: Warwick Maths Society, online.
+
+- year: 2020
+  date: October 7
+  title: Contact in algebraic and tropical geometry
+  venue: BRAG, Rio de Janeiro, Brasil.
+
+- year: 2020
+  date: March 31
+  title: Contact in algebraic and tropical geometry
+  venue: dematerialized session of ``Alg\`ebre et G\'eom\'etrie'', Versailles, France.
+
+- year: 2019
+  date: July 22-26
+  title: Arithmetic properties of del Pezzo surfaces
+  venue: D\"usseldorf, Germany
+
+- year: 2018
+  date: November 30
+  title: A self-map on the space of plane quartics
+  venue: Rennes, France.
+
+- year: 2018
+  date: May 16
+  title: Plane Quartics and their Inflection Lines
+  venue: COW Seminar, Cardiff University, UK.
+
+- year: 2018
+  date: May 15
+  title: Plane quartics and their inflection lines
+  venue: Algebraic Geometry Seminar, Sheffield University, UK.
+
+- year: 2017
+  date: November 15-17
+  title: Plane quartics and their inflection lines
+  venue: Conference Rational points and Zariski density, Copenhagen, Denmark.
+
+- year: 2017
+  date: July 14
+  title: Singular plane sections of Fermat surfaces and roots of unity
+  venue: GLEN Seminar, Manchester, UK.
+
+- year: 2016
+  date: November 10
+  title: Lines in algebraic geometry
+  venue: Colloquium, IMPA, Rio de Janeiro, Brasil.
+
+- year: 2015
+  date: October 21
+  title: Geometric influences on arithmetic problems
+  venue: Colloquium, Sheffield University, UK.
+
+- year: 2015
+  date: June 1-12
+  title: K3 surfaces arising from arithmetic problems
+  venue: II ELGA, Cabo Fr\'io, Rio de Janeiro, Brasil.
+
+- year: 2015
+  date: May 5-7
+  title: Two lectures on rational points
+  venue: IMPA, Rio de Janeiro, Brasil.
+
+- year: 2015
+  date: March 27-June 13
+  title: Special Thematic Program on Algebraic Geometry
+  venue: IMPA, Rio de Janeiro, Brasil.
+
+- year: 2015
+  date: February 9-13
+  title: Conference ``Recent advances in Linear series and Newton-Okounkov bodies''
+  venue: Universit\`a degli studi di Padova, Padova, Italy.
+
+- year: 2015
+  date: February 5-6
+  title: K3 surfaces arising from arithmetic problems
+  venue: Conference ``Geometria in Bicocca 2015'', Universit\`a di Milano-Bicocca, Milano, Italy.
+
+- year: 2014
+  date: December 10
+  title: K3 surfaces arising from arithmetic problems
+  venue: Algebraic geometry seminar, Humboldt University, Berlin, Germany.
+
+- year: 2014
+  date: November 10-14
+  title: K3 surfaces arising from arithmetic problems
+  venue: Conference ``K3, Enriques Surfaces and Related Topics'', Nagoya University, Nagoya, Japan.
+
+- year: 2014
+  date: November 6
+  title: K3 surfaces arising from arithmetic problems
+  venue: COW Seminar, Andrew Wiles Building, Oxford, UK.
+
+- year: 2014
+  date: October 15
+  title: The B\"uchi K3 surface and its rational points
+  venue: Number theory and geometry seminar, University of Nottingham, Nottingham, UK.
+
+- year: 2014
+  date: September 8-9
+  title: The B\"uchi K3 surface and its rational points
+  venue: Workshop Fibrations on algebraic varieties and related topics, Universit\`a di Milano, Milano, Italy.
+
+- year: 2014
+  date: June 6-8
+  title: Certain rational elliptic fibrations and their exceptional curves
+  venue: Edge Days, Edinburgh University, UK.
+
+- year: 2014
+  date: May 12-16
+  title: Special hyperplane sections of Fermat hypersurfaces and sums of roots of unity
+  venue: Workshop Rational and integral points on higher-dimensional varieties, AIM, Palo Alto, USA.
+
+- year: 2014
+  date: April 30
+  title: The Büchi K3 surface and its rational points
+  venue: UGA, Athens, USA.
+
+- year: 2014
+  date: April 4-6
+  title: The Büchi K3 surface and its rational points
+  venue: Texas Algebraic Geometry Symposium, Rice University, USA.
+
+- year: 2014
+  date: February 17-21
+  title: Rational points on varieties
+  venue: Liberdade Em Geometria Algébrica LEGAL 2014, Teres\'opolis, Brazil.
+
+- year: 2014
+  date: February 14
+  title: Moduli spaces and rational points
+  venue: Colloquium, Universidad de los Andes, Bogot\'a, Colombia.
+
+- year: 2014
+  date: January 30-February 6
+  title: Cox Rings of Rational Surfaces
+  venue: minicourse at IMPA, Rio de Janeiro, Brazil.
+
+- year: 2014
+  date: January 28
+  title: Singular plane sections of Fermat surfaces and roots of unity
+  venue: UFF Singularity Workshop, UFF, Niter\'oi, Brazil.
+
+- year: 2014
+  date: January 14-21
+  title: Cox Rings of Rational Surfaces
+  venue: minicourse at Universidad de Concepci\'on, Chile.
+
+- year: 2014
+  date: January 6-10
+  title: Cox rings of rational surfaces
+  venue: 'Workshop CARP: Collaborations Around Rational Points, Bellairs Research Institute, Holetown, Barbados.'
+
+- year: 2013
+  date: December 18
+  title: Curve di genere due con un'involuzione non iperellittica
+  venue: Universit\`a di Ferrara, Italy.
+
+- year: 2013
+  date: December 11-13
+  title: Unirationality of certain del Pezzo surfaces of degree two
+  venue: Algebraic and Arithmetic Geometry - ``Birpol6'', Basel, Switzerland.
+
+- year: 2013
+  date: November 14
+  title: Blow ups of $\mathbb{P}^3$ along lines
+  venue: Linfoot Seminar, University of Bristol, UK.
+
+- year: 2013
+  date: September 23-27
+  title: Cox rings of rational surfaces
+  venue: Workshop on Okounkov bodies and Nagata-type Conjectures, IMPANGA, Warsaw, Poland.
+
+- year: 2013
+  date: June 20
+  title: The B\"uchi K3 surface and its rational points
+  venue: during the Program on Rational Points, Rational Curves and Entire Holomorphic Curves on Projective Varieties, CRM, Montr\'eal, Qu\'ebec.
+
+- year: 2013
+  date: June 6-9
+  title: Reconstructing plane quartics with many undulations from their inflection lines
+  venue: Edge Days 2013, Edinburgh, UK.
+
+- year: 2013
+  date: June 3-4
+  title: Computability of N\'eron-Severi groups
+  venue: London-Paris Number Theory Seminar, Imperial College, London.
+
+- year: 2013
+  date: March 20
+  title: The B\"uchi K3 surface and its rational points
+  venue: London Number Theory Seminar, UCL, London.
+
+- year: 2013
+  date: March 11-15
+  title: The surface of cuboids and Siegel modular threefolds
+  venue: Conference ``Nouvelles directions en arithm\'etique et g\'eom\'etrie des surfaces alg\'ebriques '', Luminy, France.
+
+- year: 2013
+  date: January 5-15
+  title: Minicourse on Rational points on surfaces
+  venue: Concepci\'on, Chile.
+
+- year: 2012
+  date: October 29
+  title: Dihedral configurations in $\mathbb{P}^1$
+  venue: Algebra Seminar, UFRJ, Rio de Janeiro, Brasil.
+
+- year: 2012
+  date: October 26
+  title: The B\"uchi K3 surface and its rational points
+  venue: Colóquio de Geometria e Aritmética, Rio de Janeiro, Brasil.
+
+- year: 2012
+  date: July 2-7
+  title: The B\"uchi K3 surface and its rational points
+  venue: Durham Symposium on ``Interactions of birational geometry with other fields'', Durham, UK.
+
+- year: 2012
+  date: June 11-17
+  title: Unirationality of certain del Pezzo surfaces of degree two
+  venue: Workshop on Essential Dimension and Cremona Groups, Chern Institute of Mathematics, Tianjin, China.
+
+- year: 2012
+  date: April 23-27
+  title: Plane cubics and their flex lines
+  venue: Conference on Birational and Affine Geometry, Steklov Mathematical Institute, Moscow, Russia.
+
+- year: 2011
+  date: December 2
+  title: Surfaces rationnelles avec diviseur anticanonique pseudo-effectif
+  venue: Universit\'e de Toulouse, France.
+
+- year: 2011
+  date: October
+  title: Conics on the Fermat quintic threefold
+  venue: IMPA, Rio de Janeiro, Brasil.
+
+- year: 2011
+  date: October
+  title: Plane cubics and their flex lines
+  venue: Universidade Federal Fluminense, Niter\'oi, Brasil.
+
+- year: 2011
+  date: October
+  title: The surface of cuboids and Siegel modular threefolds
+  venue: 11th ALGA, Maresias, Brasil.
+
+- year: 2011
+  text: 2011, July 18-29, assistant for the Summer Graduate Workshop on Toric Varieties, Cortona, Italy.
+
+- year: 2011
+  date: July
+  title: The surface of cuboids and Siegel modular threefolds
+  venue: Sino-French Summer Institute 2011 in Arithmetic Geometry, Chern Institute of Mathematics, Tianjin, China.
+
+- year: 2011
+  date: May
+  title: The surface of cuboids and Siegel modular threefolds
+  venue: Cambridge University, Cambridge, UK.
+
+- year: 2011
+  date: March
+  title: Conics on the Fermat quintic threefold
+  venue: Irish Algebraic Geometry Seminar, University College Cork, Cork, Ireland.
+
+- year: 2011
+  text: '2011, January 10-14, Workshop on Torsors: theory and applications, ICMS, Edinburgh, UK.'
+
+- year: 2010
+  date: December
+  title: Rational surfaces with pseudo-effective anticanonical divisor
+  venue: V Iberoamerican Congress on Geometry, Puc\'on, Chile.
+
+- year: 2010
+  date: October
+  title: Unirationality of certain del Pezzo surfaces of degree two
+  venue: Arithmetic of Surfaces, Lorentz Center, Leiden, The Netherlands.
+
+- year: 2010
+  date: September
+  title: Conics on the Fermat quintic threefold
+  venue: Mathematics Colloquium, Rice University, USA.
+
+- year: 2010
+  date: September
+  title: The Picard group of the space of perfect cuboids
+  venue: Rice University, USA.
+
+- year: 2010
+  date: May
+  title: Relative Weil restriction
+  venue: ETH Z\"urich, Switzerland.
+
+- year: 2010
+  date: April
+  title: Intersection of two cubics and a conjecture of Artin
+  venue: BMC 2010, Edinburgh, UK.
+
+- year: 2010
+  date: March
+  title: Cox rings of del Pezzo surfaces
+  venue: Warwick University, UK.
+
+- year: 2009
+  date: November
+  title: Grosses surfaces rationnelles
+  venue: S\'eminaire ``Vari\'et\'es rationnelles'', ENS, Paris, France.
+
+- year: 2009
+  date: September
+  title: Intersections of two quadrics in $\mathbb{P}^5$
+  venue: Bristol University, UK.
+
+- year: 2009
+  date: March-June
+  title: Big rational surfaces
+  venue: at Bristol, Cambridge, Columbia, Oxford, Warwick.
+
+- year: 2009
+  date: February
+  title: Linear subspaces in the intersection of two quadrics
+  venue: Cambridge University, UK.
+
+- year: 2008
+  date: June
+  title: The Rational Box Problem
+  venue: at the ``Workshop on Rational Points on Curves and Higher Dimensional Varieties'', Warwick University, UK.
+
+- year: 2008
+  date: April 14-18
+  title: 'Instructional Workshop on Surfaces: Geometry and Arithmetic'
+  venue: with Martin Bright and Ronald van Luijk, 2007-2008 Warwick EPSRC Symposium on Algebraic Geometry, UK.
+
+- year: 2008
+  text: 2008, November 30-December 5, Workshop Arithmetic of K3 Surfaces, BIRS, Banff, Canada.
+
+- year: 2008
+  date: January
+  title: Connectedness of mapping spaces to del Pezzo surfaces
+  venue: Giornate Genovesi II, Universit\`a di Genova, Italy.
+
+- year: 2007
+  date: December
+  title: Rationally connected varieties and unirational varieties
+  venue: Max Planck Institut f\"ur Mathematik, Bonn, Germany.
+
+- year: 2007
+  date: October
+  title: Rationally Connected Varieties
+  venue: Mathematics Colloquium, Jacobs University Bremen, Germany.
+
+- year: 2007
+  date: September
+  title: Rationally Connected Varieties
+  venue: Workshop of young researchers, Universidad Complutense de Madrid, Spain.
+
+- year: 2007
+  date: July
+  title: Arithmetic of del Pezzo Surfaces
+  venue: Rational Points Workshop, Jacobs University Bremen, Germany.
+
+- year: 2007
+  date: June
+  title: Rationally connected varieties and unirational varieties
+  venue: joint Bremen-G\"ottingen-Hannover Seminar, Leibniz Universit\"at Hannover, Germany.
+
+- year: 2007
+  date: March
+  title: Cores of simplicial complexes
+  venue: 58\`eme S\'eminaire Lotharingien, Lyon, France.
+
+- year: 2007
+  date: January
+  title: Variet\`a unirazionali e variet\`a razionalmente connesse
+  venue: Scuola Normale Superiore, Pisa, Italy.
+
+- year: 2006
+  date: November
+  title: Rationally connected varieties and spaces of rational curves
+  venue: Universit\'e de Provence Aix-Marseille, France.
+
+- year: 2006
+  date: March
+  title: Cox rings and del Pezzo surfaces
+  venue: GAeL conference, B\k{e}dlewo, Poland.
+
+- year: 2006
+  date: March
+  title: The Brauer group of $\mathbb{Q}_p$
+  venue: Commutative Algebra and Algebraic Geometry Seminar, Cornell, USA.
+
+- year: 2006
+  date: February
+  title: Rational curves on the quintic threefold
+  venue: Lie Groups Seminar, Cornell, USA.
+
+- year: 2006
+  text: '2006, January 11: {\emph{Anelli di Cox e superficie di del Pezzo}}, Universit\`a di Roma ``La Sapienza,'''' Italy.'
+
+- year: 2005
+  date: October 15
+  title: Spaces of rational curves on del Pezzo surfaces
+  venue: Route 81 conference, Queen’s University, Canada.
+
+- year: 2005
+  text: 2005, September, {\emph{Rationally connected varieties - examples, really!}} and {\emph{Irreducibility of some mapping spaces}}, series of talks at Cornell, USA.
+
+- year: 2005
+  date: June 10
+  title: Il problema di Severi per curve razionali su superficie di del Pezzo
+  venue: Universit\`a di Roma II ``Tor Vergata'', Italy.
+
+- year: 2005
+  date: January-March
+  title: The Severi Problem for Rational Curves on del Pezzo Surfaces
+  venue: Brown, UPenn, Harvard, Brandeis, Columbia, USA.
+
+- year: 2004
+  date: June 7
+  title: Spazi di Mappe Stabili
+  venue: Universit\`a di Roma II ``Tor Vergata'', Italy.
+
+- year: 2001-2004
+  text: '2001-2004: Several talks in graduate student seminars at MIT, including {\emph{The $h$-cobordism theorem}}, {\emph{The Banach-Tarski Paradox}}, {\emph{Quotients of varieties by reductive groups}}, USA.'
