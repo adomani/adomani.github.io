@@ -55,7 +55,7 @@ the CV line as a trailing `\href{url}{slides}.`
 The website `/slides/` page is generated from the same data:
 
 ```
-_data/talks.yml  ── scripts/slides.py --out ─▶ slides/index.md  (/slides/ page)
+_data/talks.yml  ── scripts/slides.py ─▶ slides/index.md  (/slides/ page)
 ```
 
 It lists every talk with a `slides` URL (newest first), converting the CV's
