@@ -16,7 +16,12 @@ sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 def load(name):
     """Import a generator module and parse its DATA file: -> (module, entries)."""
     module = __import__(name)
-    return module, yaml.safe_load(open(module.DATA, encoding='utf-8'))
+    return module, read(module.DATA)
+
+
+def read(path):
+    """Parse a YAML data file (for modules with more than one DATA path)."""
+    return yaml.safe_load(open(path, encoding='utf-8'))
 
 
 def assert_itemize(tex, n_items):

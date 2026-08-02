@@ -28,7 +28,7 @@ Minicourses follow the same idea from `_data/minicourses.yml`:
 ```
 _data/minicourses.yml     <- CANONICAL (edit this)
         ├── Jekyll reads it directly ─▶ /minicourses/ (website; links + collaborators)
-        └── scripts/minicourses.py --out ─▶ cv/sections/minicourses_generated.tex (CV)
+        └── scripts/cv_sections.py minicourses ─▶ cv/sections/minicourses_generated.tex (CV)
 ```
 
 `url`, `links` and `collaborators` render on the website (the latter linked via
@@ -41,7 +41,7 @@ Talks work the same way from `_data/talks.yml`:
 
 ```
 _data/talks.yml     <- CANONICAL (edit this)
-        └── scripts/talks.py --out ─▶ cv/sections/talks_generated.tex (CV)
+        └── scripts/cv_sections.py talks ─▶ cv/sections/talks_generated.tex (CV)
 ```
 
 Most entries are structured (`year, date, title, venue`); a few heterogeneous
@@ -71,7 +71,7 @@ The CV's Teaching institution tables work the same way from `_data/teaching.yml`
 
 ```
 _data/teaching.yml     <- CANONICAL (edit this)
-        └── scripts/teaching.py --out ─▶ cv/sections/teaching_generated.tex (CV)
+        └── scripts/cv_sections.py teaching ─▶ cv/sections/teaching_generated.tex (CV)
 ```
 
 One institution per entry, `courses` newest-first with `period` and `course`
@@ -87,7 +87,7 @@ The CV's **Organized conferences** list works the same way from
 `_data/conferences.yml`:
 
 ```
-_data/conferences.yml  ── scripts/conferences.py --out ─▶ cv/sections/conferences_generated.tex (CV)
+_data/conferences.yml  ── scripts/cv_sections.py conferences ─▶ cv/sections/conferences_generated.tex (CV)
 ```
 
 The four entries are too heterogeneous to structure (an `\href` session title, a
@@ -121,7 +121,7 @@ python3 scripts/build.py          # regenerate every output (fragments, papers.b
 python3 scripts/build.py --check  # verify the committed outputs are in sync (no writes)
 ```
 
-To preview one section on its own: `python3 scripts/talks.py --out - ` (stdout).
+To preview one section on its own: `python3 scripts/cv_sections.py talks --out -` (stdout).
 
 ## Testing
 

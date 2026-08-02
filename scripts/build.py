@@ -19,12 +19,9 @@ sys.path.insert(0, HERE)
 os.chdir(os.path.dirname(HERE))          # repo root, so relative data paths resolve
 
 import _common          # noqa: E402
-import conferences      # noqa: E402
-import minicourses      # noqa: E402
-import publications     # noqa: E402
-import slides           # noqa: E402
-import talks            # noqa: E402
-import teaching         # noqa: E402
+import cv_sections       # noqa: E402
+import publications      # noqa: E402
+import slides            # noqa: E402
 
 
 def _pub_yaml():
@@ -35,15 +32,19 @@ def _pub_bib():
     return publications.to_bib(publications.load())
 
 
+def _section(name):
+    return lambda: cv_sections.render(name)
+
+
 # (output path, render -> content-or-(content,count), committed to git?)
 TARGETS = [
-    ('_data/publications.yml',                _pub_yaml,           True),
-    ('_bibliography/papers.bib',              _pub_bib,            True),
-    ('cv/sections/minicourses_generated.tex', minicourses.render,  False),
-    ('cv/sections/talks_generated.tex',       talks.render,        False),
-    ('cv/sections/teaching_generated.tex',    teaching.render,     False),
-    ('cv/sections/conferences_generated.tex', conferences.render,  False),
-    ('slides/index.md',                       slides.render,       False),
+    ('_data/publications.yml',                _pub_yaml,                    True),
+    ('_bibliography/papers.bib',              _pub_bib,                     True),
+    ('cv/sections/minicourses_generated.tex', _section('minicourses'),     False),
+    ('cv/sections/talks_generated.tex',       _section('talks'),           False),
+    ('cv/sections/teaching_generated.tex',    _section('teaching'),        False),
+    ('cv/sections/conferences_generated.tex', _section('conferences'),     False),
+    ('slides/index.md',                       slides.render,               False),
 ]
 
 

@@ -24,6 +24,15 @@ def load(path):
         return yaml.safe_load(fh)
 
 
+def itemize(header, items, lead=''):
+    """Wrap already-rendered item bodies in the CV's standard itemize envelope.
+
+    `lead` is any text between the banner and \\begin{itemize} (e.g. a bold
+    subsection heading). `items` is the '\\n'-joined item bodies.
+    """
+    return header + lead + '\\begin{itemize}\n' + items + '\n\\end{itemize}\n'
+
+
 def emit(path, content, *, count=None, noun='entries', check=False):
     """Write `content` to `path` (stdout if path is None or '-').
 
