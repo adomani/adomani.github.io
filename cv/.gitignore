@@ -1,6 +1,9 @@
 # Generated at build time from _bibliography/papers.bib (canonical: publications.json)
 papers.bib
 
+# Generated at build time from _data/minicourses.yml (scripts/minicourses.py)
+sections/minicourses_generated.tex
+
 # LaTeX build artifacts
 *.aux
 *.bcf

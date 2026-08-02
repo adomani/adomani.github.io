@@ -38,8 +38,10 @@ jobs:
       - run: pip install pyyaml
       - name: papers.bib is up to date with the JSON
         run: python3 scripts/publications.py --bib _bibliography/papers.bib --check
-      - name: Materialise the CV bibliography
-        run: cp _bibliography/papers.bib cv/papers.bib
+      - name: Materialise the CV data fragments
+        run: |
+          cp _bibliography/papers.bib cv/papers.bib
+          python3 scripts/minicourses.py --tex cv/sections/minicourses_generated.tex
       - name: Build CV PDF
         uses: xu-cheng/latex-action@v3
         with:
@@ -53,6 +55,8 @@ jobs:
           grep -q "FittingsTheorem" cv.txt                      # preprint present
           grep -q "github.com/adomani/FittingsTheorem" cv.txt   # repo link shown
           grep -q "Néron" cv.txt                                # UTF-8 accent renders
+          grep -q "Superficies Racionales sobre un Cuerpo" cv.txt  # minicourse (shared data)
+          grep -q "CIMPA" cv.txt                                # cv_only entry IS on the CV
           echo "CV assertions passed."
       - name: Place CV PDF into the site
         run: cp cv/main.pdf pdfs/CV.pdf
@@ -65,6 +69,14 @@ jobs:
           destination: ./_site
       - name: Assert CV PDF is in the built site
         run: test -s _site/pdfs/CV.pdf
+      - name: Assert minicourses page renders from shared data
+        run: |
+          set -euo pipefail
+          f=_site/minicourses/index.html
+          test -s "$f"
+          grep -q "Superficies Racionales sobre un Cuerpo" "$f"   # a shared entry
+          grep -q "boojum.org.uk" "$f"                            # collaborator link (Martin Bright)
+          ! grep -q "CIMPA" "$f"                                  # cv_only entry hidden from the website
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,82 @@
+# Single source of truth for minicourses — feeds BOTH the CV (cv/, via
+# scripts/minicourses.py) and the website /minicourses/ page (Jekyll reads this
+# file directly). Newest first. Fields:
+#   year, date, title, venue      (required)
+#   context      optional extra description
+#   url          optional link for the title (used on the website; the CV shows
+#                the title plain)
+#   collaborators  optional list of names; linked via _data/collaborators.yml
+#   links        optional list of {label, url} for extra material (slides, etc.)
+#   cv_only      optional; if true, the entry shows on the CV but not the website
+- year: 2026
+  date: "March 16-20"
+  title: "The classification of finite simple groups"
+  venue: "Tsinghua University, Beijing, China"
+  context: "workshop and general overview"
+  url: "https://github.com/adomani/PreCFSG"
+
+- year: 2023
+  date: "December 11-15"
+  title: "Minicorso Lean"
+  venue: "Università di Pisa, Italy"
+  context: "last week of the Laboratorio di formalizzazione di dimostrazioni matematiche tramite il software Lean"
+
+- year: 2023
+  date: "May 2-6"
+  title: "Atelier Lean"
+  venue: "Università Roma Tre, Italy"
+  context: "during the seventh mini symposium of the Roman Number Theory Association"
+  url: "https://github.com/adomani/Atelier_Lean_2023"
+  collaborators: ["Riccardo Brasca", "Filippo Nuccio"]
+
+- year: 2021
+  date: "August 16-20"
+  title: "Superficies Racionales sobre un Cuerpo"
+  venue: "AGRA IV, two-week school in Arithmetic, Groups and Analysis (online)"
+  url: "2021_08_16_20_AGRA_IV.pdf"
+
+- year: 2021
+  date: "July (on hold)"
+  title: "CIMPA School: Isogenies of elliptic curves and their applications to cryptography"
+  venue: "Universidad del Cauca, Popayán, Colombia"
+  cv_only: true   # on hold — keep on the CV, hide from the website
+
+- year: 2019
+  date: "July 22-26"
+  title: "Arithmetic properties of del Pezzo surfaces"
+  venue: "Düsseldorf, Germany"
+  url: "2019_07_22_26_TestaDuesseldorf.pdf"
+
+- year: 2014
+  date: "February 17-21"
+  title: "Rational points on varieties"
+  venue: "LEGAL 2014, Liberdade Em Geometria Algébrica, Teresópolis, Brazil"
+  url: "2013_RPS/legal_RPS.md"
+
+- year: 2014
+  date: "January 30 – February 6"
+  title: "Cox Rings of Rational Surfaces"
+  venue: "IMPA, Rio de Janeiro, Brazil"
+  url: "2014_CRRS/CRRS.md"
+
+- year: 2014
+  date: "January 14-21"
+  title: "Cox Rings of Rational Surfaces"
+  venue: "Universidad de Concepción, Chile"
+  url: "2014_CRRS/CRRS.md"
+
+- year: 2013
+  date: "January 5-15"
+  title: "Rational points on surfaces"
+  venue: "Universidad de Concepción, Chile"
+  url: "2013_RPS/UdeC_RPS.md"
+
+- year: 2008
+  date: "April 14-18"
+  title: "Instructional workshop on Surfaces: Geometry and Arithmetic"
+  venue: "Warwick, UK"
+  collaborators: ["Martin Bright", "Ronald van Luijk"]
+  url: "https://web.archive.org/web/20240413001431/http://homepages.warwick.ac.uk/~maseap/arith/surfaces.html"
+  links:
+    - label: "programme"
+      url: "2008_WarwickMinicourse.pdf"

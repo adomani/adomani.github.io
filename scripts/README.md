@@ -23,6 +23,20 @@ _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
 The CV (`cv/`) and the website `/papers/` page are both generated from the same
 `publications.json` — one source, two outputs.
 
+Minicourses follow the same idea from `_data/minicourses.yml`:
+
+```
+_data/minicourses.yml     <- CANONICAL (edit this)
+        ├── Jekyll reads it directly ─▶ /minicourses/ (website; links + collaborators)
+        └── scripts/minicourses.py --tex ─▶ cv/sections/minicourses_generated.tex (CV)
+```
+
+`url`, `links` and `collaborators` render on the website (the latter linked via
+`_data/collaborators.yml`); the CV lists minicourses as plain text. Set
+`cv_only: true` on an entry to keep it on the CV but hide it from the website
+(e.g. an on-hold course). The generated `.tex` is built at deploy time and
+gitignored, like `cv/papers.bib`.
+
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
   citation. All authors are listed in order.

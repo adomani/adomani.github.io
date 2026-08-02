@@ -11,9 +11,11 @@ on:
       - '_bibliography/papers.bib'
       - '_data/publications.yml'
       - '_data/collaborators.yml'
+      - '_data/minicourses.yml'
       - 'scripts/**'
       - '_includes/pub_entry.html'
       - 'papers/**'
+      - 'minicourses/**'
       - 'tests/**'
       - 'assets/**'
       - '_config.yml'
@@ -41,6 +43,8 @@ jobs:
       # 2. Fixture test: pins JSON -> yaml and JSON -> bib output.
       - name: Generator fixture test
         run: python3 tests/test_publications.py
+      - name: Minicourses generator test
+        run: python3 tests/test_minicourses.py
 
       # 3. Build the whole site (catches Liquid/template/theme errors).
       - name: Build site
