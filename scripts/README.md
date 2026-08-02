@@ -67,6 +67,20 @@ render byte-for-byte identically** (the one intended addition is the covid-era
 curated view — they carry problem sheets, drafts and course subpages the CV
 doesn't, and only cover Warwick, so they're not regenerated from this data.
 
+The CV's **Organized conferences** list works the same way from
+`_data/conferences.yml`:
+
+```
+_data/conferences.yml  ── scripts/conferences.py --tex ─▶ cv/sections/conferences_generated.tex (CV)
+```
+
+The four entries are too heterogeneous to structure (an `\href` session title, a
+plain `\emph` title, differing "with … venue … dates" phrasing), so each is one
+verbatim `text` line emitted as-is — the same choice as the irregular talks
+entries. Bootstrapped by parsing the old `teaching.tex` and **verified to render
+byte-for-byte identically**. `teaching.tex` `\input`s both this and the teaching
+tables; the whole Teaching section is now data-driven.
+
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
   citation. All authors are listed in order.
@@ -119,5 +133,8 @@ one-time bib→json migration.
 
 ## Not yet modelled
 
-- Extending the same JSON-canonical pattern to the other CV sections (teaching,
-  talks, etc.) so the website pages and the CV share that data too.
+- The remaining CV sections are still hand-written LaTeX in `cv/sections/`
+  (education, positions, awards, service, students, personal). They have no
+  website counterpart, so there's little to share yet.
+- The website `/slides/` page is still a hand-curated view; rebuilding it from
+  `_data/talks.yml` (the subset with slides/video) remains a possible follow-up.
