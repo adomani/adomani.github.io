@@ -8,6 +8,7 @@ writes it, prints it, or (with `--check`) verifies an existing file is in sync.
 """
 import argparse
 import os
+import re
 import sys
 
 import yaml
@@ -22,6 +23,46 @@ def load(path):
     """Parse a YAML data file (UTF-8)."""
     with open(path, encoding='utf-8') as fh:
         return yaml.safe_load(fh)
+
+
+# --- Inline rich text -------------------------------------------------------
+# Data fields hold neutral Markdown ([t](u), *em*, $math$, Unicode letters). The
+# CV and the website each convert it to their own dialect; this is the whole of
+# the "define the format once, small variations per target" idea.
+
+_LINK = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')      # [label](url)
+
+
+def _split_math(s):
+    """Split on $...$ spans: even indices are prose, odd indices are math."""
+    return re.split(r'(\$[^$]*\$)', s)
+
+
+def md_to_tex(s):
+    """Markdown inline text -> LaTeX, for the CV.
+
+    [t](u) -> \\href{u}{t}, *x* -> \\emph{x}, “ ” -> `` '', and &%#~ escaped.
+    $...$ math and Unicode letters pass through unchanged (the CV reads UTF-8).
+    """
+    out = []
+    for i, part in enumerate(_split_math(s)):
+        if i % 2:                                   # a $...$ span: verbatim
+            out.append(part)
+            continue
+        part = _LINK.sub(lambda m: '\\href{' + m.group(2) + '}{' + m.group(1) + '}', part)
+        part = re.sub(r'\*([^*]+)\*', r'\\emph{\1}', part)
+        for a, b in (('&', r'\&'), ('%', r'\%'), ('#', r'\#'),
+                     ('~', r'\textasciitilde ')):
+            part = part.replace(a, b)
+        part = part.replace('“', '``').replace('”', "''")
+        out.append(part)
+    return ''.join(out)
+
+
+def md_to_web(s):
+    """Markdown inline text -> the site's kramdown. Only math differs: $x$ ->
+    \\(x\\) (double backslash in the .md source survives kramdown to MathJax)."""
+    return re.sub(r'\$([^$]*)\$', lambda m: '\\\\(' + m.group(1) + '\\\\)', s)
 
 
 def itemize(header, items, lead=''):

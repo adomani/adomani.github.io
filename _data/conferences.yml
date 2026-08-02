@@ -1,16 +1,15 @@
 # Canonical source for the CV's "Organized conferences" list (newest first).
-# scripts/conferences.py --tex renders cv/sections/conferences_generated.tex from
-# this (gitignored; teaching.tex \input's it). Each `text` is one verbatim LaTeX
-# line (the entries are too heterogeneous to structure), emitted as-is.
-# Bootstrapped by parsing the old teaching.tex; proven to render byte-identically.
+# scripts/cv_sections.py renders cv/sections/conferences_generated.tex from this
+# (gitignored; teaching.tex \input's it). Each `text` is one Markdown line
+# ([*title*](url), with … venue … dates); _common.md_to_tex converts it to LaTeX.
 - text: |-
-    \href{https://icms-conference.org/2026/session5.html}{\emph{Mathematics in Lean}} session at ICMS 2026, with Matthew Ballard and R\'emy Degenne, Waterloo, Canada, 20-23 July 2026.
+    [*Mathematics in Lean*](https://icms-conference.org/2026/session5.html) session at ICMS 2026, with Matthew Ballard and Rémy Degenne, Waterloo, Canada, 20-23 July 2026.
 
 - text: |-
-    \href{https://webhomes.maths.ed.ac.uk/cheltsov/spitsbergen/index.html}{\emph{Frontiers of rationality}}, with Ivan Cheltsov, Fr\'ed\'eric Mangolte, Constantin Shramov, Longyearbyen, Spitsbergen 14-18 July 2014.
+    [*Frontiers of rationality*](https://webhomes.maths.ed.ac.uk/cheltsov/spitsbergen/index.html), with Ivan Cheltsov, Frédéric Mangolte, Constantin Shramov, Longyearbyen, Spitsbergen 14-18 July 2014.
 
 - text: |-
-    \href{https://webhomes.maths.ed.ac.uk/cheltsov/edge2014/index.html}{\emph{Edge days}}, with Ivan Cheltsov, Edinburgh 6-8 June 2014.
+    [*Edge days*](https://webhomes.maths.ed.ac.uk/cheltsov/edge2014/index.html), with Ivan Cheltsov, Edinburgh 6-8 June 2014.
 
 - text: |-
-    \href{https://warwick.ac.uk/fac/sci/maths/research/events/2012-2013/numbertheory/symp2012-13_v2.pdf}{\emph{Rational Points-Geometric, Analytic and Explicit Approaches}}, with Roger Heath-Brown, John Cremona, Samir Siksek, Michael Stoll, Warwick, 27-31 May, 2013.
+    [*Rational Points-Geometric, Analytic and Explicit Approaches*](https://warwick.ac.uk/fac/sci/maths/research/events/2012-2013/numbertheory/symp2012-13_v2.pdf), with Roger Heath-Brown, John Cremona, Samir Siksek, Michael Stoll, Warwick, 27-31 May, 2013.

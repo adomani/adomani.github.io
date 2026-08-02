@@ -45,12 +45,10 @@ _data/talks.yml     <- CANONICAL (edit this)
 ```
 
 Most entries are structured (`year, date, title, venue`); a few heterogeneous
-ones (workshops, multi-talk series) keep the CV line verbatim in `text`. Fields
-may hold LaTeX (math in titles, `\href` in venues) and are emitted verbatim.
-The data was bootstrapped by parsing the old `talks.tex` and **verified to
-render byte-for-byte identically** to the hand-written list. An optional
-`slides:` URL renders on the CV line as a trailing `\href{url}{slides}.` (this
-replaced the hrefs that used to be hand-embedded in `venue`).
+ones (workshops, multi-talk series) keep the CV line verbatim in `text`.
+`title`/`venue` are **Markdown inline text** (see *Inline text* below), so the
+same field feeds both the CV and `/slides/`. An optional `slides:` URL renders on
+the CV line as a trailing `\href{url}{slides}.`
 
 The website `/slides/` page is generated from the same data:
 
@@ -90,12 +88,10 @@ The CV's **Organized conferences** list works the same way from
 _data/conferences.yml  ── scripts/cv_sections.py conferences ─▶ cv/sections/conferences_generated.tex (CV)
 ```
 
-The four entries are too heterogeneous to structure (an `\href` session title, a
-plain `\emph` title, differing "with … venue … dates" phrasing), so each is one
-verbatim `text` line emitted as-is — the same choice as the irregular talks
-entries. Bootstrapped by parsing the old `teaching.tex` and **verified to render
-byte-for-byte identically**. `teaching.tex` `\input`s both this and the teaching
-tables; the whole Teaching section is now data-driven.
+The four entries are too heterogeneous to structure, so each is one **Markdown**
+`text` line (`[*title*](url), with … venue … dates`) that `_common.md_to_tex`
+renders to LaTeX. `teaching.tex` `\input`s both this and the teaching tables; the
+whole Teaching section is data-driven.
 
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain
@@ -107,6 +103,26 @@ tables; the whole Teaching section is now data-driven.
   whose rendered name matches a key there; unlisted names render as plain text.
 - Inline math is written `\\(..\\)` in the JSON/descriptions; it survives
   kramdown to `\(..\)`, which the site's MathJax typesets.
+
+## Inline text (one source, two dialects)
+
+Sections that render to **both** the CV and the website (talks → `/slides/`,
+conferences) store their inline formatting as neutral **Markdown**, not LaTeX:
+
+```
+[label](url)   *emphasis*   $math$   é ü “ ”      (in the YAML)
+      │                                    │
+      │ _common.md_to_tex                  │ _common.md_to_web
+      ▼                                    ▼
+\href{url}{label}, \emph{..}, $..$,   [label](url), *emphasis*, \(math\)
+é ü `` '' (LaTeX, for the CV)          (kramdown/MathJax, for the site)
+```
+
+So the format is defined once; each target applies a tiny converter. `$math$`
+and the verbatim `text` escape-hatch pass through. Sections whose CV text is
+**plain** (minicourses — its links live in separate `url`/`collaborators`
+fields) keep `tex_escape` instead; `publications` (biblatex) and `teaching`
+(tables) are their own formats.
 
 ## How the generators fit together
 

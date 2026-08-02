@@ -59,12 +59,13 @@ TALKS = '_data/talks.yml'
 def talk_line(e):
     if 'title' not in e:                 # heterogeneous entry: verbatim CV line
         return e['text']
-    venue = e['venue']
+    title = _common.md_to_tex(e['title'])           # fields are Markdown
+    venue = _common.md_to_tex(e['venue'])
     if e.get('slides'):
         # Drop a trailing '.' so "..., online." doesn't become "online., \href..".
-        return (f"{e['year']}, {e['date']}, {{\\emph{{{e['title']}}}}}, "
+        return (f"{e['year']}, {e['date']}, {{\\emph{{{title}}}}}, "
                 f"{venue.rstrip('.')}, \\href{{{e['slides']}}}{{slides}}.")
-    return f"{e['year']}, {e['date']}, {{\\emph{{{e['title']}}}}}, {venue}"
+    return f"{e['year']}, {e['date']}, {{\\emph{{{title}}}}}, {venue}"
 
 
 def talks_tex(entries):
@@ -105,7 +106,7 @@ CONF_HEADING = '{\\textbf{Organized conferences}}'
 
 
 def conferences_tex(entries):
-    items = '\n'.join('\\item\n' + e['text'] for e in entries)
+    items = '\n'.join('\\item\n' + _common.md_to_tex(e['text']) for e in entries)
     return _common.itemize(_common.header('cv_sections.py', CONFERENCES),
                            items, lead=CONF_HEADING + '\n')
 
