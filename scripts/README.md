@@ -32,8 +32,10 @@ _data/minicourses.yml     <- CANONICAL (edit this)
 ```
 
 `url`, `links` and `collaborators` render on the website (the latter linked via
-`_data/collaborators.yml`); the CV lists minicourses as plain text. The generated
-`.tex` is built at deploy time and gitignored, like `cv/papers.bib`.
+`_data/collaborators.yml`); the CV lists minicourses as plain text. Set
+`cv_only: true` on an entry to keep it on the CV but hide it from the website
+(e.g. an on-hold course). The generated `.tex` is built at deploy time and
+gitignored, like `cv/papers.bib`.
 
 - Papers with a `description` render as a `<details>/<summary>` pair (citation
   shown, description hidden until clicked); papers without render as a plain

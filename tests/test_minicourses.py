@@ -34,6 +34,10 @@ def main():
     # Collaborators rendered as "with A and B"
     assert 'with Martin Bright and Ronald van Luijk' in tex
 
+    # cv_only hides from the website only — the CV still lists the entry
+    if any(e.get('cv_only') for e in entries):
+        assert 'CIMPA' in tex, 'cv_only entry must still appear on the CV'
+
     # LaTeX escaping of specials
     assert M.tex_escape('a & b_c %d') == r'a \& b\_c \%d'
 

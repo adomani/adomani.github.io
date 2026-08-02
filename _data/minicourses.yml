@@ -7,6 +7,7 @@
 #                the title plain)
 #   collaborators  optional list of names; linked via _data/collaborators.yml
 #   links        optional list of {label, url} for extra material (slides, etc.)
+#   cv_only      optional; if true, the entry shows on the CV but not the website
 - year: 2026
   date: "March 16-20"
   title: "The classification of finite simple groups"
@@ -38,6 +39,7 @@
   date: "July (on hold)"
   title: "CIMPA School: Isogenies of elliptic curves and their applications to cryptography"
   venue: "Universidad del Cauca, Popayán, Colombia"
+  cv_only: true   # on hold — keep on the CV, hide from the website
 
 - year: 2019
   date: "July 22-26"

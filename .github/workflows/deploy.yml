@@ -56,6 +56,7 @@ jobs:
           grep -q "github.com/adomani/FittingsTheorem" cv.txt   # repo link shown
           grep -q "Néron" cv.txt                                # UTF-8 accent renders
           grep -q "Superficies Racionales sobre un Cuerpo" cv.txt  # minicourse (shared data)
+          grep -q "CIMPA" cv.txt                                # cv_only entry IS on the CV
           echo "CV assertions passed."
       - name: Place CV PDF into the site
         run: cp cv/main.pdf pdfs/CV.pdf
@@ -75,6 +76,7 @@ jobs:
           test -s "$f"
           grep -q "Superficies Racionales sobre un Cuerpo" "$f"   # a shared entry
           grep -q "boojum.org.uk" "$f"                            # collaborator link (Martin Bright)
+          ! grep -q "CIMPA" "$f"                                  # cv_only entry hidden from the website
 
       - uses: actions/upload-pages-artifact@v3
         with:
