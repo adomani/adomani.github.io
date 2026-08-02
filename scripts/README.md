@@ -48,8 +48,12 @@ Most entries are structured (`year, date, title, venue`); a few heterogeneous
 ones (workshops, multi-talk series) keep the CV line verbatim in `text`. Fields
 may hold LaTeX (math in titles, `\href` in venues) and are emitted verbatim.
 The data was bootstrapped by parsing the old `talks.tex` and **verified to
-render byte-for-byte identically** to the hand-written list. The website
-`/slides/` page will render a subset of this data (follow-up).
+render byte-for-byte identically** to the hand-written list. An optional
+`slides:` URL renders on the CV line as a trailing `\href{url}{slides}.` (this
+replaced the hrefs that used to be hand-embedded in `venue`). The website
+`/slides/` page (follow-up) will render the subset with `slides`, using further
+website-only fields the CV ignores: `video:`, `web_title:` (public title when it
+differs from the CV `title`) and `note:` (short expository note).
 
 The CV's Teaching institution tables work the same way from `_data/teaching.yml`:
 

@@ -34,6 +34,14 @@ def main():
     assert '$\\overline{M}_{0,134}$' in tex          # math preserved for LaTeX
     assert '\\href{' in tex                           # slide link preserved
 
+    # A `slides` URL renders as a trailing ", \href{url}{slides}." on the line,
+    # and structured entries never keep an inline {slides} href in the venue.
+    slides = [e for e in entries if e.get('slides')]
+    assert slides, 'expected at least one talk with a slides field'
+    for e in slides:
+        assert f"\\href{{{e['slides']}}}{{slides}}." in tex
+        assert '{slides}' not in e['venue'], f'inline slides href left in venue: {e}'
+
     print(f'PASS: talks.py renders {len(entries)} talks correctly')
 
 
