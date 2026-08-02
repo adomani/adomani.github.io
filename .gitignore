@@ -12,6 +12,3 @@ slides/index.md
 
 # Generated at build time from _data/minicourses.yml (scripts/minicourses_page.py)
 minicourses/index.md
-
-# Stamped by deploy.yml with the deploy date for the footer's "Last updated".
-_data/build.yml
