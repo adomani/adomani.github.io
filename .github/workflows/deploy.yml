@@ -118,6 +118,7 @@ jobs:
           if seen "$f"; then
             have "$f" 'id="site-updated"'    # footer "Last updated" element present
             have "$f" '<time datetime="20'   # ...stamped with the site.time build date
+            have "$f" 'id="footer"'          # the "Skip to footer" link's anchor exists
           fi
 
           # /papers/ (from publications.json) + the MathJax v3 loader
