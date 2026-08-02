@@ -98,6 +98,18 @@ jobs:
           grep -qF '<a href="https://www.boojum.org.uk/maths/">Martin Bright</a>' "$f"
           grep -qF '<a href="https://pub.math.leidenuniv.nl/~luijkrmvan/">Ronald van Luijk</a>' "$f"
           echo "msrp collaborator-include assertions passed."
+      - name: Assert teaching pages render courses from _data/courses.yml
+        run: |
+          set -euo pipefail
+          cur=_site/teaching/index.html
+          past=_site/teaching/past_teaching/index.html
+          test -s "$cur" && test -s "$past"
+          grep -q "MA4N1 Theorem Proving with Lean" "$cur"      # current-term course via the include
+          grep -q "MA4N1 Theorem Proving with Lean" "$past"     # same course, data-driven, on the history page
+          grep -q "Manifolds_2023.pdf" "$past"                  # a course's extra "links" resolved
+          grep -q "MA3J9/3rd.pdf" "$past"                       # a course's "notes" markdown resolved
+          grep -q "GitHub logo" "$past"                         # the github icon (octocat) resolved
+          echo "teaching course-include assertions passed."
 
       - uses: actions/upload-pages-artifact@v3
         with:
