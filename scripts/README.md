@@ -14,10 +14,10 @@ _bibliography/publications.json      <- CANONICAL (edit this). Rich data +
         │                 ▼
         │            papers/index.md  ─▶ /papers/
         │
-        └── to_bib  ─▶ _bibliography/papers.bib   (for the CV)
-                          │  copied to cv/papers.bib, then latexmk
+        └── to_bib  ─▶ cv/papers.bib   (read by latexmk for the CV)
+                          │  latexmk
                           ▼
-                      cv/main.tex  ─▶ CV PDF   (.github/workflows/cv.yml)
+                      cv/main.tex  ─▶ CV PDF   (.github/workflows/deploy.yml)
 ```
 
 The CV (`cv/`) and the website `/papers/` page are both generated from the same
@@ -161,9 +161,12 @@ asserts (preprint present, repo link shown, accents render) but does not deploy.
 
 ## CV build
 
-`publications.to_bib` reconstructs `papers.bib` from the JSON. The CV sources live in `cv/`;
-the build copies the generated bib to `cv/papers.bib` (gitignored) and runs
-`latexmk`. The CV's biblatex uses `url=false`, so preprint URLs are emitted as
+`publications.to_bib` reconstructs the bib from the JSON, straight into
+`cv/papers.bib` where `latexmk` reads it (`cv/main.tex` does
+`\addbibresource{papers.bib}`, and the build runs in `cv/`). It is a committed
+target — regenerated on every build and drift-checked by `build.py --check` —
+so there is no second copy and no `_bibliography/papers.bib`. The CV sources live
+in `cv/`. The CV's biblatex uses `url=false`, so preprint URLs are emitted as
 `howpublished = {\url{...}}` (which is not suppressed) to keep the link visible.
 `bibrender.py` holds the display helpers that turn each JSON entry's fields into
 the website record (`to_record` and the `delatex`/`format_authors`/`link_for` it

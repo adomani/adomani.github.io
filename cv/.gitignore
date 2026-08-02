@@ -1,5 +1,7 @@
-# Generated at build time from _bibliography/papers.bib (canonical: publications.json)
-papers.bib
+# NOTE: papers.bib is generated from publications.json but IS committed (it is a
+# committed build.py target, verified by `build.py --check`) — it lives here
+# because latexmk reads it from cv/. The section fragments below are pure layout,
+# so they stay gitignored and are rebuilt at deploy time.
 
 # Generated at build time from _data/minicourses.yml (scripts/cv_sections.py)
 sections/minicourses_generated.tex

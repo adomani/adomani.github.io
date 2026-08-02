@@ -8,7 +8,7 @@ Flow (canonical source is the JSON, never the .bib):
         │                                      │  to_record() + the helpers here
         │                                      ▼
         │                            _data/publications.yml  ──▶ /papers/ (website)
-        └──────────────────────────▶ _bibliography/papers.bib ──▶ CV PDF
+        └──────────────────────────▶ cv/papers.bib ──▶ CV PDF
 
 These are pure functions on a field dict (`to_record` and the `delatex` /
 `format_authors` / `link_for` it calls); there is no BibTeX parsing here — the
