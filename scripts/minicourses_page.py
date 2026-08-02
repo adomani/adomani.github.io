@@ -3,8 +3,7 @@
 source the CV uses (scripts/cv_sections.py). This retires the old Liquid loop, so
 the page and the CV share one builder.
 
-    python3 scripts/minicourses_page.py --out minicourses/index.md
-    python3 scripts/minicourses_page.py            # stdout
+scripts/build.py writes this; preview it with `python3 scripts/build.py minicourses-page`.
 
 Each non-`cv_only` entry becomes one Markdown paragraph:
 
@@ -52,11 +51,4 @@ def to_markdown(entries, homepages):
 
 
 def render():
-    entries = _common.load(DATA)
-    homepages = _common.load(COLLABORATORS)
-    n = sum(1 for m in entries if not m.get('cv_only'))
-    return to_markdown(entries, homepages), n
-
-
-if __name__ == '__main__':
-    raise SystemExit(_common.cli(render, noun='minicourses'))
+    return to_markdown(_common.load(DATA), _common.load(COLLABORATORS))

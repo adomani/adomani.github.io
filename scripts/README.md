@@ -128,18 +128,16 @@ fields) keep `tex_escape` instead; `publications` (biblatex) and `teaching`
 
 ## How the generators fit together
 
-Every generator has the same shape — a `to_tex`/`to_markdown` renderer plus a
-`render()` that loads its data — and shares one CLI (`scripts/_common.py`:
-`--out PATH [--check]`, or `-` for stdout). `scripts/build.py` holds the single
-list of *(data → output)* targets and materialises them all; adding a section is
-one line there. So the whole pipeline is driven by two commands:
+Every generator exposes one function, `render() -> str`, and `scripts/build.py`
+is the **single entry point**: it holds the one list of named *(data → output)*
+targets and materialises them all. There is no per-script CLI — adding a section
+is one line in `build.py`. The whole pipeline is three commands:
 
 ```sh
 python3 scripts/build.py          # regenerate every output (fragments, papers.bib, /slides/)
 python3 scripts/build.py --check  # verify the committed outputs are in sync (no writes)
+python3 scripts/build.py talks    # preview one target on stdout (by name)
 ```
-
-To preview one section on its own: `python3 scripts/cv_sections.py talks --out -` (stdout).
 
 ## Testing
 

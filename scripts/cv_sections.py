@@ -2,10 +2,8 @@
 """The CV's LaTeX \\begin{itemize} sections, each generated from a YAML list.
 
 Four sections share one envelope (_common.itemize); only the per-entry rendering
-differs. scripts/build.py lists the outputs; run one directly for a preview:
-
-    python3 scripts/cv_sections.py talks --out -
-    add --check to compare against an existing file instead of writing.
+differs. scripts/build.py lists the outputs and is the entry point; preview one
+section with `python3 scripts/build.py talks`.
 
 Fields may hold LaTeX and are emitted verbatim (minicourses escape their plain
 text; the others were bootstrapped from the old hand-written .tex and proven to
@@ -121,18 +119,6 @@ SECTIONS = {
 
 
 def render(section):
-    """(content, count) for one section — used by scripts/build.py."""
+    """The LaTeX for one section — used by scripts/build.py."""
     data_path, to_tex = SECTIONS[section]
-    entries = _common.load(data_path)
-    return to_tex(entries), len(entries)
-
-
-if __name__ == '__main__':
-    import argparse
-    ap = argparse.ArgumentParser()
-    ap.add_argument('section', choices=sorted(SECTIONS))
-    ap.add_argument('--out', default='-', help="output path ('-' for stdout)")
-    ap.add_argument('--check', action='store_true')
-    a = ap.parse_args()
-    content, count = render(a.section)
-    raise SystemExit(_common.emit(a.out, content, count=count, check=a.check))
+    return to_tex(_common.load(data_path))

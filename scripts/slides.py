@@ -12,8 +12,7 @@ the CV are LaTeX; this converts them to the kramdown/MathJax the site expects:
   $...$         ->  \\(...\\)      (double backslash survives kramdown to MathJax)
   \\&, accents, ``...''  ->  Unicode
 
-    python3 scripts/slides.py --out slides/index.md
-    python3 scripts/slides.py            # write to stdout
+scripts/build.py writes this; preview it with `python3 scripts/build.py slides`.
 """
 import re
 
@@ -74,10 +73,4 @@ def to_markdown(entries):
 
 
 def render():
-    entries = _common.load(DATA)
-    n = sum(1 for e in entries if e.get('slides'))
-    return to_markdown(entries), n
-
-
-if __name__ == '__main__':
-    raise SystemExit(_common.cli(render, noun='slide entries'))
+    return to_markdown(_common.load(DATA))

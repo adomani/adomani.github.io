@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """Shared helpers for the CV / website generators.
 
-Every generator computes an output string and hands it to `emit()`, which either
-writes it, prints it, or (with `--check`) verifies an existing file is in sync.
-`cli()` wraps the common "--out PATH / --check" command line so each generator's
-`main` is a single call. See scripts/README.md and scripts/build.py.
+Each generator exposes one function, `render() -> str`; scripts/build.py is the
+single entry point that materialises them all (and `emit()` writes, prints, or
+--checks one output). See scripts/README.md and scripts/build.py.
 """
-import argparse
 import os
 import re
 import sys
@@ -74,7 +72,7 @@ def itemize(header, items, lead=''):
     return header + lead + '\\begin{itemize}\n' + items + '\n\\end{itemize}\n'
 
 
-def emit(path, content, *, count=None, noun='entries', check=False):
+def emit(path, content, *, check=False):
     """Write `content` to `path` (stdout if path is None or '-').
 
     With check=True, compare against the file instead: return 0 if in sync, 1
@@ -94,27 +92,5 @@ def emit(path, content, *, count=None, noun='entries', check=False):
         return 0
     with open(path, 'w', encoding='utf-8') as fh:
         fh.write(content)
-    tail = f' ({count} {noun})' if count is not None else ''
-    print(f'Wrote {path}{tail}')
+    print(f'Wrote {path}')
     return 0
-
-
-def cli(render, *, noun='entries'):
-    """Standard `--out PATH [--check]` entry point for a single-output generator.
-
-    `render()` returns either the content string or a `(content, count)` tuple.
-    """
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--out', default='-', help="output path ('-' for stdout)")
-    ap.add_argument('--check', action='store_true',
-                    help='verify --out is in sync instead of writing')
-    a = ap.parse_args()
-    content, count = _unwrap(render())
-    return emit(a.out, content, count=count, noun=noun, check=a.check)
-
-
-def _unwrap(result):
-    """Accept either `content` or `(content, count)` from a render()."""
-    if isinstance(result, tuple):
-        return result
-    return result, None
