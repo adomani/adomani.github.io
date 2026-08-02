@@ -81,7 +81,7 @@ Below is a chronological list of academic activities associated with the grant.
   *K3 surfaces arising from arithmetic problems*
 
 - **November 15-17, 2014 — Kobe, Japan**
-  Collaboration with {% include andrewBrookeTaylor %}
+  Collaboration with {% include collaborator.html name="Andrew Brooke-Taylor" %}
 
 - **November 10-14, 2014 — Nagoya University**
   Conference:
@@ -108,12 +108,12 @@ Below is a chronological list of academic activities associated with the grant.
   [Frontiers of rationality](https://webhomes.maths.ed.ac.uk/cheltsov/spitsbergen/)
 
 - **June 30 - July 4, 2014 — University of Warwick**
-  Visit of {% include tonyVarillyAlvarado %}
+  Visit of {% include collaborator.html name="Anthony Várilly-Alvarado" %}
 
 - **June 12-19, 2014 — AUB, Beirut, Lebanon**
   Collaboration with
-  {% include martinBright %} and
-  {% include ronaldVanLuijk %}
+  {% include collaborator.html name="Martin Bright" %} and
+  {% include collaborator.html name="Ronald van Luijk" %}
 
 - **June 6-8, 2014 — University of Edinburgh**
   Conference:
@@ -122,7 +122,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **May 26 - June 1, 2014 — Rice University**
   Collaboration with
-  {% include tonyVarillyAlvarado %} and {% include mauricioVelasco %}
+  {% include collaborator.html name="Anthony Várilly-Alvarado" %} and {% include collaborator.html name="Mauricio Velasco" %}
 
 - **May 12-16, 2014 — AIM, Palo Alto**
   Workshop:
@@ -139,7 +139,7 @@ Below is a chronological list of academic activities associated with the grant.
 
 - **March 31 - June 1, 2014 — Rice University**
   Visiting [Brendan Hassett](https://www.math.brown.edu/bhassett/) and
-  [Anthony Várilly-Alvarado](https://math.rice.edu/~av15/)
+  {% include collaborator.html name="Anthony Várilly-Alvarado" %}
 
 - **February 18-21, 2014 — Teresópolis, Brazil**
   Minicourse at LEGAL
