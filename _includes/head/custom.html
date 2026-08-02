@@ -1,0 +1,5 @@
+{%- comment -%}
+  Head customization hook: minimal-mistakes includes this in its _layouts/default.html,
+  right after head.html. Load MathJax only on pages that opt in with `math: true`.
+{%- endcomment -%}
+{% if page.math %}{% include head/_mathjax_support.html %}{% endif %}
