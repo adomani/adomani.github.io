@@ -149,15 +149,16 @@ for t in tests/test_*.py; do python3 "$t"; done   # one self-check per section
 python3 tests/test_publications.py --update   # regenerate fixtures after an intended change
 ```
 
-`.github/workflows/publications.yml` runs these on every PR, builds the site,
-and asserts the rendered page (known entry, UTF-8 accents, a <details> block, a
-migrated description, inline math, no proxied URLs).
-`.github/workflows/deploy.yml` builds the Jekyll site **and** the CV PDF together
-and deploys them as one GitHub Pages artifact (Pages source = "GitHub Actions").
-The CV PDF is generated from the same `publications.json`, placed at
-`pdfs/CV.pdf`, and served from the built site — so the published CV is always in
-sync, with no committed binary and no manual step. On pull requests it builds and
-asserts (preprint present, repo link shown, accents render) but does not deploy.
+A single workflow, `.github/workflows/deploy.yml`, runs all of this on every PR:
+the data-sync check and generator self-checks above, then it builds the Jekyll
+site **and** the CV PDF together and asserts the rendered pages (the publications
+page — known entry, UTF-8 accents, a <details> block, a migrated description,
+inline math, no proxied URLs — plus the slides, minicourses, teaching and msrp
+pages, and that MathJax v3 loads). On push to `master` it also deploys the site
+and CV as one GitHub Pages artifact (Pages source = "GitHub Actions"). The CV PDF
+is generated from the same `publications.json`, placed at `pdfs/CV.pdf`, and
+served from the built site — so the published CV is always in sync, with no
+committed binary and no manual step. Pull requests validate but do not deploy.
 
 ## CV build
 

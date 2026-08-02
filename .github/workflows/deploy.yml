@@ -5,7 +5,9 @@ name: Deploy site and CV
 # website, placed at pdfs/CV.pdf, and included in the built site — so the
 # published CV is always in sync, with no committed binary and no manual step.
 #
-# On pull_request the build job runs (validation) but does NOT deploy.
+# This is the single CI workflow. On pull_request the build job runs full
+# validation (data-sync checks, generator self-checks, and rendered-page
+# assertions) but does NOT deploy; on push to master it also deploys.
 # Requires the repo's Pages source to be set to "GitHub Actions".
 
 on:
@@ -36,6 +38,15 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install pyyaml
+      # Fast fail-fast data checks: committed generated files (publications.yml,
+      # cv/papers.bib) are in sync with their canonical source, and each
+      # generator passes its self-check.
+      - name: Committed generated files are up to date
+        run: python3 scripts/build.py --check
+      - name: Generator self-checks
+        run: |
+          set -euo pipefail
+          for t in tests/test_*.py; do echo "== $t =="; python3 "$t"; done
       # Materialise every generated artifact from the canonical data: the CV
       # fragments, cv/papers.bib, and the /slides/ page (scripts/build.py).
       - name: Materialise all generated files
@@ -89,6 +100,10 @@ jobs:
           grep -q "2021_11_29_lines_Alt.pdf" "$f"     # a slide PDF (shared data)
           grep -q "watch?v=734jMwgjkkM" "$f"          # a video link
           grep -q "Using computers to do maths for us" "$f"  # web_only entry present
+          grep -q "Castravet-Tevelev" "$f"            # expository note
+          if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
+            echo "::error::a raw \$...\$ math span leaked on /slides/"; exit 1
+          fi
           echo "Slides page assertions passed."
       - name: Assert minicourses page renders from shared data
         run: |
@@ -127,6 +142,28 @@ jobs:
           grep -q 'cdn.jsdelivr.net/npm/mathjax@3' "$f"     # modern MathJax v3 on a maintained CDN
           ! grep -q 'cdn.mathjax.org' "$f"                  # the retired v2 shim CDN is gone
           echo "MathJax v3 loader present; retired CDN absent."
+      - name: Assert rendered /papers/ page (from publications.json)
+        run: |
+          set -euo pipefail
+          f=_site/papers/index.html
+          test -s "$f"
+          grep -q "A Macaulay2-Lean interface for proofs in Lean" "$f"   # known entry
+          grep -q "Gröbner" "$f"                                          # UTF-8 accent
+          grep -q "Néron" "$f"
+          grep -q '<details class="pub">' "$f"                            # collapsible entry present
+          grep -q '<span class="pub-title">' "$f"                         # titles wrapped/emphasised
+          grep -q "theta-hyperplanes" "$f"                                # a migrated description
+          grep -q 'href="https://anne.mx/"' "$f"                          # co-author homepage link
+          grep -q "Dedicated to Tony Mach" "$f"                           # citation_note (dedication)
+          grep -q 'supervisor <a href="https://www.math.columbia.edu/~dejong/"' "$f"  # thesis credit
+          grep -qF '\(28\)' "$f"                                          # inline math for MathJax
+          if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
+            echo "::error::a raw \$...\$ math span leaked (MathJax expects \\(..\\))"; exit 1
+          fi
+          if grep -q "pugwash" "$f"; then
+            echo "::error::proxied pugwash URL leaked into the rendered page"; exit 1
+          fi
+          echo "Publications page assertions passed."
 
       - uses: actions/upload-pages-artifact@v3
         with:
