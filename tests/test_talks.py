@@ -19,15 +19,24 @@ def main():
     tex = T.to_tex(entries)
 
     assert tex.startswith('% GENERATED')
-    assert tex.count('\\item') == len(entries), 'item count mismatch'
+    # `web_only` entries appear on the website /slides/ page but not in the CV.
+    n_cv = sum(1 for e in entries if not e.get('web_only'))
+    assert tex.count('\\item') == n_cv, 'item count mismatch (web_only excluded)'
     assert tex.rstrip().endswith('\\end{itemize}')
 
-    # Every entry is either structured (title+date+venue) or verbatim text.
+    # Every entry is either structured (title+venue, date unless web_only) or text.
     for e in entries:
         if 'title' in e:
-            assert 'date' in e and 'venue' in e, f'structured entry missing fields: {e}'
+            assert 'venue' in e, f'structured entry missing venue: {e}'
+            if not e.get('web_only'):
+                assert 'date' in e, f'CV entry missing date: {e}'
         else:
             assert 'text' in e, f'entry has neither title nor text: {e}'
+
+    # web_only entries must not leak into the CV output.
+    for e in entries:
+        if e.get('web_only'):
+            assert e['title'] not in tex, f'web_only entry leaked into CV: {e["title"]}'
 
     # Content spot-checks: a plain talk, a math title and an \href survive verbatim.
     assert '{\\emph{Metaprogramming in Lean}}' in tex
@@ -36,8 +45,8 @@ def main():
 
     # A `slides` URL renders as a trailing ", \href{url}{slides}." on the line,
     # and structured entries never keep an inline {slides} href in the venue.
-    slides = [e for e in entries if e.get('slides')]
-    assert slides, 'expected at least one talk with a slides field'
+    slides = [e for e in entries if e.get('slides') and not e.get('web_only')]
+    assert slides, 'expected at least one CV talk with a slides field'
     for e in slides:
         assert f"\\href{{{e['slides']}}}{{slides}}." in tex
         assert '{slides}' not in e['venue'], f'inline slides href left in venue: {e}'

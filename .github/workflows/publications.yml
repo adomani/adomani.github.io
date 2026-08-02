@@ -19,6 +19,7 @@ on:
       - '_includes/pub_entry.html'
       - 'papers/**'
       - 'minicourses/**'
+      - 'slides/**'
       - 'tests/**'
       - 'assets/**'
       - '_config.yml'
@@ -54,8 +55,13 @@ jobs:
         run: python3 tests/test_teaching.py
       - name: Conferences generator test
         run: python3 tests/test_conferences.py
+      - name: Slides generator test
+        run: python3 tests/test_slides.py
 
       # 3. Build the whole site (catches Liquid/template/theme errors).
+      #    Generate the /slides/ page first — it's built from the talk data.
+      - name: Generate the /slides/ page from talks data
+        run: python3 scripts/slides.py --out slides/index.md
       - name: Build site
         uses: actions/jekyll-build-pages@v1
         with:
@@ -85,3 +91,17 @@ jobs:
             echo "::error::proxied pugwash URL leaked into the rendered page"; exit 1
           fi
           echo "Rendered page assertions passed."
+
+      - name: Assert rendered slides page
+        run: |
+          set -euo pipefail
+          f=_site/slides/index.html
+          test -s "$f"
+          grep -q "2021_11_29_lines_Alt.pdf" "$f"     # a slide PDF (shared data)
+          grep -q "watch?v=734jMwgjkkM" "$f"          # a video link
+          grep -q "Using computers to do maths for us" "$f"  # web_only entry present
+          grep -q "Castravet-Tevelev" "$f"            # expository note
+          if grep -qE '\$[^$]*\\[a-zA-Z]+[^$]*\$' "$f"; then
+            echo "::error::a raw \$...\$ math span leaked on /slides/"; exit 1
+          fi
+          echo "Slides page assertions passed."

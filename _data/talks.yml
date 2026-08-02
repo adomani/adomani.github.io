@@ -5,10 +5,21 @@
 # verbatim in `text`.
 #
 # Optional `slides:` is a URL; on the CV it renders as a trailing
-# ", \href{url}{slides}." on the line. The website /slides/ page (follow-up)
-# renders the subset with `slides`, plus further website-only fields it may
-# carry — `video:` (URL), `web_title:` (public title when it differs from the CV
-# `title`) and `note:` (short expository note) — all ignored by the CV.
+# ", \href{url}{slides}." on the line. The website /slides/ page is generated
+# from the subset with `slides` (scripts/slides.py), using two further fields the
+# CV ignores: `video:` (URL) and `note:` (a short sentence, may contain \href).
+#
+# `web_only: true` marks an entry that appears on /slides/ but NOT in the CV's
+# talks list — e.g. the Tour of Mathematics (which lives in the CV's Teaching
+# section) and the Tsinghua minicourse slides. The CV generator skips these.
+- year: 2026
+  date: March 16-20
+  title: Maintaining a Large Formalisation Project
+  venue: \href{https://adomani.github.io/PreCFSG/}{workshop on formalisation and group theory}, Tsinghua University, Beijing
+  slides: https://adomani.github.io/PreCFSG/Maintenance/Maintaining_1_Maths.pdf
+  note: (\href{https://adomani.github.io/PreCFSG/Maintenance/Maintaining_2_AI.pdf}{part 2})
+  web_only: true
+
 - year: 2026
   date: February 12
   title: Machine Verified Reasoning
@@ -40,6 +51,7 @@
   title: An introduction to linters
   venue: \href{https://leanprover-community.github.io/lt2025/}{Lean Together 2025}, online workshop
   slides: https://github.com/adomani/Syllabus/blob/master/Talks/2025_Lean_Together_linter_talk.pdf
+  video: https://www.youtube.com/watch?v=734jMwgjkkM
 
 - year: 2024
   date: June 24-28
@@ -67,22 +79,34 @@
 - year: 2021
   date: November 29
   title: Lines of polynomials with Galois group $\mathfrak{A}_{2n}$
-  venue: Greek Algebra \& Number Theory seminar, online.
+  venue: \href{https://sites.google.com/view/gantseminar}{Greek Algebra \& Number Theory} seminar, online.
+  slides: https://adomani.github.io/slides/2021_11_29_lines_Alt.pdf
 
 - year: 2021
   date: November 22
   title: $\overline{M}_{0,134}$ is not a Mori Dream Space
   venue: Warwick $\overline{M}_{0,n}$ seminar, online.
+  slides: https://adomani.github.io/slides/2021_11_22_nMDS.pdf
+  note: An expository talk on a result of \href{https://arxiv.org/abs/1311.7673}{Castravet-Tevelev}.
 
 - year: 2021
   date: January 7
   title: Mathematical insights from using Lean
-  venue: Lean Together 2021, online.
+  venue: \href{https://leanprover-community.github.io/lt2021/}{Lean Together 2021}, online.
+  slides: https://adomani.github.io/slides/2021_01_07_Testa_Lean_Together_2021.pdf
+  video: https://www.youtube.com/watch?v=jlJl0p7pm7M
 
 - year: 2020
   date: December 8
   title: Computers and Mathematics
   venue: Warwick Maths Society, online.
+  slides: https://adomani.github.io/slides/2020_12_08_WMS_Calculations.pdf
+
+- year: 2020
+  title: Using computers to do maths for us!
+  venue: Tour of Mathematics 2020-21, Warwick
+  slides: https://adomani.github.io/slides/2020_ToM_Testa.pdf
+  web_only: true
 
 - year: 2020
   date: October 7
@@ -93,6 +117,7 @@
   date: March 31
   title: Contact in algebraic and tropical geometry
   venue: dematerialized session of ``Alg\`ebre et G\'eom\'etrie'', Versailles, France.
+  slides: https://adomani.github.io/slides/2020_03_31_Versailles_Testa.pdf
 
 - year: 2019
   date: July 22-26

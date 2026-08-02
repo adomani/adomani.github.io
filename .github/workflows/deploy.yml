@@ -68,7 +68,10 @@ jobs:
       - name: Place CV PDF into the site
         run: cp cv/main.pdf pdfs/CV.pdf
 
-      # 2. Build the Jekyll site, now including the fresh CV PDF.
+      # 2. Generate the /slides/ page from the same talk data, then build the
+      #    Jekyll site (now including the fresh CV PDF and slides page).
+      - name: Generate the /slides/ page from talks data
+        run: python3 scripts/slides.py --out slides/index.md
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:
@@ -76,6 +79,15 @@ jobs:
           destination: ./_site
       - name: Assert CV PDF is in the built site
         run: test -s _site/pdfs/CV.pdf
+      - name: Assert /slides/ page renders from shared data
+        run: |
+          set -euo pipefail
+          f=_site/slides/index.html
+          test -s "$f"
+          grep -q "2021_11_29_lines_Alt.pdf" "$f"     # a slide PDF (shared data)
+          grep -q "watch?v=734jMwgjkkM" "$f"          # a video link
+          grep -q "Using computers to do maths for us" "$f"  # web_only entry present
+          echo "Slides page assertions passed."
       - name: Assert minicourses page renders from shared data
         run: |
           set -euo pipefail

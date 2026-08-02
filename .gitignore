@@ -6,3 +6,6 @@ __pycache__/
 # The published CV is built fresh on every deploy (deploy.yml) from cv/ and the
 # shared publications.json, then placed here. Not committed — it's a build output.
 pdfs/CV.pdf
+
+# Generated at build time from _data/talks.yml (scripts/slides.py)
+slides/index.md
