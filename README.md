@@ -1,8 +1,4 @@
-# adomani.github.io
-
-Source for Damiano Testa's webpage.
-
-### 🌐 Live site — <https://adomani.github.io/>
+## [Damiano Testa's webpage](https://adomani.github.io/)
 
 - **CV (PDF):** <https://adomani.github.io/pdfs/CV.pdf>
 - [Publications](https://adomani.github.io/papers/) ·
@@ -12,7 +8,7 @@ Source for Damiano Testa's webpage.
 
 ## About this repository
 
-The website (Jekyll → GitHub Pages) and the CV (LaTeX → PDF) are generated from:
+The website and CV are generated from:
 
 | Canonical source | Feeds |
 | --- | --- |
@@ -22,7 +18,7 @@ The website (Jekyll → GitHub Pages) and the CV (LaTeX → PDF) are generated f
 | `_data/teaching.yml`, `_data/conferences.yml` | the CV Teaching section |
 | `_data/courses.yml`, `_data/collaborators.yml` | the teaching pages and co-author links |
 
-A single command materialises everything (`python3 scripts/build.py`), and CI
+The single command `python3 scripts/build.py` materialises everything, and CI
 rebuilds and deploys the site and the CV together on every push to `master`.
 
 See [`scripts/README.md`](scripts/README.md) for the full pipeline.
