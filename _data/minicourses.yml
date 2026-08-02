@@ -13,11 +13,13 @@
   venue: "Tsinghua University, Beijing, China"
   context: "workshop and general overview"
   url: "https://github.com/adomani/PreCFSG"
+
 - year: 2023
   date: "December 11-15"
   title: "Minicorso Lean"
   venue: "Università di Pisa, Italy"
   context: "last week of the Laboratorio di formalizzazione di dimostrazioni matematiche tramite il software Lean"
+
 - year: 2023
   date: "May 2-6"
   title: "Atelier Lean"
@@ -25,40 +27,48 @@
   context: "during the seventh mini symposium of the Roman Number Theory Association"
   url: "https://github.com/adomani/Atelier_Lean_2023"
   collaborators: ["Riccardo Brasca", "Filippo Nuccio"]
+
 - year: 2021
   date: "August 16-20"
   title: "Superficies Racionales sobre un Cuerpo"
   venue: "AGRA IV, two-week school in Arithmetic, Groups and Analysis (online)"
   url: "2021_08_16_20_AGRA_IV.pdf"
+
 - year: 2021
   date: "July (on hold)"
   title: "CIMPA School: Isogenies of elliptic curves and their applications to cryptography"
   venue: "Universidad del Cauca, Popayán, Colombia"
+
 - year: 2019
   date: "July 22-26"
   title: "Arithmetic properties of del Pezzo surfaces"
   venue: "Düsseldorf, Germany"
   url: "2019_07_22_26_TestaDuesseldorf.pdf"
+
 - year: 2014
   date: "February 17-21"
   title: "Rational points on varieties"
   venue: "LEGAL 2014, Liberdade Em Geometria Algébrica, Teresópolis, Brazil"
   url: "2013_RPS/legal_RPS.md"
+
 - year: 2014
   date: "January 30 – February 6"
   title: "Cox Rings of Rational Surfaces"
   venue: "IMPA, Rio de Janeiro, Brazil"
   url: "2014_CRRS/CRRS.md"
+
 - year: 2014
   date: "January 14-21"
   title: "Cox Rings of Rational Surfaces"
   venue: "Universidad de Concepción, Chile"
   url: "2014_CRRS/CRRS.md"
+
 - year: 2013
   date: "January 5-15"
   title: "Rational points on surfaces"
   venue: "Universidad de Concepción, Chile"
   url: "2013_RPS/UdeC_RPS.md"
+
 - year: 2008
   date: "April 14-18"
   title: "Instructional workshop on Surfaces: Geometry and Arithmetic"
