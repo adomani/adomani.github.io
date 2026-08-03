@@ -27,7 +27,7 @@ Between July 2025 and July 2027 I am partially supported by the [AI for Math Fun
 
 Between September 2013 and August 2015 I was partially supported by the EPSRC grant [Moduli Spaces and Rational Points](msrp/).
 
-> _"... most of the statements we made were wrong, most of the facts we learned were trivial..."_
+> _“... most of the statements we made were wrong, most of the facts we learned were trivial...”_
 
 ---
 
