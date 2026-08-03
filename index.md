@@ -38,6 +38,8 @@ Between September 2013 and August 2015 I was partially supported by the EPSRC gr
   <!-- Left column: email, office, phone, fax -->
   <div style="flex: 1 1 250px; min-width: 200px;">
     <b>Email:</b> d.testa at warwick dot ac dot uk<br>
+    <b>ORCID:</b> <a href="https://orcid.org/0009-0004-5949-6861">0009-0004-5949-6861</a><br>
+    <b>arXiv:</b> <a href="https://arxiv.org/a/testa_d_1.html">testa_d_1</a><br>
     <b>Office:</b> C2.13, Zeeman Building<br>
     <b>Phone:</b> +44 (0)24 765 22662<br>
     <b>Fax:</b> +44 (0)24 765 24182<br>

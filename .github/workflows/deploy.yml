@@ -81,6 +81,8 @@ jobs:
           fail=0
           have() { grep -qF -- "$2" "$1" || { echo "::error::CV PDF missing: $2"; fail=1; }; }
           have cv.txt "d.testa@warwick.ac.uk"                  # contact email shown in full
+          have cv.txt "0009-0004-5949-6861"                    # ORCID iD shown
+          have cv.txt "testa_d_1"                              # arXiv author id shown
           have cv.txt "FittingsTheorem"                        # preprint present
           have cv.txt "github.com/adomani/FittingsTheorem"     # repo link shown
           have cv.txt "Néron"                                  # UTF-8 accent renders
