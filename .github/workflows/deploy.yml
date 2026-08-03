@@ -63,12 +63,6 @@ jobs:
           # file v3.8); biber `latest` (2.21) expects a newer control file and
           # errors out. Bump this in step with Tectonic's bundle.
           biber-version: "2.17"
-      - name: Cache Tectonic's package bundle
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/Tectonic
-          key: tectonic-bundle-${{ hashFiles('cv/main.tex', 'cv/simplecv.sty') }}
-          restore-keys: tectonic-bundle-
       - name: Build CV PDF
         working-directory: cv
         run: tectonic -X compile main.tex --keep-logs --keep-intermediates
