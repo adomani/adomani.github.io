@@ -56,16 +56,19 @@ CATEGORY = {  # keyword -> section bucket
 }
 
 
+def arxiv_url(f):
+    """The arXiv abstract URL from an `eprint` field like 'arXiv:2607.29111'."""
+    m = re.search(r'(\d{4}\.\d{4,5})', f.get('eprint', ''))
+    return 'https://arxiv.org/abs/' + m.group(1) if m else None
+
+
 def link_for(f):
+    # The title's primary link: a DOI, then the arXiv abstract, then a bare URL.
+    # arXiv outranks `url` so a preprint that also lists a code repo (in `url`)
+    # links its title to the paper, and the repo becomes a separate `code` link.
     if f.get('doi'):
         return 'https://doi.org/' + f['doi']
-    if f.get('url'):
-        return f['url']
-    ep = f.get('eprint', '')
-    m = re.search(r'(\d{4}\.\d{4,5})', ep)
-    if m:
-        return 'https://arxiv.org/abs/' + m.group(1)
-    return None
+    return arxiv_url(f) or f.get('url') or None
 
 
 def to_record(f):
@@ -84,6 +87,11 @@ def to_record(f):
     link = link_for(f)
     if link:
         rec['url'] = link
+    # A code repository (`url`) shown alongside the paper: only when the primary
+    # link is the paper itself (arXiv/DOI), so the repo doesn't duplicate it.
+    repo = f.get('url')
+    if repo and repo != link:
+        rec['code'] = repo
     kw = (f.get('keywords') or '').strip().lower()
     rec['category'] = CATEGORY.get(kw, 'publications')
     rec['status'] = kw

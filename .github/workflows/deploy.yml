@@ -133,6 +133,8 @@ jobs:
             have "$f" 'href="https://anne.mx/"'                          # co-author homepage link
             have "$f" "Dedicated to Tony Mach"                           # citation_note (dedication)
             have "$f" 'supervisor <a href="https://www.math.columbia.edu/~dejong/"'  # thesis credit
+            have "$f" 'arxiv.org/abs/2607.29111'                         # preprint title links to arXiv
+            have "$f" 'github.com/adomani/FittingsTheorem'               # ...with its code repo as a [code] link
             have "$f" '\(28\)'                                           # inline math delimiter for MathJax
             have "$f" 'cdn.jsdelivr.net/npm/mathjax@3'                   # modern MathJax v3 CDN
             lack "$f" 'cdn.mathjax.org'                                  # retired v2 shim CDN gone
