@@ -709,8 +709,9 @@
     ],
     "keywords": "preprint",
     "fields": {
-      "title": "A formalised proof of {F}itting's Theorem via the binomial theorem for non-associative, non-unital rings",
+      "title": "{F}itting's {T}heorem and {S}emirings of {N}ormal {S}ubgroups",
       "year": "2026",
+      "eprint": "arXiv:2607.29111",
       "url": "https://github.com/adomani/FittingsTheorem"
     },
     "description": "A Lean 4 formalisation of Fitting's theorem: the join of two nilpotent normal subgroups is nilpotent.\nThe proof puts a (non-associative, non-unital) semiring structure on the normal subgroups of a group, with the commutator as multiplication, and runs the binomial theorem in that setting."

@@ -578,12 +578,12 @@ publications:
   status: published
 preprints:
 - key: FittingsTheorem
-  title: A formalised proof of Fitting's Theorem via the binomial theorem for non-associative, non-unital
-    rings
+  title: Fitting's Theorem and Semirings of Normal Subgroups
   authors:
   - Damiano Testa
   year: '2026'
-  url: https://github.com/adomani/FittingsTheorem
+  url: https://arxiv.org/abs/2607.29111
+  code: https://github.com/adomani/FittingsTheorem
   category: preprints
   status: preprint
   description: |-
