@@ -51,16 +51,37 @@ jobs:
       # fragments, cv/papers.bib, and the /slides/ page (scripts/build.py).
       - name: Materialise all generated files
         run: python3 scripts/build.py
-      - name: Build CV PDF
-        uses: xu-cheng/latex-action@v3
+      # Compile with Tectonic rather than a 2 GB TeXLive image: it fetches only
+      # the packages this document needs and caches them, so the step drops from
+      # ~2 min (almost all image pull) to seconds once the bundle cache is warm.
+      # biber is installed for biblatex (backend=biber); `tectonic -X compile`
+      # runs it automatically when the document needs it.
+      - name: Set up Tectonic and biber
+        uses: wtfjoke/setup-tectonic@v3
         with:
-          working_directory: cv
-          root_file: main.tex
+          # Pin biber to match the biblatex in Tectonic's bundle (3.17, control
+          # file v3.8); biber `latest` (2.21) expects a newer control file and
+          # errors out. Bump this in step with Tectonic's bundle.
+          biber-version: "2.17"
+      - name: Cache Tectonic's package bundle
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-bundle-${{ hashFiles('cv/main.tex', 'cv/simplecv.sty') }}
+          restore-keys: tectonic-bundle-
+      - name: Build CV PDF
+        working-directory: cv
+        run: tectonic -X compile main.tex --keep-logs --keep-intermediates
       - name: Assert CV content
         run: |
           set -euo pipefail
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
-          pdftotext -layout cv/main.pdf cv.txt
+          # Normalise the extracted text so fixed-string checks are robust to the
+          # TeX engine: flatten line breaks to single spaces (phrases wrap at
+          # engine-dependent points) and fold f-ligatures back to ASCII (Tectonic
+          # emits the Unicode glyphs, e.g. "Super<fi>cies" with U+FB01).
+          pdftotext -layout cv/main.pdf - | tr '\n' ' ' | tr -s ' ' \
+            | sed 's/ﬀ/ff/g; s/ﬁ/fi/g; s/ﬂ/fl/g; s/ﬃ/ffi/g; s/ﬄ/ffl/g' > cv.txt
           # Run every check, report all misses, then fail once (a bare `grep -q`
           # would both hide which string was missing and stop at the first).
           fail=0
