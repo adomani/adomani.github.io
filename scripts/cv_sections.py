@@ -47,7 +47,7 @@ def minicourses_tex(entries):
     # url/links/collaborators are website-only; the CV lists plain text.
     items = '\n'.join(_minicourse_item(e) for e in entries)
     return _common.itemize(_common.header('cv_sections.py', MINICOURSES),
-                           items, lead='{\\textbf{Minicourses}}\n')
+                           items, lead='\\section{Minicourses}\n')
 
 
 # ---- Talks (_data/talks.yml) --------------------------------------------
@@ -100,7 +100,7 @@ def teaching_tex(data):
 
 # ---- Organized conferences (_data/conferences.yml) ----------------------
 CONFERENCES = '_data/conferences.yml'
-CONF_HEADING = '{\\textbf{Organized conferences}}'
+CONF_HEADING = '\\section{Organized conferences}'
 
 
 def conferences_tex(entries):
