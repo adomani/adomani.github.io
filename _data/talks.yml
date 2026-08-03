@@ -345,6 +345,7 @@
   date: October
   title: Conics on the Fermat quintic threefold
   venue: IMPA, Rio de Janeiro, Brasil.
+  slides: https://adomani.github.io/slides/2011_03_11_Cork_conics.pdf
 
 - year: 2011
   date: October
@@ -370,9 +371,11 @@
   venue: Cambridge University, Cambridge, UK.
 
 - year: 2011
-  date: March
+  date: March 11
   title: Conics on the Fermat quintic threefold
   venue: Irish Algebraic Geometry Seminar, University College Cork, Cork, Ireland.
+  slides: https://adomani.github.io/slides/2011_03_11_Cork_conics.pdf
+  note: ([families of conics in the Dwork pencil](https://adomani.github.io/slides/2011_03_11_Cork_Dwork_conics.pdf))
 
 - year: 2011
   text: '2011, January 10-14, Workshop on Torsors: theory and applications, ICMS, Edinburgh, UK.'
@@ -391,6 +394,7 @@
   date: September
   title: Conics on the Fermat quintic threefold
   venue: Mathematics Colloquium, Rice University, USA.
+  slides: https://adomani.github.io/slides/2011_03_11_Cork_conics.pdf
 
 - year: 2010
   date: September
