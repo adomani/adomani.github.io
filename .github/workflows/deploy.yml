@@ -175,6 +175,7 @@ jobs:
           f=_site/slides/index.html
           if seen "$f"; then
             have "$f" "2021_11_29_lines_Alt.pdf"            # a slide PDF (shared data)
+            have "$f" "2011_03_11_Cork_conics.pdf"          # oldest deck, with a companion note
             have "$f" "watch?v=734jMwgjkkM"                 # a video link
             have "$f" "Using computers to do maths for us"  # web_only entry present
             have "$f" "Castravet-Tevelev"                   # expository note
