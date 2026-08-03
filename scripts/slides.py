@@ -12,8 +12,14 @@ the CV are LaTeX; this converts them to the kramdown/MathJax the site expects:
   $...$         ->  \\(...\\)      (double backslash survives kramdown to MathJax)
   \\&, accents, ``...''  ->  Unicode
 
+The same deck given at several venues is ONE entry here (the venues are listed
+after the title), even though each telling is its own line in the CV: entries
+that share a `slides` URL are grouped. The URL is the identity — two different
+decks with the same title (e.g. two versions of one talk) stay separate.
+
 scripts/build.py writes this; preview it with `python3 scripts/build.py slides`.
 """
+import collections
 import re
 
 import _common
@@ -42,7 +48,7 @@ def ordinal(n):
 
 
 def fmt_date(entry):
-    """"February 12" + 2026 -> "February 12th, 2026"; ranges/absent handled."""
+    """"February 12" + 2026 -> "February 12th, 2026"; ranges/bare-month/absent handled."""
     date = entry.get('date')
     year = entry['year']
     if not date:
@@ -50,7 +56,9 @@ def fmt_date(entry):
     m = _MONTH_DAY.match(str(date))
     if m:
         return f'{m.group(1)} {ordinal(int(m.group(2)))}, {year}'
-    return f'{date}, {year}'          # e.g. "March 16-20, 2026"
+    if not any(c.isdigit() for c in str(date)):
+        return f'{date} {year}'       # bare month, e.g. "October 2011" (no comma)
+    return f'{date}, {year}'          # a day range, e.g. "March 16-20, 2026"
 
 
 def render_entry(entry):
@@ -66,9 +74,38 @@ def render_entry(entry):
     return line
 
 
+def _venue_date(entry):
+    """"venue (date)" for one telling, with an inline [video] if it was recorded."""
+    s = web(entry['venue']).rstrip('.')
+    if entry.get('video'):
+        s += f", [video]({entry['video']})"
+    date = fmt_date(entry)
+    return f'{s} ({date})' if date else s
+
+
+def render_group(group):
+    """One paragraph per deck. A single telling keeps the original one-line form;
+    a deck given at several venues names the title once and lists the venues (and
+    their dates), so it is not repeated verbatim. Any `note`s follow at the end."""
+    if len(group) == 1:
+        return render_entry(group[0])
+    first = group[0]
+    line = f"[{web(first['title'])}]({first['slides']}), given at " \
+           + '; '.join(_venue_date(e) for e in group) + '.'
+    notes = [web(e['note']) for e in group if e.get('note')]
+    if notes:
+        line += ' ' + ' '.join(notes)
+    return line
+
+
 def to_markdown(entries):
-    talks = [e for e in entries if e.get('slides')]
-    body = '\n\n'.join(render_entry(e) for e in talks)
+    # Group talks that share a deck (`slides` URL), keeping first-appearance
+    # (newest-first) order; each group renders as one paragraph.
+    groups = collections.OrderedDict()
+    for e in entries:
+        if e.get('slides'):
+            groups.setdefault(e['slides'], []).append(e)
+    body = '\n\n'.join(render_group(g) for g in groups.values())
     return FRONT_MATTER + '\n' + body + '\n'
 
 
