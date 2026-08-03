@@ -93,7 +93,6 @@ jobs:
           have() { grep -qF -- "$2" "$1" || { echo "::error::CV PDF missing: $2"; fail=1; }; }
           have cv.txt "d.testa@warwick.ac.uk"                  # contact email shown in full
           have cv.txt "0009-0004-5949-6861"                    # ORCID iD shown
-          have cv.txt "testa_d_1"                              # arXiv author id shown
           have cv.txt "FittingsTheorem"                        # preprint present
           have cv.txt "github.com/adomani/FittingsTheorem"     # repo link shown
           have cv.txt "Néron"                                  # UTF-8 accent renders
@@ -148,6 +147,7 @@ jobs:
             have "$f" 'id="site-updated"'    # footer "Last updated" element present
             have "$f" '<time datetime="20'   # ...stamped with the site.time build date
             have "$f" 'id="footer"'          # the "Skip to footer" link's anchor exists
+            have "$f" 'arxiv.org/a/testa_d_1'  # arXiv author link (labelled "articles")
           fi
 
           # /papers/ (from publications.json) + the MathJax v3 loader
