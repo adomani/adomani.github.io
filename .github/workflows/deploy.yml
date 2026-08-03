@@ -86,6 +86,7 @@ jobs:
           # would both hide which string was missing and stop at the first).
           fail=0
           have() { grep -qF -- "$2" "$1" || { echo "::error::CV PDF missing: $2"; fail=1; }; }
+          have cv.txt "d.testa@warwick.ac.uk"                  # contact email shown in full
           have cv.txt "FittingsTheorem"                        # preprint present
           have cv.txt "github.com/adomani/FittingsTheorem"     # repo link shown
           have cv.txt "Néron"                                  # UTF-8 accent renders
