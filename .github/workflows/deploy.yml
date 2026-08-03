@@ -66,6 +66,17 @@ jobs:
       - name: Build CV PDF
         working-directory: cv
         run: tectonic -X compile main.tex --keep-logs --keep-intermediates
+      # A Unicode char with no glyph in the CV font is dropped *silently* (only a
+      # log warning). Fail instead, so e.g. a pasted en-dash or curly quote can't
+      # vanish from the CV. Fix by using a TeX-safe form (-- for en-dash, ' etc.).
+      - name: Assert no characters were dropped from the CV
+        working-directory: cv
+        run: |
+          if grep -n "Missing character" main.log; then
+            echo "::error::CV dropped a glyph (see above) — replace the Unicode char with a TeX-safe form."
+            exit 1
+          fi
+          echo "No dropped characters."
       - name: Assert CV content
         run: |
           set -euo pipefail

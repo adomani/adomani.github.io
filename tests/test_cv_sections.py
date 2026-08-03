@@ -13,7 +13,7 @@ def check_minicourses():
     entries = _helpers.read(CV.MINICOURSES)
     tex = CV.minicourses_tex(entries)
     _helpers.assert_itemize(tex, len(entries))
-    assert '{\\textbf{Minicourses}}' in tex
+    assert '\\section{Minicourses}' in tex
 
     for e in entries:                       # url/links are website-only
         assert '\\emph{' in tex
