@@ -717,7 +717,8 @@
     "fields": {
       "title": "{FormaTheoria: Constructing Large-Scale Lean Theories from Mathematical Literature -- Toward the Formalization of the Classification of Finite Simple Groups}",
       "year": "2026",
-      "eprint": "arXiv:2608.10894"
+      "eprint": "arXiv:2608.10894",
+      "url": "https://github.com/Qiuzhen-CFSG/CFSG"
     }
   },
   {
