@@ -702,6 +702,25 @@
     "description": "We compute the Picard group of the surface \\\\(S\\\\) of cuboids;\nthe emphasis is to prove that a very explicit set of 140 curves on \\\\(S\\\\) generates the full Picard group,\nnot just a finite index subgroup.\nThe main tool is the use of a combination of the geometric automorphism group of \\\\(S\\\\),\nas well as the Galois action on the set of curves to reduce the statement to the primitivity of\nthe canonical class on \\\\(S\\\\)."
   },
   {
+    "key": "FormaTheoria",
+    "type": "misc",
+    "author": [
+      "Nie, Tianjiao",
+      "Zhang, Ao",
+      "Tang, Yusen",
+      "Testa, Damiano",
+      "Yau, Shing-Tung",
+      "Li, Peng",
+      "Zhou, Yuan"
+    ],
+    "keywords": "preprint",
+    "fields": {
+      "title": "{FormaTheoria: Constructing Large-Scale Lean Theories from Mathematical Literature -- Toward the Formalization of the Classification of Finite Simple Groups}",
+      "year": "2026",
+      "eprint": "arXiv:2608.10894"
+    }
+  },
+  {
     "key": "FittingsTheorem",
     "type": "misc",
     "author": [

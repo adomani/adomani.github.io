@@ -577,6 +577,21 @@ publications:
   category: publications
   status: published
 preprints:
+- key: FormaTheoria
+  title: 'FormaTheoria: Constructing Large-Scale Lean Theories from Mathematical Literature -- Toward
+    the Formalization of the Classification of Finite Simple Groups'
+  authors:
+  - Tianjiao Nie
+  - Ao Zhang
+  - Yusen Tang
+  - Damiano Testa
+  - Shing-Tung Yau
+  - Peng Li
+  - Yuan Zhou
+  year: '2026'
+  url: https://arxiv.org/abs/2608.10894
+  category: preprints
+  status: preprint
 - key: FittingsTheorem
   title: Fitting's Theorem and Semirings of Normal Subgroups
   authors:
