@@ -590,6 +590,7 @@ preprints:
   - Yuan Zhou
   year: '2026'
   url: https://arxiv.org/abs/2608.10894
+  code: https://github.com/Qiuzhen-CFSG/CFSG
   category: preprints
   status: preprint
 - key: FittingsTheorem

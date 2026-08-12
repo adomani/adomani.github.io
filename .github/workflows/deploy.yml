@@ -166,6 +166,7 @@ jobs:
             have "$f" 'github.com/adomani/FittingsTheorem'               # ...with its code repo as a [code] link
             have "$f" 'arxiv.org/abs/2608.10894'                         # CFSG preprint links to arXiv
             have "$f" 'Toward the Formalization'                         # ...its title casing (en-dash) survives
+            have "$f" 'github.com/Qiuzhen-CFSG/CFSG'                      # ...with its code repo as a [code] link
             have "$f" '\(28\)'                                           # inline math delimiter for MathJax
             have "$f" 'cdn.jsdelivr.net/npm/mathjax@3'                   # modern MathJax v3 CDN
             lack "$f" 'cdn.mathjax.org'                                  # retired v2 shim CDN gone
