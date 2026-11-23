@@ -15,6 +15,20 @@
 # talks list — e.g. the Tour of Mathematics (which lives in the CV's Teaching
 # section) and the Tsinghua minicourse slides. The CV generator skips these.
 - year: 2026
+  date: November 27
+  title: Mathematics and formalisation
+  venue: Warwick Mathematics Colloquium
+  slides: https://adomani.github.io/Syllabus/Talks/2026_Warwick_Colloquium_Mathematics_and_formalisation.pdf
+  note: ([interactive version](https://claude.ai/artifact/3XjYb5wdJRbmRAqPwYCp3S))
+
+- year: 2026
+  date: November 25
+  title: Understanding mathematics through autoformalisation
+  venue: 'MIR@W, AI for mathematics, Warwick'
+  slides: https://adomani.github.io/Syllabus/Talks/2026_MIRaW_Understanding_mathematics_through_autoformalisation.pdf
+  note: ([interactive version](https://claude.ai/artifact/HsGszxjn5QAj9hzwNhAi2o))
+
+- year: 2026
   date: March 16-20
   title: Maintaining a Large Formalisation Project
   venue: '[workshop on formalisation and group theory](https://adomani.github.io/PreCFSG/), Tsinghua University, Beijing'
