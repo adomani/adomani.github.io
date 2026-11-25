@@ -185,6 +185,12 @@ jobs:
             have "$f" "watch?v=734jMwgjkkM"                 # a video link
             have "$f" "Using computers to do maths for us"  # web_only entry present
             have "$f" "Castravet-Tevelev"                   # expository note
+            # Two formulas in one entry: their `_`s once became emphasis, breaking
+            # the title's link (#62). The formula must reach MathJax intact, the
+            # title must be a link, and no raw Markdown link may be left anywhere.
+            have "$f" '\(\overline{M}_{0,134}\)'
+            have "$f" 'href="https://adomani.github.io/slides/2021_11_22_nMDS.pdf"'
+            lack "$f" '](http'
             no_raw_math "$f"
           fi
 

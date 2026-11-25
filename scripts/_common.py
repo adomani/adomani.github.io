@@ -57,10 +57,19 @@ def md_to_tex(s):
     return ''.join(out)
 
 
+# Inside math, the characters kramdown would read as markup: a backslash (it
+# would eat the one in \{ or \|), emphasis (_ and *: the _ of one formula paired
+# with the _ of the next one), code spans, links and HTML. Each gets a
+# backslash, which kramdown removes, so MathJax receives the formula as written.
+_MATH_MARKUP = re.compile(r'([\\`*_\[\]<])')
+
+
 def md_to_web(s):
     """Markdown inline text -> the site's kramdown. Only math differs: $x$ ->
-    \\(x\\) (double backslash in the .md source survives kramdown to MathJax)."""
-    return re.sub(r'\$([^$]*)\$', lambda m: '\\\\(' + m.group(1) + '\\\\)', s)
+    \\(x\\) (double backslash in the .md source survives kramdown to MathJax),
+    with kramdown's markup characters inside x escaped (_MATH_MARKUP)."""
+    return re.sub(r'\$([^$]*)\$',
+                  lambda m: '\\\\(' + _MATH_MARKUP.sub(r'\\\1', m.group(1)) + '\\\\)', s)
 
 
 def itemize(banner, items, lead=''):
