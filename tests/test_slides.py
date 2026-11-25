@@ -62,7 +62,14 @@ def main():
     # Videos, the expository note, math and accents survive the conversion.
     assert 'watch?v=734jMwgjkkM' in md and 'watch?v=jlJl0p7pm7M' in md
     assert '[Castravet-Tevelev](https://arxiv.org/abs/1311.7673)' in md
-    assert '\\\\(\\mathfrak{A}_{2n}\\\\)' in md            # $...$ -> \\(...\\)
+    assert '\\\\(\\\\mathfrak{A}\\_{2n}\\\\)' in md        # $...$ -> \\(...\\), markup escaped
+    # Two formulas in one paragraph: unescaped, kramdown paired their `_`s as
+    # emphasis, which also broke the title's link (the page showed raw markdown).
+    assert ('[\\\\(\\\\overline{M}\\_{0,134}\\\\) is not a Mori Dream Space]'
+            '(https://adomani.github.io/slides/2021_11_22_nMDS.pdf)') in md
+    assert 'Warwick \\\\(\\\\overline{M}\\_{0,n}\\\\) seminar' in md
+    # Outside math, Markdown is left alone.
+    assert '[Castravet-Tevelev](https://arxiv.org/abs/1311.7673)' in md
     assert 'Düsseldorf' in md and 'Géométrie' in md        # accents
     assert '[part 2](https://adomani.github.io/PreCFSG/Maintenance/Maintaining_2_AI.pdf)' in md
     # web_only entries appear here but must be absent from the CV talks list.
