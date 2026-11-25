@@ -21,9 +21,12 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; don't cancel an in-progress one.
+# Deploys (push to master, or a manual run) share one queue, `pages`: one at a time, an in-progress deploy is
+# never cancelled, and of several waiting only the newest runs (it carries everything before it).
+# Pull-request checks never deploy, so each pull request has its own queue: a check can no longer displace a
+# waiting deploy (on 2026-11-24 a push to one PR cancelled the deploy of another, merged one).
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && format('check-{0}', github.ref) || 'pages' }}
   cancel-in-progress: false
 
 jobs:
